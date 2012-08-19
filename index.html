@@ -5,14 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>makotow-log@github</title>
+  <title>makotow-notes</title>
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="tumblrにブログを構築していたが微妙に機能不足を感じて着ていたのでoctopressに移行。 Octopress 色々と探してみたが、以下のところに魅力を感じたためOctopress に決定。 拡張性が高い
-Markdownで記述
-Plugin も豊富
-A blogging framework &hellip;">
+  <meta name="description" content="設定してみた感想 構築好きとしてはかなり面白い。 とりあえずできた 構築
+RSS追加
+コメント欄追加 これからやる タグクラウド
+画像管理
+Plugin探索
+Theme カスタマイズ・変更 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -27,7 +29,7 @@ A blogging framework &hellip;">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="makotow-log@github" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="makotow-notes" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -50,7 +52,7 @@ A blogging framework &hellip;">
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">makotow-log@github</a></h1>
+  <h1><a href="/">makotow-notes</a></h1>
   
     <h2>A blogging for ....</h2>
   
@@ -85,7 +87,64 @@ A blogging framework &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/08/18/first-octopress/">First-octopress</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/08/19/octopress-construction-memo/">Octopress 構築中</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-19T22:56:00+09:00" pubdate data-updated="true">Aug 19<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>設定してみた感想</h2>
+
+<p>構築好きとしてはかなり面白い。</p>
+
+<h2>とりあえずできた</h2>
+
+<ul>
+<li>構築</li>
+<li>RSS追加</li>
+<li>コメント欄追加</li>
+</ul>
+
+
+<h2>これからやる</h2>
+
+<ul>
+<li>タグクラウド</li>
+<li>画像管理</li>
+<li>Plugin探索</li>
+<li>Theme カスタマイズ・変更</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/18/first-octopress/">First Octopress</a></h1>
     
     
       <p class="meta">
@@ -102,8 +161,6 @@ A blogging framework &hellip;">
 
 
 <time datetime="2012-08-18T16:17:00+09:00" pubdate data-updated="true">Aug 18<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/08/18/first-octopress/#disqus_thread">Comments</a>
         
       </p>
     
@@ -147,11 +204,19 @@ tumblrの方にある少ない記事を少しづつ移動させる。</p>
 <aside class="sidebar">
   
     <section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/08/18/first-octopress/">first-octopress</a>
+        <a href="/blog/2012/08/19/octopress-construction-memo/">Octopress 構築中</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/18/first-octopress/">first Octopress</a>
       </li>
     
   </ul>
@@ -194,12 +259,12 @@ tumblrの方にある少ない記事を少しづつ移動させる。</p>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
-      getTwitterFeed("makotow", 4, false);
+      getTwitterFeed("makotow", 5, true);
     });
   </script>
   <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
-    <a href="http://twitter.com/makotow" class="twitter-follow-button" data-show-count="false">Follow @makotow</a>
+    <a href="http://twitter.com/makotow" class="twitter-follow-button" data-show-count="true">Follow @makotow</a>
   
 </section>
 
@@ -221,7 +286,7 @@ tumblrの方にある少ない記事を少しづつ移動させる。</p>
   
 
 <script type="text/javascript">
-      var disqus_shortname = 'makotow';
+      var disqus_shortname = 'makotownotes';
       
         
         var disqus_script = 'count.js';
@@ -235,7 +300,24 @@ tumblrの方にある少ない記事を少しづつ移動させる。</p>
 
 
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

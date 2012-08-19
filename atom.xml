@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[makotow-log@github]]></title>
+  <title><![CDATA[makotow-notes]]></title>
   <link href="http://makotow.github.com/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2012-08-18T17:12:01+09:00</updated>
+  <updated>2012-08-19T23:21:22+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -14,7 +14,37 @@
 
   
   <entry>
-    <title type="html"><![CDATA[first-octopress]]></title>
+    <title type="html"><![CDATA[Octopress 構築中]]></title>
+    <link href="http://makotow.github.com/blog/2012/08/19/octopress-construction-memo/"/>
+    <updated>2012-08-19T22:56:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/08/19/octopress-construction-memo</id>
+    <content type="html"><![CDATA[<h2>設定してみた感想</h2>
+
+<p>構築好きとしてはかなり面白い。</p>
+
+<h2>とりあえずできた</h2>
+
+<ul>
+<li>構築</li>
+<li>RSS追加</li>
+<li>コメント欄追加</li>
+</ul>
+
+
+<h2>これからやる</h2>
+
+<ul>
+<li>タグクラウド</li>
+<li>画像管理</li>
+<li>Plugin探索</li>
+<li>Theme カスタマイズ・変更</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[first Octopress]]></title>
     <link href="http://makotow.github.com/blog/2012/08/18/first-octopress/"/>
     <updated>2012-08-18T16:17:00+09:00</updated>
     <id>http://makotow.github.com/blog/2012/08/18/first-octopress</id>
