@@ -1,35 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://makotow.github.com/blog/2012/05/13/network-checklist/</loc>
+        <lastmod>2012-09-08T11:49:40+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://makotow.github.com/blog/2012/08/18/first-octopress/</loc>
-        <lastmod>2012-08-23T23:02:59+09:00</lastmod>
+        <lastmod>2012-08-28T22:25:20+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/blog/2012/08/19/octopress-construction-memo/</loc>
-        <lastmod>2012-08-23T23:02:59+09:00</lastmod>
+        <lastmod>2012-08-28T22:25:20+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/blog/2012/08/22/read-more/</loc>
-        <lastmod>2012-08-23T23:02:59+09:00</lastmod>
+        <lastmod>2012-08-28T22:25:20+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/</loc>
-        <lastmod>2012-08-24T00:18:23+09:00</lastmod>
+        <lastmod>2012-08-28T22:25:20+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/404.html</loc>
-        <lastmod>2012-08-20T21:06:17+09:00</lastmod>
+        <lastmod>2012-08-28T22:25:20+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/404.html</loc>
-        <lastmod>2012-08-20T21:06:17+09:00</lastmod>
+        <lastmod>2012-08-28T22:25:20+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/blog/archives/</loc>
-        <lastmod>2012-08-24T00:18:23+09:00</lastmod>
+        <lastmod>2012-09-08T11:49:40+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/</loc>
-        <lastmod>2012-08-24T00:18:23+09:00</lastmod>
+        <lastmod>2012-09-08T11:49:40+09:00</lastmod>
     </url>
 </urlset>

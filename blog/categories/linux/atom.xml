@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | makotow-notes]]></title>
+  <link href="http://makotow.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2012-09-08T11:55:31+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntuのネットワーク設定チェックリスト]]></title>
+    <link href="http://makotow.github.com/blog/2012/05/13/network-checklist/"/>
+    <updated>2012-05-13T18:27:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/05/13/network-checklist</id>
+    <content type="html"><![CDATA[<h2>ネットワーク設定覚書</h2>
+
+<p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
+覚書としてメモ。</p>
+
+<p>Ubuntuでネットワークに繋がらなくなった場合のチェック。</p>
+
+<!-- more -->
+
+
+<p>試しているVersionは</p>
+
+<pre><code>Ubuntu 11 .10 64bit
+</code></pre>
+
+<p>参考にさせていただいたページはこちら</p>
+
+<p> <a href="http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html">http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html</a></p>
+
+<p> <a href="https://forums.ubuntulinux.jp/viewtopic.php?id=9522">https://forums.ubuntulinux.jp/viewtopic.php?id=9522</a></p>
+
+<h3>試した手順</h3>
+
+<ul>
+<li>とりあえず、再起動 sudo /etc/init.d/networking restart</li>
+<li>ping anyhost</li>
+<li>繋がっていないことを確認したら、/etc/network/interfaces が正しいかを確認</li>
+<li>間違っていたので修正、 その後再起動 sudo /etc/init.d/networking restart　</li>
+<li>それでもつながらないので、nameserverが指定されているかを/etc/resolv.confで確認　→ <strong>空になっている</strong></li>
+<li>/etc/resolv.conf に nameserver を追記し、sudo /etc/init.d/networking restart でつながるようになった。</li>
+</ul>
+
+
+<h3>今後の方針</h3>
+
+<p>調べてみると、根本原因はNetwork-Managerが/etc/resolv.confを書き換えることだった。</p>
+
+<p>Network-Managerを削除したりするのではなく、有効活用したほうがいいのだろうと思い検索したところ、次のページを発見。参照し設定。
+ <a href="http://www.usupi.org/sysad/173.html">http://www.usupi.org/sysad/173.html</a></p>
+
+<p>これでしばらく様子を見る。</p>
+]]></content>
+  </entry>
+  
+</feed>

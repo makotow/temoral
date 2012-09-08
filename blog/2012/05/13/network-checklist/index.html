@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>タグクラウド、関連する記事を表示するようにした。 - makotow-notes</title>
+  <title>Ubuntuのネットワーク設定チェックリスト - makotow-notes</title>
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="タイトルの通りざっくりと追加してみた。 参考にさせて頂いたのはこのあたり。 Tag Cloud Octopressのサイドバーにタグリストやタグクラウドを表示させよう！ Related Posts OctopressでRelated Posts(関連エントリー)を表示させるようにした &hellip;">
+  <meta name="description" content="ネットワーク設定覚書 Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
+覚書としてメモ。 Ubuntuでネットワークに繋がらなくなった場合のチェック。 試しているVersionは Ubuntu 11 .10 64bit 参考にさせていただいたページはこちら &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post">
+  <link rel="canonical" href="http://makotow.github.com/blog/2012/05/13/network-checklist">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -107,7 +108,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">タグクラウド、関連する記事を表示するようにした。</h1>
+      <h1 class="entry-title">Ubuntuのネットワーク設定チェックリスト</h1>
     
     
       <p class="meta">
@@ -123,30 +124,54 @@
   
 
 
-<time datetime="2012-08-23T23:26:00+09:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2012</time>
+<time datetime="2012-05-13T18:27:00+09:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>タイトルの通りざっくりと追加してみた。</p>
+<div class="entry-content"><h2>ネットワーク設定覚書</h2>
+
+<p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
+覚書としてメモ。</p>
+
+<p>Ubuntuでネットワークに繋がらなくなった場合のチェック。</p>
 
 <!-- more -->
 
 
-<p>参考にさせて頂いたのはこのあたり。</p>
+<p>試しているVersionは</p>
 
-<h2>Tag Cloud</h2>
+<pre><code>Ubuntu 11 .10 64bit
+</code></pre>
 
-<p><a href="http://qiita.com/items/944db11e257782749270">Octopressのサイドバーにタグリストやタグクラウドを表示させよう！</a></p>
+<p>参考にさせていただいたページはこちら</p>
 
-<h2>Related Posts</h2>
+<p> <a href="http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html">http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html</a></p>
 
-<p><a href="http://blog.glidenote.com/blog/2012/01/04/octopress-related-posts/">OctopressでRelated Posts(関連エントリー)を表示させるようにした</a></p>
+<p> <a href="https://forums.ubuntulinux.jp/viewtopic.php?id=9522">https://forums.ubuntulinux.jp/viewtopic.php?id=9522</a></p>
 
-<p>こういうのがサクサクできてしまうと楽しくてしょうがない。
-Related Postsが表示されていないのはなぜかわからないが、もう少し記事が追加されれば出てくるのではないかと思っている。</p>
+<h3>試した手順</h3>
+
+<ul>
+<li>とりあえず、再起動 sudo /etc/init.d/networking restart</li>
+<li>ping anyhost</li>
+<li>繋がっていないことを確認したら、/etc/network/interfaces が正しいかを確認</li>
+<li>間違っていたので修正、 その後再起動 sudo /etc/init.d/networking restart　</li>
+<li>それでもつながらないので、nameserverが指定されているかを/etc/resolv.confで確認　→ <strong>空になっている</strong></li>
+<li>/etc/resolv.conf に nameserver を追記し、sudo /etc/init.d/networking restart でつながるようになった。</li>
+</ul>
+
+
+<h3>今後の方針</h3>
+
+<p>調べてみると、根本原因はNetwork-Managerが/etc/resolv.confを書き換えることだった。</p>
+
+<p>Network-Managerを削除したりするのではなく、有効活用したほうがいいのだろうと思い検索したところ、次のページを発見。参照し設定。
+ <a href="http://www.usupi.org/sysad/173.html">http://www.usupi.org/sysad/173.html</a></p>
+
+<p>これでしばらく様子を見る。</p>
 </div>
 
 
@@ -169,12 +194,12 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
 
 
-<time datetime="2012-08-23T23:26:00+09:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2012</time>
+<time datetime="2012-05-13T18:27:00+09:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/network/'>network</a>
   
 </span>
 
@@ -183,7 +208,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2012/05/13/network-checklist/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2012/05/13/network-checklist/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -203,11 +228,11 @@ Related Postsが表示されていないのはなぜかわからないが、も�
     
     <ul class="pager">
       
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/2012/08/22/read-more/" title="Previous Post:
-        Read Moreの追加">&laquo; Read Moreの追加</a></li>
-      
       <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2012/08/18/first-octopress/"
+        title="Next Post: first Octopress">first Octopress
+        &raquo;</a></li>
       
     </ul>
   </footer>
@@ -324,8 +349,8 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/';
-        var disqus_url = 'http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/';
+        var disqus_identifier = 'http://makotow.github.com/blog/2012/05/13/network-checklist/';
+        var disqus_url = 'http://makotow.github.com/blog/2012/05/13/network-checklist/';
         var disqus_script = 'embed.js';
       
     (function () {
