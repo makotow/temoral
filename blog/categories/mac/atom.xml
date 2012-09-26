@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mac | makotow-notes]]></title>
+  <link href="http://makotow.github.com/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2012-09-27T00:34:02+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Source Code Pro を Mac で試す。]]></title>
+    <link href="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont-fail/"/>
+    <updated>2012-09-25T22:39:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/09/25/sourcecodeprofont-fail</id>
+    <content type="html"><![CDATA[<p>Adobeがコーディング用のソースコードをオープンソースで公開している。
+9/24 に開催されたCreate The Webで発表された。</p>
+
+<p>Adobe公式ブログにも記事がアップされている。
+<a href="http://blogs.adobe.com/typblography/2012/09/source-code-pro.html">Announcing Source Code Pro</a></p>
+
+<p>提供は、Sourceforge, GitHub, Adobe Edge Web Fonts, Typekit, WebINK, Google Web Fontsから入手可能。今回は馴染み深い Github から取得してみようと思う。</p>
+
+<!-- more -->
+
+
+<h2>今回の環境</h2>
+
+<pre><code>iMac Mountain Lion
+</code></pre>
+
+<h2>GitHub を確認</h2>
+
+<p><a href="https://github.com/adobe/Source-Code-Pro">adobe / Source-Code-Pro</a> を見てみるとREADMEが充実しているので順番に実施していく。</p>
+
+<pre><code>cd ~/tmp
+git clone git://github.com/adobe/Source-Code-Pro.git
+</code></pre>
+
+<hr />
+
+<h3>Overview</h3>
+
+<p>概要、そのままです。 makeotfを使ってるって書いてある。</p>
+
+<h3>Getting Involved</h3>
+
+<p>省略</p>
+
+<h2>Building</h2>
+
+<p><strong>ここからが本筋</strong></p>
+
+<h3>Pre-build font binaries</h3>
+
+<p><a href="https://github.com/downloads/adobe/Source-Code-Pro/SourceCodePro_FontsOnly-1.009.zip">ここから</a> ダウンロードして適当な場所にコピー。</p>
+
+<h3>Requirements</h3>
+
+<p><a href="http://www.adobe.com/devnet/opentype/afdko.html">Adobe Font Development Kit for OpenType(AFDKO)</a> が必須とのこと。リンク先ページの下の方にダウンロードリンクからLicense Agreementを読んでダウンロード。ダウンロードしたものを解凍し、Read_Me_First.htmlを読む。解凍した場所にリンクがはられる。</p>
+
+<p><img src="https://www.dropbox.com/s/d9rt92fj83qvxig/readme.png"></p>
+
+<p>まじか…、Pythonのスクリプトが動作してにログインシェルのprofileにパスが追加された。</p>
+
+<p>.zprofileが作成されてしまった。ここはしょうがないのでそのまま継続。</p>
+
+<p>パス反映のため</p>
+
+<pre><code>source ~/.zprofile
+</code></pre>
+
+<p>~/binに上記でFDKをおいたパスにリンクはられる。
+zprofile は使用しない運用のため、zsh で使用しているファイルへ移動。（未実施）</p>
+
+<pre><code>cd ~/bin/FDK/Tools/FontLab/
+python installFontLabMacros.py /Users/`whoami`/Library/Application\
+</code></pre>
+
+<h3>Building One font</h3>
+
+<p>AFDKOの一部のmakeotfを使用してバイナリ作成。後述する「Building all fonts」のスクリプトで一括でできるため、この部分は必要な場合に参照する。</p>
+
+<h3>Building all fonts</h3>
+
+<p>最初に git clone したディレクトリに移動し、</p>
+
+<pre><code>./install.sh
+</code></pre>
+
+<p>少しまつとフォントが生成されている。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Source Code Pro を Mac で試す。]]></title>
+    <link href="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/"/>
+    <updated>2012-09-25T22:39:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/09/25/sourcecodeprofont</id>
+    <content type="html"><![CDATA[<p>Adobeがコーディング用のソースコードをオープンソースで公開している。
+9/24 に開催されたCreate The Webで発表された。</p>
+
+<p>Adobe公式ブログにも記事がアップされている。
+<a href="http://blogs.adobe.com/typblography/2012/09/source-code-pro.html">Announcing Source Code Pro</a></p>
+
+<p>提供は、Sourceforge, GitHub, Adobe Edge Web Fonts, Typekit, WebINK, Google Web Fontsから入手可能。今回は馴染み深い Github から取得してみようと思う。</p>
+
+<!-- more -->
+
+
+<h2>今回の環境</h2>
+
+<pre><code>iMac Mountain Lion
+</code></pre>
+
+<h2>GitHub を確認</h2>
+
+<p><a href="https://github.com/adobe/Source-Code-Pro">adobe / Source-Code-Pro</a> を見てみるとREADMEが充実しているので順番に実施していく。</p>
+
+<hr />
+
+<p>※ いろいろやってみたがここでは結果のみを記載</p>
+
+<p>いろいろとやってみたが、</p>
+
+<h3>Pre-build font binaries</h3>
+
+<p><a href="https://github.com/downloads/adobe/Source-Code-Pro/SourceCodePro_FontsOnly-1.009.zip">ここから</a> ダウンロードして適当な場所にコピー。</p>
+
+<p>解凍後、フォント一覧がでてくるので~/Library/Fontsにコピーすると該当ユーザのみ使用可能となる。</p>
+
+<p>フォントをビルドしようと試行錯誤してみたがうまくいかないので上記方法で終了。
+失敗記録は別に書いてみようか。</p>
+]]></content>
+  </entry>
+  
+</feed>

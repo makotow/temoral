@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Whoops I couldn't find that page - makotow-notes</title>
+  <title>Source Code Pro を Mac で試す。 - makotow-notes</title>
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="Whoops I couldn't find that page You may want to try a search above, or visit the homepage. Also, here are some recent posts: Source Code Pro を Mac &hellip;">
+  <meta name="description" content="Adobeがコーディング用のソースコードをオープンソースで公開している。
+9/24 に開催されたCreate The Webで発表された。 Adobe公式ブログにも記事がアップされている。
+Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.com/404.html">
+  <link rel="canonical" href="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -102,128 +104,105 @@
   <div class="container">
     <div class="row-fluid">
       
-<article role="article" class="span9">
+<article class="hentry span9" role="article">
 
   
   <header class="page-header">
-    <h1 class="entry-title">Whoops I couldn't find that page</h1>
+    
+      <h1 class="entry-title">Source Code Pro を Mac で試す。</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T22:39:00+09:00" pubdate data-updated="true">Sep 25<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <p>You may want to try a search above, or <a href="/">visit the homepage</a>.</p>
 
-<p>Also, here are some recent posts:</p>
 
-<div id="blog-archives" class="missing">
-  
-  <article>
-    <div class="well">
+<div class="entry-content"><p>Adobeがコーディング用のソースコードをオープンソースで公開している。
+9/24 に開催されたCreate The Webで発表された。</p>
 
-<h2><a href="/blog/2012/09/25/sourcecodeprofont-fail/">Source Code Pro を Mac で試す。</a></h2>
-<time datetime="2012-09-25T22:39:00+09:00" pubdate><span class='month'>Sep</span> <span class='day'>25</span> <span class='year'>2012</span></time>
+<p>Adobe公式ブログにも記事がアップされている。
+<a href="http://blogs.adobe.com/typblography/2012/09/source-code-pro.html">Announcing Source Code Pro</a></p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/adobe/'>adobe</a>, <a class='category' href='/blog/categories/font/'>font</a>, <a class='category' href='/blog/categories/mac/'>mac</a></span>
-</footer>
+<p>提供は、Sourceforge, GitHub, Adobe Edge Web Fonts, Typekit, WebINK, Google Web Fontsから入手可能。今回は馴染み深い Github から取得してみようと思う。</p>
 
-</div>
+<!-- more -->
 
-  </article>
-  
-  <article>
-    <div class="well">
 
-<h2><a href="/blog/2012/09/25/sourcecodeprofont/">Source Code Pro を Mac で試す。</a></h2>
-<time datetime="2012-09-25T22:39:00+09:00" pubdate><span class='month'>Sep</span> <span class='day'>25</span> <span class='year'>2012</span></time>
+<h2>今回の環境</h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/adobe/'>adobe</a>, <a class='category' href='/blog/categories/font/'>font</a>, <a class='category' href='/blog/categories/mac/'>mac</a></span>
-</footer>
+<pre><code>iMac Mountain Lion
+</code></pre>
 
-</div>
+<h2>GitHub を確認</h2>
 
-  </article>
-  
-  <article>
-    <div class="well">
+<p><a href="https://github.com/adobe/Source-Code-Pro">adobe / Source-Code-Pro</a> を見てみるとREADMEが充実しているので順番に実施していく。</p>
 
-<h2><a href="/blog/2012/08/23/tag-cloud-related-post/">タグクラウド、関連する記事を表示するようにした。</a></h2>
-<time datetime="2012-08-23T23:26:00+09:00" pubdate><span class='month'>Aug</span> <span class='day'>23</span> <span class='year'>2012</span></time>
+<hr />
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<p>※ いろいろやってみたがここでは結果のみを記載</p>
 
-</div>
+<p>いろいろとやってみたが、</p>
 
-  </article>
-  
-  <article>
-    <div class="well">
+<h3>Pre-build font binaries</h3>
 
-<h2><a href="/blog/2012/08/22/read-more/">Read Moreの追加</a></h2>
-<time datetime="2012-08-22T22:01:00+09:00" pubdate><span class='month'>Aug</span> <span class='day'>22</span> <span class='year'>2012</span></time>
+<p><a href="https://github.com/downloads/adobe/Source-Code-Pro/SourceCodePro_FontsOnly-1.009.zip">ここから</a> ダウンロードして適当な場所にコピー。</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<p>解凍後、フォント一覧がでてくるので~/Library/Fontsにコピーすると該当ユーザのみ使用可能となる。</p>
 
-</div>
-
-  </article>
-  
-  <article>
-    <div class="well">
-
-<h2><a href="/blog/2012/08/19/octopress-construction-memo/">Octopress 構築中</a></h2>
-<time datetime="2012-08-19T22:56:00+09:00" pubdate><span class='month'>Aug</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
-
-</div>
-
-  </article>
-  
-  <article>
-    <div class="well">
-
-<h2><a href="/blog/2012/08/18/first-octopress/">first Octopress</a></h2>
-<time datetime="2012-08-18T16:17:00+09:00" pubdate><span class='month'>Aug</span> <span class='day'>18</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
-
-</div>
-
-  </article>
-  
-  <article>
-    <div class="well">
-
-<h2><a href="/blog/2012/05/13/network-checklist/">Ubuntuのネットワーク設定チェックリスト</a></h2>
-<time datetime="2012-05-13T18:27:00+09:00" pubdate><span class='month'>May</span> <span class='day'>13</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/network/'>network</a></span>
-</footer>
-
-</div>
-
-  </article>
-  
+<p>フォントをビルドしようと試行錯誤してみたがうまくいかないので上記方法で終了。
+失敗記録は別に書いてみようか。</p>
 </div>
 
 
-  
-    <footer>
+  <footer>
+    <p class="meta">
       
-      
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/404.html" data-via="makotow" data-counturl="http://makotow.github.com/404.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">makotow</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T22:39:00+09:00" pubdate data-updated="true">Sep 25<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/adobe/'>adobe</a>, <a class='category' href='/blog/categories/font/'>font</a>, <a class='category' href='/blog/categories/mac/'>mac</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -233,10 +212,28 @@
   
 </div>
 
+    
+    
+    <section>
+      <h1>Comments</h1>
+      <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </section>
+    
+    <ul class="pager">
       
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2012/08/23/tag-cloud-related-post/" title="Previous Post:
+        タグクラウド、関連する記事を表示するようにした。">&laquo; タグクラウド、関連する記事を表示するようにした。</a></li>
       
-    </footer>
-  
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2012/09/25/sourcecodeprofont-fail/"
+        title="Next Post: Source Code Pro を Mac で試す。">Source Code Pro を Mac で試す。
+        &raquo;</a></li>
+      
+    </ul>
+  </footer>
 </article>
 
 <aside class="sidebar-nav span3">
@@ -349,7 +346,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var disqus_shortname = 'makotownotes';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/';
+        var disqus_url = 'http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
