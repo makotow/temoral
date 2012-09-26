@@ -4,7 +4,7 @@
   <title><![CDATA[makotow-notes]]></title>
   <link href="http://makotow.github.com/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2012-09-27T00:34:02+09:00</updated>
+  <updated>2012-09-27T00:36:19+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -125,8 +125,6 @@ python installFontLabMacros.py /Users/`whoami`/Library/Application\
 <hr />
 
 <p>※ いろいろやってみたがここでは結果のみを記載</p>
-
-<p>いろいろとやってみたが、</p>
 
 <h3>Pre-build font binaries</h3>
 
