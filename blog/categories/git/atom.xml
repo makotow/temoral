@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | makotow-notes]]></title>
+  <link href="http://makotow.github.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2012-10-04T00:07:55+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[gistをブログに投稿]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/03/gist-on-octopress/"/>
+    <updated>2012-10-03T23:42:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/03/gist-on-octopress</id>
+    <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
+
+<p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[gitignoreのメモ]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/03/gitignore/"/>
+    <updated>2012-10-03T23:38:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/03/gitignore</id>
+    <content type="html"><![CDATA[<p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
+
+<p>今回Scala用に書いたものをメモ書きとして残す。</p>
+
+<p>主にsbtとScalaIDE用のものとなる。</p>
+
+<!-- more -->
+
+
+<p><div><script src='https://gist.github.com/3827256.js?file='></script>
+<noscript><pre><code>*.class
+*.log
+.cache
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/target/
+project/plugins/project/
+# Scala-IDE specific
+.scala_dependencies     
+</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

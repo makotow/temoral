@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | makotow-notes]]></title>
   <link href="http://makotow.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2012-09-27T00:43:11+09:00</updated>
+  <updated>2012-10-04T00:07:55+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gistをブログに投稿]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/03/gist-on-octopress/"/>
+    <updated>2012-10-03T23:42:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/03/gist-on-octopress</id>
+    <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
+
+<p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[タグクラウド、関連する記事を表示するようにした。]]></title>

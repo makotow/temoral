@@ -25,6 +25,14 @@
         <lastmod>2012-09-27T00:34:59+09:00</lastmod>
     </url>
     <url>
+        <loc>http://makotow.github.com/blog/2012/10/03/gitignore/</loc>
+        <lastmod>2012-10-03T23:52:29+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://makotow.github.com/blog/2012/10/03/gist-on-octopress/</loc>
+        <lastmod>2012-10-04T00:07:05+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://makotow.github.com/404.html</loc>
         <lastmod>2012-08-28T22:25:20+09:00</lastmod>
     </url>
@@ -34,10 +42,10 @@
     </url>
     <url>
         <loc>http://makotow.github.com/blog/archives/</loc>
-        <lastmod>2012-09-27T00:34:59+09:00</lastmod>
+        <lastmod>2012-10-04T00:07:05+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/</loc>
-        <lastmod>2012-09-27T00:34:59+09:00</lastmod>
+        <lastmod>2012-10-04T00:07:05+09:00</lastmod>
     </url>
 </urlset>
