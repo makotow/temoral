@@ -19,34 +19,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.com/blog/2012/05/13/network-checklist">
+  <link rel="canonical" href="http://makotow.github.com/blog/2012/05/13/network-checklist/">
   <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <style type="text/css">
-    body {
-      padding-bottom: 40px;
-    }
-    h1 {
-      margin-bottom: 15px;
-    }
-    img {
-      max-width: 100%;
-    }
-    .sharing, .meta, .pager {
-      margin: 20px 0px 20px 0px;
-    }
-    .page-footer p {
-      text-align: center;
-    }
-  </style>
-  <script src="/javascripts/libs/jquery.js"></script>
-  <script src="/javascripts/libs/modernizr-2.0.js"></script>
-  <script src="/javascripts/libs/bootstrap.js"></script>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="makotow-notes" type="application/atom+xml">
-  
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -63,50 +47,40 @@
 
 </head>
 
-<body   >
-  <nav role="navigation"><div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">makotow-notes</a></h1>
+  
+</hgroup>
 
-      <a class="brand" href="/">makotow-notes</a>
-
-      <div class="nav-collapse">
-        <ul class="nav">
+</header>
+  <div id="navigation">
+    <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:makotow.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
-
-        <ul class="nav pull-right" data-subscription="rss">
-          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-          
-        </ul>
-
-        
-          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
-            <fieldset role="search">
-              <input type="hidden" name="q" value="site:makotow.github.com" />
-              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
-            </fieldset>
-          </form>
-        
-      </div>
-    </div>
-  </div>
-</div>
 </nav>
-  <div class="container">
-    <div class="row-fluid">
-      
-<article class="hentry span9" role="article">
-
+  </div>
+  <div id="body"  >
+    <div id="main">
+      <div id="content">
+        <div>
+<article class="hentry" role="article">
   
-  <header class="page-header">
+  <header>
     
       <h1 class="entry-title">Ubuntuのネットワーク設定チェックリスト</h1>
     
@@ -219,56 +193,32 @@
 </div>
 
     
-    
-    
-    <div class="related_posts">
-  <h1>Related Posts</h1>
-  <ul>
-    
-  </ul>
-</div>
-
-    
-    
-    
-    <section>
-      <h1>Comments</h1>
-      <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-    </section>
-    
-    <ul class="pager">
+    <p class="meta">
       
-      <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2012/08/18/first-octopress/"
-        title="Next Post: first Octopress">first Octopress
-        &raquo;</a></li>
+        <a class="basic-alignment right" href="/blog/2012/08/18/first-octopress/" title="Next Post: first Octopress">first Octopress &raquo;</a>
       
-    </ul>
+    </p>
   </footer>
 </article>
 
-<aside class="sidebar-nav span3">
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
   
     <section>
   <h1>About Me</h1>
   <p>A little something about me.</p>
-
-<br/>
-twitter: <a href="https://twitter.com/makotow">@makotow</a>
-<br/>
-<p>
-SIer勤務<br/>
-性能評価、分散並列技術、開発環境(CI,SCM,CMS,Test)に興味あり。<br/>
-</p>
-<p>
-Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し定まらない感じ。 フィールドを縦横無尽に動きまわりたい。
-</p>
-
-</section><section class="well">
-  <ul id="recent_posts" class="nav nav-list">
-    <li class="nav-header">Recent Posts</li>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
     
       <li class="post">
         <a href="/blog/2012/10/03/gist-on-octopress/">gistをブログに投稿</a>
@@ -279,15 +229,15 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       </li>
     
       <li class="post">
+        <a href="/blog/2012/10/02/aenean-posuere/">Aenean posuere</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/01/lorem-ipsum/">Lorem Ipsum</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/09/25/sourcecodeprofont/">Source Code Pro を Mac で試す。</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/23/tag-cloud-related-post/">タグクラウド、関連する記事を表示するようにした。</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/22/read-more/">Read Moreの追加</a>
       </li>
     
   </ul>
@@ -301,16 +251,24 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
     <ul id="category-list"><li><a href='/blog/categories/adobe'>adobe (1)</a></li><li><a href='/blog/categories/blog'>blog (2)</a></li><li><a href='/blog/categories/font'>font (1)</a></li><li><a href='/blog/categories/gist'>gist (1)</a></li><li><a href='/blog/categories/git'>git (2)</a></li><li><a href='/blog/categories/linux'>linux (1)</a></li><li><a href='/blog/categories/mac'>mac (1)</a></li><li><a href='/blog/categories/network'>network (1)</a></li><li><a href='/blog/categories/octopress'>octopress (5)</a></li></ul>
 </section>
 
-<section class="well">
-  <ul id="gh_repos" class="nav">
-    <li class="nav-header">GitHub Repos</li>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
     <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/makotow">@makotow</a> on GitHub
   
   <script type="text/javascript">
-    $(document).ready(function(){
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
         github.showRepos({
             user: 'makotow',
             count: 0,
@@ -319,21 +277,21 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         });
     });
   </script>
-  <script src="/javascripts/asides/github.js" type="text/javascript"> </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
-<section class="well">
-  <ul id="tweets" class="nav">
-    <li class="nav-header">Latest Tweets</li>
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
     <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
-    $(document).ready(function(){
+    $.domReady(function(){
       getTwitterFeed("makotow", 5, true);
     });
   </script>
-  <script src="/javascripts/asides/twitter.js" type="text/javascript"> </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
     <a href="http://twitter.com/makotow" class="twitter-follow-button" data-show-count="true">Follow @makotow</a>
   
@@ -344,16 +302,15 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
 </aside>
 
 
+      </div>
     </div>
-  </div>
-  <footer role="contentinfo" class="page-footer"><hr>
-<p>
+    <footer role="contentinfo"><p>
   Copyright &copy; 2012 - makotow -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
 </p>
 
 </footer>
-  
+    
 
 <script type="text/javascript">
       var disqus_shortname = 'makotownotes';
@@ -408,5 +365,6 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
 
 
 
+  </div>
 </body>
 </html>

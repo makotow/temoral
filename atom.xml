@@ -4,7 +4,7 @@
   <title><![CDATA[makotow-notes]]></title>
   <link href="http://makotow.github.com/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2012-10-04T00:25:03+09:00</updated>
+  <updated>2012-11-25T12:07:28+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -58,6 +58,199 @@ project/plugins/project/
 
 
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aenean posuere]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/02/aenean-posuere/"/>
+    <updated>2012-10-02T06:29:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/02/aenean-posuere</id>
+    <content type="html"><![CDATA[<h2>Aenean posuere</h2>
+
+<p>odio eget imperdiet ullamcorper, nulla libero auctor dui, at adipiscing tortor neque nec lacus. Donec <a href="http://foo.com">ac mi luctus</a> nisi vestibulum scelerisque. Integer congue metus in nisi venenatis sit amet sagittis tortor sodales. Phasellus lobortis sollicitudin porttitor. Integer vel enim eu nunc laoreet pharetra eget nec nibh. Nam <a href="http://github.com">orci quam</a>, facilisis a accumsan vel, ultricies at felis. Nullam erat ipsum, tempor a viverra id, pulvinar non odio. Suspendisse eu turpis ligula, quis mattis dolor. Ut pellentesque mattis ipsum in ornare. Nullam non metus lacus. Vivamus sed euismod mi. Sed sed tellus dui, molestie dignissim turpis.</p>
+
+<!-- more -->
+
+
+<h2>Morbi tincidunt</h2>
+
+<p>urna eget volutpat vestibulum, est nunc eleifend diam, quis interdum quam erat nec risus. Etiam tincidunt cursus tortor, in aliquam orci interdum euismod. Curabitur nibh enim, fermentum eget placerat id</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Public: Makes a GET request to Mega API</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># shop   - The Shop instance</span>
+</span><span class='line'><span class="c1"># url    - The String which is the URL to query for</span>
+</span><span class='line'><span class="c1"># params - The Hash of attributes to pass in to the query</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Examples</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#   MegaApps::Interface.get(shop, &#39;/foo&#39;, {bar: &#39;bar&#39;})</span>
+</span><span class='line'><span class="c1">#   # =&gt; {...}</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Returns the Hash</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Signature</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#   &lt;mtd&gt;(args)</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># mtd - Either of the get, post or put HTTP methods</span>
+</span><span class='line'><span class="sx">%w(get put post)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">mtd</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">define_method</span> <span class="n">mtd</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{}</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">pre_setup</span>
+</span><span class='line'>    <span class="no">Mega</span><span class="o">::</span><span class="no">Request</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">mtd</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">access_params</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span> <span class="n">params</span><span class="p">))</span><span class="o">.</span><span class="n">to_hash</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>, rutrum ut urna. Morbi in odio nibh, vitae viverra tortor. Etiam sed massa elit. Integer non massa in urna accumsan adipiscing vitae sit amet ante. Vivamus urna metus, sollicitudin eu interdum ut, laoreet mattis tortor. Sed sed tortor nunc. In hac habitasse platea dictumst. Suspendisse vel quam mi, nec tristique orci.</p>
+
+<figure class='code'><figcaption><span>interface.rb </span><a href='http://coo.com'>sometext</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Public: Makes a GET request to Mega API</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># shop   - The Shop instance</span>
+</span><span class='line'><span class="c1"># url    - The String which is the URL to query for</span>
+</span><span class='line'><span class="c1"># params - The Hash of attributes to pass in to the query</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Examples</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#   MegaApps::Interface.get(shop, &#39;/foo&#39;, {bar: &#39;bar&#39;})</span>
+</span><span class='line'><span class="c1">#   # =&gt; {...}</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Returns the Hash</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Signature</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#   &lt;mtd&gt;(args)</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># mtd - Either of the get, post or put HTTP methods</span>
+</span><span class='line'><span class="sx">%w(get put post)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">mtd</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">define_method</span> <span class="n">mtd</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{}</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">pre_setup</span>
+</span><span class='line'>    <span class="no">Mega</span><span class="o">::</span><span class="no">Request</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">mtd</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">access_params</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span> <span class="n">params</span><span class="p">))</span><span class="o">.</span><span class="n">to_hash</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Fusce aliquam</h2>
+
+<div><script src='https://gist.github.com/996818.js?file='></script>
+<noscript><pre><code>@@ -590,7 +590,7 @@ class SpritesTest &lt; Test::Unit::TestCase
+  it &quot;should generate a sprite from nested folders&quot; do
+    css = render &lt;&lt;-SCSS
+-     @import &quot;nested/*.png&quot;;
++     @import &quot;nested/**/*.png&quot;;
+      @include all-nested-sprites;
+    SCSS
+    assert_correct css, &lt;&lt;-CSS</code></pre></noscript></div>
+
+
+<p>congue dictum. Nam dignissim eros commodo eros rutrum cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere, est at dictum malesuada, urna lectus condimentum dui, sit amet aliquet risus velit sed dolor. Pellentesque laoreet nulla blandit lectus pulvinar laoreet. Maecenas lorem dolor, gravida ac vulputate eget, lacinia ut nunc. Sed consequat semper quam, quis sodales arcu congue a. Nullam ac urna elit. Ut vel elit diam, vel luctus nisi. Phasellus porta scelerisque nisi quis consequat. Integer a</p>
+
+<p><span class='pullquote-right' data-pullquote='Sed eget orci vel'>
+commodo dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eget orci vel lectus vulputate ullamcorper quis quis orci. Morbi mollis sapien in tortor ullamcorper sit
+</span></p>
+
+<p> amet lacinia justo vulputate. Nam eget mauris elit, at lobortis tellus. Fusce ligula odio, mollis sit amet dignissim vitae, imperdiet et nisi.</p>
+
+<h2>Vestibulum facilisis</h2>
+
+<p>accumsan fringilla. Proin justo magna, cursus sit amet suscipit eu, euismod in mi. Ut malesuada nisi nec turpis pretium dictum sit amet nec nisi. Proin in urna sapien. Quisque lobortis auctor nibh non aliquet. Donec bibendum cursus dolor, in hendrerit neque lacinia a. Mauris arcu ipsum, interdum sit amet sagittis in, rutrum consequat lorem. Aenean dictum odio et lacus molestie quis placerat nunc laoreet. Ut consectetur porttitor lacinia. Mauris hendrerit dui id erat vestibulum ut consectetur felis hendrerit. Duis enim ligula, ultricies non cursus sit amet, sollicitudin vel mauris. Cras tellus nulla, mollis quis rhoncus vitae, consectetur eu erat. Maecenas et diam nec mauris lacinia egestas condimentum ac lectus. Donec consectetur, diam congue volutpat volutpat, sem enim mollis dolor, quis tempus metus ipsum nec lacus.</p>
+
+<h2>Duis consequat</h2>
+
+<p>pharetra nunc, quis fringilla orci semper ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc est, pulvinar sed imperdiet scelerisque, fermentum eu dolor. Quisque vel mi nunc. Curabitur congue consectetur lacinia. Curabitur id dui tortor, et pretium lorem. Nullam metus mi, venenatis at gravida ut, consequat in risus. Cras tristique gravida magna, eget rhoncus nisl blandit vitae. Sed id tellus enim. Quisque sed orci nisi. Nunc id felis ullamcorper metus cursus tristique et non quam.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lorem Ipsum]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/01/lorem-ipsum/"/>
+    <updated>2012-10-01T17:42:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/01/lorem-ipsum</id>
+    <content type="html"><![CDATA[<h2>Lorem ipsum dolor</h2>
+
+<p>sit amet, consectetur adipiscing elit. Aenean tincidunt, orci id placerat semper, nibh elit cursus velit, quis porta quam tellus sed orci. In porttitor volutpat eros, et hendrerit nunc pulvinar a. Donec</p>
+
+<blockquote><p>malesuada pulvinar dui, vitae egestas nunc dignissim eu. Donec auctor velit ac erat</p></blockquote>
+
+
+<p> porta commodo. Curabitur consequat nulla eget ipsum malesuada id tempor urna porttitor. Phasellus eu mauris odio. Vivamus eget lectus nec massa tempus pulvinar at ac libero. Aliquam sodales enim sit amet risus posuere sed porttitor felis venenatis. Pellentesque malesuada gravida ligula luctus lacinia.</p>
+
+<h2>Donec auctor</h2>
+
+<p>nisl vel fringilla varius, lectus dui faucibus est, sed fermentum neque nisl eu lectus. Vestibulum id arcu dui, nec tristique mauris. Duis gravida augue a arcu sagittis id aliquet velit dignissim. Nulla</p>
+
+<h3>interdum</h3>
+
+<p><img src="http://placekitten.com/890/280"></p>
+
+<p>lacinia dui, vel auctor leo vulputate eget. Donec at urna quam. Praesent ac ante mauris, non tempus urna. Donec vitae ligula iaculis dui aliquet imperdiet ut a sem. Nulla eu nulla felis. Integer fermentum laoreet fringilla. Nunc vel sem rhoncus arcu consectetur scelerisque. Sed elementum tempor est in vehicula.</p>
+
+<h3>Vivamus</h3>
+
+<p>ac massa nunc, at facilisis nunc. Vestibulum rhoncus velit in dui tincidunt ac sollicitudin nisi auctor. Aenean sapien leo, vestibulum non sollicitudin vitae, dignissim nec lacus. Pellentesque dapibus lectus bibendum turpis malesuada sodales. Praesent a leo quam, in pellentesque est.</p>
+
+<h2>Praesent tristique</h2>
+
+<p>molestie felis, at interdum orci rutrum vel. Sed et leo vel nunc dictum lacinia ullamcorper a velit. Vestibulum purus est, ornare sit amet eleifend eget, mollis non leo. Fusce mollis, dui at consequat hendrerit, lectus sapien pharetra quam, sit amet pharetra diam elit vitae augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam pulvinar laoreet leo, vel rutrum nibh convallis sed. Curabitur laoreet posuere dui quis blandit. Curabitur sed lacus neque, vel fringilla est. Vestibulum sit amet ligula eget sapien ultricies scelerisque. Donec dictum porta auctor. Donec placerat rutrum condimentum. Aliquam fermentum semper pulvinar. Proin nisi est, ultrices vitae suscipit quis, ultrices vel justo.</p>
+
+<h2>Curabitur sem</h2>
+
+<p>ligula, vestibulum eget ultricies vitae, aliquam eu turpis. Mauris eleifend lacinia mi, a elementum turpis consectetur vel. Ut commodo metus et felis tempor vitae pharetra turpis euismod. Duis purus nunc, molestie ornare suscipit in, porta id neque. Cras pellentesque faucibus malesuada. Fusce porttitor, metus at vestibulum varius, nulla nisi lacinia nisi, at fermentum arcu risus nec ante. Aenean consequat volutpat leo nec tempus. Integer elementum felis a tortor congue facilisis. Donec dictum vulputate pulvinar. Pellentesque porttitor bibendum rutrum. Donec sed gravida justo. Duis imperdiet quam eu libero adipiscing non facilisis est tempus. Proin nec tellus libero. Aliquam tincidunt, ligula id auctor semper, lorem metus rutrum elit, eget iaculis turpis justo at velit. Sed faucibus, urna id consectetur consequat, nisl erat pretium diam, eget molestie lacus erat ac arcu.</p>
+
+<h2>Suspendisse potenti</h2>
+
+<p>Nunc turpis augue, blandit quis euismod ac, eleifend eget enim. Nulla rutrum tellus id magna lobortis fermentum. Aliquam pretium vulputate erat, in mattis justo gravida vel. Aliquam erat volutpat. Nunc sem orci, adipiscing ultrices sagittis at, fringilla nec ipsum. Integer ultrices volutpat convallis. Quisque vehicula auctor posuere. Vivamus non diam ut nisi posuere rhoncus. Suspendisse non tellus tortor. Vivamus id tellus sed mauris pulvinar rhoncus.</p>
 ]]></content>
   </entry>
   
