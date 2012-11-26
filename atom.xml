@@ -4,7 +4,7 @@
   <title><![CDATA[makotow-notes]]></title>
   <link href="http://makotow.github.com/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2012-11-26T16:57:22+09:00</updated>
+  <updated>2012-11-26T17:00:00+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[InstapaperからPocketへ移行]]></title>
+    <link href="http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/"/>
+    <updated>2012-11-26T16:30:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket</id>
+    <content type="html"><![CDATA[<p>Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。</p>
+
+<p>最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
+参考としたサイトを紹介。</p>
+
+<!-- more -->
+
+
+<p>以下のリンクを参考に移行。
+特につまる所もなく移行完了した。</p>
+
+<h2>Pocketの紹介</h2>
+
+<p> <a href="http://www.barasu.org/diary/8004.html">Instapaper から Pocketへ乗り換え | 後悔懺悔日記</a></p>
+
+<p> <a href="http://lifehacking.jp/2012/10/pocket-for-mac/">Pocket for Macでウェブの情報処理が飛躍的に楽になる | Lifehacking.jp</a></p>
+
+<h3>Instapaperからの移行</h3>
+
+<p> <a href="http://getpocket.com/import/instapaper?e=1">Pocket: Import Instapaper</a></p>
+
+<h2>アプリケーション、アドオンなど</h2>
+
+<h3>Chrome-addon</h3>
+
+<p> <a href="https://chrome.google.com/webstore/detail/pocket-formerly-read-it-l/niloccemoadcdkdjlinkgdfekeahmflj/details">Pocket (formerly Read It Later)</a></p>
+
+<h3>Android</h3>
+
+<p> <a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro">Google Play Pocket</a></p>
+
+<h3>Mac</h3>
+
+<p> <a href="https://itunes.apple.com/jp/app/pocket-formerly-read-it-later/id309601447?mt=8&amp;ign-mpt=uo%3D4">Pocket (Formerly Read It Later)</a></p>
+
+<hr />
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>

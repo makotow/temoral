@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ubuntuのネットワーク設定チェックリスト - makotow-notes</title>
+  <title>Category: pocket - makotow-notes</title>
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="ネットワーク設定覚書 Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
-覚書としてメモ。 Ubuntuでネットワークに繋がらなくなった場合のチェック。 試しているVersionは Ubuntu 11 .10 64bit 参考にさせていただいたページはこちら &hellip;">
+  <meta name="description" content="Category: pocket">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.com/blog/2012/05/13/network-checklist/">
+  <link rel="canonical" href="http://makotow.github.comblog/categories/pocket/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,149 +82,36 @@ $(document).ready( function () {
     <div id="main">
       <div id="content">
         <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Ubuntuのネットワーク設定チェックリスト</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-13T18:27:00+09:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
-        
-      </p>
+    <h1 class="entry-title">Category: pocket</h1>
     
   </header>
-
-
-<div class="entry-content"><h2>ネットワーク設定覚書</h2>
-
-<p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
-覚書としてメモ。</p>
-
-<p>Ubuntuでネットワークに繋がらなくなった場合のチェック。</p>
-
-<!-- more -->
-
-
-<p>試しているVersionは</p>
-
-<pre><code>Ubuntu 11 .10 64bit
-</code></pre>
-
-<p>参考にさせていただいたページはこちら</p>
-
-<p> <a href="http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html">http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html</a></p>
-
-<p> <a href="https://forums.ubuntulinux.jp/viewtopic.php?id=9522">https://forums.ubuntulinux.jp/viewtopic.php?id=9522</a></p>
-
-<h3>試した手順</h3>
-
-<ul>
-<li>とりあえず、再起動 sudo /etc/init.d/networking restart</li>
-<li>ping anyhost</li>
-<li>繋がっていないことを確認したら、/etc/network/interfaces が正しいかを確認</li>
-<li>間違っていたので修正、 その後再起動 sudo /etc/init.d/networking restart　</li>
-<li>それでもつながらないので、nameserverが指定されているかを/etc/resolv.confで確認　→ <strong>空になっている</strong></li>
-<li>/etc/resolv.conf に nameserver を追記し、sudo /etc/init.d/networking restart でつながるようになった。</li>
-</ul>
-
-
-<h3>今後の方針</h3>
-
-<p>調べてみると、根本原因はNetwork-Managerが/etc/resolv.confを書き換えることだった。</p>
-
-<p>Network-Managerを削除したりするのではなく、有効活用したほうがいいのだろうと思い検索したところ、次のページを発見。参照し設定。
- <a href="http://www.usupi.org/sysad/173.html">http://www.usupi.org/sysad/173.html</a></p>
-
-<p>これでしばらく様子を見る。</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">makotow</span></span>
-
-      
-
-
-
-
-
+  <div id="blog-archives" class="category">
 
 
 
   
+  <h2>2012</h2>
 
-
-<time datetime="2012-05-13T18:27:00+09:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
-      
-
-<span class="categories">
+<article>
   
-    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/network/'>network</a>
-  
-</span>
+<h1><a href="/blog/2012/11/26/instapaper-to-pocket/">InstapaperからPocketへ移行</a></h1>
+<time datetime="2012-11-26T16:30:00+09:00" pubdate><span class='month'>Nov</span> <span class='day'>26</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/application/'>application</a>, <a class='category' href='/blog/categories/pocket/'>pocket</a></span>
+</footer>
 
 
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2012/05/13/network-checklist/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2012/05/13/network-checklist/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-
-    
-    
-<div class="related_posts">
-  <h2>Related Posts</h2>
-  <ul>
-    
-  </ul>
-</div>
-
-
-
-    
-
-    <p class="meta">
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/08/18/first-octopress/" title="Next Post: first Octopress">first Octopress &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+
+  
+</article>
 
 </div>
 
@@ -364,10 +250,7 @@ $(document).ready( function () {
       var disqus_shortname = 'makotownotes';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://makotow.github.com/blog/2012/05/13/network-checklist/';
-        var disqus_url = 'http://makotow.github.com/blog/2012/05/13/network-checklist/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

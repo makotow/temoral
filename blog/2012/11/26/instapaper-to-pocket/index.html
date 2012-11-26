@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ubuntuのネットワーク設定チェックリスト - makotow-notes</title>
+  <title>InstapaperからPocketへ移行 - makotow-notes</title>
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="ネットワーク設定覚書 Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
-覚書としてメモ。 Ubuntuでネットワークに繋がらなくなった場合のチェック。 試しているVersionは Ubuntu 11 .10 64bit 参考にさせていただいたページはこちら &hellip;">
+  <meta name="description" content="Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。 最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
+参考としたサイトを紹介。 以下のリンクを参考に移行。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.com/blog/2012/05/13/network-checklist/">
+  <link rel="canonical" href="http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -87,7 +87,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">Ubuntuのネットワーク設定チェックリスト</h1>
+      <h1 class="entry-title">InstapaperからPocketへ移行</h1>
     
     
       <p class="meta">
@@ -103,54 +103,49 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-05-13T18:27:00+09:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+<time datetime="2012-11-26T16:30:00+09:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>ネットワーク設定覚書</h2>
+<div class="entry-content"><p>Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。</p>
 
-<p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
-覚書としてメモ。</p>
-
-<p>Ubuntuでネットワークに繋がらなくなった場合のチェック。</p>
+<p>最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
+参考としたサイトを紹介。</p>
 
 <!-- more -->
 
 
-<p>試しているVersionは</p>
+<p>以下のリンクを参考に移行。
+特につまる所もなく移行完了した。</p>
 
-<pre><code>Ubuntu 11 .10 64bit
-</code></pre>
+<h2>Pocketの紹介</h2>
 
-<p>参考にさせていただいたページはこちら</p>
+<p> <a href="http://www.barasu.org/diary/8004.html">Instapaper から Pocketへ乗り換え | 後悔懺悔日記</a></p>
 
-<p> <a href="http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html">http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html</a></p>
+<p> <a href="http://lifehacking.jp/2012/10/pocket-for-mac/">Pocket for Macでウェブの情報処理が飛躍的に楽になる | Lifehacking.jp</a></p>
 
-<p> <a href="https://forums.ubuntulinux.jp/viewtopic.php?id=9522">https://forums.ubuntulinux.jp/viewtopic.php?id=9522</a></p>
+<h3>Instapaperからの移行</h3>
 
-<h3>試した手順</h3>
+<p> <a href="http://getpocket.com/import/instapaper?e=1">Pocket: Import Instapaper</a></p>
 
-<ul>
-<li>とりあえず、再起動 sudo /etc/init.d/networking restart</li>
-<li>ping anyhost</li>
-<li>繋がっていないことを確認したら、/etc/network/interfaces が正しいかを確認</li>
-<li>間違っていたので修正、 その後再起動 sudo /etc/init.d/networking restart　</li>
-<li>それでもつながらないので、nameserverが指定されているかを/etc/resolv.confで確認　→ <strong>空になっている</strong></li>
-<li>/etc/resolv.conf に nameserver を追記し、sudo /etc/init.d/networking restart でつながるようになった。</li>
-</ul>
+<h2>アプリケーション、アドオンなど</h2>
 
+<h3>Chrome-addon</h3>
 
-<h3>今後の方針</h3>
+<p> <a href="https://chrome.google.com/webstore/detail/pocket-formerly-read-it-l/niloccemoadcdkdjlinkgdfekeahmflj/details">Pocket (formerly Read It Later)</a></p>
 
-<p>調べてみると、根本原因はNetwork-Managerが/etc/resolv.confを書き換えることだった。</p>
+<h3>Android</h3>
 
-<p>Network-Managerを削除したりするのではなく、有効活用したほうがいいのだろうと思い検索したところ、次のページを発見。参照し設定。
- <a href="http://www.usupi.org/sysad/173.html">http://www.usupi.org/sysad/173.html</a></p>
+<p> <a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro">Google Play Pocket</a></p>
 
-<p>これでしばらく様子を見る。</p>
+<h3>Mac</h3>
+
+<p> <a href="https://itunes.apple.com/jp/app/pocket-formerly-read-it-later/id309601447?mt=8&amp;ign-mpt=uo%3D4">Pocket (Formerly Read It Later)</a></p>
+
+<hr />
 </div>
 
 
@@ -173,12 +168,12 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-05-13T18:27:00+09:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+<time datetime="2012-11-26T16:30:00+09:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/network/'>network</a>
+    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/application/'>application</a>, <a class='category' href='/blog/categories/pocket/'>pocket</a>
   
 </span>
 
@@ -187,7 +182,7 @@ $(document).ready( function () {
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2012/05/13/network-checklist/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2012/05/13/network-checklist/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -214,8 +209,8 @@ $(document).ready( function () {
 
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/10/03/gist-on-octopress/" title="Previous Post: gistをブログに投稿">&laquo; gistをブログに投稿</a>
       
-        <a class="basic-alignment right" href="/blog/2012/08/18/first-octopress/" title="Next Post: first Octopress">first Octopress &raquo;</a>
       
     </p>
   </footer>
@@ -365,8 +360,8 @@ $(document).ready( function () {
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://makotow.github.com/blog/2012/05/13/network-checklist/';
-        var disqus_url = 'http://makotow.github.com/blog/2012/05/13/network-checklist/';
+        var disqus_identifier = 'http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/';
+        var disqus_url = 'http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/';
         var disqus_script = 'embed.js';
       
     (function () {
