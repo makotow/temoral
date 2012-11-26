@@ -31,6 +31,11 @@ Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
 
   
   <script type="text/javascript">
@@ -165,7 +170,7 @@ Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/adobe/'>adobe</a>, <a class='category' href='/blog/categories/font/'>font</a>, <a class='category' href='/blog/categories/mac/'>mac</a>
+    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/adobe/'>adobe</a>, <a class='category' href='/blog/categories/font/'>font</a>, <a class='category' href='/blog/categories/mac/'>mac</a>
   
 </span>
 
@@ -185,12 +190,26 @@ Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
 </div>
 
     
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+  </ul>
+</div>
+
+
+
+    
+
     <p class="meta">
       
         <a class="basic-alignment left" href="/blog/2012/08/23/tag-cloud-related-post/" title="Previous Post: タグクラウド、関連する記事を表示するようにした。">&laquo; タグクラウド、関連する記事を表示するようにした。</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/10/01/lorem-ipsum/" title="Next Post: Lorem Ipsum">Lorem Ipsum &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/10/03/gitignore/" title="Next Post: gitignoreのメモ">gitignoreのメモ &raquo;</a>
       
     </p>
   </footer>
@@ -206,10 +225,43 @@ Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
 
 <aside class="sidebar">
   
-    <section>
+    
+<section>
   <h1>About Me</h1>
-  <p>A little something about me.</p>
+  <div id="twitter-profile" style="margin-top:0.5em;">
+    <p>
+      <strong>makotow</strong> 
+      (<a href="http://twitter.com/makotow">@makotow</a>)
+    </p>
+    <p>技術系ポストに偏りがちなブログ</p>
+  </div>
+  <script type="text/javascript">
+    $.domReady(function(){
+        var container = $('#twitter-profile'),
+            user = "makotow";
+        
+        function parseTwLinks(s) {
+          var twUrl = "http://www.twitter.com/"
+          s = s.replace(/ (@([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+p2+"'>"+p1+"</a>"
+          }).replace(/ (#([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+"#!/search?q=%23"+p2+"'>"+p1+"</a>"
+          })
+          return s
+        }
+
+        $.ajax({
+            url: "http://api.twitter.com/1/users/show.json?include_entities=false&screen_name="+user+"&callback=?"
+          , type: 'jsonp'
+          , error: function (err) { $('#twitter-profile').addClass('error');  }
+          , success: function(data) {
+              container.html('<img class="left" src="http://api.twitter.com/1/users/profile_image/'+user+'.json?size=bigger" alt="@'+user+'"><p><strong>'+data.name+'</strong> (<a href="http://twitter.com/'+user+'">@'+user+'</a>)<br/>'+data.location+'</p><p>'+parseTwLinks(data.description)+'</p>');
+            }
+        })
+      });
+  </script>
 </section>
+
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
@@ -223,26 +275,22 @@ Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
       </li>
     
       <li class="post">
-        <a href="/blog/2012/10/02/aenean-posuere/">Aenean posuere</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/01/lorem-ipsum/">Lorem Ipsum</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2012/09/25/sourcecodeprofont/">Source Code Pro を Mac で試す。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/23/tag-cloud-related-post/">タグクラウド、関連する記事を表示するようにした。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/22/read-more/">Read Moreの追加</a>
       </li>
     
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 112.0%'>adobe(1)</a> <a href='/blog/categories/blog' style='font-size: 124.0%'>blog(2)</a> <a href='/blog/categories/font' style='font-size: 112.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 112.0%'>gist(1)</a> <a href='/blog/categories/git' style='font-size: 124.0%'>git(2)</a> <a href='/blog/categories/linux' style='font-size: 112.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 112.0%'>mac(1)</a> <a href='/blog/categories/network' style='font-size: 112.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 160.0%'>octopress(5)</a> </span>
-</section>
-<section>
-  <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/adobe'>adobe (1)</a></li><li><a href='/blog/categories/blog'>blog (2)</a></li><li><a href='/blog/categories/font'>font (1)</a></li><li><a href='/blog/categories/gist'>gist (1)</a></li><li><a href='/blog/categories/git'>git (2)</a></li><li><a href='/blog/categories/linux'>linux (1)</a></li><li><a href='/blog/categories/mac'>mac (1)</a></li><li><a href='/blog/categories/network'>network (1)</a></li><li><a href='/blog/categories/octopress'>octopress (5)</a></li></ul>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 112.0%'>adobe(1)</a> <a href='/blog/categories/article' style='font-size: 136.0%'>Article(3)</a> <a href='/blog/categories/blog' style='font-size: 124.0%'>blog(2)</a> <a href='/blog/categories/font' style='font-size: 112.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 124.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 124.0%'>git(2)</a> <a href='/blog/categories/links' style='font-size: 112.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 112.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 112.0%'>mac(1)</a> <a href='/blog/categories/network' style='font-size: 112.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 160.0%'>octopress(5)</a> <a href='/blog/categories/sbt' style='font-size: 112.0%'>sbt(1)</a> <a href='/blog/categories/scala' style='font-size: 112.0%'>scala(1)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(5)</a> </span>
 </section>
 
 <section>
@@ -300,7 +348,7 @@ Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
     </div>
     <footer role="contentinfo"><p>
   Copyright &copy; 2012 - makotow -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>

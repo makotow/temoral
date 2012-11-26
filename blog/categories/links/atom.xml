@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Links | makotow-notes]]></title>
+  <link href="http://makotow.github.com/blog/categories/links/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2012-11-26T16:56:42+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[タグクラウド、関連する記事を表示するようにした。]]></title>
+    <link href="http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/"/>
+    <updated>2012-08-23T23:26:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post</id>
+    <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。</p>
+
+<!-- more -->
+
+
+<p>参考にさせて頂いたのはこのあたり。</p>
+
+<h2>Tag Cloud</h2>
+
+<p><a href="http://qiita.com/items/944db11e257782749270">Octopressのサイドバーにタグリストやタグクラウドを表示させよう！</a></p>
+
+<h2>Related Posts</h2>
+
+<p><a href="http://blog.glidenote.com/blog/2012/01/04/octopress-related-posts/">OctopressでRelated Posts(関連エントリー)を表示させるようにした</a></p>
+
+<p>こういうのがサクサクできてしまうと楽しくてしょうがない。
+Related Postsが表示されていないのはなぜかわからないが、もう少し記事が追加されれば出てくるのではないかと思っている。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gist | makotow-notes]]></title>
   <link href="http://makotow.github.com/blog/categories/gist/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2012-11-25T12:07:28+09:00</updated>
+  <updated>2012-11-26T16:56:42+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -21,6 +21,39 @@
     <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
 
 <p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[gitignoreのメモ]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/03/gitignore/"/>
+    <updated>2012-10-03T23:38:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/03/gitignore</id>
+    <content type="html"><![CDATA[<p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
+
+<p>今回Scala用に書いたものをメモ書きとして残す。</p>
+
+<p>主にsbtとScalaIDE用のものとなる。</p>
+
+<!-- more -->
+
+
+<p><div><script src='https://gist.github.com/3827256.js?file='></script>
+<noscript><pre><code>*.class
+*.log
+.cache
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/target/
+project/plugins/project/
+# Scala-IDE specific
+.scala_dependencies     
+</code></pre></noscript></div>
+</p>
 ]]></content>
   </entry>
   

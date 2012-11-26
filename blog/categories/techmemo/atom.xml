@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: TechMemo | makotow-notes]]></title>
+  <link href="http://makotow.github.com/blog/categories/techmemo/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2012-11-26T16:56:42+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[gistをブログに投稿]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/03/gist-on-octopress/"/>
+    <updated>2012-10-03T23:42:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/03/gist-on-octopress</id>
+    <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
+
+<p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[gitignoreのメモ]]></title>
+    <link href="http://makotow.github.com/blog/2012/10/03/gitignore/"/>
+    <updated>2012-10-03T23:38:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/10/03/gitignore</id>
+    <content type="html"><![CDATA[<p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
+
+<p>今回Scala用に書いたものをメモ書きとして残す。</p>
+
+<p>主にsbtとScalaIDE用のものとなる。</p>
+
+<!-- more -->
+
+
+<p><div><script src='https://gist.github.com/3827256.js?file='></script>
+<noscript><pre><code>*.class
+*.log
+.cache
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/target/
+project/plugins/project/
+# Scala-IDE specific
+.scala_dependencies     
+</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[タグクラウド、関連する記事を表示するようにした。]]></title>
+    <link href="http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/"/>
+    <updated>2012-08-23T23:26:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post</id>
+    <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。</p>
+
+<!-- more -->
+
+
+<p>参考にさせて頂いたのはこのあたり。</p>
+
+<h2>Tag Cloud</h2>
+
+<p><a href="http://qiita.com/items/944db11e257782749270">Octopressのサイドバーにタグリストやタグクラウドを表示させよう！</a></p>
+
+<h2>Related Posts</h2>
+
+<p><a href="http://blog.glidenote.com/blog/2012/01/04/octopress-related-posts/">OctopressでRelated Posts(関連エントリー)を表示させるようにした</a></p>
+
+<p>こういうのがサクサクできてしまうと楽しくてしょうがない。
+Related Postsが表示されていないのはなぜかわからないが、もう少し記事が追加されれば出てくるのではないかと思っている。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress 構築中]]></title>
+    <link href="http://makotow.github.com/blog/2012/08/19/octopress-construction-memo/"/>
+    <updated>2012-08-19T22:56:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/08/19/octopress-construction-memo</id>
+    <content type="html"><![CDATA[<h2>設定してみた感想</h2>
+
+<p>構築好きとしてはかなり面白い。</p>
+
+<h2>とりあえずできた</h2>
+
+<ul>
+<li>構築</li>
+<li>RSS追加</li>
+<li>コメント欄追加</li>
+</ul>
+
+
+<h2>これからやる</h2>
+
+<ul>
+<li>タグクラウド</li>
+<li>画像管理</li>
+<li>Plugin探索</li>
+<li>Theme カスタマイズ・変更</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntuのネットワーク設定チェックリスト]]></title>
+    <link href="http://makotow.github.com/blog/2012/05/13/network-checklist/"/>
+    <updated>2012-05-13T18:27:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2012/05/13/network-checklist</id>
+    <content type="html"><![CDATA[<h2>ネットワーク設定覚書</h2>
+
+<p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
+覚書としてメモ。</p>
+
+<p>Ubuntuでネットワークに繋がらなくなった場合のチェック。</p>
+
+<!-- more -->
+
+
+<p>試しているVersionは</p>
+
+<pre><code>Ubuntu 11 .10 64bit
+</code></pre>
+
+<p>参考にさせていただいたページはこちら</p>
+
+<p> <a href="http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html">http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html</a></p>
+
+<p> <a href="https://forums.ubuntulinux.jp/viewtopic.php?id=9522">https://forums.ubuntulinux.jp/viewtopic.php?id=9522</a></p>
+
+<h3>試した手順</h3>
+
+<ul>
+<li>とりあえず、再起動 sudo /etc/init.d/networking restart</li>
+<li>ping anyhost</li>
+<li>繋がっていないことを確認したら、/etc/network/interfaces が正しいかを確認</li>
+<li>間違っていたので修正、 その後再起動 sudo /etc/init.d/networking restart　</li>
+<li>それでもつながらないので、nameserverが指定されているかを/etc/resolv.confで確認　→ <strong>空になっている</strong></li>
+<li>/etc/resolv.conf に nameserver を追記し、sudo /etc/init.d/networking restart でつながるようになった。</li>
+</ul>
+
+
+<h3>今後の方針</h3>
+
+<p>調べてみると、根本原因はNetwork-Managerが/etc/resolv.confを書き換えることだった。</p>
+
+<p>Network-Managerを削除したりするのではなく、有効活用したほうがいいのだろうと思い検索したところ、次のページを発見。参照し設定。
+ <a href="http://www.usupi.org/sysad/173.html">http://www.usupi.org/sysad/173.html</a></p>
+
+<p>これでしばらく様子を見る。</p>
+]]></content>
+  </entry>
+  
+</feed>
