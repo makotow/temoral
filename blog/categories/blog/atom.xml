@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: blog | makotow-notes]]></title>
+  <title><![CDATA[Category: blog | MEMORANDUM OF MAKOTOW]]></title>
   <link href="http://makotow.github.com/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2012-12-09T22:58:11+09:00</updated>
+  <updated>2013-01-01T18:51:21+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
