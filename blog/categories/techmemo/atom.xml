@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: TechMemo | MEMORANDUM OF MAKOTOW]]></title>
+  <title><![CDATA[Category: TechMemo | Software Technology Memorandum]]></title>
   <link href="http://makotow.github.com/blog/categories/techmemo/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2013-01-01T19:24:43+09:00</updated>
+  <updated>2013-01-19T17:01:30+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopressでのデザイン変更方法]]></title>
+    <link href="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/"/>
+    <updated>2013-01-19T17:00:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/01/19/change-octopress-css-style</id>
+    <content type="html"><![CDATA[<p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
+文字サイズを変更してみる。</p>
+
+<p>ついでに見出しのバックグラウンドやブログタイトルへの背景画像も設定してみる。</p>
+
+<p>そもそもOctopressではThemeを使用してブログデザインを変更している。
+今回は簡単なところから初めて見る。</p>
+
+<p>少しずつ理解しながらやっていたため、12月中旬から開始していたが年明けまでかかってしまった。
+git で branch 作って作業して他の branch にマージということを初めてやったけど便利すぎ。</p>
+
+<!-- more -->
+
+
+<h2>Octopress 変更点</h2>
+
+<h3>ファイル一覧</h3>
+
+<p>思ったよりも変更する箇所はなく、
+octopress/sass/custom 以下のファイルに設定を追加、
+CSSを書き換えることで変更可能
+フレームワーク部分にはほとんど手をいれることなく変更可能な作りとなっている。</p>
+
+<ul>
+<li>octopress/sass/custom/_styles.scss</li>
+<li>octopress/sass/custom/_fonts.scss</li>
+<li>octopress/sass/custom/_colors.scss</li>
+</ul>
+
+
+<h2>今回つかったツール</h2>
+
+<h3>IDE</h3>
+
+<p>IntelliJ IDEA 12
+年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
+
+<h3>サイト</h3>
+
+<ul>
+<li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
+<li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
+</ul>
+
+
+<h2>残作業</h2>
+
+<p>凝り始めるときりがないので今回は一旦この段階で終了。
+今後は、</p>
+
+<ul>
+<li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
+<li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>
@@ -109,55 +172,6 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <li>Theme カスタマイズ・変更</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntuのネットワーク設定チェックリスト]]></title>
-    <link href="http://makotow.github.com/blog/2012/05/13/network-checklist/"/>
-    <updated>2012-05-13T18:27:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/05/13/network-checklist</id>
-    <content type="html"><![CDATA[<h2>ネットワーク設定覚書</h2>
-
-<p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
-覚書としてメモ。</p>
-
-<p>Ubuntuでネットワークに繋がらなくなった場合のチェック。</p>
-
-<!-- more -->
-
-
-<p>試しているVersionは</p>
-
-<pre><code>Ubuntu 11 .10 64bit
-</code></pre>
-
-<p>参考にさせていただいたページはこちら</p>
-
-<p> <a href="http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html">http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html</a></p>
-
-<p> <a href="https://forums.ubuntulinux.jp/viewtopic.php?id=9522">https://forums.ubuntulinux.jp/viewtopic.php?id=9522</a></p>
-
-<h3>試した手順</h3>
-
-<ul>
-<li>とりあえず、再起動 sudo /etc/init.d/networking restart</li>
-<li>ping anyhost</li>
-<li>繋がっていないことを確認したら、/etc/network/interfaces が正しいかを確認</li>
-<li>間違っていたので修正、 その後再起動 sudo /etc/init.d/networking restart　</li>
-<li>それでもつながらないので、nameserverが指定されているかを/etc/resolv.confで確認　→ <strong>空になっている</strong></li>
-<li>/etc/resolv.conf に nameserver を追記し、sudo /etc/init.d/networking restart でつながるようになった。</li>
-</ul>
-
-
-<h3>今後の方針</h3>
-
-<p>調べてみると、根本原因はNetwork-Managerが/etc/resolv.confを書き換えることだった。</p>
-
-<p>Network-Managerを削除したりするのではなく、有効活用したほうがいいのだろうと思い検索したところ、次のページを発見。参照し設定。
- <a href="http://www.usupi.org/sysad/173.html">http://www.usupi.org/sysad/173.html</a></p>
-
-<p>これでしばらく様子を見る。</p>
 ]]></content>
   </entry>
   

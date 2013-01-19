@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: git - Software Technology Memorandum</title>
+  <title>Octopressでのデザイン変更方法 - Software Technology Memorandum</title>
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="Category: git">
+  <meta name="description" content="Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
+文字サイズを変更してみる。 ついでに見出しのバックグラウンドやブログタイトルへの背景画像も設定してみる。 そもそもOctopressではThemeを使用してブログデザインを変更している。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.comblog/categories/git/">
+  <link rel="canonical" href="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -86,50 +87,173 @@ $(document).ready( function () {
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: git</h1>
+    
+      <h1 class="entry-title">Octopressでのデザイン変更方法</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-19T17:00:00+09:00" pubdate data-updated="true">Jan 19<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
+文字サイズを変更してみる。</p>
 
-  
-  <h2>2012</h2>
+<p>ついでに見出しのバックグラウンドやブログタイトルへの背景画像も設定してみる。</p>
 
-<article>
-  
-<h1><a href="/blog/2012/10/03/gist-on-octopress/">gistをブログに投稿</a></h1>
-<time datetime="2012-10-03T23:42:00+09:00" pubdate><span class='month'>Oct</span> <span class='day'>03</span> <span class='year'>2012</span></time>
+<p>そもそもOctopressではThemeを使用してブログデザインを変更している。
+今回は簡単なところから初めて見る。</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/gist/'>gist</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<p>少しずつ理解しながらやっていたため、12月中旬から開始していたが年明けまでかかってしまった。
+git で branch 作って作業して他の branch にマージということを初めてやったけど便利すぎ。</p>
 
-
-</article>
+<!-- more -->
 
 
+<h2>Octopress 変更点</h2>
 
-<article>
-  
-<h1><a href="/blog/2012/10/03/gitignore/">gitignoreのメモ</a></h1>
-<time datetime="2012-10-03T23:38:00+09:00" pubdate><span class='month'>Oct</span> <span class='day'>03</span> <span class='year'>2012</span></time>
+<h3>ファイル一覧</h3>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/gist/'>gist</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/sbt/'>sbt</a>, <a class='category' href='/blog/categories/scala/'>scala</a></span>
-</footer>
+<p>思ったよりも変更する箇所はなく、
+octopress/sass/custom 以下のファイルに設定を追加、
+CSSを書き換えることで変更可能
+フレームワーク部分にはほとんど手をいれることなく変更可能な作りとなっている。</p>
+
+<ul>
+<li>octopress/sass/custom/_styles.scss</li>
+<li>octopress/sass/custom/_fonts.scss</li>
+<li>octopress/sass/custom/_colors.scss</li>
+</ul>
 
 
-</article>
+<h2>今回つかったツール</h2>
+
+<h3>IDE</h3>
+
+<p>IntelliJ IDEA 12
+年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
+
+<h3>サイト</h3>
+
+<ul>
+<li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
+<li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
+</ul>
+
+
+<h2>残作業</h2>
+
+<p>凝り始めるときりがないので今回は一旦この段階で終了。
+今後は、</p>
+
+<ul>
+<li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
+<li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">makotow</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-19T17:00:00+09:00" pubdate data-updated="true">Jan 19<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/scss/'>scss</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+    <li><a href="/blog/2012/10/03/gist-on-octopress/">gistをブログに投稿</a></li>
+    
+    <li><a href="/blog/2012/08/23/tag-cloud-related-post/">タグクラウド、関連する記事を表示するようにした。</a></li>
+    
+    <li><a href="/blog/2012/08/22/read-more/">Read Moreの追加</a></li>
+    
+    <li><a href="/blog/2012/08/19/octopress-construction-memo/">Octopress 構築中</a></li>
+    
+    <li><a href="/blog/2012/08/18/first-octopress/">first Octopress</a></li>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/09/buying-books/" title="Previous Post: 最近購入した本(2012/12)">&laquo; 最近購入した本(2012/12)</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -268,7 +392,10 @@ $(document).ready( function () {
       var disqus_shortname = 'makotownotes';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/';
+        var disqus_url = 'http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

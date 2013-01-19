@@ -41,6 +41,10 @@
         <lastmod>2013-01-01T18:25:24+09:00</lastmod>
     </url>
     <url>
+        <loc>http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/</loc>
+        <lastmod>2013-01-19T17:01:03+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://makotow.github.com/404.html</loc>
         <lastmod>2013-01-01T18:25:24+09:00</lastmod>
     </url>
@@ -50,7 +54,7 @@
     </url>
     <url>
         <loc>http://makotow.github.com/blog/archives/</loc>
-        <lastmod>2013-01-01T18:25:24+09:00</lastmod>
+        <lastmod>2013-01-19T17:01:03+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.com/engineer-qa/</loc>
@@ -58,6 +62,6 @@
     </url>
     <url>
         <loc>http://makotow.github.com/</loc>
-        <lastmod>2013-01-01T18:25:24+09:00</lastmod>
+        <lastmod>2013-01-19T17:01:03+09:00</lastmod>
     </url>
 </urlset>

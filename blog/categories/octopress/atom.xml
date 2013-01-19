@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: octopress | MEMORANDUM OF MAKOTOW]]></title>
+  <title><![CDATA[Category: octopress | Software Technology Memorandum]]></title>
   <link href="http://makotow.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2013-01-01T19:24:43+09:00</updated>
+  <updated>2013-01-19T17:01:30+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopressでのデザイン変更方法]]></title>
+    <link href="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/"/>
+    <updated>2013-01-19T17:00:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/01/19/change-octopress-css-style</id>
+    <content type="html"><![CDATA[<p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
+文字サイズを変更してみる。</p>
+
+<p>ついでに見出しのバックグラウンドやブログタイトルへの背景画像も設定してみる。</p>
+
+<p>そもそもOctopressではThemeを使用してブログデザインを変更している。
+今回は簡単なところから初めて見る。</p>
+
+<p>少しずつ理解しながらやっていたため、12月中旬から開始していたが年明けまでかかってしまった。
+git で branch 作って作業して他の branch にマージということを初めてやったけど便利すぎ。</p>
+
+<!-- more -->
+
+
+<h2>Octopress 変更点</h2>
+
+<h3>ファイル一覧</h3>
+
+<p>思ったよりも変更する箇所はなく、
+octopress/sass/custom 以下のファイルに設定を追加、
+CSSを書き換えることで変更可能
+フレームワーク部分にはほとんど手をいれることなく変更可能な作りとなっている。</p>
+
+<ul>
+<li>octopress/sass/custom/_styles.scss</li>
+<li>octopress/sass/custom/_fonts.scss</li>
+<li>octopress/sass/custom/_colors.scss</li>
+</ul>
+
+
+<h2>今回つかったツール</h2>
+
+<h3>IDE</h3>
+
+<p>IntelliJ IDEA 12
+年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
+
+<h3>サイト</h3>
+
+<ul>
+<li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
+<li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
+</ul>
+
+
+<h2>残作業</h2>
+
+<p>凝り始めるときりがないので今回は一旦この段階で終了。
+今後は、</p>
+
+<ul>
+<li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
+<li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>
@@ -260,35 +323,6 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <li>Theme カスタマイズ・変更</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[first Octopress]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/18/first-octopress/"/>
-    <updated>2012-08-18T16:17:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/18/first-octopress</id>
-    <content type="html"><![CDATA[<p>tumblrにブログを構築していたが微妙に機能不足を感じて着ていたのでoctopressに移行。</p>
-
-<p><a href="http://octopress.org">Octopress</a></p>
-
-<p>色々と探してみたが、以下のところに魅力を感じたためOctopress に決定。</p>
-
-<ul>
-<li>拡張性が高い</li>
-<li>Markdownで記述</li>
-<li>Plugin も豊富</li>
-<li>A blogging framework for hackers.</li>
-</ul>
-
-
-<p>使い始めたばかりなので上に書いたことが間違っていることもあるかもしれないが、
-しばらく使ってみようと思う。</p>
-
-<p>とりあえずは最低限の準備をする。
-tumblrの方にある少ない記事を少しづつ移動させる。</p>
-
-<p>テーマがデフォルトのままなので変更したい。</p>
 ]]></content>
   </entry>
   
