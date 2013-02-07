@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: macosx | Software Technology Memorandum]]></title>
+  <link href="http://makotow.github.com/blog/categories/macosx/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2013-02-08T01:08:39+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mac OSX のDiffツール]]></title>
+    <link href="http://makotow.github.com/blog/2013/02/08/mac-difftools/"/>
+    <updated>2013-02-08T00:40:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/02/08/mac-difftools</id>
+    <content type="html"><![CDATA[<p>色々探してみた。
+要件としては</p>
+
+<ul>
+<li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
+<li>できれば比較状態から編集できる</li>
+</ul>
+
+
+<p>MacOSXでは決定打となるようなツールはなかったが、
+ある程度の候補を上げることができたので記録する。</p>
+
+<!-- more -->
+
+
+<h2>試してみたツール</h2>
+
+<p>探してみてスペック的に満たしていそうなものをためしてみた。
+参考としてURLや使用感を書いてみようと思う。</p>
+
+<h3>P4Merge+stroy</h3>
+
+<p>MacのDiffツールといえばP4Mergeをよく見かける。しかし、ディレクトリ単位での比較ができないためスルーしていた。ディレクトリ単位で比較できるツールという観点で調べていたところstroyと連携することでディレクトリ単位の比較が実現できるようなので試してみた。</p>
+
+<p> <a href="http://www.atinfinity.info/wiki/index.php?Mac/stroy%E3%81%A8P4Merge%E3%82%92%E9%80%A3%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B">Mac/stroyとP4Mergeを連動させる</a>
+を参考に試してみた。</p>
+
+<p>比較、マージもわかりやすく使いやすいように感じる。</p>
+
+<p><img class="left" src="/images/2013/02/stroy.png">
+<img class="right" src="/images/2013/02/p4merge.png"></p>
+
+<h3>DiffMerge</h3>
+
+<p>P4Merge + story に比べて導入するソフトは１つだけでよい。
+求めているものの要求を満たしていてる。</p>
+
+<p>あえて、不満点を上げるとしたら、マージがわかりづらいところ。
+変更前と変更後を指定する必要があり２ペインの左がオリジナル</p>
+
+<p>初期状態だと日本語が化けてしまう。
+日本語についての対応策としては　<a href="http://d.hatena.ne.jp/nakamura001/20110321/1300706226">強火で進め - ソースコードの比較/マージツール「DiffMerge」</a>
+を参考にした。</p>
+
+<p><img class="right" src="/images/2013/02/diffmerge1.png">
+<img class="right" src="/images/2013/02/diffmerge2.png"></p>
+
+<h3>meld</h3>
+
+<p>homebrewでインストール可能なのだが、ビルドに失敗したり色々と大変だった。</p>
+
+<p>gtk2+のビルドのことごとく失敗するので、githubをみて解決</p>
+
+<ul>
+<li>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/07/homebrew-gtk2-24-11/</li>
+<li>https://github.com/mxcl/homebrew/issues/13546</li>
+</ul>
+
+
+<p>操作感がMacとは違うので違和感は感じる。
+機能的には問題なく使用可能</p>
+
+<h2>その他</h2>
+
+<p>試してはいないが検索している上で出てきたキーワードを備忘として記載しておく。</p>
+
+<ul>
+<li>TextWrangler</li>
+<li>Kaleidoscope(有償）</li>
+<li>Beyond Compare</li>
+<li>Araxis</li>
+</ul>
+
+
+<h2>まとめ</h2>
+
+<p>Winmergeほどの使いやすがはないが、ちょっとづつ使ってみようと思う。
+今のところP4Mege+stroyが良い感じ。</p>
+]]></content>
+  </entry>
+  
+</feed>
