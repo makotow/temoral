@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project management | Software Technology Memorandum]]></title>
   <link href="http://makotow.github.com/blog/categories/project-management/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2013-02-08T01:08:39+09:00</updated>
+  <updated>2013-02-20T01:04:18+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[漫画で学ぶプロジェクトマネジメント読書録]]></title>
+    <link href="http://makotow.github.com/blog/2013/02/20/pmintro/"/>
+    <updated>2013-02-20T01:00:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/02/20/pmintro</id>
+    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<p>漫画で学ぶプロジェクトマネジメント読書録を読んだ感想。</p>
+
+<!-- more -->
+
+
+<p>自分としては、基本をすっとばして物事をやっているため、
+優しいくらいの基本を学べてよかったと思う。
+体系的に学ぶ第一歩となるのではないかと思う。</p>
+
+<p>本書の特徴として、</p>
+
+<ul>
+<li>非常に容易(わかり易く解説してある）</li>
+<li>漫画のためサクサクよめる</li>
+<li>一部、フォローのためのコラムあり</li>
+<li>内容にPMBOKなどの用語が出てくるため、次になにを学ぶかがわかる。（調べるべきキーワードがわかりやすい）</li>
+<li>新入社員、新米PM、PMとは何をやっているかを知りたい人向け</li>
+</ul>
+
+
+<h2>今後の指針</h2>
+
+<p>プロジェクト・マネジメントで自分が読んだものでおすすめできるものを挙げる。</p>
+
+<h3>プロジェクト・マネジメント</h3>
+
+<p>なんかかPMに近い立場を体験したあとに読むと勉強になるはず。
+読むたびに新しい発見がありそう。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/4106A8SHJRL._SL160_.jpg" alt="アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Scott Berkun <br />オライリー・ジャパン <br />売り上げランキング: 51,421<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<h3>アジャイル開発</h3>
+
+<p>アジャイル開発に興味が出たら</p>
+
+<p>  <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg" alt="アジャイルサムライ−達人開発者への道−" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルサムライ−達人開発者への道−</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Jonathan Rasmusson <br />オーム社 <br />売り上げランキング: 2,147<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div></p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51A8BTrHYxL._SL160_.jpg" alt="アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Mike Cohn マイク コーン <br />毎日コミュニケーションズ <br />売り上げランキング: 20,349<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[最近購入した本(2012/12)]]></title>
