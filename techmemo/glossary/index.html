@@ -5,13 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Glossary - Software Technology Memorandum</title>
+  <title>Glossary - Software Technology Memorandum and thoughts</title>
   <meta name="author" content="makotow">
 
   
   <meta name="description" content="Glossary Feb 9th, 2013 日々に作成中。
 間違っている可能性もあります。
-適宜、見直し・修正を行なっています。 OS CIFS Storage SCSI Network Link Aggregation 302.ad link aggregation NIC Teaming &hellip;">
+適宜、見直し・修正を行なっています。 OS CIFS (Common Internet File System) MSが開発したインターネット経由でファイルを共有するプロトコル。
+SMB(Server &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -26,11 +27,11 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Black+Ops+One|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 
 <script language="JavaScript">
 $(document).ready( function () {
@@ -56,9 +57,9 @@ $(document).ready( function () {
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">Software Technology Memorandum</a></h1>
+  <h1><a href="/">Software Technology Memorandum and thoughts</a></h1>
   
-    <h2>Mostly software technology memorandum at random times.</h2>
+    <h2>Mostly software technology memorandum at random times powerd by makotow.</h2>
   
 </hgroup>
 
@@ -113,40 +114,112 @@ $(document).ready( function () {
 
 <h2>OS</h2>
 
-<h3>CIFS</h3>
+<h3>CIFS (Common Internet File System)</h3>
+
+<p>MSが開発したインターネット経由でファイルを共有するプロトコル。
+SMB(Server Meesage Block)をベースに開発。SBMはNetBIOSを使用しているが、CIFSはTCP/IPを使用する。
+CIFSは正式にドキュメントを公開しているため、Windows以外のOSやインターネット上を介してファイル共有サービス等を使用できる。
+CIFSを使用するアプリケーションとしてSambaがある。</p>
 
 <h2>Storage</h2>
 
 <h3>SCSI</h3>
 
+<p>ハードウェア間のデータのやり取りをするインターフェース企画CPUの負荷を抑えることができる。</p>
+
+<h3>iSCSI</h3>
+
+<p>SCSIプロトコルをTCP/IPで使用する規格。</p>
+
 <h2>Network</h2>
-
-<h3>Link Aggregation</h3>
-
-<p>302.ad link aggregation</p>
 
 <h3>NIC Teaming</h3>
 
-<h2>VMWare</h2>
+<p>物理NICを１つの仮想的なNICとして束ねる技術。
+耐障害性の強化、使用帯域の向上を実現する。</p>
 
-<h3>RDM</h3>
+<h3>Link Aggregation</h3>
 
-<p>Raw Device Mapping
-ホストマシンから直接ハードにアクセスできる技術
-物理互換モード
-仮想互換モード</p>
+<p>LANスイッチ感を接続する複数の物理リンクを1本に束ねる技術。 トランキングと呼ぶ。
+IEEE802.3ad で標準化され、CISCO用語ではEtherChannel。
+NICチーミングの1つ。</p>
+
+<h3>TCP/IPオフロードエンジン</h3>
+
+<p>NICがTCP/IPの処理の一部をCPUの代わりに実行する機能。</p>
+
+<h2>VMWare (vSphere 5.1)</h2>
+
+<h3>RDM (Raw Device Mapping)</h3>
+
+<p>仮想マシンからストレージデバイス(LUN)を直接的に扱うための仕組み。
+実体は、使用するストレージデバイスのプロキシとして機能するVMFSボリュームのマッピングファイル。
+VMFSファイルシステムの仮想ディスクが利用可能になるのと同時に、物理デバイスに直接アクセスできるようになる。
+これによって、VMFSの管理性とRawデバイスへアクセスとを両立させている。
+ほとんどの場合は、仮想ディスクのストレージにはVMFSを使用することが望ましい。</p>
+
+<p>RDMを使用する場面としては、</p>
+
+<ul>
+<li>既存ファイルシステムをそのまま使用したい</li>
+<li>ストレージが提供するスナップショットを使用している場合</li>
+<li>MSFCを使って物理マシンをまたがるクラスタリングシステムを仮想マシンで構築する場合(共有ディスクをRDMとして構成する必要がある)</li>
+</ul>
+
+
+<h4>仮想互換モード</h4>
+
+<p>VMFSのメリットを享受できる。</p>
+
+<h4>物理互換モード</h4>
+
+<p>VMKernelが、すべてのSCSIコマンドをデバイスに渡す。
+REPORT LUNのみは例外でパススルーされない。
+MSFCを使用してクラスタリングシステムを構築する際には物理互換モードの必要がある。</p>
 
 <h3>DPM</h3>
 
-<h3>SDRS</h3>
+<p>ワークロードにあわせて起動するホストの台数を最適化すること。
+DPMを設定する際に以下について考慮する
+ - CPU,メモリを均一化したクラスタを構成
+ - 予期できないワークロードがある場合は、最低限必要なCPUとメモリ容量を確保する
+   詳細オプションMinPoweredOnCpuCapacity、MinPoweredOnMemCapacityを設定
+ - DRSを完全自動とし、自動化レベルを保守的にしないようにする。ホスト起動後の仮想マシンバランスを最適化するため。
+ - テンプレートが登録されているホストをDPMがパワーオフしてしまうことを避けるためテンプレートは1つのホストにまとめ、そのホストのDPMは無効化する。</p>
 
-<h3>EVC</h3>
+<h4>HA と DPM</h4>
 
-<p>Enhanced vMotion Compatibility</p>
+<p> DPM、DRSはHAのアドミッションポリシーに従う。
+ アイドル状態のホストがあったとしても、HAの設定に違反する場合は仮想マシンの電源起動やホストの電源停止などは行われない。</p>
 
-<h3>VSS</h3>
+<p> また、DPMはHAが有効になっているクラスタないではアドミッションポリシーが有効になっているかどうかにかかわらず、最低限2台のホストの電源は起動した状態を維持する</p>
 
-<h3>VMWare SMP</h3>
+<h3>DRS (Distributed Resource Scheduler)</h3>
+
+<p>常に最適なパフォーマンスを得られるように、vMotionを利用して自動的に仮想マシンを再配置し、
+システム全体のパフォーマンスを維持する機能。
+同様にストレージの負荷を平準化するために、仮想マシンが格納されているデータ領域を自動的に再配置するストレージDRSも用意されている。</p>
+
+<h3>EVC (Enhanced vMotion Compatibility)</h3>
+
+<p>EVCを利用すること異なる CPU 世代間の vMotion による移行を可能とする。
+新しいCPU世代のサーバーをクラスタに追加した場合でもvMotionが可能な構成をとることができる。</p>
+
+<p>通常CPU世代が異なるホスト間では、vMotionを行うことはできない。
+vCenterはvMotionを行う前にホスト間でCPU命令セットに互換性があるかチェックし、互換性のないホスト間ではvMotionを実行できないようにする。</p>
+
+<p>要件として、</p>
+
+<ul>
+<li>ESXiはクラスタ内にあること</li>
+<li>クラスタのホストCPUはAMDまたはIntelのどちらかであること</li>
+<li>クラスタのすべてのホストがvMotionの要件を満たしていること</li>
+<li>ホストCPUが使用するEVCモードを満たすこと</li>
+<li>ハードウェ仮想化サポートとNX/XD がBIOSで有効になっていること</li>
+</ul>
+
+
+<p>see also: <a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;docType=kc&amp;docTypeID=DT_KB_1_1&amp;externalId=1003212">KnowledgeBase</a></p>
 
 <h3>Storage vMotion</h3>
 
@@ -158,6 +231,52 @@ $(document).ready( function () {
 <h3>VSA Manager</h3>
 
 <p>VMWare vSphere Storage Applications Manager</p>
+
+<h3>バルーンドライバ</h3>
+
+<p>VMWare ESXiのメモリのオーバーコミットを実現する技術の1つ。
+ゲストOSにVMWare tools をインストールした際にインストールされる。
+ESXiと連携しアイドル状態の仮想マシンからメモリ税の税率にしたがってメモリ解放を行う。</p>
+
+<h3>VSS (Volume Shadow Copy Service)</h3>
+
+<p>Data Recoveryで使用する静止メカニズム。
+MSが開発し、WindowsServer2003移行のOSで実装されているスナップショット技術。
+VMWare ToolsにはVSSのリクエスタ機能が含まれている。</p>
+
+<h3>sync ドライバ</h3>
+
+<p>Data Recoveryで使用する静止メカニズム。</p>
+
+<h3>ネットワークI/Oコントロール</h3>
+
+<h3>iSCSCIアダプタ</h3>
+
+<h4>適用型</h4>
+
+<h4>ソフトウェア型</h4>
+
+<h4>ハードウェア型</h4>
+
+<h3>ストレージIOコントロール(SIOC)</h3>
+
+<p>ポリシーベースでストレージI/Oの優先度を制御できる。
+ディスクI/Oに対してシェア値を設定するとデータストアにたいして発行するI/Oキューをホスト間で協調して調整する。</p>
+
+<h3>FT(Fault Tolerance)</h3>
+
+<h3>WOL (Wake on LAN)</h3>
+
+<h3>VA</h3>
+
+<h3>VCMSDS</h3>
+
+<p>LDAPディレクトリサービス</p>
+
+<h3>SAN Boot</h3>
+
+<p>ストレージからOSを起動すること
+PXE boot と同じ。</p>
 
   
     <footer>
@@ -248,6 +367,18 @@ $(document).ready( function () {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/31/sh-tech-exists-command/">shでコマンドが存在するか確認する方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/30/tddprac/">実践テスト駆動開発　読書録</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/30/agileandscrum/">アジャイル開発とスクラム　読書録</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/01/feldman/">フェルドマン式知的生産術　読書録</a>
       </li>
     
@@ -255,23 +386,11 @@ $(document).ready( function () {
         <a href="/blog/2013/02/20/pmintro/">漫画で学ぶプロジェクトマネジメント読書録</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/02/08/mac-difftools/">Mac OSX のDiffツール</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/19/change-octopress-css-style/">Octopressでのデザイン変更方法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/12/09/buying-books/">最近購入した本(2012/12)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 108.57142857142857%'>adobe(1)</a> <a href='/blog/categories/application' style='font-size: 108.57142857142857%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 160.0%'>Article(7)</a> <a href='/blog/categories/blog' style='font-size: 117.14285714285714%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 125.71428571428572%'>books(3)</a> <a href='/blog/categories/business' style='font-size: 108.57142857142857%'>business(1)</a> <a href='/blog/categories/bussiness' style='font-size: 108.57142857142857%'>bussiness(1)</a> <a href='/blog/categories/css' style='font-size: 108.57142857142857%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 108.57142857142857%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 117.14285714285714%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 117.14285714285714%'>git(2)</a> <a href='/blog/categories/links' style='font-size: 108.57142857142857%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 108.57142857142857%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 108.57142857142857%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 108.57142857142857%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 108.57142857142857%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 151.42857142857144%'>octopress(6)</a> <a href='/blog/categories/pocket' style='font-size: 108.57142857142857%'>pocket(1)</a> <a href='/blog/categories/project-management' style='font-size: 117.14285714285714%'>project management(2)</a> <a href='/blog/categories/sbt' style='font-size: 108.57142857142857%'>sbt(1)</a> <a href='/blog/categories/scala' style='font-size: 108.57142857142857%'>scala(1)</a> <a href='/blog/categories/scss' style='font-size: 108.57142857142857%'>scss(1)</a> <a href='/blog/categories/skill' style='font-size: 108.57142857142857%'>skill(1)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(7)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>tools(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 106.66666666666667%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 106.66666666666667%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 106.66666666666667%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 160.0%'>Article(9)</a> <a href='/blog/categories/blog' style='font-size: 113.33333333333333%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 133.33333333333334%'>books(5)</a> <a href='/blog/categories/business' style='font-size: 106.66666666666667%'>business(1)</a> <a href='/blog/categories/bussiness' style='font-size: 106.66666666666667%'>bussiness(1)</a> <a href='/blog/categories/css' style='font-size: 106.66666666666667%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 106.66666666666667%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 113.33333333333333%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 113.33333333333333%'>git(2)</a> <a href='/blog/categories/links' style='font-size: 106.66666666666667%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 106.66666666666667%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 106.66666666666667%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 106.66666666666667%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 106.66666666666667%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 140.0%'>octopress(6)</a> <a href='/blog/categories/pocket' style='font-size: 106.66666666666667%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 106.66666666666667%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 120.0%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 106.66666666666667%'>sbt(1)</a> <a href='/blog/categories/scala' style='font-size: 106.66666666666667%'>scala(1)</a> <a href='/blog/categories/scrum' style='font-size: 106.66666666666667%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 106.66666666666667%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 106.66666666666667%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 106.66666666666667%'>skill(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.66666666666667%'>TDD(1)</a> <a href='/blog/categories/techmemo' style='font-size: 153.33333333333334%'>TechMemo(8)</a> <a href='/blog/categories/tools' style='font-size: 106.66666666666667%'>tools(1)</a> </span>
 </section>
 
 <section>

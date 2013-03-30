@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: project management | Software Technology Memorandum]]></title>
+  <title><![CDATA[Category: project management | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.com/blog/categories/project-management/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2013-03-01T00:14:23+09:00</updated>
+  <updated>2013-03-31T02:47:09+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[アジャイル開発とスクラム　読書録]]></title>
+    <link href="http://makotow.github.com/blog/2013/03/30/agileandscrum/"/>
+    <updated>2013-03-30T13:00:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/03/30/agileandscrum</id>
+    <content type="html"><![CDATA[<p>アジャイル開発とスクラム　顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+
+
+<!-- more -->
+
+
+<p>話題となっていたので購入。</p>
+
+<h3>感想</h3>
+
+<p>三部構成となっており
+各部の内容を一言でまとめると</p>
+
+<ul>
+<li>1部 アジャイル開発とは、Scrumとは、プラクティスの紹介</li>
+<li>2部 実例</li>
+<li>3部 考察</li>
+</ul>
+
+
+<p>1部についてはScrumを学んだことがあればおなじみのもの。</p>
+
+<p>2部がとても参考になった。
+実際の開発事例をあげてどのように導入し、運用していったかが記載されている。</p>
+
+<p>3部の形式知・暗黙知、SECIモデルは自分の中に思い当たるところがあり、
+ようやく言葉で説明できている書籍に出会えた。
+最近はSECIモデルに近いことを行うとうまくいくことが多いことは実感できていた。</p>
+
+<p>2部が一番印象に残っており読んだ段階でワクワクしながら読めた。
+初級者から上級者まで幅広くカバーできている書籍と感じた。</p>
+
+<h3>参考になったキーワード</h3>
+
+<ul>
+<li>ワンチームマインド</li>
+<li>マルチ学習</li>
+<li>暗黙知・形式知</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[漫画で学ぶプロジェクトマネジメント読書録]]></title>

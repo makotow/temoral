@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Software Technology Memorandum]]></title>
+  <title><![CDATA[Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.com/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2013-03-01T00:14:23+09:00</updated>
+  <updated>2013-03-31T02:47:09+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,136 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[shでコマンドが存在するか確認する方法]]></title>
+    <link href="http://makotow.github.com/blog/2013/03/31/sh-tech-exists-command/"/>
+    <updated>2013-03-31T00:41:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/03/31/sh-tech-exists-command</id>
+    <content type="html"><![CDATA[<p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
+Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if </span>which brew &gt; /dev/null;then
+</span><span class='line'>   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class='line'><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>こんな方法もあるみたい</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;`which brew`&quot;</span> <span class="o">]</span>;<span class="k">then</span>
+</span><span class='line'>   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class='line'><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[実践テスト駆動開発　読書録]]></title>
+    <link href="http://makotow.github.com/blog/2013/03/30/tddprac/"/>
+    <updated>2013-03-30T13:30:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/03/30/tddprac</id>
+    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<p>軽いメモ書き。
+個人的に結構なボリュームがある書籍であった。</p>
+
+<!-- more -->
+
+
+<h3>感想</h3>
+
+<p>読んでから少したってしまったので箇条書きで感想。</p>
+
+<ul>
+<li>1章が一番しっくりきた。</li>
+<li>テストコードをどうコーディングするかをかなり多くのサンプルをみながら理解できた。</li>
+<li>モックオブジェクト(jMock2)について理解を深めることができた。</li>
+<li>同期処理、非同期処理についても言及しているため、非同期処理のテストについて学びたく買ったので良かった。</li>
+</ul>
+
+
+<p>  実際、設計を進化させながら進んでいる。
+  途中でこれは微妙だなと思うことがあっても章が進むと改善されていくので、自分の設計思想と同じだなと思ったり、
+  こういうやり方があるかなどと読み進めていけて面白かった。</p>
+
+<p>  この書籍自体にはテスティングフレームワークの使用方法などは載っていないが、
+  書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
+  なにを使ったらよいかの参考になるのではないか。</p>
+
+<h3>参考</h3>
+
+<p>テスト駆動開発といえばこれ。
+併せて読むと理解が進むと思う。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" alt="テスト駆動開発入門" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">テスト駆動開発入門</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.30</div></div><div class="amazlet-detail">ケント ベック <br />ピアソンエデュケーション <br />売り上げランキング: 105,111<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[アジャイル開発とスクラム　読書録]]></title>
+    <link href="http://makotow.github.com/blog/2013/03/30/agileandscrum/"/>
+    <updated>2013-03-30T13:00:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/03/30/agileandscrum</id>
+    <content type="html"><![CDATA[<p>アジャイル開発とスクラム　顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+
+
+<!-- more -->
+
+
+<p>話題となっていたので購入。</p>
+
+<h3>感想</h3>
+
+<p>三部構成となっており
+各部の内容を一言でまとめると</p>
+
+<ul>
+<li>1部 アジャイル開発とは、Scrumとは、プラクティスの紹介</li>
+<li>2部 実例</li>
+<li>3部 考察</li>
+</ul>
+
+
+<p>1部についてはScrumを学んだことがあればおなじみのもの。</p>
+
+<p>2部がとても参考になった。
+実際の開発事例をあげてどのように導入し、運用していったかが記載されている。</p>
+
+<p>3部の形式知・暗黙知、SECIモデルは自分の中に思い当たるところがあり、
+ようやく言葉で説明できている書籍に出会えた。
+最近はSECIモデルに近いことを行うとうまくいくことが多いことは実感できていた。</p>
+
+<p>2部が一番印象に残っており読んだ段階でワクワクしながら読めた。
+初級者から上級者まで幅広くカバーできている書籍と感じた。</p>
+
+<h3>参考になったキーワード</h3>
+
+<ul>
+<li>ワンチームマインド</li>
+<li>マルチ学習</li>
+<li>暗黙知・形式知</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[フェルドマン式知的生産術　読書録]]></title>

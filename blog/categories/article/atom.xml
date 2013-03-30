@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Article | Software Technology Memorandum]]></title>
+  <title><![CDATA[Category: Article | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.com/blog/categories/article/atom.xml" rel="self"/>
   <link href="http://makotow.github.com/"/>
-  <updated>2013-03-01T00:14:23+09:00</updated>
+  <updated>2013-03-31T02:47:09+09:00</updated>
   <id>http://makotow.github.com/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,104 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[実践テスト駆動開発　読書録]]></title>
+    <link href="http://makotow.github.com/blog/2013/03/30/tddprac/"/>
+    <updated>2013-03-30T13:30:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/03/30/tddprac</id>
+    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<p>軽いメモ書き。
+個人的に結構なボリュームがある書籍であった。</p>
+
+<!-- more -->
+
+
+<h3>感想</h3>
+
+<p>読んでから少したってしまったので箇条書きで感想。</p>
+
+<ul>
+<li>1章が一番しっくりきた。</li>
+<li>テストコードをどうコーディングするかをかなり多くのサンプルをみながら理解できた。</li>
+<li>モックオブジェクト(jMock2)について理解を深めることができた。</li>
+<li>同期処理、非同期処理についても言及しているため、非同期処理のテストについて学びたく買ったので良かった。</li>
+</ul>
+
+
+<p>  実際、設計を進化させながら進んでいる。
+  途中でこれは微妙だなと思うことがあっても章が進むと改善されていくので、自分の設計思想と同じだなと思ったり、
+  こういうやり方があるかなどと読み進めていけて面白かった。</p>
+
+<p>  この書籍自体にはテスティングフレームワークの使用方法などは載っていないが、
+  書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
+  なにを使ったらよいかの参考になるのではないか。</p>
+
+<h3>参考</h3>
+
+<p>テスト駆動開発といえばこれ。
+併せて読むと理解が進むと思う。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" alt="テスト駆動開発入門" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">テスト駆動開発入門</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.30</div></div><div class="amazlet-detail">ケント ベック <br />ピアソンエデュケーション <br />売り上げランキング: 105,111<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[アジャイル開発とスクラム　読書録]]></title>
+    <link href="http://makotow.github.com/blog/2013/03/30/agileandscrum/"/>
+    <updated>2013-03-30T13:00:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/03/30/agileandscrum</id>
+    <content type="html"><![CDATA[<p>アジャイル開発とスクラム　顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+
+
+<!-- more -->
+
+
+<p>話題となっていたので購入。</p>
+
+<h3>感想</h3>
+
+<p>三部構成となっており
+各部の内容を一言でまとめると</p>
+
+<ul>
+<li>1部 アジャイル開発とは、Scrumとは、プラクティスの紹介</li>
+<li>2部 実例</li>
+<li>3部 考察</li>
+</ul>
+
+
+<p>1部についてはScrumを学んだことがあればおなじみのもの。</p>
+
+<p>2部がとても参考になった。
+実際の開発事例をあげてどのように導入し、運用していったかが記載されている。</p>
+
+<p>3部の形式知・暗黙知、SECIモデルは自分の中に思い当たるところがあり、
+ようやく言葉で説明できている書籍に出会えた。
+最近はSECIモデルに近いことを行うとうまくいくことが多いことは実感できていた。</p>
+
+<p>2部が一番印象に残っており読んだ段階でワクワクしながら読めた。
+初級者から上級者まで幅広くカバーできている書籍と感じた。</p>
+
+<h3>参考になったキーワード</h3>
+
+<ul>
+<li>ワンチームマインド</li>
+<li>マルチ学習</li>
+<li>暗黙知・形式知</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[フェルドマン式知的生産術　読書録]]></title>
@@ -173,90 +271,6 @@
 <p>ブログ内でアマゾンの画像を使いたかったためにアフリエイトIDを取得した。</p>
 
 <p>規約的には問題無いと思っているが、もし違反しているようなことがあれば教えて欲しい。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[InstapaperからPocketへ移行]]></title>
-    <link href="http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/"/>
-    <updated>2012-11-26T16:30:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket</id>
-    <content type="html"><![CDATA[<p>Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。</p>
-
-<p>最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
-参考としたサイトを紹介。</p>
-
-<!-- more -->
-
-
-<p>以下のリンクを参考に移行。
-特につまる所もなく移行完了した。</p>
-
-<h2>Pocketの紹介</h2>
-
-<p> <a href="http://www.barasu.org/diary/8004.html">Instapaper から Pocketへ乗り換え | 後悔懺悔日記</a></p>
-
-<p> <a href="http://lifehacking.jp/2012/10/pocket-for-mac/">Pocket for Macでウェブの情報処理が飛躍的に楽になる | Lifehacking.jp</a></p>
-
-<h3>Instapaperからの移行</h3>
-
-<p> <a href="http://getpocket.com/import/instapaper?e=1">Pocket: Import Instapaper</a></p>
-
-<h2>アプリケーション、アドオンなど</h2>
-
-<h3>Chrome-addon</h3>
-
-<p> <a href="https://chrome.google.com/webstore/detail/pocket-formerly-read-it-l/niloccemoadcdkdjlinkgdfekeahmflj/details">Pocket (formerly Read It Later)</a></p>
-
-<h3>Android</h3>
-
-<p> <a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro">Google Play Pocket</a></p>
-
-<h3>Mac</h3>
-
-<p> <a href="https://itunes.apple.com/jp/app/pocket-formerly-read-it-later/id309601447?mt=8&amp;ign-mpt=uo%3D4">Pocket (Formerly Read It Later)</a></p>
-
-<hr />
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Source Code Pro を Mac で試す。]]></title>
-    <link href="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/"/>
-    <updated>2012-09-25T22:39:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/09/25/sourcecodeprofont</id>
-    <content type="html"><![CDATA[<p>Adobeがコーディング用のソースコードをオープンソースで公開している。
-9/24 に開催されたCreate The Webで発表された。</p>
-
-<p>Adobe公式ブログにも記事がアップされている。
-<a href="http://blogs.adobe.com/typblography/2012/09/source-code-pro.html">Announcing Source Code Pro</a></p>
-
-<p>提供は、Sourceforge, GitHub, Adobe Edge Web Fonts, Typekit, WebINK, Google Web Fontsから入手可能。今回は馴染み深い Github から取得してみようと思う。</p>
-
-<!-- more -->
-
-
-<h2>今回の環境</h2>
-
-<pre><code>iMac Mountain Lion
-</code></pre>
-
-<h2>GitHub を確認</h2>
-
-<p><a href="https://github.com/adobe/Source-Code-Pro">adobe / Source-Code-Pro</a> を見てみるとREADMEが充実しているので順番に実施していく。</p>
-
-<hr />
-
-<p>※ いろいろやってみたがここでは結果のみを記載</p>
-
-<h3>Pre-build font binaries</h3>
-
-<p><a href="https://github.com/downloads/adobe/Source-Code-Pro/SourceCodePro_FontsOnly-1.009.zip">ここから</a> ダウンロードして適当な場所にコピー。</p>
-
-<p>解凍後、フォント一覧がでてくるので~/Library/Fontsにコピーすると該当ユーザのみ使用可能となる。</p>
-
-<p>フォントをビルドしようと試行錯誤してみたがうまくいかないので上記方法で終了。
-失敗記録は別に書いてみようか。</p>
 ]]></content>
   </entry>
   
