@@ -9,11 +9,10 @@
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
-Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。 1
-2
-3
-if which brew &gt; /dev/null;then . `brew --prefix`/etc/profile. &hellip;">
+  <meta name="description" content="概要 ちょっと不便だなと思いつつ放置して使ってたけど、
+少し調べたらわかったのでメモ。 Google日本語入力を使用中
+SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。
+SublimeText2に制御が移るため、日本語消える。 対策方法 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +90,139 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/05/sublimetext-japanese-input/">SublimeText2で日本語入力をTabで。</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-05T17:50:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>概要</h2>
+
+<p>ちょっと不便だなと思いつつ放置して使ってたけど、
+少し調べたらわかったのでメモ。</p>
+
+<ul>
+<li>Google日本語入力を使用中</li>
+<li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
+<li>SublimeText2に制御が移るため、日本語消える。</li>
+</ul>
+
+
+<h2>対策方法</h2>
+
+<ul>
+<li>SublimeText2での制御を外す。</li>
+<li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
+</ul>
+
+
+<p>Sublime Text2 > Preferences > Key Bindings - Default を選択して、以下の部分をコメントアウト。</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'>
+</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
+</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="p">[</span>
+</span><span class='line'>    <span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="p">]</span>
+</span><span class='line'>    <span class="err">//</span> <span class="p">}</span><span class="err">,</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下のURLを参考にさせていただいた。</p>
+
+<ul>
+<li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/05/sqlantipattern/">SQLアンチパターン　読書録</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-05T17:50:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<p>内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。
+やっちゃいけないことあるある集、解決方法をみてあーなるほどとなるなど学ぶことの多い本だった。</p>
+
+<p>すでにいろいろな所で言われていることだが、
+アンチパターンに名前をつけたことが最大の功績だと思う。
+名前があることでコミュニケーションが非常にやりやすい。</p>
+
+<p>以下、感想、参考になったアンチパターンを書いてみる。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/05/05/sqlantipattern/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -489,88 +621,6 @@ git で branch 作って作業して他の branch にマージということを
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/26/instapaper-to-pocket/">InstapaperからPocketへ移行</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-26T16:30:00+09:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。</p>
-
-<p>最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
-参考としたサイトを紹介。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/11/26/instapaper-to-pocket/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/gist-on-octopress/">gistをブログに投稿</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T23:42:00+09:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>簡単にできて便利だったのでメモ。</p>
-
-<p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -623,6 +673,14 @@ git で branch 作って作業して他の branch にマージということを
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/05/sublimetext-japanese-input/">SublimeText2で日本語入力をTabで。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/05/sqlantipattern/">SQLアンチパターン　読書録</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/31/sh-tech-exists-command/">shでコマンドが存在するか確認する方法</a>
       </li>
     
@@ -634,19 +692,11 @@ git で branch 作って作業して他の branch にマージということを
         <a href="/blog/2013/03/30/agileandscrum/">アジャイル開発とスクラム　読書録</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/03/01/feldman/">フェルドマン式知的生産術　読書録</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/20/pmintro/">漫画で学ぶプロジェクトマネジメント読書録</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 106.66666666666667%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 106.66666666666667%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 106.66666666666667%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 160.0%'>Article(9)</a> <a href='/blog/categories/blog' style='font-size: 113.33333333333333%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 133.33333333333334%'>books(5)</a> <a href='/blog/categories/business' style='font-size: 106.66666666666667%'>business(1)</a> <a href='/blog/categories/bussiness' style='font-size: 106.66666666666667%'>bussiness(1)</a> <a href='/blog/categories/css' style='font-size: 106.66666666666667%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 106.66666666666667%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 113.33333333333333%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 113.33333333333333%'>git(2)</a> <a href='/blog/categories/links' style='font-size: 106.66666666666667%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 106.66666666666667%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 106.66666666666667%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 106.66666666666667%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 106.66666666666667%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 140.0%'>octopress(6)</a> <a href='/blog/categories/pocket' style='font-size: 106.66666666666667%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 106.66666666666667%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 120.0%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 106.66666666666667%'>sbt(1)</a> <a href='/blog/categories/scala' style='font-size: 106.66666666666667%'>scala(1)</a> <a href='/blog/categories/scrum' style='font-size: 106.66666666666667%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 106.66666666666667%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 106.66666666666667%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 106.66666666666667%'>skill(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.66666666666667%'>TDD(1)</a> <a href='/blog/categories/techmemo' style='font-size: 153.33333333333334%'>TechMemo(8)</a> <a href='/blog/categories/tools' style='font-size: 106.66666666666667%'>tools(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 106.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 106.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 106.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 160.0%'>Article(10)</a> <a href='/blog/categories/blog' style='font-size: 112.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 136.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 106.0%'>business(1)</a> <a href='/blog/categories/bussiness' style='font-size: 106.0%'>bussiness(1)</a> <a href='/blog/categories/css' style='font-size: 106.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 106.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 112.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(2)</a> <a href='/blog/categories/links' style='font-size: 106.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 106.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 106.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 106.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 106.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 136.0%'>octopress(6)</a> <a href='/blog/categories/pocket' style='font-size: 106.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 106.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 118.0%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 106.0%'>sbt(1)</a> <a href='/blog/categories/scala' style='font-size: 106.0%'>scala(1)</a> <a href='/blog/categories/scrum' style='font-size: 106.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 106.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 106.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 106.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 106.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 106.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.0%'>TDD(1)</a> <a href='/blog/categories/techmemo' style='font-size: 154.0%'>TechMemo(9)</a> <a href='/blog/categories/tools' style='font-size: 112.0%'>tools(2)</a> </span>
 </section>
 
 <section>

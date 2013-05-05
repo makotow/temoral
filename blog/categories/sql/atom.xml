@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: SQL | Software Technology Memorandum and thoughts]]></title>
+  <link href="http://makotow.github.com/blog/categories/sql/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2013-05-05T18:08:25+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SQLアンチパターン　読書録]]></title>
+    <link href="http://makotow.github.com/blog/2013/05/05/sqlantipattern/"/>
+    <updated>2013-05-05T17:50:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/05/05/sqlantipattern</id>
+    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<p>内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。
+やっちゃいけないことあるある集、解決方法をみてあーなるほどとなるなど学ぶことの多い本だった。</p>
+
+<p>すでにいろいろな所で言われていることだが、
+アンチパターンに名前をつけたことが最大の功績だと思う。
+名前があることでコミュニケーションが非常にやりやすい。</p>
+
+<p>以下、感想、参考になったアンチパターンを書いてみる。</p>
+
+<!-- more -->
+
+
+<h3>感想</h3>
+
+<p>アンチパターンの兆しが見える質問例、
+アンチパターンを使ってもいい場面などが各アンチパターンごとに記載されているため実践的な内容となっている。</p>
+
+<p>「IDリクワイアド」の兆しがある、などと会話できるようなチームはいいなと思いながら読み進めた。</p>
+
+<p>以下4部で構成されている</p>
+
+<ul>
+<li>論理設計</li>
+<li>物理設計</li>
+<li>クエリ</li>
+<li>アプリケーション</li>
+</ul>
+
+
+<p>全般的になるほどと思いながら読めた。
+特に、論理設計、アプリケーションの部は面白く感じた。</p>
+
+<p>論理設計のアンチパターンについてはあまり経験値がない部分であったのでとても参考になった。</p>
+
+<h3>特に気になったアンチパターン</h3>
+
+<p>自分なりのメモ。</p>
+
+<h4>ナイーブツリー</h4>
+
+<p>SQLでツリーを表す際のアンチパターン、
+解決するためにはいくつかの策があり、テーブルの性質によって策を考える。
+本書では設計の一覧表がのっている。</p>
+
+<h4>キーレスエントリー</h4>
+
+<p>外部キー制約を使用しないパターン。柔軟性が高まるが参照整合性を保つコードをアプリケーションで保証しなければいけない。
+解決策としては外部キー制約を使用する。
+外部キー制約使うと柔軟性がなくなってテストしにくいって言われたのを思い出した。</p>
+
+<h4>ファントムファイル</h4>
+
+<p>RDMBS上にはファイルのパスを格納、実際のファイルはファイルシステムへ配置するパターン。
+必要に応じてLOBの使用を検討する。常に２パターンの設計を検討。</p>
+
+<h4>リーダブルパスワードの章のレインボーテーブル</h4>
+
+<p>一般的なことだが考慮すべきことは多い。
+攻撃手法を知り対策を行う必要がある。</p>
+
+<h4>マジックビーンズ</h4>
+
+<p>MVCのM(モデル)がActiveRecordそのものなってしまう。
+ドメインモデル貧血症(Anemic Domain Model)</p>
+
+<p>モデルがActiveRecordを持つようにする。コントローラーからはModelを使用する。</p>
+
+<p>プロジェクトのソースが大きくなってきてわかったことがあった。
+このアンチパターンの方に近いやり方になっていたことがあり、
+これではまずいと思い自分なりの解決方法を実施していたことを思い出した。
+やり方的には同じ方法だったような…</p>
+
+<h3>Reference</h3>
+
+<p><iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div></p>
+]]></content>
+  </entry>
+  
+</feed>

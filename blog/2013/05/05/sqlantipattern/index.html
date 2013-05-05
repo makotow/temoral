@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>SQLアンチパターン　読書録 - Software Technology Memorandum and thoughts</title>
+  <meta name="author" content="makotow">
+
+  
+  <meta name="description" content="SQLアンチパターンposted with amazlet at 13.05.02Bill Karwin オライリージャパン 売り上げランキング: 10,412Amazon.co.jpで詳細を見る 内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://makotow.github.com/blog/2013/05/05/sqlantipattern/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34175052-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Software Technology Memorandum and thoughts</a></h1>
+  
+    <h2>Mostly software technology memorandum at random times powerd by makotow.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:makotow.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/techmemo">Tech memo</a></li>
+  <li><a href="https://twitter.com/makotow">Twitter</a></li>
+  <li><a href="https://github.com/makotow">GitHub</a></li>
+  <li><a href="/books">Books</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">SQLアンチパターン　読書録</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-05T17:50:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<p>内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。
+やっちゃいけないことあるある集、解決方法をみてあーなるほどとなるなど学ぶことの多い本だった。</p>
+
+<p>すでにいろいろな所で言われていることだが、
+アンチパターンに名前をつけたことが最大の功績だと思う。
+名前があることでコミュニケーションが非常にやりやすい。</p>
+
+<p>以下、感想、参考になったアンチパターンを書いてみる。</p>
+
+<!-- more -->
+
+
+<h3>感想</h3>
+
+<p>アンチパターンの兆しが見える質問例、
+アンチパターンを使ってもいい場面などが各アンチパターンごとに記載されているため実践的な内容となっている。</p>
+
+<p>「IDリクワイアド」の兆しがある、などと会話できるようなチームはいいなと思いながら読み進めた。</p>
+
+<p>以下4部で構成されている</p>
+
+<ul>
+<li>論理設計</li>
+<li>物理設計</li>
+<li>クエリ</li>
+<li>アプリケーション</li>
+</ul>
+
+
+<p>全般的になるほどと思いながら読めた。
+特に、論理設計、アプリケーションの部は面白く感じた。</p>
+
+<p>論理設計のアンチパターンについてはあまり経験値がない部分であったのでとても参考になった。</p>
+
+<h3>特に気になったアンチパターン</h3>
+
+<p>自分なりのメモ。</p>
+
+<h4>ナイーブツリー</h4>
+
+<p>SQLでツリーを表す際のアンチパターン、
+解決するためにはいくつかの策があり、テーブルの性質によって策を考える。
+本書では設計の一覧表がのっている。</p>
+
+<h4>キーレスエントリー</h4>
+
+<p>外部キー制約を使用しないパターン。柔軟性が高まるが参照整合性を保つコードをアプリケーションで保証しなければいけない。
+解決策としては外部キー制約を使用する。
+外部キー制約使うと柔軟性がなくなってテストしにくいって言われたのを思い出した。</p>
+
+<h4>ファントムファイル</h4>
+
+<p>RDMBS上にはファイルのパスを格納、実際のファイルはファイルシステムへ配置するパターン。
+必要に応じてLOBの使用を検討する。常に２パターンの設計を検討。</p>
+
+<h4>リーダブルパスワードの章のレインボーテーブル</h4>
+
+<p>一般的なことだが考慮すべきことは多い。
+攻撃手法を知り対策を行う必要がある。</p>
+
+<h4>マジックビーンズ</h4>
+
+<p>MVCのM(モデル)がActiveRecordそのものなってしまう。
+ドメインモデル貧血症(Anemic Domain Model)</p>
+
+<p>モデルがActiveRecordを持つようにする。コントローラーからはModelを使用する。</p>
+
+<p>プロジェクトのソースが大きくなってきてわかったことがあった。
+このアンチパターンの方に近いやり方になっていたことがあり、
+これではまずいと思い自分なりの解決方法を実施していたことを思い出した。
+やり方的には同じ方法だったような…</p>
+
+<h3>Reference</h3>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">makotow</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-05T17:50:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/sql/'>SQL</a>, <a class='category' href='/blog/categories/books/'>books</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.com/blog/2013/05/05/sqlantipattern/" data-via="makotow" data-counturl="http://makotow.github.com/blog/2013/05/05/sqlantipattern/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+    <li><a href="/blog/2013/03/30/tddprac/">実践テスト駆動開発　読書録</a></li>
+    
+    <li><a href="/blog/2013/03/30/agileandscrum/">アジャイル開発とスクラム　読書録</a></li>
+    
+    <li><a href="/blog/2013/03/01/feldman/">フェルドマン式知的生産術　読書録</a></li>
+    
+    <li><a href="/blog/2013/02/20/pmintro/">漫画で学ぶプロジェクトマネジメント読書録</a></li>
+    
+    <li><a href="/blog/2012/12/09/buying-books/">最近購入した本(2012/12)</a></li>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/31/sh-tech-exists-command/" title="Previous Post: shでコマンドが存在するか確認する方法">&laquo; shでコマンドが存在するか確認する方法</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/05/05/sublimetext-japanese-input/" title="Next Post: SublimeText2で日本語入力をTabで。">SublimeText2で日本語入力をTabで。 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+  <h1>About Me</h1>
+  <div id="twitter-profile" style="margin-top:0.5em;">
+    <p>
+      <strong>makotow</strong> 
+      (<a href="http://twitter.com/makotow">@makotow</a>)
+    </p>
+    <p>技術系ポストに偏りがちなブログ</p>
+  </div>
+  <script type="text/javascript">
+    $.domReady(function(){
+        var container = $('#twitter-profile'),
+            user = "makotow";
+        
+        function parseTwLinks(s) {
+          var twUrl = "http://www.twitter.com/"
+          s = s.replace(/ (@([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+p2+"'>"+p1+"</a>"
+          }).replace(/ (#([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+"#!/search?q=%23"+p2+"'>"+p1+"</a>"
+          })
+          return s
+        }
+
+        $.ajax({
+            url: "http://api.twitter.com/1/users/show.json?include_entities=false&screen_name="+user+"&callback=?"
+          , type: 'jsonp'
+          , error: function (err) { $('#twitter-profile').addClass('error');  }
+          , success: function(data) {
+              container.html('<img class="left" src="http://api.twitter.com/1/users/profile_image/'+user+'.json?size=bigger" alt="@'+user+'"><p><strong>'+data.name+'</strong> (<a href="http://twitter.com/'+user+'">@'+user+'</a>)<br/>'+data.location+'</p><p>'+parseTwLinks(data.description)+'</p>');
+            }
+        })
+      });
+  </script>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/05/sublimetext-japanese-input/">SublimeText2で日本語入力をTabで。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/05/sqlantipattern/">SQLアンチパターン　読書録</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/31/sh-tech-exists-command/">shでコマンドが存在するか確認する方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/30/tddprac/">実践テスト駆動開発　読書録</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/30/agileandscrum/">アジャイル開発とスクラム　読書録</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Tag Cloud</h1>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 106.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 106.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 106.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 160.0%'>Article(10)</a> <a href='/blog/categories/blog' style='font-size: 112.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 136.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 106.0%'>business(1)</a> <a href='/blog/categories/bussiness' style='font-size: 106.0%'>bussiness(1)</a> <a href='/blog/categories/css' style='font-size: 106.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 106.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 112.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(2)</a> <a href='/blog/categories/links' style='font-size: 106.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 106.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 106.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 106.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 106.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 136.0%'>octopress(6)</a> <a href='/blog/categories/pocket' style='font-size: 106.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 106.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 118.0%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 106.0%'>sbt(1)</a> <a href='/blog/categories/scala' style='font-size: 106.0%'>scala(1)</a> <a href='/blog/categories/scrum' style='font-size: 106.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 106.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 106.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 106.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 106.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 106.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.0%'>TDD(1)</a> <a href='/blog/categories/techmemo' style='font-size: 154.0%'>TechMemo(9)</a> <a href='/blog/categories/tools' style='font-size: 112.0%'>tools(2)</a> </span>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/makotow">@makotow</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'makotow',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("makotow", 15, true);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/makotow" class="twitter-follow-button" data-show-count="true">Follow @makotow</a>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - makotow -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'makotownotes';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.com/blog/2013/05/05/sqlantipattern/';
+        var disqus_url = 'http://makotow.github.com/blog/2013/05/05/sqlantipattern/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

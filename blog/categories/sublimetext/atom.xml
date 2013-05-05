@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: SublimeText | Software Technology Memorandum and thoughts]]></title>
+  <link href="http://makotow.github.com/blog/categories/sublimetext/atom.xml" rel="self"/>
+  <link href="http://makotow.github.com/"/>
+  <updated>2013-05-05T18:08:25+09:00</updated>
+  <id>http://makotow.github.com/</id>
+  <author>
+    <name><![CDATA[makotow]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SublimeText2で日本語入力をTabで。]]></title>
+    <link href="http://makotow.github.com/blog/2013/05/05/sublimetext-japanese-input/"/>
+    <updated>2013-05-05T17:50:00+09:00</updated>
+    <id>http://makotow.github.com/blog/2013/05/05/sublimetext-japanese-input</id>
+    <content type="html"><![CDATA[<h2>概要</h2>
+
+<p>ちょっと不便だなと思いつつ放置して使ってたけど、
+少し調べたらわかったのでメモ。</p>
+
+<ul>
+<li>Google日本語入力を使用中</li>
+<li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
+<li>SublimeText2に制御が移るため、日本語消える。</li>
+</ul>
+
+
+<h2>対策方法</h2>
+
+<ul>
+<li>SublimeText2での制御を外す。</li>
+<li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
+</ul>
+
+
+<p>Sublime Text2 > Preferences > Key Bindings - Default を選択して、以下の部分をコメントアウト。
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="err">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;pre&gt;&lt;code&gt;//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
+</span><span class='line'><span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+</span><span class='line'><span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
+</span><span class='line'><span class="err">//</span>  <span class="p">[</span>
+</span><span class='line'><span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+</span><span class='line'><span class="err">//</span>  <span class="p">]</span>
+</span><span class='line'><span class="err">//</span> <span class="p">}</span><span class="err">,</span>
+</span><span class='line'><span class="err">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>以下のURLを参考にさせていただいた。</p>
+
+<ul>
+<li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
