@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Techmemo | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/techmemo/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T12:32:09+09:00</updated>
+  <updated>2013-05-06T17:43:47+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[octopress-update]]></title>
+    <title type="html"><![CDATA[Octopressアップデート]]></title>
     <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
@@ -56,8 +56,14 @@
 <pre><code>git pull octopress master
 </code></pre>
 
-<p>diff の結果 */custom 以外は編集していなかった。(sourceとsource.old、sassとsass.old)
-Rakefile, _config.ymlについてはコンフリクトした箇所を手でマージ。</p>
+<p>diff の結果 */custom 以外は編集していなかった。(sourceとsource.old、sassとsass.old)</p>
+
+<p>Rakefile, _config.ymlについてはコンフリクトした箇所を手でマージ。</p>
+
+<p>
+2013/05/06 15:00 追記： _layout/post.htmlにrelated_postを表示するプラグインの記述を入れていた。
+</p>
+
 
 <pre><code>git add/rm ...
 git commit -m "pull upstream."
