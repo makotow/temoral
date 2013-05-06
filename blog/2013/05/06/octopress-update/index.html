@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: scala - Software Technology Memorandum and thoughts</title>
+  <title>octopress-update - Software Technology Memorandum and thoughts</title>
   <meta name="author" content="makotow">
 
   
-  <meta name="description" content="Category: scala">
+  <meta name="description" content="octopress アップデートまとめ octopressのアップデート、頻繁にやるものではないのでメモを残す。
+作業記録。 やりたいこと 自分のOctopressに、remote branch (本家)の更新を取り込みたい。 マニュアル ここに親切に書いてある。 Updating &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.ioblog/categories/scala">
+  <link rel="canonical" href="http://makotow.github.io/blog/2013/05/06/octopress-update">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
@@ -87,36 +88,166 @@ $(document).ready( function () {
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: scala</h1>
+    
+      <h1 class="entry-title">octopress-update</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-06T12:19:00+09:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><h2>octopress アップデートまとめ</h2>
 
-  
-  <h2>2012</h2>
+<p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
+作業記録。</p>
 
-<article>
-  
-<h1><a href="/blog/2012/10/03/gitignore/">gitignoreのメモ</a></h1>
-<time datetime="2012-10-03T23:38:00+09:00" pubdate><span class='month'>Oct</span> <span class='day'>03</span> <span class='year'>2012</span></time>
+<h2>やりたいこと</h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/gist/'>gist</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/sbt/'>sbt</a>, <a class='category' href='/blog/categories/scala/'>scala</a></span>
-</footer>
+<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
+
+<!-- more -->
 
 
-</article>
+<h2>マニュアル</h2>
 
+<p>ここに親切に書いてある。</p>
+
+<ul>
+<li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
+</ul>
+
+
+<p>基本はこの通りやっていけば大丈夫。
+カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
+
+<h3>+α</h3>
+
+<p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
+
+<p>ブランチを作って作業</p>
+
+<pre><code>git checkout -b pull-upstream
+</code></pre>
+
+<p>本家更新分を取り込み</p>
+
+<pre><code>git pull octopress master
+</code></pre>
+
+<p>diff の結果 */custom 以外は編集していなかった。(sourceとsource.old、sassとsass.old)
+Rakefile, _config.ymlについてはコンフリクトした箇所を手でマージ。</p>
+
+<pre><code>git add/rm ...
+git commit -m "pull upstream."
+</code></pre>
+
+<p>メインのブランチに戻って更新を反映</p>
+
+<pre><code>git checkout source
+</code></pre>
+
+<p>ブランチ(pull-upstream)で作業した結果をマージ</p>
+
+<pre><code>git merge pull-upstream
+</code></pre>
+
+<p>マージしたブランチ(pull-upstream)を削除</p>
+
+<pre><code>git branch -d pull-upstream
+</code></pre>
+
+<p>以上</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">makotow</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-06T12:19:00+09:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/techmemo/'>Techmemo</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/05/06/octopress-update/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/05/06/octopress-update/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+
+  
+  <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+  
+
+
+  
+   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/blog/2013/05/06/octopress-update/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/05/05/sublimetext-japanese-input/" title="Previous Post: SublimeText2で日本語入力をTabで。">&laquo; SublimeText2で日本語入力をTabで。</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -255,7 +386,10 @@ $(document).ready( function () {
       var disqus_shortname = 'makotownotes';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.io/blog/2013/05/06/octopress-update/';
+        var disqus_url = 'http://makotow.github.io/blog/2013/05/06/octopress-update/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

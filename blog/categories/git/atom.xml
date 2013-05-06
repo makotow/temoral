@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T12:28:45+09:00</updated>
+  <updated>2013-05-06T12:32:09+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[octopress-update]]></title>
+    <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
+    <updated>2013-05-06T12:19:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
+    <content type="html"><![CDATA[<h2>octopress アップデートまとめ</h2>
+
+<p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
+作業記録。</p>
+
+<h2>やりたいこと</h2>
+
+<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
+
+<!-- more -->
+
+
+<h2>マニュアル</h2>
+
+<p>ここに親切に書いてある。</p>
+
+<ul>
+<li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
+</ul>
+
+
+<p>基本はこの通りやっていけば大丈夫。
+カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
+
+<h3>+α</h3>
+
+<p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
+
+<p>ブランチを作って作業</p>
+
+<pre><code>git checkout -b pull-upstream
+</code></pre>
+
+<p>本家更新分を取り込み</p>
+
+<pre><code>git pull octopress master
+</code></pre>
+
+<p>diff の結果 */custom 以外は編集していなかった。(sourceとsource.old、sassとsass.old)
+Rakefile, _config.ymlについてはコンフリクトした箇所を手でマージ。</p>
+
+<pre><code>git add/rm ...
+git commit -m "pull upstream."
+</code></pre>
+
+<p>メインのブランチに戻って更新を反映</p>
+
+<pre><code>git checkout source
+</code></pre>
+
+<p>ブランチ(pull-upstream)で作業した結果をマージ</p>
+
+<pre><code>git merge pull-upstream
+</code></pre>
+
+<p>マージしたブランチ(pull-upstream)を削除</p>
+
+<pre><code>git branch -d pull-upstream
+</code></pre>
+
+<p>以上</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>

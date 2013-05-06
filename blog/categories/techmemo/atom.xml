@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: TechMemo | Software Technology Memorandum and thoughts]]></title>
+  <title><![CDATA[Category: Techmemo | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/techmemo/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T12:28:45+09:00</updated>
+  <updated>2013-05-06T12:32:09+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
@@ -14,251 +14,71 @@
 
   
   <entry>
-    <title type="html"><![CDATA[SublimeText2で日本語入力をTabで。]]></title>
-    <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
-    <updated>2013-05-05T17:50:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
-    <content type="html"><![CDATA[<h2>概要</h2>
+    <title type="html"><![CDATA[octopress-update]]></title>
+    <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
+    <updated>2013-05-06T12:19:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
+    <content type="html"><![CDATA[<h2>octopress アップデートまとめ</h2>
 
-<p>ちょっと不便だなと思いつつ放置して使ってたけど、
-少し調べたらわかったのでメモ。</p>
+<p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
+作業記録。</p>
 
-<ul>
-<li>Google日本語入力を使用中</li>
-<li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
-<li>SublimeText2に制御が移るため、日本語消える。</li>
-</ul>
+<h2>やりたいこと</h2>
 
-
-<h2>対策方法</h2>
-
-<ul>
-<li>SublimeText2での制御を外す。</li>
-<li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
-</ul>
-
-
-<p>Sublime Text2 > Preferences > Key Bindings - Default を選択して、以下の部分をコメントアウト。
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="err">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="err">&lt;pre&gt;&lt;code&gt;//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'><span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-</span><span class='line'><span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
-</span><span class='line'><span class="err">//</span>  <span class="p">[</span>
-</span><span class='line'><span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-</span><span class='line'><span class="err">//</span>  <span class="p">]</span>
-</span><span class='line'><span class="err">//</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'><span class="err">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="err">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>以下のURLを参考にさせていただいた。</p>
-
-<ul>
-<li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[shでコマンドが存在するか確認する方法]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command/"/>
-    <updated>2013-03-31T00:41:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command</id>
-    <content type="html"><![CDATA[<p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
-Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if </span>which brew &gt; /dev/null;then
-</span><span class='line'>   . &lt;code&gt;brew --prefix&lt;/code&gt;/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>こんな方法もあるみたい</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;&lt;code&gt;which brew&lt;/code&gt;&quot;</span> <span class="o">]</span>;<span class="k">then</span>
-</span><span class='line'>   . &lt;code&gt;brew --prefix&lt;/code&gt;/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac OSX のDiffツール]]></title>
-    <link href="http://makotow.github.io/blog/2013/02/08/mac-difftools/"/>
-    <updated>2013-02-08T00:40:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/02/08/mac-difftools</id>
-    <content type="html"><![CDATA[<p>色々探してみた。
-要件としては</p>
-
-<ul>
-<li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
-<li>できれば比較状態から編集できる</li>
-</ul>
-
-
-<p>MacOSXでは決定打となるようなツールはなかったが、
-ある程度の候補を上げることができたので記録する。</p>
+<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
 
 <!-- more -->
 
 
-<h2>試してみたツール</h2>
+<h2>マニュアル</h2>
 
-<p>探してみてスペック的に満たしていそうなものをためしてみた。
-参考としてURLや使用感を書いてみようと思う。</p>
-
-<h3>P4Merge+stroy</h3>
-
-<p>MacのDiffツールといえばP4Mergeをよく見かける。しかし、ディレクトリ単位での比較ができないためスルーしていた。ディレクトリ単位で比較できるツールという観点で調べていたところstroyと連携することでディレクトリ単位の比較が実現できるようなので試してみた。</p>
-
-<p> <a href="http://www.atinfinity.info/wiki/index.php?Mac/stroy%E3%81%A8P4Merge%E3%82%92%E9%80%A3%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B">Mac/stroyとP4Mergeを連動させる</a>
-を参考に試してみた。</p>
-
-<p>比較、マージもわかりやすく使いやすいように感じる。</p>
-
-<p><img class="left" src="/images/2013/02/stroy.png">
-<img class="right" src="/images/2013/02/p4merge.png"></p>
-
-<h3>DiffMerge</h3>
-
-<p>P4Merge + story に比べて導入するソフトは１つだけでよい。
-求めているものの要求を満たしていてる。</p>
-
-<p>あえて、不満点を上げるとしたら、マージがわかりづらいところ。
-変更前と変更後を指定する必要があり２ペインの左がオリジナル</p>
-
-<p>初期状態だと日本語が化けてしまう。
-日本語についての対応策としては　<a href="http://d.hatena.ne.jp/nakamura001/20110321/1300706226">強火で進め - ソースコードの比較/マージツール「DiffMerge」</a>
-を参考にした。</p>
-
-<p><img class="right" src="/images/2013/02/diffmerge1.png">
-<img class="right" src="/images/2013/02/diffmerge2.png"></p>
-
-<h3>meld</h3>
-
-<p>homebrewでインストール可能なのだが、ビルドに失敗したり色々と大変だった。</p>
-
-<p>gtk2+のビルドのことごとく失敗するので、githubをみて解決</p>
+<p>ここに親切に書いてある。</p>
 
 <ul>
-<li>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/07/homebrew-gtk2-24-11/</li>
-<li>https://github.com/mxcl/homebrew/issues/13546</li>
+<li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
 </ul>
 
 
-<p>操作感がMacとは違うので違和感は感じる。
-機能的には問題なく使用可能</p>
+<p>基本はこの通りやっていけば大丈夫。
+カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
 
-<h2>その他</h2>
+<h3>+α</h3>
 
-<p>試してはいないが検索している上で出てきたキーワードを備忘として記載しておく。</p>
+<p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
 
-<ul>
-<li>TextWrangler</li>
-<li>Kaleidoscope(有償）</li>
-<li>Beyond Compare</li>
-<li>Araxis</li>
-</ul>
+<p>ブランチを作って作業</p>
 
+<pre><code>git checkout -b pull-upstream
+</code></pre>
 
-<h2>まとめ</h2>
+<p>本家更新分を取り込み</p>
 
-<p>Winmergeほどの使いやすがはないが、ちょっとづつ使ってみようと思う。
-今のところP4Mege+stroyが良い感じ。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopressでのデザイン変更方法]]></title>
-    <link href="http://makotow.github.io/blog/2013/01/19/change-octopress-css-style/"/>
-    <updated>2013-01-19T17:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/01/19/change-octopress-css-style</id>
-    <content type="html"><![CDATA[<p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
-文字サイズを変更してみる。</p>
+<pre><code>git pull octopress master
+</code></pre>
 
-<p>ついでに見出しのバックグラウンドやブログタイトルへの背景画像も設定してみる。</p>
+<p>diff の結果 */custom 以外は編集していなかった。(sourceとsource.old、sassとsass.old)
+Rakefile, _config.ymlについてはコンフリクトした箇所を手でマージ。</p>
 
-<p>そもそもOctopressではThemeを使用してブログデザインを変更している。
-今回は簡単なところから初めて見る。</p>
+<pre><code>git add/rm ...
+git commit -m "pull upstream."
+</code></pre>
 
-<p>少しずつ理解しながらやっていたため、12月中旬から開始していたが年明けまでかかってしまった。
-git で branch 作って作業して他の branch にマージということを初めてやったけど便利すぎ。</p>
+<p>メインのブランチに戻って更新を反映</p>
 
-<!-- more -->
+<pre><code>git checkout source
+</code></pre>
 
+<p>ブランチ(pull-upstream)で作業した結果をマージ</p>
 
-<h2>Octopress 変更点</h2>
+<pre><code>git merge pull-upstream
+</code></pre>
 
-<h3>ファイル一覧</h3>
+<p>マージしたブランチ(pull-upstream)を削除</p>
 
-<p>思ったよりも変更する箇所はなく、
-octopress/sass/custom 以下のファイルに設定を追加、
-CSSを書き換えることで変更可能
-フレームワーク部分にはほとんど手をいれることなく変更可能な作りとなっている。</p>
+<pre><code>git branch -d pull-upstream
+</code></pre>
 
-<ul>
-<li>octopress/sass/custom/_styles.scss</li>
-<li>octopress/sass/custom/_fonts.scss</li>
-<li>octopress/sass/custom/_colors.scss</li>
-</ul>
-
-
-<h2>今回つかったツール</h2>
-
-<h3>IDE</h3>
-
-<p>IntelliJ IDEA 12
-年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
-
-<h3>サイト</h3>
-
-<ul>
-<li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
-<li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
-</ul>
-
-
-<h2>残作業</h2>
-
-<p>凝り始めるときりがないので今回は一旦この段階で終了。
-今後は、</p>
-
-<ul>
-<li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
-<li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[gistをブログに投稿]]></title>
-    <link href="http://makotow.github.io/blog/2012/10/03/gist-on-octopress/"/>
-    <updated>2012-10-03T23:42:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/10/03/gist-on-octopress</id>
-    <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
-
-<p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
+<p>以上</p>
 ]]></content>
   </entry>
   
