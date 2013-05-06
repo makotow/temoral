@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: octopress | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopressでのデザイン変更方法]]></title>
-    <link href="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/"/>
+    <link href="http://makotow.github.io/blog/2013/01/19/change-octopress-css-style/"/>
     <updated>2013-01-19T17:00:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/01/19/change-octopress-css-style</id>
+    <id>http://makotow.github.io/blog/2013/01/19/change-octopress-css-style</id>
     <content type="html"><![CDATA[<p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
 文字サイズを変更してみる。</p>
 
@@ -78,9 +78,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>
-    <link href="http://makotow.github.com/blog/2012/10/03/gist-on-octopress/"/>
+    <link href="http://makotow.github.io/blog/2012/10/03/gist-on-octopress/"/>
     <updated>2012-10-03T23:42:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/10/03/gist-on-octopress</id>
+    <id>http://makotow.github.io/blog/2012/10/03/gist-on-octopress</id>
     <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
 
 <p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
@@ -89,9 +89,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[タグクラウド、関連する記事を表示するようにした。]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/"/>
+    <link href="http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post/"/>
     <updated>2012-08-23T23:26:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post</id>
+    <id>http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post</id>
     <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。</p>
 
 <!-- more -->
@@ -114,9 +114,9 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
   <entry>
     <title type="html"><![CDATA[Read Moreの追加]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/22/read-more/"/>
+    <link href="http://makotow.github.io/blog/2012/08/22/read-more/"/>
     <updated>2012-08-22T22:01:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/22/read-more</id>
+    <id>http://makotow.github.io/blog/2012/08/22/read-more</id>
     <content type="html"><![CDATA[<p>なんとなく、ポスト一覧を見ているとREAD MOREみたいなものが欲しくなったので探してみた。</p>
 
 <!-- more -->
@@ -127,7 +127,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <p>Rakefile の new_post のコードを書き換えてみた。
 このやり方で合っているかわからないがうまく行っているようだ。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>before  </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>before </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -192,7 +192,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>after  </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>after </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -261,7 +261,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 
 <p>変更箇所のみを抽出すると以下のとおり。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>diff  </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>diff </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -298,9 +298,9 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
   <entry>
     <title type="html"><![CDATA[Octopress 構築中]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/19/octopress-construction-memo/"/>
+    <link href="http://makotow.github.io/blog/2012/08/19/octopress-construction-memo/"/>
     <updated>2012-08-19T22:56:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/19/octopress-construction-memo</id>
+    <id>http://makotow.github.io/blog/2012/08/19/octopress-construction-memo</id>
     <content type="html"><![CDATA[<h2>設定してみた感想</h2>
 
 <p>構築好きとしてはかなり面白い。</p>

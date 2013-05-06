@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: css | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/css/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopressでのデザイン変更方法]]></title>
-    <link href="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/"/>
+    <link href="http://makotow.github.io/blog/2013/01/19/change-octopress-css-style/"/>
     <updated>2013-01-19T17:00:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/01/19/change-octopress-css-style</id>
+    <id>http://makotow.github.io/blog/2013/01/19/change-octopress-css-style</id>
     <content type="html"><![CDATA[<p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
 文字サイズを変更してみる。</p>
 

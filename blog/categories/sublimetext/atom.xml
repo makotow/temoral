@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: SublimeText | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/sublimetext/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/sublimetext/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SublimeText2で日本語入力をTabで。]]></title>
-    <link href="http://makotow.github.com/blog/2013/05/05/sublimetext-japanese-input/"/>
+    <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/05/05/sublimetext-japanese-input</id>
+    <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
     <content type="html"><![CDATA[<h2>概要</h2>
 
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、

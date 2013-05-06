@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: business | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/business/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/business/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[最近購入した本(2012/12)]]></title>
-    <link href="http://makotow.github.com/blog/2012/12/09/buying-books/"/>
+    <link href="http://makotow.github.io/blog/2012/12/09/buying-books/"/>
     <updated>2012-12-09T22:41:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/12/09/buying-books</id>
+    <id>http://makotow.github.io/blog/2012/12/09/buying-books</id>
     <content type="html"><![CDATA[<p>社会人としての常識がかけていると痛感し始めているので、
 当たり前なこと、基本的なことが書かれている書籍を３冊購入。</p>
 

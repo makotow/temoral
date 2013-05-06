@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: TDD | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/tdd/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/tdd/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[実践テスト駆動開発　読書録]]></title>
-    <link href="http://makotow.github.com/blog/2013/03/30/tddprac/"/>
+    <link href="http://makotow.github.io/blog/2013/03/30/tddprac/"/>
     <updated>2013-03-30T13:30:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/03/30/tddprac</id>
+    <id>http://makotow.github.io/blog/2013/03/30/tddprac</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 

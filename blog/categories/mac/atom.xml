@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mac | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/mac/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Source Code Pro を Mac で試す。]]></title>
-    <link href="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/"/>
+    <link href="http://makotow.github.io/blog/2012/09/25/sourcecodeprofont/"/>
     <updated>2012-09-25T22:39:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/09/25/sourcecodeprofont</id>
+    <id>http://makotow.github.io/blog/2012/09/25/sourcecodeprofont</id>
     <content type="html"><![CDATA[<p>Adobeがコーディング用のソースコードをオープンソースで公開している。
 9/24 に開催されたCreate The Webで発表された。</p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: linux | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ubuntuのネットワーク設定チェックリスト]]></title>
-    <link href="http://makotow.github.com/blog/2012/05/13/network-checklist/"/>
+    <link href="http://makotow.github.io/blog/2012/05/13/network-checklist/"/>
     <updated>2012-05-13T18:27:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/05/13/network-checklist</id>
+    <id>http://makotow.github.io/blog/2012/05/13/network-checklist</id>
     <content type="html"><![CDATA[<h2>ネットワーク設定覚書</h2>
 
 <p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SublimeText2で日本語入力をTabで。]]></title>
-    <link href="http://makotow.github.com/blog/2013/05/05/sublimetext-japanese-input/"/>
+    <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/05/05/sublimetext-japanese-input</id>
+    <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
     <content type="html"><![CDATA[<h2>概要</h2>
 
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
@@ -70,9 +70,9 @@
   
   <entry>
     <title type="html"><![CDATA[SQLアンチパターン　読書録]]></title>
-    <link href="http://makotow.github.com/blog/2013/05/05/sqlantipattern/"/>
+    <link href="http://makotow.github.io/blog/2013/05/05/sqlantipattern/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/05/05/sqlantipattern</id>
+    <id>http://makotow.github.io/blog/2013/05/05/sqlantipattern</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
@@ -159,9 +159,9 @@
   
   <entry>
     <title type="html"><![CDATA[shでコマンドが存在するか確認する方法]]></title>
-    <link href="http://makotow.github.com/blog/2013/03/31/sh-tech-exists-command/"/>
+    <link href="http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command/"/>
     <updated>2013-03-31T00:41:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/03/31/sh-tech-exists-command</id>
+    <id>http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command</id>
     <content type="html"><![CDATA[<p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
 Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
 
@@ -191,9 +191,9 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   
   <entry>
     <title type="html"><![CDATA[実践テスト駆動開発　読書録]]></title>
-    <link href="http://makotow.github.com/blog/2013/03/30/tddprac/"/>
+    <link href="http://makotow.github.io/blog/2013/03/30/tddprac/"/>
     <updated>2013-03-30T13:30:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/03/30/tddprac</id>
+    <id>http://makotow.github.io/blog/2013/03/30/tddprac</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
@@ -237,9 +237,9 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   
   <entry>
     <title type="html"><![CDATA[アジャイル開発とスクラム　読書録]]></title>
-    <link href="http://makotow.github.com/blog/2013/03/30/agileandscrum/"/>
+    <link href="http://makotow.github.io/blog/2013/03/30/agileandscrum/"/>
     <updated>2013-03-30T13:00:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/03/30/agileandscrum</id>
+    <id>http://makotow.github.io/blog/2013/03/30/agileandscrum</id>
     <content type="html"><![CDATA[<p>アジャイル開発とスクラム　顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</p>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
@@ -289,9 +289,9 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   
   <entry>
     <title type="html"><![CDATA[フェルドマン式知的生産術　読書録]]></title>
-    <link href="http://makotow.github.com/blog/2013/03/01/feldman/"/>
+    <link href="http://makotow.github.io/blog/2013/03/01/feldman/"/>
     <updated>2013-03-01T00:00:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/03/01/feldman</id>
+    <id>http://makotow.github.io/blog/2013/03/01/feldman</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:20px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
@@ -327,9 +327,9 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   
   <entry>
     <title type="html"><![CDATA[漫画で学ぶプロジェクトマネジメント読書録]]></title>
-    <link href="http://makotow.github.com/blog/2013/02/20/pmintro/"/>
+    <link href="http://makotow.github.io/blog/2013/02/20/pmintro/"/>
     <updated>2013-02-20T01:00:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/02/20/pmintro</id>
+    <id>http://makotow.github.io/blog/2013/02/20/pmintro</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
@@ -380,9 +380,9 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   
   <entry>
     <title type="html"><![CDATA[Mac OSX のDiffツール]]></title>
-    <link href="http://makotow.github.com/blog/2013/02/08/mac-difftools/"/>
+    <link href="http://makotow.github.io/blog/2013/02/08/mac-difftools/"/>
     <updated>2013-02-08T00:40:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/02/08/mac-difftools</id>
+    <id>http://makotow.github.io/blog/2013/02/08/mac-difftools</id>
     <content type="html"><![CDATA[<p>色々探してみた。
 要件としては</p>
 
@@ -412,8 +412,8 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 
 <p>比較、マージもわかりやすく使いやすいように感じる。</p>
 
-<p><img class="left" src="http://makotow.github.com/images/2013/02/stroy.png">
-<img class="right" src="http://makotow.github.com/images/2013/02/p4merge.png"></p>
+<p><img class="left" src="http://makotow.github.io/images/2013/02/stroy.png">
+<img class="right" src="http://makotow.github.io/images/2013/02/p4merge.png"></p>
 
 <h3>DiffMerge</h3>
 
@@ -427,8 +427,8 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 日本語についての対応策としては　<a href="http://d.hatena.ne.jp/nakamura001/20110321/1300706226">強火で進め - ソースコードの比較/マージツール「DiffMerge」</a>
 を参考にした。</p>
 
-<p><img class="right" src="http://makotow.github.com/images/2013/02/diffmerge1.png">
-<img class="right" src="http://makotow.github.com/images/2013/02/diffmerge2.png"></p>
+<p><img class="right" src="http://makotow.github.io/images/2013/02/diffmerge1.png">
+<img class="right" src="http://makotow.github.io/images/2013/02/diffmerge2.png"></p>
 
 <h3>meld</h3>
 
@@ -466,9 +466,9 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   
   <entry>
     <title type="html"><![CDATA[Octopressでのデザイン変更方法]]></title>
-    <link href="http://makotow.github.com/blog/2013/01/19/change-octopress-css-style/"/>
+    <link href="http://makotow.github.io/blog/2013/01/19/change-octopress-css-style/"/>
     <updated>2013-01-19T17:00:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2013/01/19/change-octopress-css-style</id>
+    <id>http://makotow.github.io/blog/2013/01/19/change-octopress-css-style</id>
     <content type="html"><![CDATA[<p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
 文字サイズを変更してみる。</p>
 
@@ -529,9 +529,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[最近購入した本(2012/12)]]></title>
-    <link href="http://makotow.github.com/blog/2012/12/09/buying-books/"/>
+    <link href="http://makotow.github.io/blog/2012/12/09/buying-books/"/>
     <updated>2012-12-09T22:41:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/12/09/buying-books</id>
+    <id>http://makotow.github.io/blog/2012/12/09/buying-books</id>
     <content type="html"><![CDATA[<p>社会人としての常識がかけていると痛感し始めているので、
 当たり前なこと、基本的なことが書かれている書籍を３冊購入。</p>
 
@@ -601,9 +601,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[InstapaperからPocketへ移行]]></title>
-    <link href="http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket/"/>
+    <link href="http://makotow.github.io/blog/2012/11/26/instapaper-to-pocket/"/>
     <updated>2012-11-26T16:30:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/11/26/instapaper-to-pocket</id>
+    <id>http://makotow.github.io/blog/2012/11/26/instapaper-to-pocket</id>
     <content type="html"><![CDATA[<p>Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。</p>
 
 <p>最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
@@ -645,9 +645,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>
-    <link href="http://makotow.github.com/blog/2012/10/03/gist-on-octopress/"/>
+    <link href="http://makotow.github.io/blog/2012/10/03/gist-on-octopress/"/>
     <updated>2012-10-03T23:42:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/10/03/gist-on-octopress</id>
+    <id>http://makotow.github.io/blog/2012/10/03/gist-on-octopress</id>
     <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
 
 <p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
@@ -656,9 +656,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[gitignoreのメモ]]></title>
-    <link href="http://makotow.github.com/blog/2012/10/03/gitignore/"/>
+    <link href="http://makotow.github.io/blog/2012/10/03/gitignore/"/>
     <updated>2012-10-03T23:38:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/10/03/gitignore</id>
+    <id>http://makotow.github.io/blog/2012/10/03/gitignore</id>
     <content type="html"><![CDATA[<p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
 
 <p>今回Scala用に書いたものをメモ書きとして残す。</p>
@@ -670,7 +670,7 @@ CSSを書き換えることで変更可能
 
 
 
-<div><script src='https://gist.github.com/3827256.js?file='></script>
+<div><script src='https://gist.github.com/3827256.js'></script>
 <noscript><pre><code>*.class
 *.log
 .cache
@@ -693,9 +693,9 @@ project/plugins/project/
   
   <entry>
     <title type="html"><![CDATA[Source Code Pro を Mac で試す。]]></title>
-    <link href="http://makotow.github.com/blog/2012/09/25/sourcecodeprofont/"/>
+    <link href="http://makotow.github.io/blog/2012/09/25/sourcecodeprofont/"/>
     <updated>2012-09-25T22:39:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/09/25/sourcecodeprofont</id>
+    <id>http://makotow.github.io/blog/2012/09/25/sourcecodeprofont</id>
     <content type="html"><![CDATA[<p>Adobeがコーディング用のソースコードをオープンソースで公開している。
 9/24 に開催されたCreate The Webで発表された。</p>
 
@@ -733,9 +733,9 @@ project/plugins/project/
   
   <entry>
     <title type="html"><![CDATA[タグクラウド、関連する記事を表示するようにした。]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post/"/>
+    <link href="http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post/"/>
     <updated>2012-08-23T23:26:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/23/tag-cloud-related-post</id>
+    <id>http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post</id>
     <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。</p>
 
 <!-- more -->
@@ -758,9 +758,9 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
   <entry>
     <title type="html"><![CDATA[Read Moreの追加]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/22/read-more/"/>
+    <link href="http://makotow.github.io/blog/2012/08/22/read-more/"/>
     <updated>2012-08-22T22:01:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/22/read-more</id>
+    <id>http://makotow.github.io/blog/2012/08/22/read-more</id>
     <content type="html"><![CDATA[<p>なんとなく、ポスト一覧を見ているとREAD MOREみたいなものが欲しくなったので探してみた。</p>
 
 <!-- more -->
@@ -771,7 +771,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <p>Rakefile の new_post のコードを書き換えてみた。
 このやり方で合っているかわからないがうまく行っているようだ。</p>
 
-<figure class='code'><figcaption><span>before  </span></figcaption>
+<figure class='code'><figcaption><span>before </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -821,7 +821,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 
 
 
-<figure class='code'><figcaption><span>after  </span></figcaption>
+<figure class='code'><figcaption><span>after </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -873,7 +873,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 
 <p>変更箇所のみを抽出すると以下のとおり。</p>
 
-<figure class='code'><figcaption><span>diff  </span></figcaption>
+<figure class='code'><figcaption><span>diff </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -897,9 +897,9 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
   <entry>
     <title type="html"><![CDATA[Octopress 構築中]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/19/octopress-construction-memo/"/>
+    <link href="http://makotow.github.io/blog/2012/08/19/octopress-construction-memo/"/>
     <updated>2012-08-19T22:56:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/19/octopress-construction-memo</id>
+    <id>http://makotow.github.io/blog/2012/08/19/octopress-construction-memo</id>
     <content type="html"><![CDATA[<h2>設定してみた感想</h2>
 
 <p>構築好きとしてはかなり面白い。</p>
@@ -927,9 +927,9 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
   <entry>
     <title type="html"><![CDATA[first Octopress]]></title>
-    <link href="http://makotow.github.com/blog/2012/08/18/first-octopress/"/>
+    <link href="http://makotow.github.io/blog/2012/08/18/first-octopress/"/>
     <updated>2012-08-18T16:17:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/08/18/first-octopress</id>
+    <id>http://makotow.github.io/blog/2012/08/18/first-octopress</id>
     <content type="html"><![CDATA[<p>tumblrにブログを構築していたが微妙に機能不足を感じて着ていたのでoctopressに移行。</p>
 
 <p><a href="http://octopress.org">Octopress</a></p>
@@ -956,9 +956,9 @@ tumblrの方にある少ない記事を少しづつ移動させる。</p>
   
   <entry>
     <title type="html"><![CDATA[Ubuntuのネットワーク設定チェックリスト]]></title>
-    <link href="http://makotow.github.com/blog/2012/05/13/network-checklist/"/>
+    <link href="http://makotow.github.io/blog/2012/05/13/network-checklist/"/>
     <updated>2012-05-13T18:27:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/05/13/network-checklist</id>
+    <id>http://makotow.github.io/blog/2012/05/13/network-checklist</id>
     <content type="html"><![CDATA[<h2>ネットワーク設定覚書</h2>
 
 <p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、

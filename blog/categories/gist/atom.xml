@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: gist | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.com/blog/categories/gist/atom.xml" rel="self"/>
-  <link href="http://makotow.github.com/"/>
-  <updated>2013-05-05T18:08:25+09:00</updated>
-  <id>http://makotow.github.com/</id>
+  <link href="http://makotow.github.io/blog/categories/gist/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2013-05-06T12:28:45+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[makotow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>
-    <link href="http://makotow.github.com/blog/2012/10/03/gist-on-octopress/"/>
+    <link href="http://makotow.github.io/blog/2012/10/03/gist-on-octopress/"/>
     <updated>2012-10-03T23:42:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/10/03/gist-on-octopress</id>
+    <id>http://makotow.github.io/blog/2012/10/03/gist-on-octopress</id>
     <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
 
 <p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[gitignoreのメモ]]></title>
-    <link href="http://makotow.github.com/blog/2012/10/03/gitignore/"/>
+    <link href="http://makotow.github.io/blog/2012/10/03/gitignore/"/>
     <updated>2012-10-03T23:38:00+09:00</updated>
-    <id>http://makotow.github.com/blog/2012/10/03/gitignore</id>
+    <id>http://makotow.github.io/blog/2012/10/03/gitignore</id>
     <content type="html"><![CDATA[<p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
 
 <p>今回Scala用に書いたものをメモ書きとして残す。</p>
@@ -38,7 +38,7 @@
 <!-- more -->
 
 
-<p><div><script src='https://gist.github.com/3827256.js?file='></script>
+<p><div><script src='https://gist.github.com/3827256.js'></script>
 <noscript><pre><code>*.class
 *.log
 .cache
