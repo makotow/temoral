@@ -4,10 +4,10 @@
   <title><![CDATA[Category: TDD | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/tdd/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -27,7 +27,7 @@
 <!-- more -->
 
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>読んでから少したってしまったので箇条書きで感想。</p>
 
@@ -47,7 +47,7 @@
   書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
   なにを使ったらよいかの参考になるのではないか。</p>
 
-<h3>参考</h3>
+<h3 id="参考">参考</h3>
 
 <p>テスト駆動開発といえばこれ。
 併せて読むと理解が進むと思う。</p>

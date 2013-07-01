@@ -4,10 +4,10 @@
   <title><![CDATA[Category: css | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -32,9 +32,9 @@ git で branch 作って作業して他の branch にマージということを
 <!-- more -->
 
 
-<h2>Octopress 変更点</h2>
+<h2 id="Octopress+変更点">Octopress 変更点</h2>
 
-<h3>ファイル一覧</h3>
+<h3 id="ファイル一覧">ファイル一覧</h3>
 
 <p>思ったよりも変更する箇所はなく、
 octopress/sass/custom 以下のファイルに設定を追加、
@@ -48,14 +48,14 @@ CSSを書き換えることで変更可能
 </ul>
 
 
-<h2>今回つかったツール</h2>
+<h2 id="今回つかったツール">今回つかったツール</h2>
 
-<h3>IDE</h3>
+<h3 id="IDE">IDE</h3>
 
 <p>IntelliJ IDEA 12
 年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
 
-<h3>サイト</h3>
+<h3 id="サイト">サイト</h3>
 
 <ul>
 <li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
@@ -63,7 +63,7 @@ CSSを書き換えることで変更可能
 </ul>
 
 
-<h2>残作業</h2>
+<h2 id="残作業">残作業</h2>
 
 <p>凝り始めるときりがないので今回は一旦この段階で終了。
 今後は、</p>

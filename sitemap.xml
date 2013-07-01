@@ -54,7 +54,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/blog/2013/03/01/feldman/</loc>
-        <lastmod>2013-05-06T14:58:45+09:00</lastmod>
+        <lastmod>2013-05-29T01:08:49+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/blog/2013/03/30/agileandscrum/</loc>
@@ -78,7 +78,11 @@
     </url>
     <url>
         <loc>http://makotow.github.io/blog/2013/05/06/octopress-update/</loc>
-        <lastmod>2013-05-06T17:31:49+09:00</lastmod>
+        <lastmod>2013-05-29T01:01:46+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/</loc>
+        <lastmod>2013-07-01T23:45:51+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/404.html</loc>
@@ -90,7 +94,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/blog/archives/</loc>
-        <lastmod>2013-05-06T17:31:49+09:00</lastmod>
+        <lastmod>2013-07-01T23:45:51+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/books/</loc>
@@ -98,7 +102,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/</loc>
-        <lastmod>2013-05-06T17:31:49+09:00</lastmod>
+        <lastmod>2013-07-01T23:45:51+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/robots.txt</loc>
@@ -106,10 +110,14 @@
     </url>
     <url>
         <loc>http://makotow.github.io/techmemo/glossary/</loc>
-        <lastmod>2013-05-05T23:52:03+09:00</lastmod>
+        <lastmod>2013-06-09T02:25:28+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/techmemo/</loc>
-        <lastmod>2013-05-05T23:52:03+09:00</lastmod>
+        <lastmod>2013-06-30T22:17:45+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://makotow.github.io/techmemo/octopress-tips/</loc>
+        <lastmod>2013-06-09T02:18:09+09:00</lastmod>
     </url>
 </urlset>

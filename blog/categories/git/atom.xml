@@ -4,10 +4,10 @@
   <title><![CDATA[Category: git | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,19 +18,19 @@
     <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
-    <content type="html"><![CDATA[<h2>octopress アップデートまとめ</h2>
+    <content type="html"><![CDATA[<h2 id="octopress+アップデートまとめ">octopress アップデートまとめ</h2>
 
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
 
-<h2>やりたいこと</h2>
+<h2 id="やりたいこと">やりたいこと</h2>
 
 <p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
 
 <!-- more -->
 
 
-<h2>マニュアル</h2>
+<h2 id="マニュアル">マニュアル</h2>
 
 <p>ここに親切に書いてある。</p>
 
@@ -42,7 +42,7 @@
 <p>基本はこの通りやっていけば大丈夫。
 カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
 
-<h3>+α</h3>
+<h3 id="+α">+α</h3>
 
 <p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
 

@@ -4,10 +4,10 @@
   <title><![CDATA[Category: SublimeText | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/sublimetext/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,7 +18,7 @@
     <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
-    <content type="html"><![CDATA[<h2>概要</h2>
+    <content type="html"><![CDATA[<h2 id="概要">概要</h2>
 
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
@@ -30,7 +30,7 @@
 </ul>
 
 
-<h2>対策方法</h2>
+<h2 id="対策方法">対策方法</h2>
 
 <ul>
 <li>SublimeText2での制御を外す。</li>

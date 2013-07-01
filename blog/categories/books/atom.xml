@@ -4,10 +4,10 @@
   <title><![CDATA[Category: books | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/books/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -33,7 +33,7 @@
 <!-- more -->
 
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>アンチパターンの兆しが見える質問例、
 アンチパターンを使ってもいい場面などが各アンチパターンごとに記載されているため実践的な内容となっている。</p>
@@ -55,33 +55,33 @@
 
 <p>論理設計のアンチパターンについてはあまり経験値がない部分であったのでとても参考になった。</p>
 
-<h3>特に気になったアンチパターン</h3>
+<h3 id="特に気になったアンチパターン">特に気になったアンチパターン</h3>
 
 <p>自分なりのメモ。</p>
 
-<h4>ナイーブツリー</h4>
+<h4 id="ナイーブツリー">ナイーブツリー</h4>
 
 <p>SQLでツリーを表す際のアンチパターン、
 解決するためにはいくつかの策があり、テーブルの性質によって策を考える。
 本書では設計の一覧表がのっている。</p>
 
-<h4>キーレスエントリー</h4>
+<h4 id="キーレスエントリー">キーレスエントリー</h4>
 
 <p>外部キー制約を使用しないパターン。柔軟性が高まるが参照整合性を保つコードをアプリケーションで保証しなければいけない。
 解決策としては外部キー制約を使用する。
 外部キー制約使うと柔軟性がなくなってテストしにくいって言われたのを思い出した。</p>
 
-<h4>ファントムファイル</h4>
+<h4 id="ファントムファイル">ファントムファイル</h4>
 
 <p>RDMBS上にはファイルのパスを格納、実際のファイルはファイルシステムへ配置するパターン。
 必要に応じてLOBの使用を検討する。常に２パターンの設計を検討。</p>
 
-<h4>リーダブルパスワードの章のレインボーテーブル</h4>
+<h4 id="リーダブルパスワードの章のレインボーテーブル">リーダブルパスワードの章のレインボーテーブル</h4>
 
 <p>一般的なことだが考慮すべきことは多い。
 攻撃手法を知り対策を行う必要がある。</p>
 
-<h4>マジックビーンズ</h4>
+<h4 id="マジックビーンズ">マジックビーンズ</h4>
 
 <p>MVCのM(モデル)がActiveRecordそのものなってしまう。
 ドメインモデル貧血症(Anemic Domain Model)</p>
@@ -93,7 +93,7 @@
 これではまずいと思い自分なりの解決方法を実施していたことを思い出した。
 やり方的には同じ方法だったような…</p>
 
-<h3>Reference</h3>
+<h3 id="Reference">Reference</h3>
 
 <p><iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div></p>
 ]]></content>
@@ -113,7 +113,7 @@
 <!-- more -->
 
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>読んでから少したってしまったので箇条書きで感想。</p>
 
@@ -133,7 +133,7 @@
   書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
   なにを使ったらよいかの参考になるのではないか。</p>
 
-<h3>参考</h3>
+<h3 id="参考">参考</h3>
 
 <p>テスト駆動開発といえばこれ。
 併せて読むと理解が進むと思う。</p>
@@ -162,7 +162,7 @@
 
 <p>話題となっていたので購入。</p>
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>三部構成となっており
 各部の内容を一言でまとめると</p>
@@ -186,7 +186,7 @@
 <p>2部が一番印象に残っており読んだ段階でワクワクしながら読めた。
 初級者から上級者まで幅広くカバーできている書籍と感じた。</p>
 
-<h3>参考になったキーワード</h3>
+<h3 id="参考になったキーワード">参考になったキーワード</h3>
 
 <ul>
 <li>ワンチームマインド</li>
@@ -263,11 +263,11 @@
 </ul>
 
 
-<h2>今後の指針</h2>
+<h2 id="今後の指針">今後の指針</h2>
 
 <p>プロジェクト・マネジメントで自分が読んだものでおすすめできるものを挙げる。</p>
 
-<h3>プロジェクト・マネジメント</h3>
+<h3 id="プロジェクト・マネジメント">プロジェクト・マネジメント</h3>
 
 <p>なんかかPMに近い立場を体験したあとに読むと勉強になるはず。
 読むたびに新しい発見がありそう。</p>
@@ -275,7 +275,7 @@
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/4106A8SHJRL._SL160_.jpg" alt="アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Scott Berkun <br />オライリー・ジャパン <br />売り上げランキング: 51,421<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
-<h3>アジャイル開発</h3>
+<h3 id="アジャイル開発">アジャイル開発</h3>
 
 <p>アジャイル開発に興味が出たら</p>
 

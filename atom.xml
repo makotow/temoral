@@ -4,33 +4,91 @@
   <title><![CDATA[Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
+    <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成]]></title>
+    <link href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/"/>
+    <updated>2013-07-01T23:30:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#必要なもの">必要なもの</a>  </li>
+  <li><a href="#手順">手順</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<p>タイトルの通り、sbtでIntelliJのプロジェクトを作成する方法を記載。
+今までな何度も調べたが毎回忘れるのでメモ。</p>
+
+<p>簡単なプロジェクトを作りたいときなどに使用。
+ある程度大きなものを作る場合はきちんとsbtで設定するはず。</p>
+
+<!-- more -->
+
+
+<h2 id="必要なもの">必要なもの</h2>
+
+<p>IntelliJ のプロジェクトを作成する、sbtプラグインが必要。
+plugin の導入はproject/plugins.sbtに addSbtPlugin(&#8230;.)を書いておけばよい。</p>
+
+<ul>
+<li>sbt(0.12.x)</li>
+<li>sbt-plugin (1.4.0) (<a href="https://github.com/mpeltonen/sbt-idea">sbt-idea</a>)</li>
+</ul>
+
+
+<h2 id="手順">手順</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir PROJECT_DIR
+</span><span class='line'>cd PROJECT_DIR
+</span><span class='line'>mkdir porject
+</span><span class='line'>echo 'addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.4.0")' >> project/plugins.sbt
+</span><span class='line'>sbt
+</span><span class='line'>gen-idea</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Octopressアップデート]]></title>
     <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
-    <content type="html"><![CDATA[<h2>octopress アップデートまとめ</h2>
+    <content type="html"><![CDATA[<h2 id="octopress+アップデートまとめ">octopress アップデートまとめ</h2>
 
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
 
-<h2>やりたいこと</h2>
+<h2 id="やりたいこと">やりたいこと</h2>
 
 <p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
 
 <!-- more -->
 
 
-<h2>マニュアル</h2>
+<h2 id="マニュアル">マニュアル</h2>
 
 <p>ここに親切に書いてある。</p>
 
@@ -42,7 +100,7 @@
 <p>基本はこの通りやっていけば大丈夫。
 カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
 
-<h3>+α</h3>
+<h3 id="+α">+α</h3>
 
 <p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
 
@@ -93,7 +151,7 @@ git commit -m "pull upstream."
     <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
-    <content type="html"><![CDATA[<h2>概要</h2>
+    <content type="html"><![CDATA[<h2 id="概要">概要</h2>
 
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
@@ -105,7 +163,7 @@ git commit -m "pull upstream."
 </ul>
 
 
-<h2>対策方法</h2>
+<h2 id="対策方法">対策方法</h2>
 
 <ul>
 <li>SublimeText2での制御を外す。</li>
@@ -163,7 +221,7 @@ git commit -m "pull upstream."
 <!-- more -->
 
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>アンチパターンの兆しが見える質問例、
 アンチパターンを使ってもいい場面などが各アンチパターンごとに記載されているため実践的な内容となっている。</p>
@@ -185,33 +243,33 @@ git commit -m "pull upstream."
 
 <p>論理設計のアンチパターンについてはあまり経験値がない部分であったのでとても参考になった。</p>
 
-<h3>特に気になったアンチパターン</h3>
+<h3 id="特に気になったアンチパターン">特に気になったアンチパターン</h3>
 
 <p>自分なりのメモ。</p>
 
-<h4>ナイーブツリー</h4>
+<h4 id="ナイーブツリー">ナイーブツリー</h4>
 
 <p>SQLでツリーを表す際のアンチパターン、
 解決するためにはいくつかの策があり、テーブルの性質によって策を考える。
 本書では設計の一覧表がのっている。</p>
 
-<h4>キーレスエントリー</h4>
+<h4 id="キーレスエントリー">キーレスエントリー</h4>
 
 <p>外部キー制約を使用しないパターン。柔軟性が高まるが参照整合性を保つコードをアプリケーションで保証しなければいけない。
 解決策としては外部キー制約を使用する。
 外部キー制約使うと柔軟性がなくなってテストしにくいって言われたのを思い出した。</p>
 
-<h4>ファントムファイル</h4>
+<h4 id="ファントムファイル">ファントムファイル</h4>
 
 <p>RDMBS上にはファイルのパスを格納、実際のファイルはファイルシステムへ配置するパターン。
 必要に応じてLOBの使用を検討する。常に２パターンの設計を検討。</p>
 
-<h4>リーダブルパスワードの章のレインボーテーブル</h4>
+<h4 id="リーダブルパスワードの章のレインボーテーブル">リーダブルパスワードの章のレインボーテーブル</h4>
 
 <p>一般的なことだが考慮すべきことは多い。
 攻撃手法を知り対策を行う必要がある。</p>
 
-<h4>マジックビーンズ</h4>
+<h4 id="マジックビーンズ">マジックビーンズ</h4>
 
 <p>MVCのM(モデル)がActiveRecordそのものなってしまう。
 ドメインモデル貧血症(Anemic Domain Model)</p>
@@ -223,7 +281,7 @@ git commit -m "pull upstream."
 これではまずいと思い自分なりの解決方法を実施していたことを思い出した。
 やり方的には同じ方法だったような…</p>
 
-<h3>Reference</h3>
+<h3 id="Reference">Reference</h3>
 
 <iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
 
@@ -278,7 +336,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <!-- more -->
 
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>読んでから少したってしまったので箇条書きで感想。</p>
 
@@ -298,7 +356,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
   なにを使ったらよいかの参考になるのではないか。</p>
 
-<h3>参考</h3>
+<h3 id="参考">参考</h3>
 
 <p>テスト駆動開発といえばこれ。
 併せて読むと理解が進むと思う。</p>
@@ -327,7 +385,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 
 <p>話題となっていたので購入。</p>
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>三部構成となっており
 各部の内容を一言でまとめると</p>
@@ -351,7 +409,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <p>2部が一番印象に残っており読んだ段階でワクワクしながら読めた。
 初級者から上級者まで幅広くカバーできている書籍と感じた。</p>
 
-<h3>参考になったキーワード</h3>
+<h3 id="参考になったキーワード">参考になったキーワード</h3>
 
 <ul>
 <li>ワンチームマインド</li>
@@ -428,11 +486,11 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 </ul>
 
 
-<h2>今後の指針</h2>
+<h2 id="今後の指針">今後の指針</h2>
 
 <p>プロジェクト・マネジメントで自分が読んだものでおすすめできるものを挙げる。</p>
 
-<h3>プロジェクト・マネジメント</h3>
+<h3 id="プロジェクト・マネジメント">プロジェクト・マネジメント</h3>
 
 <p>なんかかPMに近い立場を体験したあとに読むと勉強になるはず。
 読むたびに新しい発見がありそう。</p>
@@ -440,7 +498,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/4106A8SHJRL._SL160_.jpg" alt="アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Scott Berkun <br />オライリー・ジャパン <br />売り上げランキング: 51,421<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
-<h3>アジャイル開発</h3>
+<h3 id="アジャイル開発">アジャイル開発</h3>
 
 <p>アジャイル開発に興味が出たら</p>
 
@@ -473,12 +531,12 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <!-- more -->
 
 
-<h2>試してみたツール</h2>
+<h2 id="試してみたツール">試してみたツール</h2>
 
 <p>探してみてスペック的に満たしていそうなものをためしてみた。
 参考としてURLや使用感を書いてみようと思う。</p>
 
-<h3>P4Merge+stroy</h3>
+<h3 id="P4Merge+stroy">P4Merge+stroy</h3>
 
 <p>MacのDiffツールといえばP4Mergeをよく見かける。しかし、ディレクトリ単位での比較ができないためスルーしていた。ディレクトリ単位で比較できるツールという観点で調べていたところstroyと連携することでディレクトリ単位の比較が実現できるようなので試してみた。</p>
 
@@ -490,7 +548,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <p><img class="left" src="http://makotow.github.io/images/2013/02/stroy.png">
 <img class="right" src="http://makotow.github.io/images/2013/02/p4merge.png"></p>
 
-<h3>DiffMerge</h3>
+<h3 id="DiffMerge">DiffMerge</h3>
 
 <p>P4Merge + story に比べて導入するソフトは１つだけでよい。
 求めているものの要求を満たしていてる。</p>
@@ -505,7 +563,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <p><img class="right" src="http://makotow.github.io/images/2013/02/diffmerge1.png">
 <img class="right" src="http://makotow.github.io/images/2013/02/diffmerge2.png"></p>
 
-<h3>meld</h3>
+<h3 id="meld">meld</h3>
 
 <p>homebrewでインストール可能なのだが、ビルドに失敗したり色々と大変だった。</p>
 
@@ -520,7 +578,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <p>操作感がMacとは違うので違和感は感じる。
 機能的には問題なく使用可能</p>
 
-<h2>その他</h2>
+<h2 id="その他">その他</h2>
 
 <p>試してはいないが検索している上で出てきたキーワードを備忘として記載しておく。</p>
 
@@ -532,7 +590,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 </ul>
 
 
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
 <p>Winmergeほどの使いやすがはないが、ちょっとづつ使ってみようと思う。
 今のところP4Mege+stroyが良い感じ。</p>
@@ -558,9 +616,9 @@ git で branch 作って作業して他の branch にマージということを
 <!-- more -->
 
 
-<h2>Octopress 変更点</h2>
+<h2 id="Octopress+変更点">Octopress 変更点</h2>
 
-<h3>ファイル一覧</h3>
+<h3 id="ファイル一覧">ファイル一覧</h3>
 
 <p>思ったよりも変更する箇所はなく、
 octopress/sass/custom 以下のファイルに設定を追加、
@@ -574,14 +632,14 @@ CSSを書き換えることで変更可能
 </ul>
 
 
-<h2>今回つかったツール</h2>
+<h2 id="今回つかったツール">今回つかったツール</h2>
 
-<h3>IDE</h3>
+<h3 id="IDE">IDE</h3>
 
 <p>IntelliJ IDEA 12
 年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
 
-<h3>サイト</h3>
+<h3 id="サイト">サイト</h3>
 
 <ul>
 <li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
@@ -589,7 +647,7 @@ CSSを書き換えることで変更可能
 </ul>
 
 
-<h2>残作業</h2>
+<h2 id="残作業">残作業</h2>
 
 <p>凝り始めるときりがないので今回は一旦この段階で終了。
 今後は、</p>
@@ -629,21 +687,21 @@ CSSを書き換えることで変更可能
 <!-- more -->
 
 
-<h2>マンガでわかるプロジェクトマネジメント</h2>
+<h2 id="マンガでわかるプロジェクトマネジメント">マンガでわかるプロジェクトマネジメント</h2>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
-<h3>途中までの感想</h3>
+<h3 id="途中までの感想">途中までの感想</h3>
 
 <p>漫画ということでかなり読みやすい。先にPMの入門書を読んだ人にとっては当たり前のことが書いてあるかも知れないが、基本中の基本を学ぶには良い書籍と思う。</p>
 
-<h2>フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</h2>
+<h2 id="フェルドマン式知的生産術+―+国境、業界を越えて働く人に">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</h2>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
-<h3>途中までの感想</h3>
+<h3 id="途中までの感想">途中までの感想</h3>
 
 <p>読んでいる途中で、「これは何についての書籍だったか？」と思うことが多々あり。
 言いたいことは章の一番最初に一言で書かれており、その後の文章では実体験を交えた説明をしているスタイル。</p>
@@ -656,17 +714,17 @@ CSSを書き換えることで変更可能
 
 <p> 簡単なメッセージほど伝わりやすい</p></blockquote>
 
-<h2>ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</h2>
+<h2 id="ビジネススキル・イノベーション+―+「時間×思考×直感」67のパワフルな技術">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</h2>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/510UNl%2BuWrL._SL160_.jpg" alt="ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/483345047X/makotownotes-22/ref=nosim/" title="ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">横田 尚哉 <br />プレジデント社 <br />売り上げランキング: 649<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 
-<h3>途中までの感想</h3>
+<h3 id="途中までの感想">途中までの感想</h3>
 
 <p>まだ目次を見た段階だけけれどもどれも基本的な内容のように見えた。
 基本を抑えれていない自分にとって望んでいたもののようだ。</p>
 
-<h2>本記事においての試み</h2>
+<h2 id="本記事においての試み">本記事においての試み</h2>
 
 <p>ブログ内でアマゾンの画像を使いたかったためにアフリエイトIDを取得した。</p>
 
@@ -690,27 +748,27 @@ CSSを書き換えることで変更可能
 <p>以下のリンクを参考に移行。
 特につまる所もなく移行完了した。</p>
 
-<h2>Pocketの紹介</h2>
+<h2 id="Pocketの紹介">Pocketの紹介</h2>
 
 <p> <a href="http://www.barasu.org/diary/8004.html">Instapaper から Pocketへ乗り換え | 後悔懺悔日記</a></p>
 
 <p> <a href="http://lifehacking.jp/2012/10/pocket-for-mac/">Pocket for Macでウェブの情報処理が飛躍的に楽になる | Lifehacking.jp</a></p>
 
-<h3>Instapaperからの移行</h3>
+<h3 id="Instapaperからの移行">Instapaperからの移行</h3>
 
 <p> <a href="http://getpocket.com/import/instapaper?e=1">Pocket: Import Instapaper</a></p>
 
-<h2>アプリケーション、アドオンなど</h2>
+<h2 id="アプリケーション、アドオンなど">アプリケーション、アドオンなど</h2>
 
-<h3>Chrome-addon</h3>
+<h3 id="Chrome-addon">Chrome-addon</h3>
 
 <p> <a href="https://chrome.google.com/webstore/detail/pocket-formerly-read-it-l/niloccemoadcdkdjlinkgdfekeahmflj/details">Pocket (formerly Read It Later)</a></p>
 
-<h3>Android</h3>
+<h3 id="Android">Android</h3>
 
 <p> <a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro">Google Play Pocket</a></p>
 
-<h3>Mac</h3>
+<h3 id="Mac">Mac</h3>
 
 <p> <a href="https://itunes.apple.com/jp/app/pocket-formerly-read-it-later/id309601447?mt=8&amp;ign-mpt=uo%3D4">Pocket (Formerly Read It Later)</a></p>
 
@@ -782,12 +840,12 @@ project/plugins/project/
 <!-- more -->
 
 
-<h2>今回の環境</h2>
+<h2 id="今回の環境">今回の環境</h2>
 
 <pre><code>iMac Mountain Lion
 </code></pre>
 
-<h2>GitHub を確認</h2>
+<h2 id="GitHub+を確認">GitHub を確認</h2>
 
 <p><a href="https://github.com/adobe/Source-Code-Pro">adobe / Source-Code-Pro</a> を見てみるとREADMEが充実しているので順番に実施していく。</p>
 
@@ -795,7 +853,7 @@ project/plugins/project/
 
 <p>※ いろいろやってみたがここでは結果のみを記載</p>
 
-<h3>Pre-build font binaries</h3>
+<h3 id="Pre-build+font+binaries">Pre-build font binaries</h3>
 
 <p><a href="https://github.com/downloads/adobe/Source-Code-Pro/SourceCodePro_FontsOnly-1.009.zip">ここから</a> ダウンロードして適当な場所にコピー。</p>
 
@@ -818,11 +876,11 @@ project/plugins/project/
 
 <p>参考にさせて頂いたのはこのあたり。</p>
 
-<h2>Tag Cloud</h2>
+<h2 id="Tag+Cloud">Tag Cloud</h2>
 
 <p><a href="http://qiita.com/items/944db11e257782749270">Octopressのサイドバーにタグリストやタグクラウドを表示させよう！</a></p>
 
-<h2>Related Posts</h2>
+<h2 id="Related+Posts">Related Posts</h2>
 
 <p><a href="http://blog.glidenote.com/blog/2012/01/04/octopress-related-posts/">OctopressでRelated Posts(関連エントリー)を表示させるようにした</a></p>
 
@@ -975,11 +1033,11 @@ Related Postsが表示されていないのはなぜかわからないが、も�
     <link href="http://makotow.github.io/blog/2012/08/19/octopress-construction-memo/"/>
     <updated>2012-08-19T22:56:00+09:00</updated>
     <id>http://makotow.github.io/blog/2012/08/19/octopress-construction-memo</id>
-    <content type="html"><![CDATA[<h2>設定してみた感想</h2>
+    <content type="html"><![CDATA[<h2 id="設定してみた感想">設定してみた感想</h2>
 
 <p>構築好きとしてはかなり面白い。</p>
 
-<h2>とりあえずできた</h2>
+<h2 id="とりあえずできた">とりあえずできた</h2>
 
 <ul>
 <li>構築</li>
@@ -988,7 +1046,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 </ul>
 
 
-<h2>これからやる</h2>
+<h2 id="これからやる">これからやる</h2>
 
 <ul>
 <li>タグクラウド</li>
@@ -1026,55 +1084,6 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 tumblrの方にある少ない記事を少しづつ移動させる。</p>
 
 <p>テーマがデフォルトのままなので変更したい。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntuのネットワーク設定チェックリスト]]></title>
-    <link href="http://makotow.github.io/blog/2012/05/13/network-checklist/"/>
-    <updated>2012-05-13T18:27:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/05/13/network-checklist</id>
-    <content type="html"><![CDATA[<h2>ネットワーク設定覚書</h2>
-
-<p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
-覚書としてメモ。</p>
-
-<p>Ubuntuでネットワークに繋がらなくなった場合のチェック。</p>
-
-<!-- more -->
-
-
-<p>試しているVersionは</p>
-
-<pre><code>Ubuntu 11 .10 64bit
-</code></pre>
-
-<p>参考にさせていただいたページはこちら</p>
-
-<p> <a href="http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html">http://www.math.kobe-u.ac.jp/~kodama/tips-net-setup.html</a></p>
-
-<p> <a href="https://forums.ubuntulinux.jp/viewtopic.php?id=9522">https://forums.ubuntulinux.jp/viewtopic.php?id=9522</a></p>
-
-<h3>試した手順</h3>
-
-<ul>
-<li>とりあえず、再起動 sudo /etc/init.d/networking restart</li>
-<li>ping anyhost</li>
-<li>繋がっていないことを確認したら、/etc/network/interfaces が正しいかを確認</li>
-<li>間違っていたので修正、 その後再起動 sudo /etc/init.d/networking restart　</li>
-<li>それでもつながらないので、nameserverが指定されているかを/etc/resolv.confで確認　→ <strong>空になっている</strong></li>
-<li>/etc/resolv.conf に nameserver を追記し、sudo /etc/init.d/networking restart でつながるようになった。</li>
-</ul>
-
-
-<h3>今後の方針</h3>
-
-<p>調べてみると、根本原因はNetwork-Managerが/etc/resolv.confを書き換えることだった。</p>
-
-<p>Network-Managerを削除したりするのではなく、有効活用したほうがいいのだろうと思い検索したところ、次のページを発見。参照し設定。
- <a href="http://www.usupi.org/sysad/173.html">http://www.usupi.org/sysad/173.html</a></p>
-
-<p>これでしばらく様子を見る。</p>
 ]]></content>
   </entry>
   

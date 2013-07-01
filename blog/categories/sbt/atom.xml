@@ -4,14 +4,75 @@
   <title><![CDATA[Category: sbt | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/sbt/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成]]></title>
+    <link href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/"/>
+    <updated>2013-07-01T23:30:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#必要なもの">必要なもの</a>  </li>
+  <li><a href="#手順">手順</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<p>タイトルの通り、sbtでIntelliJのプロジェクトを作成する方法を記載。
+今までな何度も調べたが毎回忘れるのでメモ。</p>
+
+<p>簡単なプロジェクトを作りたいときなどに使用。
+ある程度大きなものを作る場合はきちんとsbtで設定するはず。</p>
+
+<!-- more -->
+
+
+<h2 id="必要なもの">必要なもの</h2>
+
+<p>IntelliJ のプロジェクトを作成する、sbtプラグインが必要。
+plugin の導入はproject/plugins.sbtに addSbtPlugin(....)を書いておけばよい。</p>
+
+<ul>
+<li>sbt(0.12.x)</li>
+<li>sbt-plugin (1.4.0) (<a href="https://github.com/mpeltonen/sbt-idea">sbt-idea</a>)</li>
+</ul>
+
+
+<h2 id="手順">手順</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir PROJECT_DIR
+</span><span class='line'>cd PROJECT_DIR
+</span><span class='line'>mkdir porject
+</span><span class='line'>echo 'addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.4.0")' >> project/plugins.sbt
+</span><span class='line'>sbt
+</span><span class='line'>gen-idea&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gitignoreのメモ]]></title>

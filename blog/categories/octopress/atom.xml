@@ -4,10 +4,10 @@
   <title><![CDATA[Category: octopress | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,19 +18,19 @@
     <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
-    <content type="html"><![CDATA[<h2>octopress アップデートまとめ</h2>
+    <content type="html"><![CDATA[<h2 id="octopress+アップデートまとめ">octopress アップデートまとめ</h2>
 
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
 
-<h2>やりたいこと</h2>
+<h2 id="やりたいこと">やりたいこと</h2>
 
 <p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
 
 <!-- more -->
 
 
-<h2>マニュアル</h2>
+<h2 id="マニュアル">マニュアル</h2>
 
 <p>ここに親切に書いてある。</p>
 
@@ -42,7 +42,7 @@
 <p>基本はこの通りやっていけば大丈夫。
 カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
 
-<h3>+α</h3>
+<h3 id="+α">+α</h3>
 
 <p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
 
@@ -107,9 +107,9 @@ git で branch 作って作業して他の branch にマージということを
 <!-- more -->
 
 
-<h2>Octopress 変更点</h2>
+<h2 id="Octopress+変更点">Octopress 変更点</h2>
 
-<h3>ファイル一覧</h3>
+<h3 id="ファイル一覧">ファイル一覧</h3>
 
 <p>思ったよりも変更する箇所はなく、
 octopress/sass/custom 以下のファイルに設定を追加、
@@ -123,14 +123,14 @@ CSSを書き換えることで変更可能
 </ul>
 
 
-<h2>今回つかったツール</h2>
+<h2 id="今回つかったツール">今回つかったツール</h2>
 
-<h3>IDE</h3>
+<h3 id="IDE">IDE</h3>
 
 <p>IntelliJ IDEA 12
 年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
 
-<h3>サイト</h3>
+<h3 id="サイト">サイト</h3>
 
 <ul>
 <li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
@@ -138,7 +138,7 @@ CSSを書き換えることで変更可能
 </ul>
 
 
-<h2>残作業</h2>
+<h2 id="残作業">残作業</h2>
 
 <p>凝り始めるときりがないので今回は一旦この段階で終了。
 今後は、</p>
@@ -174,11 +174,11 @@ CSSを書き換えることで変更可能
 
 <p>参考にさせて頂いたのはこのあたり。</p>
 
-<h2>Tag Cloud</h2>
+<h2 id="Tag+Cloud">Tag Cloud</h2>
 
 <p><a href="http://qiita.com/items/944db11e257782749270">Octopressのサイドバーにタグリストやタグクラウドを表示させよう！</a></p>
 
-<h2>Related Posts</h2>
+<h2 id="Related+Posts">Related Posts</h2>
 
 <p><a href="http://blog.glidenote.com/blog/2012/01/04/octopress-related-posts/">OctopressでRelated Posts(関連エントリー)を表示させるようにした</a></p>
 
@@ -236,7 +236,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <span class='line-number'>31</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'><span class="sr">&lt;h1 id=&quot;usage+rake+new_post[my-new-post]+or+rake+new_post[&#39;my+new+post&#39;]+or+rake+new_post+(defaults+to++new-post+)&quot;&gt;usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">desc</span> <span class="s2">&quot;Begin a new post in </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'><span class="n">task</span> <span class="ss">:new_post</span><span class="p">,</span> <span class="ss">:title</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
@@ -302,7 +302,7 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <span class='line-number'>32</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'><span class="sr">&lt;h1 id=&quot;usage+rake+new_post[my-new-post]+or+rake+new_post[&#39;my+new+post&#39;]+or+rake+new_post+(defaults+to++new-post+)&quot;&gt;usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">desc</span> <span class="s2">&quot;Begin a new post in </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'><span class="n">task</span> <span class="ss">:new_post</span><span class="p">,</span> <span class="ss">:title</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>

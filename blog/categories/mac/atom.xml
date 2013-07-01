@@ -4,10 +4,10 @@
   <title><![CDATA[Category: mac | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -29,12 +29,12 @@
 <!-- more -->
 
 
-<h2>今回の環境</h2>
+<h2 id="今回の環境">今回の環境</h2>
 
 <pre><code>iMac Mountain Lion
 </code></pre>
 
-<h2>GitHub を確認</h2>
+<h2 id="GitHub+を確認">GitHub を確認</h2>
 
 <p><a href="https://github.com/adobe/Source-Code-Pro">adobe / Source-Code-Pro</a> を見てみるとREADMEが充実しているので順番に実施していく。</p>
 
@@ -42,7 +42,7 @@
 
 <p>※ いろいろやってみたがここでは結果のみを記載</p>
 
-<h3>Pre-build font binaries</h3>
+<h3 id="Pre-build+font+binaries">Pre-build font binaries</h3>
 
 <p><a href="https://github.com/downloads/adobe/Source-Code-Pro/SourceCodePro_FontsOnly-1.009.zip">ここから</a> ダウンロードして適当な場所にコピー。</p>
 

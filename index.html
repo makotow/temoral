@@ -6,11 +6,12 @@
 <head>
   <meta charset="utf-8">
   <title>Software Technology Memorandum and thoughts</title>
-  <meta name="author" content="makotow">
+  <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="octopress アップデートまとめ octopressのアップデート、頻繁にやるものではないのでメモを残す。
-作業記録。 やりたいこと 自分のOctopressに、remote branch (本家)の更新を取り込みたい。 ">
+  <meta name="description" content=" Contents 必要なもの 手順 タイトルの通り、sbtでIntelliJのプロジェクトを作成する方法を記載。
+今までな何度も調べたが毎回忘れるのでメモ。 簡単なプロジェクトを作りたいときなどに使用。
+ある程度大きなものを作る場合はきちんとsbtで設定するはず。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -32,11 +33,14 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 
+
 <script language="JavaScript">
 $(document).ready( function () {
    $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
 })
 </script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/footnote.js" type="text/javascript"></script>
 
   
   <script type="text/javascript">
@@ -95,6 +99,66 @@ $(document).ready( function () {
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-01T23:30:00+09:00" pubdate data-updated="true">Jul 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#必要なもの">必要なもの</a>  </li>
+  <li><a href="#手順">手順</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<p>タイトルの通り、sbtでIntelliJのプロジェクトを作成する方法を記載。
+今までな何度も調べたが毎回忘れるのでメモ。</p>
+
+<p>簡単なプロジェクトを作りたいときなどに使用。
+ある程度大きなものを作る場合はきちんとsbtで設定するはず。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/01/sbt-intellij-idea/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/05/06/octopress-update/">Octopressアップデート</a></h1>
     
     
@@ -118,12 +182,12 @@ $(document).ready( function () {
   </header>
 
 
-  <div class="entry-content"><h2>octopress アップデートまとめ</h2>
+  <div class="entry-content"><h2 id="octopress+アップデートまとめ">octopress アップデートまとめ</h2>
 
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
 
-<h2>やりたいこと</h2>
+<h2 id="やりたいこと">やりたいこと</h2>
 
 <p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
 
@@ -166,7 +230,7 @@ $(document).ready( function () {
   </header>
 
 
-  <div class="entry-content"><h2>概要</h2>
+  <div class="entry-content"><h2 id="概要">概要</h2>
 
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
@@ -178,7 +242,7 @@ $(document).ready( function () {
 </ul>
 
 
-<h2>対策方法</h2>
+<h2 id="対策方法">対策方法</h2>
 
 <ul>
 <li>SublimeText2での制御を外す。</li>
@@ -560,56 +624,6 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/19/change-octopress-css-style/">Octopressでのデザイン変更方法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-19T17:00:00+09:00" pubdate data-updated="true">Jan 19<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
-文字サイズを変更してみる。</p>
-
-<p>ついでに見出しのバックグラウンドやブログタイトルへの背景画像も設定してみる。</p>
-
-<p>そもそもOctopressではThemeを使用してブログデザインを変更している。
-今回は簡単なところから初めて見る。</p>
-
-<p>少しずつ理解しながらやっていたため、12月中旬から開始していたが年明けまでかかってしまった。
-git で branch 作って作業して他の branch にマージということを初めてやったけど便利すぎ。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/01/19/change-octopress-css-style/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -627,14 +641,17 @@ git で branch 作って作業して他の branch にマージということを
   
 twitter: <a href="https://twitter.com/makotow">@makotow</a>
 <br/>
+hoverboard.io:<a href="http://hoverboard.io/makotow">hoverboard.io(under constructing) </a>
+ <br/>
 <p>
 Software Development Engineer. 
 </p>
-<br />
+<br/>
 <p>
 Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し定まらない感じ。 フィールドを縦横無尽に動きまわりたい。
 </p>
-    
+</section>
+<section>
 <h2>興味</h2>
 <ul>
     <li>性能評価</li>
@@ -650,11 +667,14 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
     <li>Hadoop関連</li>
 </ul>
 
-
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/05/06/octopress-update/">Octopressアップデート</a>
@@ -672,15 +692,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/03/31/sh-tech-exists-command/">shでコマンドが存在するか確認する方法</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/03/30/tddprac/">実践テスト駆動開発　読書録</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 106.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 106.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 106.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 160.0%'>Article(10)</a> <a href='/blog/categories/blog' style='font-size: 112.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 136.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 106.0%'>business(1)</a> <a href='/blog/categories/bussiness' style='font-size: 106.0%'>bussiness(1)</a> <a href='/blog/categories/css' style='font-size: 106.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 106.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 112.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 118.0%'>git(3)</a> <a href='/blog/categories/links' style='font-size: 106.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 106.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 106.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 106.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 106.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 142.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 106.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 106.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 118.0%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 106.0%'>sbt(1)</a> <a href='/blog/categories/scala' style='font-size: 106.0%'>scala(1)</a> <a href='/blog/categories/scrum' style='font-size: 106.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 106.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 106.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 106.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 106.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 106.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.0%'>TDD(1)</a> <a href='/blog/categories/techmemo' style='font-size: 154.0%'>TechMemo(9)</a> <a href='/blog/categories/techmemo' style='font-size: 106.0%'>Techmemo(1)</a> <a href='/blog/categories/tools' style='font-size: 112.0%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 105.45454545454545%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 105.45454545454545%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 105.45454545454545%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 154.54545454545456%'>Article(10)</a> <a href='/blog/categories/blog' style='font-size: 110.9090909090909%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 132.72727272727272%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 110.9090909090909%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 105.45454545454545%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 105.45454545454545%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 110.9090909090909%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 116.36363636363636%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 105.45454545454545%'>IntelliJ(1)</a> <a href='/blog/categories/links' style='font-size: 105.45454545454545%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 105.45454545454545%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 105.45454545454545%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 105.45454545454545%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 105.45454545454545%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 138.1818181818182%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 105.45454545454545%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 105.45454545454545%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 116.36363636363636%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 110.9090909090909%'>sbt(2)</a> <a href='/blog/categories/scala' style='font-size: 110.9090909090909%'>scala(2)</a> <a href='/blog/categories/scrum' style='font-size: 105.45454545454545%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 105.45454545454545%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 105.45454545454545%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 105.45454545454545%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 105.45454545454545%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 105.45454545454545%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 105.45454545454545%'>TDD(1)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(11)</a> <a href='/blog/categories/tools' style='font-size: 110.9090909090909%'>tools(2)</a> </span>
 </section>
 
 <section>
@@ -731,7 +747,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - makotow -
+  Copyright &copy; 2013 - Makoto WATANABE (makotow) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

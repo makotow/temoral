@@ -4,10 +4,10 @@
   <title><![CDATA[Category: SQL | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/sql/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-05-06T17:43:47+09:00</updated>
+  <updated>2013-07-01T23:47:06+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
-    <name><![CDATA[makotow]]></name>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -33,7 +33,7 @@
 <!-- more -->
 
 
-<h3>感想</h3>
+<h3 id="感想">感想</h3>
 
 <p>アンチパターンの兆しが見える質問例、
 アンチパターンを使ってもいい場面などが各アンチパターンごとに記載されているため実践的な内容となっている。</p>
@@ -55,33 +55,33 @@
 
 <p>論理設計のアンチパターンについてはあまり経験値がない部分であったのでとても参考になった。</p>
 
-<h3>特に気になったアンチパターン</h3>
+<h3 id="特に気になったアンチパターン">特に気になったアンチパターン</h3>
 
 <p>自分なりのメモ。</p>
 
-<h4>ナイーブツリー</h4>
+<h4 id="ナイーブツリー">ナイーブツリー</h4>
 
 <p>SQLでツリーを表す際のアンチパターン、
 解決するためにはいくつかの策があり、テーブルの性質によって策を考える。
 本書では設計の一覧表がのっている。</p>
 
-<h4>キーレスエントリー</h4>
+<h4 id="キーレスエントリー">キーレスエントリー</h4>
 
 <p>外部キー制約を使用しないパターン。柔軟性が高まるが参照整合性を保つコードをアプリケーションで保証しなければいけない。
 解決策としては外部キー制約を使用する。
 外部キー制約使うと柔軟性がなくなってテストしにくいって言われたのを思い出した。</p>
 
-<h4>ファントムファイル</h4>
+<h4 id="ファントムファイル">ファントムファイル</h4>
 
 <p>RDMBS上にはファイルのパスを格納、実際のファイルはファイルシステムへ配置するパターン。
 必要に応じてLOBの使用を検討する。常に２パターンの設計を検討。</p>
 
-<h4>リーダブルパスワードの章のレインボーテーブル</h4>
+<h4 id="リーダブルパスワードの章のレインボーテーブル">リーダブルパスワードの章のレインボーテーブル</h4>
 
 <p>一般的なことだが考慮すべきことは多い。
 攻撃手法を知り対策を行う必要がある。</p>
 
-<h4>マジックビーンズ</h4>
+<h4 id="マジックビーンズ">マジックビーンズ</h4>
 
 <p>MVCのM(モデル)がActiveRecordそのものなってしまう。
 ドメインモデル貧血症(Anemic Domain Model)</p>
@@ -93,7 +93,7 @@
 これではまずいと思い自分なりの解決方法を実施していたことを思い出した。
 やり方的には同じ方法だったような…</p>
 
-<h3>Reference</h3>
+<h3 id="Reference">Reference</h3>
 
 <p><iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div></p>
 ]]></content>
