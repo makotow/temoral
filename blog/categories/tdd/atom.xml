@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TDD | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/tdd/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-07-01T23:47:06+09:00</updated>
+  <updated>2013-07-18T01:24:55+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,178 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IntelliJ で ScalaTest]]></title>
+    <link href="http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
+    <updated>2013-07-18T00:10:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#概要">概要</a>  </li>
+  <li><a href="#Sample+Code">Sample Code</a>
+   <ul>
+   <li><a href="#Vec+trait">Vec trait</a>   </li>
+   <li><a href="#VecTest">VecTest</a>   </li>
+  </ul>
+  <li><a href="#IntelliJ+からテスト実行">IntelliJ からテスト実行</a>  </li>
+  <li><a href="#雑感">雑感</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<h2 id="概要">概要</h2>
+
+<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br/>
+<a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a></p>
+
+<p>の続きでIntelliJプロジェクトにScalaTestを追加したのでテストを書いてIntelliJのsbtconsoleからコンパイル、実行、テストをやってみる。</p>
+
+<p>書いている現在の各バージョン
+- IntelliJ 12
+- Scala 2.10.2
+- ScalaTest 1.9.</p>
+
+<!-- more -->
+
+
+<h2 id="Sample+Code">Sample Code</h2>
+
+<h3 id="Vec+trait">Vec trait</h3>
+
+<p>ベクトルの計算をする小さなプログラムを作った。
+内積とnormを求める機能。<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Vec </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Vec</span> <span class="o">{</span>      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">dot</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">],</span> <span class="n">b</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="o">((</span><span class="n">a</span> <span class="n">zip</span> <span class="n">b</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span><span class="k">case</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">}</span> <span class="o">:\</span> <span class="mf">0.0</span> <span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">norm</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">((</span><span class="mf">0.0</span> <span class="o">/:</span> <span class="n">l</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="o">))</span> <span class="o">{&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="o">+</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;})</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3 id="VecTest">VecTest</h3>
+
+<p>ScalaTestの使い方は本家を参照</p>
+
+<ul>
+<li><a href="http://www.scalatest.org/" title="ScalaTest本家">ScalaTest</a></li>
+</ul>
+
+
+<p>以下、本家より引用</p>
+
+<blockquote><p>ScalaTest supports three main styles of testing out of the box. If you don't have a preference, start with FunSuite:</p>
+
+<p>For test-driven development (TDD) start with FunSuite <br/>
+For behavior-driven development (BDD), start with FunSpec<br/>
+For functional, integration, or acceptance testing, start with FeatureSpec<br/></p></blockquote>
+
+<p>主に３つのテストの書き方ができる
+今回は慣れているJUnit風の書き方。</p>
+
+<p>JUnitのコードを見たことがあればソースから理解できると思う。<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>VecTest </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">org.scalatest._&lt;/p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">VecTest</span> <span class="k">extends</span> <span class="nc">FunSuite</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">test</span><span class="o">(</span><span class="s">&quot;dot product&quot;</span><span class="o">)</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">v2</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">4.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
+</span><span class='line'><span class="n">assert</span><span class="o">(</span><span class="mi">3</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">dot</span><span class="o">(</span><span class="n">v1</span> <span class="o">,</span><span class="n">v2</span><span class="o">))</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">test</span><span class="o">(</span><span class="s">&quot;norm&quot;</span><span class="o">)</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">assert</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">(</span><span class="mi">35</span><span class="o">)</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">norm</span><span class="o">(</span><span class="n">v1</span><span class="o">))</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2 id="IntelliJ+からテスト実行">IntelliJ からテスト実行</h2>
+
+<p>今回はIntelliJ のプラグインである SBT Consoleを使用する。
+コンソールからsbtを実行するのと同じ。</p>
+
+<ol>
+<li>SBT Consoleからsbt起動
+<img src="/images/2013/07/ScalaTest.png"></li>
+<li>コマンド入力エリアへsbtコマンドを入力し実行
+<img src="/images/2013/07/ScalaTest-sbtcmd.png"></li>
+<li>テスト実行後、結果出力
+<img src="/images/2013/07/ScalaTest-testresult.png"></li>
+</ol>
+
+
+<p>上記の例では ~test でやっているがもちろん、run, test, compielなども実行可能。</p>
+
+<h2 id="雑感">雑感</h2>
+
+<p>SBT Console使うことでIntelliJ内で完結するのは便利だと思う。</p>
+
+<p>もう少しネタ見つけて続ける。</p>
+
+<p><div class="footnotes">
+	<ol>
+		<li id='fn:1'><p> trait にしたのはなんとなく使ってみたいから…。object にすべきか traitにすべきかの判断はScala力が不足していてピンとこないので、とりあえずどのようなにつかえるかを試している最中。</p>
+
+<p><a href='#fnref:1' rev='footnote'>↩</a></p>
+</li><li id='fn:2'><p> dot productのコードは本当は v1 dot v2 とか書きたい。Scala力が不足…
+</code></pre></p>
+
+<p><a href='#fnref:2' rev='footnote'>↩</a>
+
+</li>
+	</ol>
+</div>
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[実践テスト駆動開発　読書録]]></title>

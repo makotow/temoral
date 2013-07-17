@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TechMemo | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/techmemo/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-07-01T23:47:06+09:00</updated>
+  <updated>2013-07-18T01:24:55+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,266 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IntelliJ で ScalaTest]]></title>
+    <link href="http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
+    <updated>2013-07-18T00:10:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#概要">概要</a>  </li>
+  <li><a href="#Sample+Code">Sample Code</a>
+   <ul>
+   <li><a href="#Vec+trait">Vec trait</a>   </li>
+   <li><a href="#VecTest">VecTest</a>   </li>
+  </ul>
+  <li><a href="#IntelliJ+からテスト実行">IntelliJ からテスト実行</a>  </li>
+  <li><a href="#雑感">雑感</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<h2 id="概要">概要</h2>
+
+<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br/>
+<a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a></p>
+
+<p>の続きでIntelliJプロジェクトにScalaTestを追加したのでテストを書いてIntelliJのsbtconsoleからコンパイル、実行、テストをやってみる。</p>
+
+<p>書いている現在の各バージョン
+- IntelliJ 12
+- Scala 2.10.2
+- ScalaTest 1.9.</p>
+
+<!-- more -->
+
+
+<h2 id="Sample+Code">Sample Code</h2>
+
+<h3 id="Vec+trait">Vec trait</h3>
+
+<p>ベクトルの計算をする小さなプログラムを作った。
+内積とnormを求める機能。<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Vec </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Vec</span> <span class="o">{</span>      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">dot</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">],</span> <span class="n">b</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="o">((</span><span class="n">a</span> <span class="n">zip</span> <span class="n">b</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span><span class="k">case</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">}</span> <span class="o">:\</span> <span class="mf">0.0</span> <span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">norm</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">((</span><span class="mf">0.0</span> <span class="o">/:</span> <span class="n">l</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="o">))</span> <span class="o">{&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="o">+</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;})</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3 id="VecTest">VecTest</h3>
+
+<p>ScalaTestの使い方は本家を参照</p>
+
+<ul>
+<li><a href="http://www.scalatest.org/" title="ScalaTest本家">ScalaTest</a></li>
+</ul>
+
+
+<p>以下、本家より引用</p>
+
+<blockquote><p>ScalaTest supports three main styles of testing out of the box. If you don't have a preference, start with FunSuite:</p>
+
+<p>For test-driven development (TDD) start with FunSuite <br/>
+For behavior-driven development (BDD), start with FunSpec<br/>
+For functional, integration, or acceptance testing, start with FeatureSpec<br/></p></blockquote>
+
+<p>主に３つのテストの書き方ができる
+今回は慣れているJUnit風の書き方。</p>
+
+<p>JUnitのコードを見たことがあればソースから理解できると思う。<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>VecTest </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">org.scalatest._&lt;/p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">VecTest</span> <span class="k">extends</span> <span class="nc">FunSuite</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">test</span><span class="o">(</span><span class="s">&quot;dot product&quot;</span><span class="o">)</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">v2</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">4.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
+</span><span class='line'><span class="n">assert</span><span class="o">(</span><span class="mi">3</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">dot</span><span class="o">(</span><span class="n">v1</span> <span class="o">,</span><span class="n">v2</span><span class="o">))</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">test</span><span class="o">(</span><span class="s">&quot;norm&quot;</span><span class="o">)</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">assert</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">(</span><span class="mi">35</span><span class="o">)</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">norm</span><span class="o">(</span><span class="n">v1</span><span class="o">))</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2 id="IntelliJ+からテスト実行">IntelliJ からテスト実行</h2>
+
+<p>今回はIntelliJ のプラグインである SBT Consoleを使用する。
+コンソールからsbtを実行するのと同じ。</p>
+
+<ol>
+<li>SBT Consoleからsbt起動
+<img src="/images/2013/07/ScalaTest.png"></li>
+<li>コマンド入力エリアへsbtコマンドを入力し実行
+<img src="/images/2013/07/ScalaTest-sbtcmd.png"></li>
+<li>テスト実行後、結果出力
+<img src="/images/2013/07/ScalaTest-testresult.png"></li>
+</ol>
+
+
+<p>上記の例では ~test でやっているがもちろん、run, test, compielなども実行可能。</p>
+
+<h2 id="雑感">雑感</h2>
+
+<p>SBT Console使うことでIntelliJ内で完結するのは便利だと思う。</p>
+
+<p>もう少しネタ見つけて続ける。</p>
+
+<p><div class="footnotes">
+	<ol>
+		<li id='fn:1'><p> trait にしたのはなんとなく使ってみたいから…。object にすべきか traitにすべきかの判断はScala力が不足していてピンとこないので、とりあえずどのようなにつかえるかを試している最中。</p>
+
+<p><a href='#fnref:1' rev='footnote'>↩</a></p>
+</li><li id='fn:2'><p> dot productのコードは本当は v1 dot v2 とか書きたい。Scala力が不足…
+</code></pre></p>
+
+<p><a href='#fnref:2' rev='footnote'>↩</a>
+
+</li>
+	</ol>
+</div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)]]></title>
+    <link href="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
+    <updated>2013-07-03T00:14:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#概要">概要</a>  </li>
+  <li><a href="#前回の作業内容">前回の作業内容</a>  </li>
+  <li><a href="#今日やること（依存ライブラリの追加）">今日やること（依存ライブラリの追加）</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<h2 id="概要">概要</h2>
+
+<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
+
+<p>今回はScalaTestを導入。</p>
+
+<!-- more -->
+
+
+<h2 id="前回の作業内容">前回の作業内容</h2>
+
+<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> の成果</p>
+
+<ul>
+<li>sbtでIntelliJのプロジェクトを作った</li>
+</ul>
+
+
+<h2 id="今日やること（依存ライブラリの追加）">今日やること（依存ライブラリの追加）</h2>
+
+<ul>
+<li>依存するライブラリをsbtで定義しIntelliJ用の定義ファイルを再生成する。</li>
+<li>build.sbtをPROJECT_DIR に作成 (PROJECT_DIRはプロジェクトディレクトリ)</li>
+</ul>
+
+
+<p>build.sbt は次の内容これがわかれば他にも応用出来るはず。
+<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+<p><div><script src='https://gist.github.com/5910249.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<p>以下手順
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd PROJECT_DIR
+</span><span class='line'>sbt&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;blockquote>&lt;p>reload
+</span><span class='line'>update
+</span><span class='line'>gen-idea</span></code></pre></td></tr></table></div></figure></notextile></div></p></blockquote>
+
+<p>IntelliJを開いていると自動的に変更を検知してリロードしてくれる。
+libraryDependenciesにscalatestを追加され、ScalaTestがつえるようになる。
+これでひと通りソース書いてテストができる。</p>
+
+<p>このシリーズ、きっとまだ続く。</p>
+
+<p><div class="footnotes">
+	<ol>
+		<li id='fn:1'><p> sbtのplugin.sbt, build.sbtはいつも調べてその場では理解するが忘れてしまう…
+</code></pre></p>
+
+<p><a href='#fnref:1' rev='footnote'>↩</a>
+
+</li>
+	</ol>
+</div>
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成]]></title>
@@ -207,120 +467,6 @@ git commit -m "pull upstream."
 <li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[shでコマンドが存在するか確認する方法]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command/"/>
-    <updated>2013-03-31T00:41:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command</id>
-    <content type="html"><![CDATA[<p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
-Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if </span>which brew &gt; /dev/null;then
-</span><span class='line'>   . &lt;code&gt;brew --prefix&lt;/code&gt;/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>こんな方法もあるみたい</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;&lt;code&gt;which brew&lt;/code&gt;&quot;</span> <span class="o">]</span>;<span class="k">then</span>
-</span><span class='line'>   . &lt;code&gt;brew --prefix&lt;/code&gt;/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac OSX のDiffツール]]></title>
-    <link href="http://makotow.github.io/blog/2013/02/08/mac-difftools/"/>
-    <updated>2013-02-08T00:40:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/02/08/mac-difftools</id>
-    <content type="html"><![CDATA[<p>色々探してみた。
-要件としては</p>
-
-<ul>
-<li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
-<li>できれば比較状態から編集できる</li>
-</ul>
-
-
-<p>MacOSXでは決定打となるようなツールはなかったが、
-ある程度の候補を上げることができたので記録する。</p>
-
-<!-- more -->
-
-
-<h2 id="試してみたツール">試してみたツール</h2>
-
-<p>探してみてスペック的に満たしていそうなものをためしてみた。
-参考としてURLや使用感を書いてみようと思う。</p>
-
-<h3 id="P4Merge+stroy">P4Merge+stroy</h3>
-
-<p>MacのDiffツールといえばP4Mergeをよく見かける。しかし、ディレクトリ単位での比較ができないためスルーしていた。ディレクトリ単位で比較できるツールという観点で調べていたところstroyと連携することでディレクトリ単位の比較が実現できるようなので試してみた。</p>
-
-<p> <a href="http://www.atinfinity.info/wiki/index.php?Mac/stroy%E3%81%A8P4Merge%E3%82%92%E9%80%A3%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B">Mac/stroyとP4Mergeを連動させる</a>
-を参考に試してみた。</p>
-
-<p>比較、マージもわかりやすく使いやすいように感じる。</p>
-
-<p><img class="left" src="/images/2013/02/stroy.png">
-<img class="right" src="/images/2013/02/p4merge.png"></p>
-
-<h3 id="DiffMerge">DiffMerge</h3>
-
-<p>P4Merge + story に比べて導入するソフトは１つだけでよい。
-求めているものの要求を満たしていてる。</p>
-
-<p>あえて、不満点を上げるとしたら、マージがわかりづらいところ。
-変更前と変更後を指定する必要があり２ペインの左がオリジナル</p>
-
-<p>初期状態だと日本語が化けてしまう。
-日本語についての対応策としては　<a href="http://d.hatena.ne.jp/nakamura001/20110321/1300706226">強火で進め - ソースコードの比較/マージツール「DiffMerge」</a>
-を参考にした。</p>
-
-<p><img class="right" src="/images/2013/02/diffmerge1.png">
-<img class="right" src="/images/2013/02/diffmerge2.png"></p>
-
-<h3 id="meld">meld</h3>
-
-<p>homebrewでインストール可能なのだが、ビルドに失敗したり色々と大変だった。</p>
-
-<p>gtk2+のビルドのことごとく失敗するので、githubをみて解決</p>
-
-<ul>
-<li>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/07/homebrew-gtk2-24-11/</li>
-<li>https://github.com/mxcl/homebrew/issues/13546</li>
-</ul>
-
-
-<p>操作感がMacとは違うので違和感は感じる。
-機能的には問題なく使用可能</p>
-
-<h2 id="その他">その他</h2>
-
-<p>試してはいないが検索している上で出てきたキーワードを備忘として記載しておく。</p>
-
-<ul>
-<li>TextWrangler</li>
-<li>Kaleidoscope(有償）</li>
-<li>Beyond Compare</li>
-<li>Araxis</li>
-</ul>
-
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>Winmergeほどの使いやすがはないが、ちょっとづつ使ってみようと思う。
-今のところP4Mege+stroyが良い感じ。</p>
 ]]></content>
   </entry>
   
