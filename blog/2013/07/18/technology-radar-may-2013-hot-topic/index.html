@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Links - Software Technology Memorandum and thoughts</title>
+  <title>Technology Radar May 2013の気になるところ(1) - Software Technology Memorandum and thoughts</title>
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Category: Links">
+  <meta name="description" content="Contents Technology Radar May 2013 気になるキーワード Infrastructure as code D3 Hystrix Log Management Gatling その他気になったところ 終わりに Technology Radar May 2013 もう、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.ioblog/categories/links">
+  <link rel="canonical" href="http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
@@ -90,36 +90,231 @@ $(document).ready( function () {
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Links</h1>
+    
+      <h1 class="entry-title">Technology Radar May 2013の気になるところ(1)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-18T23:50:00+09:00" pubdate data-updated="true">Jul 18<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
-
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/08/23/tag-cloud-related-post/">タグクラウド、関連する記事を表示するようにした。</a></h1>
-<time datetime="2012-08-23T23:26:00+09:00" pubdate><span class='month'>Aug</span> <span class='day'>23</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/links/'>Links</a>, <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<div class="entry-content"><h2> Contents </h2>
 
 
-</article>
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#Technology+Radar+May+2013">Technology Radar May 2013</a>  </li>
+  <li><a href="#気になるキーワード">気になるキーワード</a>
+   <ul>
+   <li><a href="#Infrastructure+as+code">Infrastructure as code</a>   </li>
+   <li><a href="#D3">D3</a>   </li>
+   <li><a href="#Hystrix">Hystrix</a>   </li>
+   <li><a href="#Log+Management">Log Management</a>   </li>
+   <li><a href="#Gatling">Gatling</a>   </li>
+   <li><a href="#その他気になったところ">その他気になったところ</a>   </li>
+  </ul>
+  <li><a href="#終わりに">終わりに</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<h2 id="Technology+Radar+May+2013">Technology Radar May 2013</h2>
+
+<p>もう、２ヶ月もまえだが、Technology Radar May 2013が公開された。
+興味があるキーワードを自分なりに調べてみた。
+タイトルが（1）となっているのは気になるものをすべて書こうとしてなかなか記事がアップできなかったので1記事2,3トピックで挙げるようにした。</p>
+
+<p>もしかすると（2）、（3）と続くかもしれない。興味があるものはおおいけど記事を作成する時間がなかなか取れないでとりあえず軽い内容でアップ。</p>
+
+<p>一応、簡単な説明。
+Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査結果を公開しているもの。
+自分が読んでいる目的としては現在どのようなテクノロジーがあり、どれほど浸透しているかの確認や、
+新しいモノを見つけるために読んでいる。
+<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+<ul>
+<li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
+<li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2 id="気になるキーワード">気になるキーワード</h2>
+
+<p>特に目を引いたもの、興味のあるものについて調べてみた。</p>
+
+<h3 id="Infrastructure+as+code">Infrastructure as code</h3>
+
+<p>Continuous Delivery と DevOps についてたかいところまで到達している。
+infrastructure as code と
+infrastructure as code 、最近VergentやらChef, Puppetなどでインフラの自動化につく記事も多く見るようになってきた。</p>
+
+<h3 id="D3">D3</h3>
+
+<p>コンテキストから察するに、おそらくこれのこと(最後のReference)
+<a href="http://d3js.org/">Data-Driven Documents</a>
+少しGalleryをみてみるとこんなにも綺麗に可視化できるものかと思ってしまった。</p>
+
+<h3 id="Hystrix">Hystrix</h3>
+
+<p>キーワードだけ。
+調べてはいない。</p>
+
+<p><a href="https://github.com/Netflix/Hystrix">Hystrix: Latency and Fault Tolerance for Distributed Systems</a></p>
+
+<h3 id="Log+Management">Log Management</h3>
+
+<p>ログの収集、集約、検索、フィルタのテクノロジー。（だと思う…）</p>
+
+<ul>
+<li><a href="http://logstash.net/">Logstash</a></li>
+<li><a href="http://graylog2.org/">Graylog2</a></li>
+</ul>
+
+
+<h3 id="Gatling">Gatling</h3>
+
+<p><a href="http://gatling-tool.org/">Gatling Project - stress tool</a></p>
+
+<p>Gatlingはパフォーマンステストのツール。
+Scalaで書かれている。</p>
+
+<h3 id="その他気になったところ">その他気になったところ</h3>
+
+<ul>
+<li>Chef, PuppetがWindows対応.OctopusはWindos専用で作成されている。</li>
+</ul>
+
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>Technoogy　Radarって日本語訳の需要あるかな。
+日本語にするって難しい。</p>
+
+<div class="footnotes">
+    <ol>
+        <li id='fn:1'><p>Technology Radarからリンクされている、
+<a href="http://martinfowler.com/articles/radar-faq.html">ThoughtWorks Technology Radar FAQ</a>
+を読むことで詳細を理解することができる。</p>
+
+<p><a href='#fnref:1' rev='footnote'>↩</a></p>
+</li>
+    </ol>
+</div>
+
+
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Makoto WATANABE (makotow)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-18T23:50:00+09:00" pubdate data-updated="true">Jul 18<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/technology/'>technology</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+
+  
+  <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+  
+
+
+  
+   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+  
+  
+</div>
+
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/18/scala-intellij-idea-scalatest/" title="Previous Post: IntelliJ で ScalaTest">&laquo; IntelliJ で ScalaTest</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -250,7 +445,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var disqus_shortname = 'makotownotes';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/';
+        var disqus_url = 'http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

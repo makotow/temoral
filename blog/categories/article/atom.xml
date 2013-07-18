@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Article | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/article/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-07-18T01:30:18+09:00</updated>
+  <updated>2013-07-19T00:10:36+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,130 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Technology Radar May 2013の気になるところ(1)]]></title>
+    <link href="http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/"/>
+    <updated>2013-07-18T23:50:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#Technology+Radar+May+2013">Technology Radar May 2013</a>  </li>
+  <li><a href="#気になるキーワード">気になるキーワード</a>
+   <ul>
+   <li><a href="#Infrastructure+as+code">Infrastructure as code</a>   </li>
+   <li><a href="#D3">D3</a>   </li>
+   <li><a href="#Hystrix">Hystrix</a>   </li>
+   <li><a href="#Log+Management">Log Management</a>   </li>
+   <li><a href="#Gatling">Gatling</a>   </li>
+   <li><a href="#その他気になったところ">その他気になったところ</a>   </li>
+  </ul>
+  <li><a href="#終わりに">終わりに</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<h2 id="Technology+Radar+May+2013">Technology Radar May 2013</h2>
+
+<p>もう、２ヶ月もまえだが、Technology Radar May 2013が公開された。
+興味があるキーワードを自分なりに調べてみた。
+タイトルが（1）となっているのは気になるものをすべて書こうとしてなかなか記事がアップできなかったので1記事2,3トピックで挙げるようにした。</p>
+
+<p>もしかすると（2）、（3）と続くかもしれない。興味があるものはおおいけど記事を作成する時間がなかなか取れないでとりあえず軽い内容でアップ。</p>
+
+<p>一応、簡単な説明。
+Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査結果を公開しているもの。
+自分が読んでいる目的としては現在どのようなテクノロジーがあり、どれほど浸透しているかの確認や、
+新しいモノを見つけるために読んでいる。
+<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+<ul>
+<li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
+<li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2 id="気になるキーワード">気になるキーワード</h2>
+
+<p>特に目を引いたもの、興味のあるものについて調べてみた。</p>
+
+<h3 id="Infrastructure+as+code">Infrastructure as code</h3>
+
+<p>Continuous Delivery と DevOps についてたかいところまで到達している。
+infrastructure as code と
+infrastructure as code 、最近VergentやらChef, Puppetなどでインフラの自動化につく記事も多く見るようになってきた。</p>
+
+<h3 id="D3">D3</h3>
+
+<p>コンテキストから察するに、おそらくこれのこと(最後のReference)
+<a href="http://d3js.org/">Data-Driven Documents</a>
+少しGalleryをみてみるとこんなにも綺麗に可視化できるものかと思ってしまった。</p>
+
+<h3 id="Hystrix">Hystrix</h3>
+
+<p>キーワードだけ。
+調べてはいない。</p>
+
+<p><a href="https://github.com/Netflix/Hystrix">Hystrix: Latency and Fault Tolerance for Distributed Systems</a></p>
+
+<h3 id="Log+Management">Log Management</h3>
+
+<p>ログの収集、集約、検索、フィルタのテクノロジー。（だと思う…）</p>
+
+<ul>
+<li><a href="http://logstash.net/">Logstash</a></li>
+<li><a href="http://graylog2.org/">Graylog2</a></li>
+</ul>
+
+
+<h3 id="Gatling">Gatling</h3>
+
+<p><a href="http://gatling-tool.org/">Gatling Project - stress tool</a></p>
+
+<p>Gatlingはパフォーマンステストのツール。
+Scalaで書かれている。</p>
+
+<h3 id="その他気になったところ">その他気になったところ</h3>
+
+<ul>
+<li>Chef, PuppetがWindows対応.OctopusはWindos専用で作成されている。</li>
+</ul>
+
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>Technoogy　Radarって日本語訳の需要あるかな。
+日本語にするって難しい。</p>
+
+<p><div class="footnotes">
+	<ol>
+		<li id='fn:1'><p>Technology Radarからリンクされている、
+</code></pre></p>
+
+<p><a href="http://martinfowler.com/articles/radar-faq.html">ThoughtWorks Technology Radar FAQ</a>
+を読むことで詳細を理解することができる。</p>
+
+
+
+
+<p><a href='#fnref:1' rev='footnote'>↩</a>
+
+</li>
+	</ol>
+</div>
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SQLアンチパターン　読書録]]></title>
@@ -232,59 +356,6 @@
 <p>今後はここに書いてある例でやっていきたい。</p>
 
 <p>最終的には、時間管理の章以降は付箋を貼る箇所が多くなった。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[漫画で学ぶプロジェクトマネジメント読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/02/20/pmintro/"/>
-    <updated>2013-02-20T01:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/02/20/pmintro</id>
-    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-
-<p>漫画で学ぶプロジェクトマネジメント読書録を読んだ感想。</p>
-
-<!-- more -->
-
-
-<p>自分としては、基本をすっとばして物事をやっているため、
-優しいくらいの基本を学べてよかったと思う。
-体系的に学ぶ第一歩となるのではないかと思う。</p>
-
-<p>本書の特徴として、</p>
-
-<ul>
-<li>非常に容易(わかり易く解説してある）</li>
-<li>漫画のためサクサクよめる</li>
-<li>一部、フォローのためのコラムあり</li>
-<li>内容にPMBOKなどの用語が出てくるため、次になにを学ぶかがわかる。（調べるべきキーワードがわかりやすい）</li>
-<li>新入社員、新米PM、PMとは何をやっているかを知りたい人向け</li>
-</ul>
-
-
-<h2 id="今後の指針">今後の指針</h2>
-
-<p>プロジェクト・マネジメントで自分が読んだものでおすすめできるものを挙げる。</p>
-
-<h3 id="プロジェクト・マネジメント">プロジェクト・マネジメント</h3>
-
-<p>なんかかPMに近い立場を体験したあとに読むと勉強になるはず。
-読むたびに新しい発見がありそう。</p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/4106A8SHJRL._SL160_.jpg" alt="アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Scott Berkun <br />オライリー・ジャパン <br />売り上げランキング: 51,421<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-
-<h3 id="アジャイル開発">アジャイル開発</h3>
-
-<p>アジャイル開発に興味が出たら</p>
-
-<p>  <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg" alt="アジャイルサムライ−達人開発者への道−" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルサムライ−達人開発者への道−</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Jonathan Rasmusson <br />オーム社 <br />売り上げランキング: 2,147<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div></p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51A8BTrHYxL._SL160_.jpg" alt="アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Mike Cohn マイク コーン <br />毎日コミュニケーションズ <br />売り上げランキング: 20,349<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-
-
 ]]></content>
   </entry>
   

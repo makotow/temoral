@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TDD | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/tdd/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-07-18T01:30:18+09:00</updated>
+  <updated>2013-07-19T00:10:36+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -170,7 +170,7 @@ For functional, integration, or acceptance testing, start with FeatureSpec<br/><
 
 <p>SBT Console使うことでIntelliJ内で完結するのは便利だと思う。</p>
 
-<p>もう少しネタ見つけて続ける。</p>
+<p>もう少しネタ見つけて続ける。(コード片とか学んだこととか…)</p>
 
 <p><div class="footnotes">
 	<ol>
