@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>実践テスト駆動開発　読書録 - Software Technology Memorandum and thoughts</title>
+  <title>ScalaでIO - Software Technology Memorandum and thoughts</title>
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)posted with amazlet at 13.02.18Steve Freeman Nat Pryce 翔泳社 売り上げランキング: 39,893Amazon.co &hellip;">
+  <meta name="description" content="Contents Scala でファイルIO API ラインごとに処理をする 便利メソッド try-with-resources は？ 次のお題 Scala でファイルIO Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.io/blog/2013/03/30/tddprac">
+  <link rel="canonical" href="http://makotow.github.io/blog/2013/08/04/scala-file-io">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
@@ -94,7 +94,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">実践テスト駆動開発　読書録</h1>
+      <h1 class="entry-title">ScalaでIO</h1>
     
     
       <p class="meta">
@@ -110,48 +110,168 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-03-30T13:30:00+09:00" pubdate data-updated="true">Mar 30<span>th</span>, 2013</time>
+<time datetime="2013-08-04T23:10:00+09:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+<div class="entry-content"><h2> Contents </h2>
 
 
-<p>軽いメモ書き。
-個人的に結構なボリュームがある書籍であった。</p>
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#Scala+でファイルIO">Scala でファイルIO</a>  </li>
+  <li><a href="#API">API</a>
+   <ul>
+   <li><a href="#ラインごとに処理をする">ラインごとに処理をする</a>   </li>
+   <li><a href="#便利メソッド">便利メソッド</a>   </li>
+  </ul>
+  <li><a href="#try-with-resources+は？">try-with-resources は？</a>  </li>
+  <li><a href="#次のお題">次のお題</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<h2 id="Scala+でファイルIO">Scala でファイルIO</h2>
+
+<p>Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。
+今ならどのような方法があるかしらべてみた</p>
 
 <!-- more -->
 
 
-<h3 id="感想">感想</h3>
+<h2 id="API">API</h2>
 
-<p>読んでから少したってしまったので箇条書きで感想。</p>
+<p>ぱっと思いつく所で以下の２つ。</p>
 
 <ul>
-<li>1章が一番しっくりきた。</li>
-<li>テストコードをどうコーディングするかをかなり多くのサンプルをみながら理解できた。</li>
-<li>モックオブジェクト(jMock2)について理解を深めることができた。</li>
-<li>同期処理、非同期処理についても言及しているため、非同期処理のテストについて学びたく買ったので良かった。</li>
+<li>Scala の scala.io.Source</li>
+<li>Java の java.nio(nio2), java.io</li>
 </ul>
 
 
-<p>  実際、設計を進化させながら進んでいる。
-  途中でこれは微妙だなと思うことがあっても章が進むと改善されていくので、自分の設計思想と同じだなと思ったり、
-  こういうやり方があるかなどと読み進めていけて面白かった。</p>
+<p>今回はScalaなので<a href="http://www.scala-lang.org/api/current/index.html#scala.io.Source">scala.io.Source</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/io/Source.scala#L1">ソース</a><sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>)を使ってみる。</p>
 
-<p>  この書籍自体にはテスティングフレームワークの使用方法などは載っていないが、
-  書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
-  なにを使ったらよいかの参考になるのではないか。</p>
+<pre><code>scala-version: scala 2.10.2
+</code></pre>
 
-<h3 id="参考">参考</h3>
+<h3 id="ラインごとに処理をする">ラインごとに処理をする</h3>
 
-<p>テスト駆動開発といえばこれ。
-併せて読むと理解が進むと思う。</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// ファイルから一行づつ読み込み処理をするサンプル</span>
+</span><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+</span><span class='line'><span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">()</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
+</span><span class='line'>    <span class="c1">// doSomething</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" alt="テスト駆動開発入門" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">テスト駆動開発入門</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.30</div></div><div class="amazlet-detail">ケント ベック <br />ピアソンエデュケーション <br />売り上げランキング: 105,111<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+<h3 id="便利メソッド">便利メソッド</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+</span><span class='line'><span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">take</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
+</span><span class='line'>     <span class="c1">// 先頭5行のみ処理</span>
+</span><span class='line'>     <span class="c1">// do something</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+</span><span class='line'><span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">drop</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
+</span><span class='line'>     <span class="c1">// 先頭行を読み捨てて drop(1)</span>
+</span><span class='line'>     <span class="c1">// 以降をループする。</span>
+</span><span class='line'>     <span class="c1">// do something</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>一行読み捨てとか綺麗に書ける印象。
+getLinesでは<a href="http://www.scala-lang.org/api/current/index.html#scala.collection.Iterator">scala.collection.Iterator</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/collection/Iterator.scala#L1">ソース</a>)が返ってくるので、便利メソッドがたくさん使える。
+APIを眺めているともっと綺麗にできそう。</p>
+
+<h2 id="try-with-resources+は？">try-with-resources は？</h2>
+
+<p>リソースの解放でJava7のtry-with-resourceみたいなことするにはどうしたらいいか。
+Java7でできるからScalaでもと思ったけど言語仕様ではできないようだ。
+やはりローンパターンを使用するみたい。
+少し調べてみるとScalazのwithResource, scala-armなどがあるようだ。</p>
+
+<p><a href="http://www.ne.jp/asahi/hishidama/home/index.html">ひしだま&#8217;s ホームページ</a>にいろいろなローンパターンがまとめられている。</p>
+
+<ul>
+<li><a href="http://www.ne.jp/asahi/hishidama/home/tech/scala/sample/using.html">Scala using（ローンパターン)</a></li>
+</ul>
+
+
+<h2 id="次のお題">次のお題</h2>
+
+<p>今後派生するとしたらこんな感じ</p>
+
+<ul>
+<li>ローンパターン、派生してScalaを通してのデザインパターン再考</li>
+<li>Scalaz, scala-arm を使用したローンパターン実装方法</li>
+</ul>
+
+
+<br/><br/>
+
+
+
+
+<div class="footnotes">
+    <ol>
+        <li id='fn:1'><p> ソースがAPIからリンク貼られててすごく便利。
+<a href='#fnref:1' rev='footnote'>↩</a></p>
+</li>
+    </ol>
+</div>
 
 
 
@@ -177,12 +297,12 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-03-30T13:30:00+09:00" pubdate data-updated="true">Mar 30<span>th</span>, 2013</time>
+<time datetime="2013-08-04T23:10:00+09:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/tdd/'>TDD</a>, <a class='category' href='/blog/categories/books/'>books</a>
+    <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/scala/'>scala</a>
   
 </span>
 
@@ -191,7 +311,7 @@ $(document).ready( function () {
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/03/30/tddprac/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/03/30/tddprac/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/08/04/scala-file-io/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/08/04/scala-file-io/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -207,7 +327,7 @@ $(document).ready( function () {
 
 
   
-   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/blog/2013/03/30/tddprac/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/blog/2013/08/04/scala-file-io/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
   
 
   
@@ -224,15 +344,11 @@ $(document).ready( function () {
     
     <li><a href="/blog/2013/07/18/scala-intellij-idea-scalatest/">IntelliJ で ScalaTest</a></li>
     
-    <li><a href="/blog/2013/05/05/sqlantipattern/">SQLアンチパターン　読書録</a></li>
+    <li><a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a></li>
     
-    <li><a href="/blog/2013/03/30/agileandscrum/">アジャイル開発とスクラム　読書録</a></li>
+    <li><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a></li>
     
-    <li><a href="/blog/2013/03/01/feldman/">フェルドマン式知的生産術　読書録</a></li>
-    
-    <li><a href="/blog/2013/02/20/pmintro/">漫画で学ぶプロジェクトマネジメント読書録</a></li>
-    
-    <li><a href="/blog/2012/12/09/buying-books/">最近購入した本(2012/12)</a></li>
+    <li><a href="/blog/2012/10/03/gitignore/">gitignoreのメモ</a></li>
     
   </ul>
 </div>
@@ -243,10 +359,8 @@ $(document).ready( function () {
 
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/03/30/agileandscrum/" title="Previous Post: アジャイル開発とスクラム　読書録">&laquo; アジャイル開発とスクラム　読書録</a>
+        <a class="basic-alignment left" href="/blog/2013/07/18/technology-radar-may-2013-hot-topic/" title="Previous Post: Technology Radar May 2013の気になるところ(1)">&laquo; Technology Radar May 2013の気になるところ(1)</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/03/31/sh-tech-exists-command/" title="Next Post: shでコマンドが存在するか確認する方法">shでコマンドが存在するか確認する方法 &raquo;</a>
       
     </p>
   </footer>
@@ -388,8 +502,8 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://makotow.github.io/blog/2013/03/30/tddprac/';
-        var disqus_url = 'http://makotow.github.io/blog/2013/03/30/tddprac/';
+        var disqus_identifier = 'http://makotow.github.io/blog/2013/08/04/scala-file-io/';
+        var disqus_url = 'http://makotow.github.io/blog/2013/08/04/scala-file-io/';
         var disqus_script = 'embed.js';
       
     (function () {

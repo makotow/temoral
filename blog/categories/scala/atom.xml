@@ -4,7 +4,7 @@
   <title><![CDATA[Category: scala | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/scala/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-07-19T00:10:36+09:00</updated>
+  <updated>2013-08-04T23:34:53+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,184 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ScalaでIO]]></title>
+    <link href="http://makotow.github.io/blog/2013/08/04/scala-file-io/"/>
+    <updated>2013-08-04T23:10:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/08/04/scala-file-io</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#Scala+でファイルIO">Scala でファイルIO</a>  </li>
+  <li><a href="#API">API</a>
+   <ul>
+   <li><a href="#ラインごとに処理をする">ラインごとに処理をする</a>   </li>
+   <li><a href="#便利メソッド">便利メソッド</a>   </li>
+  </ul>
+  <li><a href="#try-with-resources+は？">try-with-resources は？</a>  </li>
+  <li><a href="#次のお題">次のお題</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+<h2 id="Scala+でファイルIO">Scala でファイルIO</h2>
+
+<p>Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。
+今ならどのような方法があるかしらべてみた</p>
+
+<!-- more -->
+
+
+<h2 id="API">API</h2>
+
+<p>ぱっと思いつく所で以下の２つ。</p>
+
+<ul>
+<li>Scala の scala.io.Source</li>
+<li>Java の java.nio(nio2), java.io</li>
+</ul>
+
+
+<p>今回はScalaなので<a href="http://www.scala-lang.org/api/current/index.html#scala.io.Source">scala.io.Source</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/io/Source.scala#L1">ソース</a><sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>)を使ってみる。</p>
+
+<pre><code>scala-version: scala 2.10.2
+</code></pre>
+
+<h3 id="ラインごとに処理をする">ラインごとに処理をする</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// ファイルから一行づつ読み込み処理をするサンプル</span>
+</span><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>                                                    <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="k">try</span> <span class="o">{</span>                                                                            <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">()</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="o">=&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;//</span> <span class="n">doSomething</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>                                                                           <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>                                                                      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>                                                                      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3 id="便利メソッド">便利メソッド</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>                                                    <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="k">try</span> <span class="o">{</span>                                                                            <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">take</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="o">=&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span> <span class="c1">// 先頭5行のみ処理</span>
+</span><span class='line'> <span class="c1">// do something</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>                                                                           <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>                                                                      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>                                                                      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="o">}</span>      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>                                                    <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="k">try</span> <span class="o">{</span>                                                                            <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">drop</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="o">=&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span> <span class="c1">// 先頭行を読み捨てて drop(1)</span>
+</span><span class='line'> <span class="c1">// 以降をループする。</span>
+</span><span class='line'> <span class="c1">// do something</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>                                                                           <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>                                                                      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>                                                                      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="o">}</span>      <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>一行読み捨てとか綺麗に書ける印象。
+getLinesでは<a href="http://www.scala-lang.org/api/current/index.html#scala.collection.Iterator">scala.collection.Iterator</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/collection/Iterator.scala#L1">ソース</a>)が返ってくるので、便利メソッドがたくさん使える。
+APIを眺めているともっと綺麗にできそう。</p>
+
+<h2 id="try-with-resources+は？">try-with-resources は？</h2>
+
+<p>リソースの解放でJava7のtry-with-resourceみたいなことするにはどうしたらいいか。
+Java7でできるからScalaでもと思ったけど言語仕様ではできないようだ。
+やはりローンパターンを使用するみたい。
+少し調べてみるとScalazのwithResource, scala-armなどがあるようだ。</p>
+
+<p><a href="http://www.ne.jp/asahi/hishidama/home/index.html">ひしだま's ホームページ</a>にいろいろなローンパターンがまとめられている。</p>
+
+<ul>
+<li><a href="http://www.ne.jp/asahi/hishidama/home/tech/scala/sample/using.html">Scala using（ローンパターン)</a></li>
+</ul>
+
+
+<h2 id="次のお題">次のお題</h2>
+
+<p>今後派生するとしたらこんな感じ</p>
+
+<ul>
+<li>ローンパターン、派生してScalaを通してのデザインパターン再考</li>
+<li>Scalaz, scala-arm を使用したローンパターン実装方法</li>
+</ul>
+
+
+<br/><br/>
+
+
+<p><div class="footnotes">
+	<ol>
+		<li id='fn:1'><p> ソースがAPIからリンク貼られててすごく便利。
+</code></pre></p>
+
+<p><a href='#fnref:1' rev='footnote'>↩</a>
+
+</li>
+	</ol>
+</div>
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IntelliJ で ScalaTest]]></title>
