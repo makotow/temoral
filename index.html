@@ -9,7 +9,7 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Contents Scala でファイルIO API ラインごとに処理をする 便利メソッド try-with-resources は？ 次のお題 Scala でファイルIO Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。 &hellip;">
+  <meta name="description" content="社内勉強会用の資料をつくらなかやなとおもっててプレゼンツールを探してみた。 PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。 reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,96 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-17T19:00:00+09:00" pubdate data-updated="true">Aug 17<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>社内勉強会用の資料をつくらなかやなとおもっててプレゼンツールを探してみた。</p>
+
+<p>PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。</p>
+
+<p>reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。</p>
+
+<h2> Contents </h2>
+
+
+<p>
+  <ul>
+
+  <ul>
+  <li><a href="#reveal.jsとは">reveal.jsとは</a>  </li>
+  <li><a href="#インストール">インストール</a>
+   <ul>
+   <li><a href="#Basic+Setup">Basic Setup</a>   </li>
+   <li><a href="#Full+Setup">Full Setup</a>   </li>
+  </ul>
+  <li><a href="#スライドを作成する">スライドを作成する</a>
+   <ul>
+   <li><a href="#HTML">HTML</a>
+    <ul>
+    <li><a href="#画像、リスト">画像、リスト</a>
+     <ul>
+     <li><a href="#画像">画像</a>     </li>
+     <li><a href="#リスト">リスト</a>     </li>
+    </ul>
+    </li>
+   </ul>
+   <li><a href="#Markdown">Markdown</a>
+    <ul>
+    <li><a href="#外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</a>    </li>
+    <li><a href="#HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</a>    </li>
+    <li><a href="#画像、リスト">画像、リスト</a>
+     <ul>
+     <li><a href="#画像">画像</a>     </li>
+     <li><a href="#リスト">リスト</a>     </li>
+    </ul>
+    </li>
+   </ul>
+   </li>
+  </ul>
+  <li><a href="#その他">その他</a>  </li>
+  <li><a href="#まとめ">まとめ</a>  </li>
+  </ul>
+ </li>
+ </ul>
+
+</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/17/presentation-using-reveal-dot-js/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -677,51 +767,6 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/30/tddprac/">実践テスト駆動開発　読書録</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-30T13:30:00+09:00" pubdate data-updated="true">Mar 30<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-
-<p>軽いメモ書き。
-個人的に結構なボリュームがある書籍であった。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/30/tddprac/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -771,6 +816,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/scala-file-io/">ScalaでIO</a>
       </li>
     
@@ -786,15 +835,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.28571428571429%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.28571428571429%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.28571428571429%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 147.14285714285714%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 125.71428571428572%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.57142857142857%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.28571428571429%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.28571428571429%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.57142857142857%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.85714285714286%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.85714285714286%'>IntelliJ(3)</a> <a href='/blog/categories/links' style='font-size: 104.28571428571429%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.28571428571429%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.28571428571429%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.28571428571429%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.28571428571429%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 130.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.28571428571429%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.28571428571429%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.85714285714286%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 117.14285714285714%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 121.42857142857143%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.28571428571429%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.28571428571429%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.28571428571429%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.28571428571429%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.28571428571429%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.28571428571429%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.57142857142857%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(14)</a> <a href='/blog/categories/technology' style='font-size: 104.28571428571429%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 144.0%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 124.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.0%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 104.0%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 104.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 128.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 104.0%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 116.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.0%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(15)</a> <a href='/blog/categories/technology' style='font-size: 104.0%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.0%'>tools(2)</a> </span>
 </section>
 
 <section>

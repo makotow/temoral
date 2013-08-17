@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>ScalaでIO - Software Technology Memorandum and thoughts</title>
+  <title>reveal.jsを使ってみる - Software Technology Memorandum and thoughts</title>
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Contents Scala でファイルIO API ラインごとに処理をする 便利メソッド try-with-resources は？ 次のお題 Scala でファイルIO Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。 &hellip;">
+  <meta name="description" content="社内勉強会用の資料をつくらなかやなとおもっててプレゼンツールを探してみた。 PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。 reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.io/blog/2013/08/04/scala-file-io">
+  <link rel="canonical" href="http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
@@ -94,7 +94,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">ScalaでIO</h1>
+      <h1 class="entry-title">reveal.jsを使ってみる</h1>
     
     
       <p class="meta">
@@ -110,58 +110,113 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-08-04T23:10:00+09:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
+<time datetime="2013-08-17T19:00:00+09:00" pubdate data-updated="true">Aug 17<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2> Contents </h2>
+<div class="entry-content"><p>社内勉強会用の資料をつくらなかやなとおもっててプレゼンツールを探してみた。</p>
+
+<p>PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。</p>
+
+<p>reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。</p>
+
+<h2> Contents </h2>
 
 
 <p>
   <ul>
 
   <ul>
-  <li><a href="#Scala+でファイルIO">Scala でファイルIO</a>  </li>
-  <li><a href="#API">API</a>
+  <li><a href="#reveal.jsとは">reveal.jsとは</a>  </li>
+  <li><a href="#インストール">インストール</a>
    <ul>
-   <li><a href="#ラインごとに処理をする">ラインごとに処理をする</a>   </li>
-   <li><a href="#便利メソッド">便利メソッド</a>   </li>
+   <li><a href="#Basic+Setup">Basic Setup</a>   </li>
+   <li><a href="#Full+Setup">Full Setup</a>   </li>
   </ul>
-  <li><a href="#try-with-resources+は？">try-with-resources は？</a>  </li>
-  <li><a href="#次のお題">次のお題</a>  </li>
+  <li><a href="#スライドを作成する">スライドを作成する</a>
+   <ul>
+   <li><a href="#HTML">HTML</a>
+    <ul>
+    <li><a href="#画像、リスト">画像、リスト</a>
+     <ul>
+     <li><a href="#画像">画像</a>     </li>
+     <li><a href="#リスト">リスト</a>     </li>
+    </ul>
+    </li>
+   </ul>
+   <li><a href="#Markdown">Markdown</a>
+    <ul>
+    <li><a href="#外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</a>    </li>
+    <li><a href="#HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</a>    </li>
+    <li><a href="#画像、リスト">画像、リスト</a>
+     <ul>
+     <li><a href="#画像">画像</a>     </li>
+     <li><a href="#リスト">リスト</a>     </li>
+    </ul>
+    </li>
+   </ul>
+   </li>
+  </ul>
+  <li><a href="#その他">その他</a>  </li>
+  <li><a href="#まとめ">まとめ</a>  </li>
   </ul>
  </li>
  </ul>
 
 </p>
 
-<h2 id="Scala+でファイルIO">Scala でファイルIO</h2>
-
-<p>Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。
-今ならどのような方法があるかしらべてみた</p>
-
 <!-- more -->
 
 
-<h2 id="API">API</h2>
+<h2 id="reveal.jsとは">reveal.jsとは</h2>
 
-<p>ぱっと思いつく所で以下の２つ。</p>
+<p>HTMLでかっこいいスライドが作れるフレームワーク。
+ぐいんぐいん動いてみ見た目もよい。</p>
 
 <ul>
-<li>Scala の scala.io.Source</li>
-<li>Java の java.nio(nio2), java.io</li>
+<li><a href="https://github.com/hakimel/reveal.js">reveal.js</a></li>
+<li><a href="http://lab.hakim.se/reveal-js/#/">reveal.jsのデモ</a></li>
+<li><a href="https://github.com/hakimel/reveal.js/wiki/Example-Presentations">reveal.js使ったサンプル一覧</a></li>
 </ul>
 
 
-<p>今回はScalaなので<a href="http://www.scala-lang.org/api/current/index.html#scala.io.Source">scala.io.Source</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/io/Source.scala#L1">ソース</a><sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>)を使ってみる。</p>
+<h2 id="インストール">インストール</h2>
 
-<pre><code>scala-version: scala 2.10.2
+<h3 id="Basic+Setup">Basic Setup</h3>
+
+<p>簡単な方法としては、
+<a href="https://github.com/hakimel/reveal.js#basic-setup">Basic Setup</a> を参照して、<a href="https://github.com/hakimel/reveal.js/releases">https://github.com/hakimel/reveal.js/releases</a>から最新版をダウンロードしてindex.htmlを編集する。</p>
+
+<h3 id="Full+Setup">Full Setup</h3>
+
+<p>reveal.jsのフル機能を使いたい場合はこちらを使う。外部のmarkdown を取り込みたい場合などはFullSetupが必要。
+<a href="https://github.com/hakimel/reveal.js#full-setup">Full Setup</a>を参照して必要なnode.js, Gruntをインストールする。
+github から clone する。</p>
+
+<pre><code>$ git clone git@github.com:hakimel/reveal.js.git
 </code></pre>
 
-<h3 id="ラインごとに処理をする">ラインごとに処理をする</h3>
+<h2 id="スライドを作成する">スライドを作成する</h2>
+
+<p>基本的にはindex.htmlを眺めているとざっくりした書き方はわかってくる。
+スライドの作成方法としては次の2つがある。</p>
+
+<ul>
+<li>HTML</li>
+<li>Markdown</li>
+</ul>
+
+
+<p>markdownを直接書く方法、外部ファイルのmarkdownファイルの読み込みできる。
+ここではhtml, markdown の2つで、スライド作成に必要になるであろう、画像埋め込み、リストについてメモをしておく。
+reveal.jsの特徴としてスライドを一次元的なものではなく2次元的にも作成できる(nested vertical slide)ものがある。</p>
+
+<h3 id="HTML">HTML</h3>
+
+<p><code>&lt;section&gt;</code> タグで一枚のスライドになる。</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -169,45 +224,16 @@ $(document).ready( function () {
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// ファイルから一行づつ読み込み処理をするサンプル</span>
-</span><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
-</span><span class='line'><span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">()</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
-</span><span class='line'>    <span class="c1">// doSomething</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
-</span><span class='line'><span class="o">}</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド１
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド２
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3 id="便利メソッド">便利メソッド</h3>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
-</span><span class='line'><span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">take</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
-</span><span class='line'>     <span class="c1">// 先頭5行のみ処理</span>
-</span><span class='line'>     <span class="c1">// do something</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+<p>nested vertical slide の作成方法としては <code>&lt;section&gt;</code> タグ内に <code>&lt;section&gt;</code> タグをネストすることで実現できる。</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -219,61 +245,132 @@ $(document).ready( function () {
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
-</span><span class='line'><span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">drop</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
-</span><span class='line'>     <span class="c1">// 先頭行を読み捨てて drop(1)</span>
-</span><span class='line'>     <span class="c1">// 以降をループする。</span>
-</span><span class='line'>     <span class="c1">// do something</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
-</span><span class='line'><span class="o">}</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド１
+</span><span class='line'>    <span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド1-1
+</span><span class='line'>    <span class="nt">&lt;/section&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド1-2
+</span><span class='line'>    <span class="nt">&lt;/section&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド２
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>一行読み捨てとか綺麗に書ける印象。
-getLinesでは<a href="http://www.scala-lang.org/api/current/index.html#scala.collection.Iterator">scala.collection.Iterator</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/collection/Iterator.scala#L1">ソース</a>)が返ってくるので、便利メソッドがたくさん使える。
-APIを眺めているともっと綺麗にできそう。</p>
+<h4 id="画像、リスト">画像、リスト</h4>
 
-<h2 id="try-with-resources+は？">try-with-resources は？</h2>
+<p>HTMLで記述する。</p>
 
-<p>リソースの解放でJava7のtry-with-resourceみたいなことするにはどうしたらいいか。
-Java7でできるからScalaでもと思ったけど言語仕様ではできないようだ。
-やはりローンパターンを使用するみたい。
-少し調べてみるとScalazのwithResource, scala-armなどがあるようだ。</p>
+<h5 id="画像">画像</h5>
 
-<p><a href="http://www.ne.jp/asahi/hishidama/home/index.html">ひしだま&#8217;s ホームページ</a>にいろいろなローンパターンがまとめられている。</p>
+<p>画像であれば <code>&lt;img src="xxx"&gt;&lt;/img&gt;</code></p>
+
+<h5 id="リスト">リスト</h5>
+
+<p><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code> を使用する。</p>
+
+<h3 id="Markdown">Markdown</h3>
+
+<p>htmlのなかにもMarkdownはかけるが、外部ファイルのMarkdownも読み込める。
+スライドだけではなくて配布資料としても使いたいのでMarkdownを埋め込めるのはとてもいい機能だと思える。
+ただし、外部Markdownを使うには Full Setup を実行し、grunt serve を実行する必要がある。</p>
+
+<h4 id="外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</h4>
+
+<p>外部ファイルとして用意したexample.mdを読み込む場合
+スライドのセパレータとnested vertical slideのセパレータを設定。</p>
 
 <ul>
-<li><a href="http://www.ne.jp/asahi/hishidama/home/tech/scala/sample/using.html">Scala using（ローンパターン)</a></li>
+<li>data-separator: スライドのセパレーター</li>
+<li>data-vertical: nested vertical slide のセパレーター</li>
 </ul>
 
 
-<h2 id="次のお題">次のお題</h2>
-
-<p>今後派生するとしたらこんな感じ</p>
-
-<ul>
-<li>ローンパターン、派生してScalaを通してのデザインパターン再考</li>
-<li>Scalaz, scala-arm を使用したローンパターン実装方法</li>
-</ul>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">data-markdown=</span><span class="s">&quot;example.md&quot;</span> <span class="na">data-separator=</span><span class="s">&quot;^\n\n\n&quot;</span> <span class="na">data-vertical=</span><span class="s">&quot;^\n\n&quot;</span><span class="nt">&gt;&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<br/><br/>
+<h4 id="HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</h4>
+
+<p>以下のように記述し、section内にMarkdownで書く。</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">data-markdown</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="err">##</span> <span class="nx">Markdown</span> <span class="nx">support</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">For</span> <span class="nx">those</span> <span class="nx">of</span> <span class="nx">you</span> <span class="nx">who</span> <span class="nx">like</span> <span class="nx">that</span> <span class="nx">sort</span> <span class="nx">of</span> <span class="nx">thing</span><span class="p">.</span> <span class="nx">Instructions</span> <span class="nx">and</span> <span class="nx">a</span> <span class="nx">bit</span> <span class="nx">more</span> <span class="nx">info</span> <span class="nx">available</span> <span class="p">[</span><span class="nx">here</span><span class="p">](</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/hakimel/reveal.js#markdown).</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">data</span><span class="o">-</span><span class="nx">markdown</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="err">##</span> <span class="nx">Markdown</span> <span class="nx">support</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nx">For</span> <span class="nx">those</span> <span class="nx">of</span> <span class="nx">you</span> <span class="nx">who</span> <span class="nx">like</span> <span class="nx">that</span> <span class="nx">sort</span> <span class="nx">of</span> <span class="nx">thing</span><span class="p">.</span>
+</span><span class='line'>      <span class="nx">Instructions</span> <span class="nx">and</span> <span class="nx">a</span> <span class="nx">bit</span> <span class="nx">more</span> <span class="nx">info</span> <span class="nx">available</span> <span class="p">[</span><span class="nx">here</span><span class="p">](</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/hakimel/reveal.js#markdown).</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="err">/section&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<h4 id="画像、リスト">画像、リスト</h4>
 
+<p>Markdownの記法で書ける。</p>
+
+<h5 id="画像">画像</h5>
+
+<p><code>![Alt Text](path/to/img)</code>
+ただし、画像サイズの指定ができない。指定したい場合はHTMLのimgタグを使用する。</p>
+
+<h5 id="リスト">リスト</h5>
+
+<p>以下のとおり</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- ABC
+</span><span class='line'>- DEF
+</span><span class='line'>- GHI</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="その他">その他</h2>
+
+<p>画面遷移の方法、背景色の変更などはダウンロードしたディレクトリのindex.htmlをみることで理解できると思う。<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup> [<sup>1]</sup></p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>この記事ではreveal.jsでスライドを作成する前におそらく使うであろう機能、セットアップ時のメモを紹介した。</p>
 
 <div class="footnotes">
     <ol>
-        <li id='fn:1'><p> ソースがAPIからリンク貼られててすごく便利。
+        <li id='fn:1'><p> 記事に書いても本当にindex.htmlと同じことしか書けない…
 <a href='#fnref:1' rev='footnote'>↩</a></p>
 </li>
     </ol>
 </div>
-
-
 
 </div>
 
@@ -297,12 +394,12 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
   
 
 
-<time datetime="2013-08-04T23:10:00+09:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
+<time datetime="2013-08-17T19:00:00+09:00" pubdate data-updated="true">Aug 17<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/scala/'>scala</a>
+    <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/reveal-dot-js/'>reveal.js</a>
   
 </span>
 
@@ -311,7 +408,7 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/08/04/scala-file-io/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/08/04/scala-file-io/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -327,7 +424,7 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
 
 
   
-   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/blog/2013/08/04/scala-file-io/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
   
 
   
@@ -342,14 +439,6 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
   <h2>Related Posts</h2>
   <ul>
     
-    <li><a href="/blog/2013/07/18/scala-intellij-idea-scalatest/">IntelliJ で ScalaTest</a></li>
-    
-    <li><a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a></li>
-    
-    <li><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a></li>
-    
-    <li><a href="/blog/2012/10/03/gitignore/">gitignoreのメモ</a></li>
-    
   </ul>
 </div>
 
@@ -359,10 +448,8 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
 
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/18/technology-radar-may-2013-hot-topic/" title="Previous Post: Technology Radar May 2013の気になるところ(1)">&laquo; Technology Radar May 2013の気になるところ(1)</a>
+        <a class="basic-alignment left" href="/blog/2013/08/04/scala-file-io/" title="Previous Post: ScalaでIO">&laquo; ScalaでIO</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/17/presentation-using-reveal-dot-js/" title="Next Post: reveal.jsを使ってみる">reveal.jsを使ってみる &raquo;</a>
       
     </p>
   </footer>
@@ -504,8 +591,8 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://makotow.github.io/blog/2013/08/04/scala-file-io/';
-        var disqus_url = 'http://makotow.github.io/blog/2013/08/04/scala-file-io/';
+        var disqus_identifier = 'http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/';
+        var disqus_url = 'http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -103,6 +103,10 @@
         <lastmod>2013-08-04T23:09:34+09:00</lastmod>
     </url>
     <url>
+        <loc>http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/</loc>
+        <lastmod>2013-08-17T18:45:52+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://makotow.github.io/404.html</loc>
         <lastmod>2013-05-05T23:52:03+09:00</lastmod>
     </url>
@@ -112,7 +116,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/blog/archives/</loc>
-        <lastmod>2013-08-04T23:09:34+09:00</lastmod>
+        <lastmod>2013-08-17T18:45:52+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/books/</loc>
@@ -120,7 +124,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/</loc>
-        <lastmod>2013-08-04T23:09:34+09:00</lastmod>
+        <lastmod>2013-08-17T18:45:52+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/robots.txt</loc>
@@ -136,6 +140,6 @@
     </url>
     <url>
         <loc>http://makotow.github.io/techmemo/octopress-tips/</loc>
-        <lastmod>2013-06-09T02:18:09+09:00</lastmod>
+        <lastmod>2013-08-17T17:18:33+09:00</lastmod>
     </url>
 </urlset>

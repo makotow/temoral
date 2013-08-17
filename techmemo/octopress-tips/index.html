@@ -9,7 +9,7 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Octopress memo May 30th, 2013 Octopress を使っていく上で調べたことを書いていく。 Contents Table of Contents footnote Table of Contents _config.yml 内に以下のコードを追加、 &hellip;">
+  <meta name="description" content="Octopress memo Aug 17th, 2013 Octopress を使っていく上で調べたことを書いていく。 Contents Table of Contents footnote codeblock reference Table of Contents _config.yml &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,7 +106,7 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-05-30T00:01:00+09:00" pubdate data-updated="true">May 30<span>th</span>, 2013</time></p>
+<time datetime="2013-08-17T00:01:00+09:00" pubdate data-updated="true">Aug 17<span>th</span>, 2013</time></p>
   </header>
   
   <p>Octopress を使っていく上で調べたことを書いていく。</p>
@@ -120,6 +120,11 @@ $(document).ready( function () {
   <ul>
   <li><a href="#Table+of+Contents">Table of Contents</a>  </li>
   <li><a href="#footnote">footnote</a>  </li>
+  <li><a href="#codeblock">codeblock</a>
+   <ul>
+   <li><a href="#reference">reference</a>   </li>
+   </ul>
+  </li>
   </ul>
  </li>
  </ul>
@@ -163,6 +168,24 @@ $(document).ready( function () {
 </span><span class='line'>{% endfootnotes%}</span></code></pre></td></tr></table></div></figure>
 
 
+<h2 id="codeblock">codeblock</h2>
+
+<p>コードを埋め込む場合に使用、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{% codeblock lang:ruby %}
+</span><span class='line'>    puts "Hello"
+</span><span class='line'>{% endcodeblock}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="reference">reference</h3>
+
+<ul>
+<li><a href="http://octopress.org/docs/plugins/codeblock/">Codeblock</a></li>
+<li><a href="http://rcmdnk.github.io/blog/2013/05/05/blog-octopress/">Octopressでのコードの表示やコメントのあれこれ</a></li>
+</ul>
 
 
   
@@ -181,7 +204,7 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-05-30T00:01:00+09:00" pubdate data-updated="true">May 30<span>th</span>, 2013</time>
+<time datetime="2013-08-17T00:01:00+09:00" pubdate data-updated="true">Aug 17<span>th</span>, 2013</time>
         
       </p>
       
@@ -264,6 +287,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/scala-file-io/">ScalaでIO</a>
       </li>
     
@@ -279,15 +306,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.28571428571429%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.28571428571429%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.28571428571429%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 147.14285714285714%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 125.71428571428572%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.57142857142857%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.28571428571429%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.28571428571429%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.57142857142857%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.85714285714286%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.85714285714286%'>IntelliJ(3)</a> <a href='/blog/categories/links' style='font-size: 104.28571428571429%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.28571428571429%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.28571428571429%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.28571428571429%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.28571428571429%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 130.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.28571428571429%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.28571428571429%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.85714285714286%'>project management(3)</a> <a href='/blog/categories/sbt' style='font-size: 117.14285714285714%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 121.42857142857143%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.28571428571429%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.28571428571429%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.28571428571429%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.28571428571429%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.28571428571429%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.28571428571429%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.57142857142857%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(14)</a> <a href='/blog/categories/technology' style='font-size: 104.28571428571429%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 144.0%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 124.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.0%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 104.0%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 104.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 128.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 104.0%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 116.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.0%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(15)</a> <a href='/blog/categories/technology' style='font-size: 104.0%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.0%'>tools(2)</a> </span>
 </section>
 
 <section>
