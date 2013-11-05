@@ -4,7 +4,7 @@
   <title><![CDATA[Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-08-17T18:50:18+09:00</updated>
+  <updated>2013-11-06T02:00:32+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MacでKindleを読む]]></title>
+    <link href="http://makotow.github.io/blog/2013/11/06/kindle-on-mac/"/>
+    <updated>2013-11-06T00:54:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/11/06/kindle-on-mac</id>
+    <content type="html"><![CDATA[<p>下書きしてから１ヶ月放置してたけどせっかくなので公開します。</p>
+
+<p>KindleのMacアプリはamazon.comのものしか読めないので、
+アカウント統合を行うことで読めるようになるのだけども、
+直接電話したりでめんどくさいので放置してた。</p>
+
+<p>結果的にはAndroidエミュレータをインストールして、
+そこにKindleアプリを入れて読むことにした。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">導入</a></li>
+  <li><a href="#section-2">仮想デバイスの作成</a></li>
+  <li><a href="#section-3">起動</a></li>
+  <li><a href="#section-4">類似アプリ</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>なんとなくAndroidエミュレータを入れて読めばいいんじゃないかとわかってから初めてみたが、
+標準のAndroidSDKでは遅くて使い物にならなかかったかつPlayストアが入っていなかったりでかなり苦戦した。</p>
+
+<h2 id="section-1">導入</h2>
+
+<p>Genymotion を導入する。
+本家サイトからダウンロードしてインストール。特に迷うところはない。</p>
+
+<p>本家: http://www.genymotion.com/</p>
+
+<p>ダウンロードするにはアカウントが必要なので作成する。仮想デバイスを作成する際にも必要となる。
+高速なエミュレータかつGoogleアプリが初期導入済みのデバイスを使用すれば最初からPlayストアが入っている。</p>
+
+<p>(インストール時のバージョンは1.3.0)</p>
+
+<p>GenymotionはVirtualBox上に仮想マシンを作成するためVirtualBoxを導入する。</p>
+
+<h2 id="section-2">仮想デバイスの作成</h2>
+
+<p>起動した画面から「Add」ボタンクリックすると認証ダイアログが出てくるので作成したアカウントを入力。</p>
+
+<p><img src="http://makotow.github.io/images/2013/11/Genymotion-Add.png" />
+<img src="http://makotow.github.io/images/2013/11/Genymotion-Credential.png" /></p>
+
+<p>仮想デバイスの一覧が表示される。</p>
+
+<p><img src="http://makotow.github.io/images/2013/11/Create_a_new_virtual_device.png" /></p>
+
+<p>好きなデバイスを選んで作成する。
+この時注意することは今回はPlayストアからKindleアプリをダウンロードして本を読むことが目標なので、</p>
+
+<pre><code>xxxx - with GoogleApps
+</code></pre>
+
+<p>となっている仮想デバイスを選ぶこと。</p>
+
+<p><img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device.png" />
+<img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard.png" /></p>
+
+<p>Next-＞Nextとボタンを押してくと、
+仮想デバイスのダウンロード、チェックが開始するのでしばらくまつ。</p>
+
+<p><img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_done.png" /></p>
+
+<p>ダウンロードが終わったら名前をつけて終了。</p>
+
+<p><img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_name.png" />
+<img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_success.png" /></p>
+
+<h2 id="section-3">起動</h2>
+
+<p>起動時の画面に行くと仮想デバイスリストにダウンロードしたデバイスが表示されているので、
+選択して　▶Play をクリックでデバイスが起動する。</p>
+
+<p>あとはAndroid端末と同じように使うことができる。</p>
+
+<h2 id="section-4">類似アプリ</h2>
+
+<p>他にも次のような類似のものがあったが、
+私の環境ではうまく動いてくれなかった。</p>
+
+<ul>
+  <li>BlueStacks</li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[reveal.jsを使ってみる]]></title>
@@ -24,75 +118,58 @@
 
 <p>reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。</p>
 
+<!-- more -->
 <h2> Contents </h2>
 
-
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#reveal.jsとは">reveal.jsとは</a>  </li>
-  <li><a href="#インストール">インストール</a>
-   <ul>
-   <li><a href="#Basic+Setup">Basic Setup</a>   </li>
-   <li><a href="#Full+Setup">Full Setup</a>   </li>
-  </ul>
-  <li><a href="#スライドを作成する">スライドを作成する</a>
-   <ul>
-   <li><a href="#HTML">HTML</a>
-    <ul>
-    <li><a href="#画像、リスト">画像、リスト</a>
-     <ul>
-     <li><a href="#画像">画像</a>     </li>
-     <li><a href="#リスト">リスト</a>     </li>
+<ul id="markdown-toc">
+  <li><a href="#revealjs">reveal.jsとは</a></li>
+  <li><a href="#section">インストール</a>    <ul>
+      <li><a href="#basic-setup">Basic Setup</a></li>
+      <li><a href="#full-setup">Full Setup</a></li>
     </ul>
-    </li>
-   </ul>
-   <li><a href="#Markdown">Markdown</a>
-    <ul>
-    <li><a href="#外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</a>    </li>
-    <li><a href="#HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</a>    </li>
-    <li><a href="#画像、リスト">画像、リスト</a>
-     <ul>
-     <li><a href="#画像">画像</a>     </li>
-     <li><a href="#リスト">リスト</a>     </li>
+  </li>
+  <li><a href="#section-1">スライドを作成する</a>    <ul>
+      <li><a href="#html">HTML</a>        <ul>
+          <li><a href="#section-2">画像、リスト</a>            <ul>
+              <li><a href="#section-3">画像</a></li>
+              <li><a href="#section-4">リスト</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#markdown">Markdown</a>        <ul>
+          <li><a href="#markdown-">外部のMarkdown を読み込む場合</a></li>
+          <li><a href="#htmlmarkdown-">HTML内にMarkdown を書く場合</a></li>
+          <li><a href="#section-5">画像、リスト</a>            <ul>
+              <li><a href="#section-6">画像</a></li>
+              <li><a href="#section-7">リスト</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
-    </li>
-   </ul>
-   </li>
-  </ul>
-  <li><a href="#その他">その他</a>  </li>
-  <li><a href="#まとめ">まとめ</a>  </li>
-  </ul>
- </li>
- </ul>
+  </li>
+  <li><a href="#section-8">その他</a></li>
+  <li><a href="#section-9">まとめ</a></li>
+</ul>
 
-</p>
-
-<!-- more -->
-
-
-<h2 id="reveal.jsとは">reveal.jsとは</h2>
-
+<h2 id="revealjs">reveal.jsとは</h2>
 <p>HTMLでかっこいいスライドが作れるフレームワーク。
 ぐいんぐいん動いてみ見た目もよい。</p>
 
 <ul>
-<li><a href="https://github.com/hakimel/reveal.js">reveal.js</a></li>
-<li><a href="http://lab.hakim.se/reveal-js/#/">reveal.jsのデモ</a></li>
-<li><a href="https://github.com/hakimel/reveal.js/wiki/Example-Presentations">reveal.js使ったサンプル一覧</a></li>
+  <li><a href="https://github.com/hakimel/reveal.js">reveal.js</a></li>
+  <li><a href="http://lab.hakim.se/reveal-js/#/">reveal.jsのデモ</a></li>
+  <li><a href="https://github.com/hakimel/reveal.js/wiki/Example-Presentations">reveal.js使ったサンプル一覧</a></li>
 </ul>
 
+<h2 id="section">インストール</h2>
 
-<h2 id="インストール">インストール</h2>
-
-<h3 id="Basic+Setup">Basic Setup</h3>
-
+<h3 id="basic-setup">Basic Setup</h3>
 <p>簡単な方法としては、
 <a href="https://github.com/hakimel/reveal.js#basic-setup">Basic Setup</a> を参照して、<a href="https://github.com/hakimel/reveal.js/releases">https://github.com/hakimel/reveal.js/releases</a>から最新版をダウンロードしてindex.htmlを編集する。</p>
 
-<h3 id="Full+Setup">Full Setup</h3>
-
+<h3 id="full-setup">Full Setup</h3>
 <p>reveal.jsのフル機能を使いたい場合はこちらを使う。外部のmarkdown を取り込みたい場合などはFullSetupが必要。
 <a href="https://github.com/hakimel/reveal.js#full-setup">Full Setup</a>を参照して必要なnode.js, Gruntをインストールする。
 github から clone する。</p>
@@ -100,179 +177,159 @@ github から clone する。</p>
 <pre><code>$ git clone git@github.com:hakimel/reveal.js.git
 </code></pre>
 
-<h2 id="スライドを作成する">スライドを作成する</h2>
-
+<h2 id="section-1">スライドを作成する</h2>
 <p>基本的にはindex.htmlを眺めているとざっくりした書き方はわかってくる。
 スライドの作成方法としては次の2つがある。</p>
 
 <ul>
-<li>HTML</li>
-<li>Markdown</li>
+  <li>HTML</li>
+  <li>Markdown</li>
 </ul>
-
 
 <p>markdownを直接書く方法、外部ファイルのmarkdownファイルの読み込みできる。
 ここではhtml, markdown の2つで、スライド作成に必要になるであろう、画像埋め込み、リストについてメモをしておく。
 reveal.jsの特徴としてスライドを一次元的なものではなく2次元的にも作成できる(nested vertical slide)ものがある。</p>
 
-<h3 id="HTML">HTML</h3>
+<h3 id="html">HTML</h3>
 
 <p><code>&lt;section&gt;</code> タグで一枚のスライドになる。</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section&gt;</span>
-</span><span class='line'>    スライド１
-</span><span class='line'><span class="nt">&lt;/section&gt;</span>
-</span><span class='line'><span class="nt">&lt;section&gt;</span>
-</span><span class='line'>    スライド２
-</span><span class='line'><span class="nt">&lt;/section&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;section&gt;</span>
+</span><span class="line">    スライド１
+</span><span class="line"><span class="nt">&lt;/section&gt;</span>
+</span><span class="line"><span class="nt">&lt;section&gt;</span>
+</span><span class="line">    スライド２
+</span><span class="line"><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>nested vertical slide の作成方法としては <code>&lt;section&gt;</code> タグ内に <code>&lt;section&gt;</code> タグをネストすることで実現できる。 </p>
 
-<p>nested vertical slide の作成方法としては <code>&lt;section&gt;</code> タグ内に <code>&lt;section&gt;</code> タグをネストすることで実現できる。</p>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;section&gt;</span>
+</span><span class="line">    スライド１
+</span><span class="line">    <span class="nt">&lt;section&gt;</span>
+</span><span class="line">    スライド1-1
+</span><span class="line">    <span class="nt">&lt;/section&gt;</span>
+</span><span class="line">    <span class="nt">&lt;section&gt;</span>
+</span><span class="line">    スライド1-2
+</span><span class="line">    <span class="nt">&lt;/section&gt;</span>
+</span><span class="line"><span class="nt">&lt;section&gt;</span>
+</span><span class="line"><span class="nt">&lt;section&gt;</span>
+</span><span class="line">    スライド２
+</span><span class="line"><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section&gt;</span>
-</span><span class='line'>    スライド１
-</span><span class='line'>    <span class="nt">&lt;section&gt;</span>
-</span><span class='line'>    スライド1-1
-</span><span class='line'>    <span class="nt">&lt;/section&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;section&gt;</span>
-</span><span class='line'>    スライド1-2
-</span><span class='line'>    <span class="nt">&lt;/section&gt;</span>
-</span><span class='line'><span class="nt">&lt;section&gt;</span>
-</span><span class='line'><span class="nt">&lt;section&gt;</span>
-</span><span class='line'>    スライド２
-</span><span class='line'><span class="nt">&lt;/section&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4 id="画像、リスト">画像、リスト</h4>
-
+<h4 id="section-2">画像、リスト</h4>
 <p>HTMLで記述する。</p>
 
-<h5 id="画像">画像</h5>
-
+<h5 id="section-3">画像</h5>
 <p>画像であれば <code>&lt;img src="xxx"&gt;&lt;/img&gt;</code></p>
 
-<h5 id="リスト">リスト</h5>
+<h5 id="section-4">リスト</h5>
+<p><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code> を使用する。 </p>
 
-<p><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code> を使用する。</p>
-
-<h3 id="Markdown">Markdown</h3>
-
+<h3 id="markdown">Markdown</h3>
 <p>htmlのなかにもMarkdownはかけるが、外部ファイルのMarkdownも読み込める。
 スライドだけではなくて配布資料としても使いたいのでMarkdownを埋め込めるのはとてもいい機能だと思える。
 ただし、外部Markdownを使うには Full Setup を実行し、grunt serve を実行する必要がある。</p>
 
-<h4 id="外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</h4>
-
+<h4 id="markdown-">外部のMarkdown を読み込む場合</h4>
 <p>外部ファイルとして用意したexample.mdを読み込む場合
 スライドのセパレータとnested vertical slideのセパレータを設定。</p>
 
 <ul>
-<li>data-separator: スライドのセパレーター</li>
-<li>data-vertical: nested vertical slide のセパレーター</li>
+  <li>data-separator: スライドのセパレーター</li>
+  <li>data-vertical: nested vertical slide のセパレーター</li>
 </ul>
 
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;section</span> <span class="na">data-markdown=</span><span class="s">&quot;example.md&quot;</span> <span class="na">data-separator=</span><span class="s">&quot;^\n\n\n&quot;</span> <span class="na">data-vertical=</span><span class="s">&quot;^\n\n&quot;</span><span class="nt">&gt;&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">data-markdown=</span><span class="s">&quot;example.md&quot;</span> <span class="na">data-separator=</span><span class="s">&quot;^\n\n\n&quot;</span> <span class="na">data-vertical=</span><span class="s">&quot;^\n\n&quot;</span><span class="nt">&gt;&lt;/section&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4 id="HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</h4>
-
+<h4 id="htmlmarkdown-">HTML内にMarkdown を書く場合</h4>
 <p>以下のように記述し、section内にMarkdownで書く。</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">data-markdown</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="err">##</span> <span class="nx">Markdown</span> <span class="nx">support</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nx">For</span> <span class="nx">those</span> <span class="nx">of</span> <span class="nx">you</span> <span class="nx">who</span> <span class="nx">like</span> <span class="nx">that</span> <span class="nx">sort</span> <span class="nx">of</span> <span class="nx">thing</span><span class="p">.</span> <span class="nx">Instructions</span> <span class="nx">and</span> <span class="nx">a</span> <span class="nx">bit</span> <span class="nx">more</span> <span class="nx">info</span> <span class="nx">available</span> <span class="p">[</span><span class="nx">here</span><span class="p">](</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/hakimel/reveal.js#markdown).</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">data</span><span class="o">-</span><span class="nx">markdown</span><span class="o">&gt;</span>
-</span><span class='line'>      <span class="err">##</span> <span class="nx">Markdown</span> <span class="nx">support</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="nx">For</span> <span class="nx">those</span> <span class="nx">of</span> <span class="nx">you</span> <span class="nx">who</span> <span class="nx">like</span> <span class="nx">that</span> <span class="nx">sort</span> <span class="nx">of</span> <span class="nx">thing</span><span class="p">.</span>
-</span><span class='line'>      <span class="nx">Instructions</span> <span class="nx">and</span> <span class="nx">a</span> <span class="nx">bit</span> <span class="nx">more</span> <span class="nx">info</span> <span class="nx">available</span> <span class="p">[</span><span class="nx">here</span><span class="p">](</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/hakimel/reveal.js#markdown).</span>
-</span><span class='line'>    <span class="o">&lt;</span><span class="err">/section&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;/section&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;section</span> <span class="na">data-markdown</span><span class="nt">&gt;</span>
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">    <span class="err">##</span> <span class="nx">Markdown</span> <span class="nx">support</span>
+</span><span class="line">
+</span><span class="line">    <span class="nx">For</span> <span class="nx">those</span> <span class="nx">of</span> <span class="nx">you</span> <span class="nx">who</span> <span class="nx">like</span> <span class="nx">that</span> <span class="nx">sort</span> <span class="nx">of</span> <span class="nx">thing</span><span class="p">.</span> <span class="nx">Instructions</span> <span class="nx">and</span> <span class="nx">a</span> <span class="nx">bit</span> <span class="nx">more</span> <span class="nx">info</span> <span class="nx">available</span> <span class="p">[</span><span class="nx">here</span><span class="p">](</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/hakimel/reveal.js#markdown).</span>
+</span><span class="line">
+</span><span class="line">
+</span><span class="line">    <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">data</span><span class="o">-</span><span class="nx">markdown</span><span class="o">&gt;</span>
+</span><span class="line">      <span class="err">##</span> <span class="nx">Markdown</span> <span class="nx">support</span>
+</span><span class="line">
+</span><span class="line">      <span class="nx">For</span> <span class="nx">those</span> <span class="nx">of</span> <span class="nx">you</span> <span class="nx">who</span> <span class="nx">like</span> <span class="nx">that</span> <span class="nx">sort</span> <span class="nx">of</span> <span class="nx">thing</span><span class="p">.</span>
+</span><span class="line">      <span class="nx">Instructions</span> <span class="nx">and</span> <span class="nx">a</span> <span class="nx">bit</span> <span class="nx">more</span> <span class="nx">info</span> <span class="nx">available</span> <span class="p">[</span><span class="nx">here</span><span class="p">](</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/hakimel/reveal.js#markdown).</span>
+</span><span class="line">    <span class="o">&lt;</span><span class="err">/section&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="nt">&lt;/script&gt;</span>
+</span><span class="line"><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h4 id="画像、リスト">画像、リスト</h4>
-
+<h4 id="section-5">画像、リスト</h4>
 <p>Markdownの記法で書ける。</p>
 
-<h5 id="画像">画像</h5>
-
+<h5 id="section-6">画像</h5>
 <p><code>![Alt Text](path/to/img)</code>
 ただし、画像サイズの指定ができない。指定したい場合はHTMLのimgタグを使用する。</p>
 
-<h5 id="リスト">リスト</h5>
-
+<h5 id="section-7">リスト</h5>
 <p>以下のとおり</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>- ABC
-</span><span class='line'>- DEF
-</span><span class='line'>- GHI</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">- ABC
+</span><span class="line">- DEF
+</span><span class="line">- GHI</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<h2 id="section-8">その他</h2>
+<p>画面遷移の方法、背景色の変更などはダウンロードしたディレクトリのindex.htmlをみることで理解できると思う。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
-<h2 id="その他">その他</h2>
-
-<p>画面遷移の方法、背景色の変更などはダウンロードしたディレクトリのindex.htmlをみることで理解できると思う。<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="section-9">まとめ</h2>
 <p>この記事ではreveal.jsでスライドを作成する前におそらく使うであろう機能、セットアップ時のメモを紹介した。</p>
 
 <div class="footnotes">
-    <ol>
-        <li id='fn:1'><p> 記事に書いても本当にindex.htmlと同じことしか書けない…
-<a href='#fnref:1' rev='footnote'>↩</a></p>
-</li>
-    </ol>
+  <ol>
+    <li id="fn:1">
+      <p>記事に書いても本当にindex.htmlと同じことしか書けない…<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-
 ]]></content>
   </entry>
   
@@ -283,162 +340,138 @@ reveal.jsの特徴としてスライドを一次元的なものではなく2次�
     <id>http://makotow.github.io/blog/2013/08/04/scala-file-io</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#scala-io">Scala でファイルIO</a></li>
+  <li><a href="#api">API</a>    <ul>
+      <li><a href="#section">ラインごとに処理をする</a></li>
+      <li><a href="#section-1">便利メソッド</a></li>
+    </ul>
+  </li>
+  <li><a href="#try-with-resources-">try-with-resources は？</a></li>
+  <li><a href="#section-2">次のお題</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#Scala+でファイルIO">Scala でファイルIO</a>  </li>
-  <li><a href="#API">API</a>
-   <ul>
-   <li><a href="#ラインごとに処理をする">ラインごとに処理をする</a>   </li>
-   <li><a href="#便利メソッド">便利メソッド</a>   </li>
-  </ul>
-  <li><a href="#try-with-resources+は？">try-with-resources は？</a>  </li>
-  <li><a href="#次のお題">次のお題</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="Scala+でファイルIO">Scala でファイルIO</h2>
-
+<h2 id="scala-io">Scala でファイルIO</h2>
 <p>Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。
 今ならどのような方法があるかしらべてみた</p>
 
 <!-- more -->
 
-
-<h2 id="API">API</h2>
+<h2 id="api">API</h2>
 
 <p>ぱっと思いつく所で以下の２つ。</p>
 
 <ul>
-<li>Scala の scala.io.Source</li>
-<li>Java の java.nio(nio2), java.io</li>
+  <li>Scala の scala.io.Source</li>
+  <li>Java の java.nio(nio2), java.io</li>
 </ul>
 
-
-<p>今回はScalaなので<a href="http://www.scala-lang.org/api/current/index.html#scala.io.Source">scala.io.Source</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/io/Source.scala#L1">ソース</a><sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>)を使ってみる。</p>
+<p>今回はScalaなので<a href="http://www.scala-lang.org/api/current/index.html#scala.io.Source">scala.io.Source</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/io/Source.scala#L1">ソース</a>)を使ってみる。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
 <pre><code>scala-version: scala 2.10.2
 </code></pre>
 
-<h3 id="ラインごとに処理をする">ラインごとに処理をする</h3>
+<h3 id="section">ラインごとに処理をする</h3>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// ファイルから一行づつ読み込み処理をするサンプル</span>
-</span><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
-</span><span class='line'><span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">()</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
-</span><span class='line'>    <span class="c1">// doSomething</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="scala"><span class="line"><span class="c1">// ファイルから一行づつ読み込み処理をするサンプル</span>
+</span><span class="line"><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+</span><span class="line"><span class="k">try</span> <span class="o">{</span>
+</span><span class="line">  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">()</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
+</span><span class="line">    <span class="c1">// doSomething</span>
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line"><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class="line">  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+</span><span class="line"><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<h3 id="section-1">便利メソッド</h3>
 
-<h3 id="便利メソッド">便利メソッド</h3>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="scala"><span class="line"><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+</span><span class="line"><span class="k">try</span> <span class="o">{</span>
+</span><span class="line">  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">take</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
+</span><span class="line">     <span class="c1">// 先頭5行のみ処理</span>
+</span><span class="line">     <span class="c1">// do something</span>
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line"><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class="line">  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+</span><span class="line"><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
-</span><span class='line'><span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">take</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
-</span><span class='line'>     <span class="c1">// 先頭5行のみ処理</span>
-</span><span class='line'>     <span class="c1">// do something</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
-</span><span class='line'><span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">drop</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
-</span><span class='line'>     <span class="c1">// 先頭行を読み捨てて drop(1)</span>
-</span><span class='line'>     <span class="c1">// 以降をループする。</span>
-</span><span class='line'>     <span class="c1">// do something</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="scala"><span class="line"><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Source</span><span class="o">.</span><span class="n">fromFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+</span><span class="line"><span class="k">try</span> <span class="o">{</span>
+</span><span class="line">  <span class="n">s</span><span class="o">.</span><span class="n">getLines</span><span class="o">().</span><span class="n">drop</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">e</span> <span class="k">=&gt;</span>
+</span><span class="line">     <span class="c1">// 先頭行を読み捨てて drop(1)</span>
+</span><span class="line">     <span class="c1">// 以降をループする。</span>
+</span><span class="line">     <span class="c1">// do something</span>
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line"><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class="line">  <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+</span><span class="line"><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>一行読み捨てとか綺麗に書ける印象。
 getLinesでは<a href="http://www.scala-lang.org/api/current/index.html#scala.collection.Iterator">scala.collection.Iterator</a>(<a href="https://github.com/scala/scala/blob/v2.10.2/src/library/scala/collection/Iterator.scala#L1">ソース</a>)が返ってくるので、便利メソッドがたくさん使える。
 APIを眺めているともっと綺麗にできそう。</p>
 
-<h2 id="try-with-resources+は？">try-with-resources は？</h2>
+<h2 id="try-with-resources-">try-with-resources は？</h2>
 
 <p>リソースの解放でJava7のtry-with-resourceみたいなことするにはどうしたらいいか。
 Java7でできるからScalaでもと思ったけど言語仕様ではできないようだ。
 やはりローンパターンを使用するみたい。
 少し調べてみるとScalazのwithResource, scala-armなどがあるようだ。</p>
 
-<p><a href="http://www.ne.jp/asahi/hishidama/home/index.html">ひしだま&#8217;s ホームページ</a>にいろいろなローンパターンがまとめられている。</p>
+<p><a href="http://www.ne.jp/asahi/hishidama/home/index.html">ひしだま’s ホームページ</a>にいろいろなローンパターンがまとめられている。</p>
 
 <ul>
-<li><a href="http://www.ne.jp/asahi/hishidama/home/tech/scala/sample/using.html">Scala using（ローンパターン)</a></li>
+  <li><a href="http://www.ne.jp/asahi/hishidama/home/tech/scala/sample/using.html">Scala using（ローンパターン)</a></li>
 </ul>
 
-
-<h2 id="次のお題">次のお題</h2>
+<h2 id="section-2">次のお題</h2>
 
 <p>今後派生するとしたらこんな感じ</p>
 
 <ul>
-<li>ローンパターン、派生してScalaを通してのデザインパターン再考</li>
-<li>Scalaz, scala-arm を使用したローンパターン実装方法</li>
+  <li>ローンパターン、派生してScalaを通してのデザインパターン再考</li>
+  <li>Scalaz, scala-arm を使用したローンパターン実装方法</li>
 </ul>
 
-
-<br/><br/>
-
-
-
+<p><br /><br /></p>
 
 <div class="footnotes">
-    <ol>
-        <li id='fn:1'><p> ソースがAPIからリンク貼られててすごく便利。
-<a href='#fnref:1' rev='footnote'>↩</a></p>
-</li>
-    </ol>
+  <ol>
+    <li id="fn:1">
+      <p>ソースがAPIからリンク貼られててすごく便利。<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-
-
-
 ]]></content>
   </entry>
   
@@ -449,29 +482,21 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
     <id>http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#technology-radar-may-2013">Technology Radar May 2013</a></li>
+  <li><a href="#section">気になるキーワード</a>    <ul>
+      <li><a href="#infrastructure-as-code">Infrastructure as code</a></li>
+      <li><a href="#d3">D3</a></li>
+      <li><a href="#hystrix">Hystrix</a></li>
+      <li><a href="#log-management">Log Management</a></li>
+      <li><a href="#gatling">Gatling</a></li>
+      <li><a href="#section-1">その他気になったところ</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-2">終わりに</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#Technology+Radar+May+2013">Technology Radar May 2013</a>  </li>
-  <li><a href="#気になるキーワード">気になるキーワード</a>
-   <ul>
-   <li><a href="#Infrastructure+as+code">Infrastructure as code</a>   </li>
-   <li><a href="#D3">D3</a>   </li>
-   <li><a href="#Hystrix">Hystrix</a>   </li>
-   <li><a href="#Log+Management">Log Management</a>   </li>
-   <li><a href="#Gatling">Gatling</a>   </li>
-   <li><a href="#その他気になったところ">その他気になったところ</a>   </li>
-  </ul>
-  <li><a href="#終わりに">終わりに</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="Technology+Radar+May+2013">Technology Radar May 2013</h2>
+<h2 id="technology-radar-may-2013">Technology Radar May 2013</h2>
 
 <p>もう、２ヶ月もまえだが、Technology Radar May 2013が公開された。
 興味があるキーワードを自分なりに調べてみた。
@@ -483,82 +508,68 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
 Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査結果を公開しているもの。
 自分が読んでいる目的としては現在どのようなテクノロジーがあり、どれほど浸透しているかの確認や、
 新しいモノを見つけるために読んでいる。
-<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
 <ul>
-<li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
-<li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
+  <li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
+  <li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
 </ul>
-
 
 <!-- more -->
 
-
-<h2 id="気になるキーワード">気になるキーワード</h2>
-
+<h2 id="section">気になるキーワード</h2>
 <p>特に目を引いたもの、興味のあるものについて調べてみた。</p>
 
-<h3 id="Infrastructure+as+code">Infrastructure as code</h3>
-
+<h3 id="infrastructure-as-code">Infrastructure as code</h3>
 <p>Continuous Delivery と DevOps についてたかいところまで到達している。
 infrastructure as code と
 infrastructure as code 、最近VergentやらChef, Puppetなどでインフラの自動化につく記事も多く見るようになってきた。</p>
 
-<h3 id="D3">D3</h3>
-
+<h3 id="d3">D3</h3>
 <p>コンテキストから察するに、おそらくこれのこと(最後のReference)
 <a href="http://d3js.org/">Data-Driven Documents</a>
 少しGalleryをみてみるとこんなにも綺麗に可視化できるものかと思ってしまった。</p>
 
-<h3 id="Hystrix">Hystrix</h3>
-
+<h3 id="hystrix">Hystrix</h3>
 <p>キーワードだけ。
 調べてはいない。</p>
 
 <p><a href="https://github.com/Netflix/Hystrix">Hystrix: Latency and Fault Tolerance for Distributed Systems</a></p>
 
-<h3 id="Log+Management">Log Management</h3>
+<h3 id="log-management">Log Management</h3>
 
 <p>ログの収集、集約、検索、フィルタのテクノロジー。（だと思う…）</p>
 
 <ul>
-<li><a href="http://logstash.net/">Logstash</a></li>
-<li><a href="http://graylog2.org/">Graylog2</a></li>
+  <li><a href="http://logstash.net/">Logstash</a></li>
+  <li><a href="http://graylog2.org/">Graylog2</a></li>
 </ul>
 
-
-<h3 id="Gatling">Gatling</h3>
-
+<h3 id="gatling">Gatling</h3>
 <p><a href="http://gatling-tool.org/">Gatling Project - stress tool</a></p>
 
 <p>Gatlingはパフォーマンステストのツール。
 Scalaで書かれている。</p>
 
-<h3 id="その他気になったところ">その他気になったところ</h3>
-
+<h3 id="section-1">その他気になったところ</h3>
 <ul>
-<li>Chef, PuppetがWindows対応.OctopusはWindos専用で作成されている。</li>
+  <li>Chef, PuppetがWindows対応.OctopusはWindos専用で作成されている。</li>
 </ul>
 
-
-<h2 id="終わりに">終わりに</h2>
-
+<h2 id="section-2">終わりに</h2>
 <p>Technoogy　Radarって日本語訳の需要あるかな。
 日本語にするって難しい。</p>
 
-<div class="footnotes">
-    <ol>
-        <li id='fn:1'><p>Technology Radarからリンクされている、
-<a href="http://martinfowler.com/articles/radar-faq.html">ThoughtWorks Technology Radar FAQ</a>
+<p><a href="http://martinfowler.com/articles/radar-faq.html">ThoughtWorks Technology Radar FAQ</a>
 を読むことで詳細を理解することができる。</p>
 
-<p><a href='#fnref:1' rev='footnote'>↩</a></p>
-</li>
-    </ol>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Technology Radarからリンクされている、<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-
-
-
 ]]></content>
   </entry>
   
@@ -569,160 +580,140 @@ Scalaで書かれている。</p>
     <id>http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#section">概要</a></li>
+  <li><a href="#sample-code">Sample Code</a>    <ul>
+      <li><a href="#vec-trait">Vec trait</a></li>
+      <li><a href="#vectest">VecTest</a></li>
+    </ul>
+  </li>
+  <li><a href="#intellij-">IntelliJ からテスト実行</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#概要">概要</a>  </li>
-  <li><a href="#Sample+Code">Sample Code</a>
-   <ul>
-   <li><a href="#Vec+trait">Vec trait</a>   </li>
-   <li><a href="#VecTest">VecTest</a>   </li>
-  </ul>
-  <li><a href="#IntelliJ+からテスト実行">IntelliJ からテスト実行</a>  </li>
-  <li><a href="#雑感">雑感</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="概要">概要</h2>
-
-<p><a href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br/>
-<a href="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a></p>
+<h2 id="section">概要</h2>
+<p><a href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br />
+<a href="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a> </p>
 
 <p>の続きでIntelliJプロジェクトにScalaTestを追加したのでテストを書いてIntelliJのsbtconsoleからコンパイル、実行、テストをやってみる。</p>
 
 <p>書いている現在の各バージョン</p>
 
 <ul>
-<li>IntelliJ 12</li>
-<li>Scala 2.10.2</li>
-<li>ScalaTest 1.9.1</li>
+  <li>IntelliJ 12</li>
+  <li>Scala 2.10.2</li>
+  <li>ScalaTest 1.9.1</li>
 </ul>
-
 
 <!-- more -->
 
+<h2 id="sample-code">Sample Code</h2>
 
-<h2 id="Sample+Code">Sample Code</h2>
-
-<h3 id="Vec+trait">Vec trait</h3>
+<h3 id="vec-trait">Vec trait</h3>
 
 <p>ベクトルの計算をする小さなプログラムを作った。
-内積とnormを求める機能。<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+内積とnormを求める機能。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
-<figure class='code'><figcaption><span>Vec </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Vec</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">dot</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">],</span> <span class="n">b</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="o">((</span><span class="n">a</span> <span class="n">zip</span> <span class="n">b</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span><span class="k">case</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">}</span> <span class="o">:\</span> <span class="mf">0.0</span> <span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">norm</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">((</span><span class="mf">0.0</span> <span class="o">/:</span> <span class="n">l</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="o">))</span> <span class="o">{</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">})</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Vec </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="scala"><span class="line"><span class="k">trait</span> <span class="nc">Vec</span> <span class="o">{</span>
+</span><span class="line">  <span class="k">def</span> <span class="n">dot</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">],</span> <span class="n">b</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="o">((</span><span class="n">a</span> <span class="n">zip</span> <span class="n">b</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span><span class="k">case</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">}</span> <span class="o">:\</span> <span class="mf">0.0</span> <span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>
+</span><span class="line">  <span class="k">def</span> <span class="n">norm</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">((</span><span class="mf">0.0</span> <span class="o">/:</span> <span class="n">l</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="o">))</span> <span class="o">{</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">})</span>
+</span><span class="line"><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3 id="VecTest">VecTest</h3>
+<h3 id="vectest">VecTest</h3>
 
 <p>ScalaTestの使い方は本家を参照</p>
 
 <ul>
-<li><a href="http://www.scalatest.org/" title="ScalaTest本家">ScalaTest</a></li>
+  <li><a href="http://www.scalatest.org/" title="ScalaTest本家">ScalaTest</a></li>
 </ul>
 
+<p>以下、本家より引用
+&gt; ScalaTest supports three main styles of testing out of the box. If you don’t have a preference, start with FunSuite:</p>
 
-<p>以下、本家より引用</p>
-
-<blockquote><p>ScalaTest supports three main styles of testing out of the box. If you don&#8217;t have a preference, start with FunSuite:</p>
-
-<p>For test-driven development (TDD) start with FunSuite <br/>
-For behavior-driven development (BDD), start with FunSpec<br/>
-For functional, integration, or acceptance testing, start with FeatureSpec<br/></p></blockquote>
+<blockquote>
+  <p>For test-driven development (TDD) start with FunSuite <br />
+For behavior-driven development (BDD), start with FunSpec<br />
+For functional, integration, or acceptance testing, start with FeatureSpec<br /></p>
+</blockquote>
 
 <p>主に３つのテストの書き方ができる
 今回は慣れているJUnit風の書き方。</p>
 
-<p>JUnitのコードを見たことがあればソースから理解できると思う。<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup></p>
+<p>JUnitのコードを見たことがあればソースから理解できると思う。<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
 
-<figure class='code'><figcaption><span>VecTest </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">org.scalatest._</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">VecTest</span> <span class="k">extends</span> <span class="nc">FunSuite</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">test</span><span class="o">(</span><span class="s">&quot;dot product&quot;</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
-</span><span class='line'>    <span class="k">val</span> <span class="n">v2</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">4.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">)</span>
-</span><span class='line'>    <span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
-</span><span class='line'>    <span class="n">assert</span><span class="o">(</span><span class="mi">3</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">dot</span><span class="o">(</span><span class="n">v1</span> <span class="o">,</span><span class="n">v2</span><span class="o">))</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">test</span><span class="o">(</span><span class="s">&quot;norm&quot;</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
-</span><span class='line'>    <span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">assert</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">(</span><span class="mi">35</span><span class="o">)</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">norm</span><span class="o">(</span><span class="n">v1</span><span class="o">))</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>VecTest </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="scala"><span class="line"><span class="k">import</span> <span class="nn">org.scalatest._</span>
+</span><span class="line">
+</span><span class="line"><span class="k">class</span> <span class="nc">VecTest</span> <span class="k">extends</span> <span class="nc">FunSuite</span> <span class="o">{</span>
+</span><span class="line">
+</span><span class="line">  <span class="n">test</span><span class="o">(</span><span class="s">&quot;dot product&quot;</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="line">    <span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
+</span><span class="line">    <span class="k">val</span> <span class="n">v2</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">4.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">)</span>
+</span><span class="line">    <span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
+</span><span class="line">    <span class="n">assert</span><span class="o">(</span><span class="mi">3</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">dot</span><span class="o">(</span><span class="n">v1</span> <span class="o">,</span><span class="n">v2</span><span class="o">))</span>
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="n">test</span><span class="o">(</span><span class="s">&quot;norm&quot;</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="line">    <span class="k">val</span> <span class="n">v1</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">3.0</span><span class="o">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="o">)</span>
+</span><span class="line">    <span class="k">val</span> <span class="n">vec</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Vec</span><span class="o">{}</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">assert</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">(</span><span class="mi">35</span><span class="o">)</span> <span class="o">===</span> <span class="n">vec</span><span class="o">.</span><span class="n">norm</span><span class="o">(</span><span class="n">v1</span><span class="o">))</span>
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line"><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h2 id="IntelliJ+からテスト実行">IntelliJ からテスト実行</h2>
-
+<h2 id="intellij-">IntelliJ からテスト実行</h2>
 <p>今回はIntelliJ のプラグインである SBT Consoleを使用する。
 コンソールからsbtを実行するのと同じ。</p>
 
 <ol>
-<li>SBT Consoleからsbt起動
-<img src="http://makotow.github.io/images/2013/07/ScalaTest.png"></li>
-<li>コマンド入力エリアへsbtコマンドを入力し実行
-<img src="http://makotow.github.io/images/2013/07/ScalaTest-sbtcmd.png"></li>
-<li>テスト実行後、結果出力
-<img src="http://makotow.github.io/images/2013/07/ScalaTest-testresult.png"></li>
+  <li>SBT Consoleからsbt起動 
+<img src="http://makotow.github.io/images/2013/07/ScalaTest.png" /></li>
+  <li>コマンド入力エリアへsbtコマンドを入力し実行
+<img src="http://makotow.github.io/images/2013/07/ScalaTest-sbtcmd.png" /></li>
+  <li>テスト実行後、結果出力
+<img src="http://makotow.github.io/images/2013/07/ScalaTest-testresult.png" /></li>
 </ol>
 
-
-<p>上記の例では ~test でやっているがもちろん、run, test, compielなども実行可能。</p>
-
-<h2 id="雑感">雑感</h2>
-
-<p>SBT Console使うことでIntelliJ内で完結するのは便利だと思う。</p>
+<p>上記の例では ~test でやっているがもちろん、run, test, compielなども実行可能。
+## 雑感
+SBT Console使うことでIntelliJ内で完結するのは便利だと思う。</p>
 
 <p>もう少しネタ見つけて続ける。(コード片とか学んだこととか…)</p>
 
 <div class="footnotes">
-    <ol>
-        <li id='fn:1'><p> trait にしたのはなんとなく使ってみたいから…。object にすべきか traitにすべきかの判断はScala力が不足していてピンとこないので、とりあえずどのようなにつかえるかを試している最中。
-<a href='#fnref:1' rev='footnote'>↩</a></p>
-</li><li id='fn:2'><p> dot productのコードは本当は v1 dot v2 とか書きたい。Scala力が不足…
-<a href='#fnref:2' rev='footnote'>↩</a></p>
-</li>
-    </ol>
+  <ol>
+    <li id="fn:1">
+      <p>trait にしたのはなんとなく使ってみたいから…。object にすべきか traitにすべきかの判断はScala力が不足していてピンとこないので、とりあえずどのようなにつかえるかを試している最中。<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>dot productのコードは本当は v1 dot v2 とか書きたい。Scala力が不足…<a href="#fnref:2" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-
-
-
 ]]></content>
   </entry>
   
@@ -733,66 +724,51 @@ For functional, integration, or acceptance testing, start with FeatureSpec<br/><
     <id>http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#section">概要</a></li>
+  <li><a href="#section-1">前回の作業内容</a></li>
+  <li><a href="#section-2">今日やること（依存ライブラリの追加）</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#概要">概要</a>  </li>
-  <li><a href="#前回の作業内容">前回の作業内容</a>  </li>
-  <li><a href="#今日やること（依存ライブラリの追加）">今日やること（依存ライブラリの追加）</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="概要">概要</h2>
+<h2 id="section">概要</h2>
 
 <p><a href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
 
-<p>今回はScalaTestを導入。</p>
+<p>今回はScalaTestを導入。
+<!-- more --></p>
 
-<!-- more -->
-
-
-<h2 id="前回の作業内容">前回の作業内容</h2>
-
+<h2 id="section-1">前回の作業内容</h2>
 <p><a href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> の成果</p>
 
 <ul>
-<li>sbtでIntelliJのプロジェクトを作った</li>
+  <li>sbtでIntelliJのプロジェクトを作った</li>
 </ul>
 
-
-<h2 id="今日やること（依存ライブラリの追加）">今日やること（依存ライブラリの追加）</h2>
+<h2 id="section-2">今日やること（依存ライブラリの追加）</h2>
 
 <ul>
-<li>依存するライブラリをsbtで定義しIntelliJ用の定義ファイルを再生成する。</li>
-<li>build.sbtをPROJECT_DIR に作成 (PROJECT_DIRはプロジェクトディレクトリ)</li>
+  <li>依存するライブラリをsbtで定義しIntelliJ用の定義ファイルを再生成する。</li>
+  <li>build.sbtをPROJECT_DIR に作成 (PROJECT_DIRはプロジェクトディレクトリ)</li>
 </ul>
 
-
 <p>build.sbt は次の内容これがわかれば他にも応用出来るはず。
-<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
-<div><script src='https://gist.github.com/5910249.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
+<div><script src="https://gist.github.com/5910249.js"></script>
+<noscript><pre><code /></pre></noscript></div>
 
 <p>以下手順</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd PROJECT_DIR
-</span><span class='line'>sbt
-</span><span class='line'>> reload
-</span><span class='line'>> update
-</span><span class='line'>> gen-idea</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd PROJECT_DIR
+</span><span class="line">sbt
+</span><span class="line">&gt; reload
+</span><span class="line">&gt; update
+</span><span class="line">&gt; gen-idea</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>IntelliJを開いていると自動的に変更を検知してリロードしてくれる。
 libraryDependenciesにscalatestを追加され、ScalaTestがつえるようになる。
@@ -801,13 +777,12 @@ libraryDependenciesにscalatestを追加され、ScalaTestがつえるように�
 <p>このシリーズ、きっとまだ続く。</p>
 
 <div class="footnotes">
-    <ol>
-        <li id='fn:1'><p> sbtのplugin.sbt, build.sbtはいつも調べてその場では理解するが忘れてしまう…
-<a href='#fnref:1' rev='footnote'>↩</a></p>
-</li>
-    </ol>
+  <ol>
+    <li id="fn:1">
+      <p>sbtのplugin.sbt, build.sbtはいつも調べてその場では理解するが忘れてしまう…<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-
 ]]></content>
   </entry>
   
@@ -818,54 +793,40 @@ libraryDependenciesにscalatestを追加され、ScalaTestがつえるように�
     <id>http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
-
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#必要なもの">必要なもの</a>  </li>
-  <li><a href="#手順">手順</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
+<ul id="markdown-toc">
+  <li><a href="#section">手順</a></li>
+</ul>
 
 <p>タイトルの通り、sbtでIntelliJのプロジェクトを作成する方法を記載。
 今までな何度も調べたが毎回忘れるのでメモ。</p>
 
 <p>簡単なプロジェクトを作りたいときなどに使用。
-ある程度大きなものを作る場合はきちんとsbtで設定するはず。</p>
-
+ある程度大きなものを作る場合はきちんとsbtで設定するはず。
 <!-- more -->
-
-
-<h2 id="必要なもの">必要なもの</h2>
+## 必要なもの</p>
 
 <p>IntelliJ のプロジェクトを作成する、sbtプラグインが必要。
-plugin の導入はproject/plugins.sbtに addSbtPlugin(&#8230;.)を書いておけばよい。</p>
+plugin の導入はproject/plugins.sbtに addSbtPlugin(….)を書いておけばよい。</p>
 
 <ul>
-<li>sbt(0.12.x)</li>
-<li>sbt-plugin (1.4.0) (<a href="https://github.com/mpeltonen/sbt-idea">sbt-idea</a>)</li>
+  <li>sbt(0.12.x)</li>
+  <li>sbt-plugin (1.4.0) (<a href="https://github.com/mpeltonen/sbt-idea">sbt-idea</a>)</li>
 </ul>
 
+<h2 id="section">手順</h2>
 
-<h2 id="手順">手順</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir PROJECT_DIR
-</span><span class='line'>cd PROJECT_DIR
-</span><span class='line'>mkdir porject
-</span><span class='line'>echo 'addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.4.0")' >> project/plugins.sbt
-</span><span class='line'>sbt
-</span><span class='line'>gen-idea</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">mkdir PROJECT_DIR
+</span><span class="line">cd PROJECT_DIR
+</span><span class="line">mkdir porject
+</span><span class="line">echo 'addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.4.0")' &gt;&gt; project/plugins.sbt
+</span><span class="line">sbt
+</span><span class="line">gen-idea</span></code></pre></td></tr></table></div></figure></notextile></div>
 ]]></content>
   </entry>
   
@@ -874,32 +835,26 @@ plugin の導入はproject/plugins.sbtに addSbtPlugin(&#8230;.)を書いてお�
     <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
-    <content type="html"><![CDATA[<h2 id="octopress+アップデートまとめ">octopress アップデートまとめ</h2>
-
+    <content type="html"><![CDATA[<h2 id="octopress-">octopress アップデートまとめ</h2>
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
 
-<h2 id="やりたいこと">やりたいこと</h2>
+<h2 id="section">やりたいこと</h2>
+<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。
+<!-- more --></p>
 
-<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
-
-<!-- more -->
-
-
-<h2 id="マニュアル">マニュアル</h2>
+<h2 id="section-1">マニュアル</h2>
 
 <p>ここに親切に書いてある。</p>
 
 <ul>
-<li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
+  <li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
 </ul>
-
 
 <p>基本はこの通りやっていけば大丈夫。
 カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
 
-<h3 id="+α">+α</h3>
-
+<h3 id="section-2">+α</h3>
 <p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
 
 <p>ブランチを作って作業</p>
@@ -919,8 +874,6 @@ plugin の導入はproject/plugins.sbtに addSbtPlugin(&#8230;.)を書いてお�
 <p>
 2013/05/06 15:00 追記： _layout/post.htmlにrelated_postを表示するプラグインの記述を入れていた。
 </p>
-
-
 <pre><code>git add/rm ...
 git commit -m "pull upstream."
 </code></pre>
@@ -941,6 +894,7 @@ git commit -m "pull upstream."
 </code></pre>
 
 <p>以上</p>
+
 ]]></content>
   </entry>
   
@@ -949,53 +903,48 @@ git commit -m "pull upstream."
     <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
-    <content type="html"><![CDATA[<h2 id="概要">概要</h2>
-
+    <content type="html"><![CDATA[<h2 id="section">概要</h2>
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
 
 <ul>
-<li>Google日本語入力を使用中</li>
-<li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
-<li>SublimeText2に制御が移るため、日本語消える。</li>
+  <li>Google日本語入力を使用中</li>
+  <li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
+  <li>SublimeText2に制御が移るため、日本語消える。</li>
 </ul>
 
-
-<h2 id="対策方法">対策方法</h2>
+<h2 id="section-1">対策方法</h2>
 
 <ul>
-<li>SublimeText2での制御を外す。</li>
-<li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
+  <li>SublimeText2での制御を外す。</li>
+  <li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
 </ul>
 
+<p>Sublime Text2 &gt; Preferences &gt; Key Bindings - Default を選択して、以下の部分をコメントアウト。 </p>
 
-<p>Sublime Text2 > Preferences > Key Bindings - Default を選択して、以下の部分をコメントアウト。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'>
-</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-</span><span class='line'>    <span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
-</span><span class='line'>    <span class="err">//</span>  <span class="p">[</span>
-</span><span class='line'>    <span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-</span><span class='line'>    <span class="err">//</span>  <span class="p">]</span>
-</span><span class='line'>    <span class="err">//</span> <span class="p">}</span><span class="err">,</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="json"><span class="line">
+</span><span class="line">    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
+</span><span class="line">    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+</span><span class="line">    <span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
+</span><span class="line">    <span class="err">//</span>  <span class="p">[</span>
+</span><span class="line">    <span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+</span><span class="line">    <span class="err">//</span>  <span class="p">]</span>
+</span><span class="line">    <span class="err">//</span> <span class="p">}</span><span class="err">,</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>以下のURLを参考にさせていただいた。</p>
 
 <ul>
-<li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
+  <li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -1005,7 +954,6 @@ git commit -m "pull upstream."
     <updated>2013-05-05T17:50:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/05/sqlantipattern</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
 
 <p>内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。
 やっちゃいけないことあるある集、解決方法をみてあーなるほどとなるなど学ぶことの多い本だった。</p>
@@ -1018,8 +966,7 @@ git commit -m "pull upstream."
 
 <!-- more -->
 
-
-<h3 id="感想">感想</h3>
+<h3 id="section">感想</h3>
 
 <p>アンチパターンの兆しが見える質問例、
 アンチパターンを使ってもいい場面などが各アンチパターンごとに記載されているため実践的な内容となっている。</p>
@@ -1029,45 +976,44 @@ git commit -m "pull upstream."
 <p>以下4部で構成されている</p>
 
 <ul>
-<li>論理設計</li>
-<li>物理設計</li>
-<li>クエリ</li>
-<li>アプリケーション</li>
+  <li>論理設計</li>
+  <li>物理設計</li>
+  <li>クエリ</li>
+  <li>アプリケーション</li>
 </ul>
-
 
 <p>全般的になるほどと思いながら読めた。
 特に、論理設計、アプリケーションの部は面白く感じた。</p>
 
 <p>論理設計のアンチパターンについてはあまり経験値がない部分であったのでとても参考になった。</p>
 
-<h3 id="特に気になったアンチパターン">特に気になったアンチパターン</h3>
+<h3 id="section-1">特に気になったアンチパターン</h3>
 
 <p>自分なりのメモ。</p>
 
-<h4 id="ナイーブツリー">ナイーブツリー</h4>
+<h4 id="section-2">ナイーブツリー</h4>
 
 <p>SQLでツリーを表す際のアンチパターン、
 解決するためにはいくつかの策があり、テーブルの性質によって策を考える。
 本書では設計の一覧表がのっている。</p>
 
-<h4 id="キーレスエントリー">キーレスエントリー</h4>
+<h4 id="section-3">キーレスエントリー</h4>
 
 <p>外部キー制約を使用しないパターン。柔軟性が高まるが参照整合性を保つコードをアプリケーションで保証しなければいけない。
 解決策としては外部キー制約を使用する。
 外部キー制約使うと柔軟性がなくなってテストしにくいって言われたのを思い出した。</p>
 
-<h4 id="ファントムファイル">ファントムファイル</h4>
+<h4 id="section-4">ファントムファイル</h4>
 
 <p>RDMBS上にはファイルのパスを格納、実際のファイルはファイルシステムへ配置するパターン。
 必要に応じてLOBの使用を検討する。常に２パターンの設計を検討。</p>
 
-<h4 id="リーダブルパスワードの章のレインボーテーブル">リーダブルパスワードの章のレインボーテーブル</h4>
+<h4 id="section-5">リーダブルパスワードの章のレインボーテーブル</h4>
 
 <p>一般的なことだが考慮すべきことは多い。
 攻撃手法を知り対策を行う必要がある。</p>
 
-<h4 id="マジックビーンズ">マジックビーンズ</h4>
+<h4 id="section-6">マジックビーンズ</h4>
 
 <p>MVCのM(モデル)がActiveRecordそのものなってしまう。
 ドメインモデル貧血症(Anemic Domain Model)</p>
@@ -1079,12 +1025,11 @@ git commit -m "pull upstream."
 これではまずいと思い自分なりの解決方法を実施していたことを思い出した。
 やり方的には同じ方法だったような…</p>
 
-<h3 id="Reference">Reference</h3>
+<h3 id="reference">Reference</h3>
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div>
 
-
-<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div></p>
 ]]></content>
   </entry>
   
@@ -1096,26 +1041,23 @@ git commit -m "pull upstream."
     <content type="html"><![CDATA[<p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
 Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if </span>which brew &gt; /dev/null;then
-</span><span class='line'>   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if </span>which brew &gt; /dev/null;then
+</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class="line"><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>こんな方法もあるみたい</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;`which brew`&quot;</span> <span class="o">]</span>;<span class="k">then</span>
-</span><span class='line'>   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;`which brew`&quot;</span> <span class="o">]</span>;<span class="k">then</span>
+</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class="line"><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 ]]></content>
   </entry>
@@ -1127,41 +1069,36 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
     <id>http://makotow.github.io/blog/2013/03/30/tddprac</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
 <p>軽いメモ書き。
 個人的に結構なボリュームがある書籍であった。</p>
 
 <!-- more -->
 
-
-<h3 id="感想">感想</h3>
+<h3 id="section">感想</h3>
 
 <p>読んでから少したってしまったので箇条書きで感想。</p>
 
 <ul>
-<li>1章が一番しっくりきた。</li>
-<li>テストコードをどうコーディングするかをかなり多くのサンプルをみながら理解できた。</li>
-<li>モックオブジェクト(jMock2)について理解を深めることができた。</li>
-<li>同期処理、非同期処理についても言及しているため、非同期処理のテストについて学びたく買ったので良かった。</li>
+  <li>1章が一番しっくりきた。</li>
+  <li>テストコードをどうコーディングするかをかなり多くのサンプルをみながら理解できた。</li>
+  <li>モックオブジェクト(jMock2)について理解を深めることができた。</li>
+  <li>同期処理、非同期処理についても言及しているため、非同期処理のテストについて学びたく買ったので良かった。</li>
 </ul>
 
-
-<p>  実際、設計を進化させながら進んでいる。
+<p>実際、設計を進化させながら進んでいる。
   途中でこれは微妙だなと思うことがあっても章が進むと改善されていくので、自分の設計思想と同じだなと思ったり、
   こういうやり方があるかなどと読み進めていけて面白かった。</p>
 
-<p>  この書籍自体にはテスティングフレームワークの使用方法などは載っていないが、
+<p>この書籍自体にはテスティングフレームワークの使用方法などは載っていないが、
   書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
   なにを使ったらよいかの参考になるのではないか。</p>
 
-<h3 id="参考">参考</h3>
+<h3 id="section-1">参考</h3>
 
 <p>テスト駆動開発といえばこれ。
 併せて読むと理解が進むと思う。</p>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" alt="テスト駆動開発入門" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">テスト駆動開発入門</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.30</div></div><div class="amazlet-detail">ケント ベック <br />ピアソンエデュケーション <br />売り上げランキング: 105,111<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-
 
 ]]></content>
   </entry>
@@ -1175,25 +1112,20 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
-
-
 <!-- more -->
-
 
 <p>話題となっていたので購入。</p>
 
-<h3 id="感想">感想</h3>
+<h3 id="section">感想</h3>
 
 <p>三部構成となっており
 各部の内容を一言でまとめると</p>
 
 <ul>
-<li>1部 アジャイル開発とは、Scrumとは、プラクティスの紹介</li>
-<li>2部 実例</li>
-<li>3部 考察</li>
+  <li>1部 アジャイル開発とは、Scrumとは、プラクティスの紹介</li>
+  <li>2部 実例</li>
+  <li>3部 考察</li>
 </ul>
-
 
 <p>1部についてはScrumを学んだことがあればおなじみのもの。</p>
 
@@ -1207,14 +1139,13 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <p>2部が一番印象に残っており読んだ段階でワクワクしながら読めた。
 初級者から上級者まで幅広くカバーできている書籍と感じた。</p>
 
-<h3 id="参考になったキーワード">参考になったキーワード</h3>
+<h3 id="section-1">参考になったキーワード</h3>
 
 <ul>
-<li>ワンチームマインド</li>
-<li>マルチ学習</li>
-<li>暗黙知・形式知</li>
+  <li>ワンチームマインド</li>
+  <li>マルチ学習</li>
+  <li>暗黙知・形式知</li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -1225,27 +1156,18 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
     <id>http://makotow.github.io/blog/2013/03/01/feldman</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:20px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
-
-
 <!-- more -->
 
-
-
-
-<br>
-
-
-<p>著者の主張は章のタイトルでほとんどが表現されているように感じた。</p>
+<p><br />
+著者の主張は章のタイトルでほとんどが表現されているように感じた。</p>
 
 <p>内容は実体験をもとにした理論付け</p>
 
 <ul>
-<li>理論付けとして、政治の話、お金の話が多い（著者の背景上）</li>
-<li>数字が文章中におおいため納得しやすい。</li>
-<li>分量的にはそれほどではないためこういうことも覚えておこうといった感じで読むのがいいかもしれない。</li>
+  <li>理論付けとして、政治の話、お金の話が多い（著者の背景上）</li>
+  <li>数字が文章中におおいため納得しやすい。</li>
+  <li>分量的にはそれほどではないためこういうことも覚えておこうといった感じで読むのがいいかもしれない。</li>
 </ul>
-
 
 <p>時間管理の章ぐらいから自分が知りたい情報が多かった。
 次の日のスケジュールをつくるところはわかってはいるけどもできなかった。予実管理に終始してしまったところだった。</p>
@@ -1253,6 +1175,7 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <p>今後はここに書いてある例でやっていきたい。</p>
 
 <p>最終的には、時間管理の章以降は付箋を貼る箇所が多くなった。</p>
+
 ]]></content>
   </entry>
   
@@ -1263,11 +1186,9 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
     <id>http://makotow.github.io/blog/2013/02/20/pmintro</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
 <p>漫画で学ぶプロジェクトマネジメント読書録を読んだ感想。</p>
 
 <!-- more -->
-
 
 <p>自分としては、基本をすっとばして物事をやっているため、
 優しいくらいの基本を学べてよかったと思う。
@@ -1276,35 +1197,29 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 <p>本書の特徴として、</p>
 
 <ul>
-<li>非常に容易(わかり易く解説してある）</li>
-<li>漫画のためサクサクよめる</li>
-<li>一部、フォローのためのコラムあり</li>
-<li>内容にPMBOKなどの用語が出てくるため、次になにを学ぶかがわかる。（調べるべきキーワードがわかりやすい）</li>
-<li>新入社員、新米PM、PMとは何をやっているかを知りたい人向け</li>
+  <li>非常に容易(わかり易く解説してある）</li>
+  <li>漫画のためサクサクよめる</li>
+  <li>一部、フォローのためのコラムあり</li>
+  <li>内容にPMBOKなどの用語が出てくるため、次になにを学ぶかがわかる。（調べるべきキーワードがわかりやすい）</li>
+  <li>新入社員、新米PM、PMとは何をやっているかを知りたい人向け</li>
 </ul>
 
-
-<h2 id="今後の指針">今後の指針</h2>
-
+<h2 id="section">今後の指針</h2>
 <p>プロジェクト・マネジメントで自分が読んだものでおすすめできるものを挙げる。</p>
 
-<h3 id="プロジェクト・マネジメント">プロジェクト・マネジメント</h3>
-
+<h3 id="section-1">プロジェクト・マネジメント</h3>
 <p>なんかかPMに近い立場を体験したあとに読むと勉強になるはず。
 読むたびに新しい発見がありそう。</p>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/4106A8SHJRL._SL160_.jpg" alt="アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Scott Berkun <br />オライリー・ジャパン <br />売り上げランキング: 51,421<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
-<h3 id="アジャイル開発">アジャイル開発</h3>
+<h3 id="section-2">アジャイル開発</h3>
 
 <p>アジャイル開発に興味が出たら</p>
 
-<p>  <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg" alt="アジャイルサムライ−達人開発者への道−" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルサムライ−達人開発者への道−</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Jonathan Rasmusson <br />オーム社 <br />売り上げランキング: 2,147<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div></p>
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg" alt="アジャイルサムライ−達人開発者への道−" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルサムライ−達人開発者への道−</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Jonathan Rasmusson <br />オーム社 <br />売り上げランキング: 2,147<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51A8BTrHYxL._SL160_.jpg" alt="アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Mike Cohn マイク コーン <br />毎日コミュニケーションズ <br />売り上げランキング: 20,349<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-
 
 ]]></content>
   </entry>
@@ -1314,39 +1229,36 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
     <link href="http://makotow.github.io/blog/2013/02/08/mac-difftools/"/>
     <updated>2013-02-08T00:40:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/02/08/mac-difftools</id>
-    <content type="html"><![CDATA[<p>色々探してみた。
+    <content type="html"><![CDATA[<p>色々探してみた。 
 要件としては</p>
 
 <ul>
-<li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
-<li>できれば比較状態から編集できる</li>
+  <li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
+  <li>できれば比較状態から編集できる</li>
 </ul>
-
 
 <p>MacOSXでは決定打となるようなツールはなかったが、
 ある程度の候補を上げることができたので記録する。</p>
 
 <!-- more -->
 
-
-<h2 id="試してみたツール">試してみたツール</h2>
-
+<h2 id="section">試してみたツール</h2>
 <p>探してみてスペック的に満たしていそうなものをためしてみた。
 参考としてURLや使用感を書いてみようと思う。</p>
 
-<h3 id="P4Merge+stroy">P4Merge+stroy</h3>
+<h3 id="p4mergestroy">P4Merge+stroy</h3>
 
 <p>MacのDiffツールといえばP4Mergeをよく見かける。しかし、ディレクトリ単位での比較ができないためスルーしていた。ディレクトリ単位で比較できるツールという観点で調べていたところstroyと連携することでディレクトリ単位の比較が実現できるようなので試してみた。</p>
 
-<p> <a href="http://www.atinfinity.info/wiki/index.php?Mac/stroy%E3%81%A8P4Merge%E3%82%92%E9%80%A3%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B">Mac/stroyとP4Mergeを連動させる</a>
+<p><a href="http://www.atinfinity.info/wiki/index.php?Mac/stroy%E3%81%A8P4Merge%E3%82%92%E9%80%A3%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B">Mac/stroyとP4Mergeを連動させる</a>
 を参考に試してみた。</p>
 
 <p>比較、マージもわかりやすく使いやすいように感じる。</p>
 
-<p><img class="left" src="http://makotow.github.io/images/2013/02/stroy.png">
-<img class="right" src="http://makotow.github.io/images/2013/02/p4merge.png"></p>
+<p><img class="left" src="http://makotow.github.io/images/2013/02/stroy.png" />
+<img class="right" src="http://makotow.github.io/images/2013/02/p4merge.png" /></p>
 
-<h3 id="DiffMerge">DiffMerge</h3>
+<h3 id="diffmerge">DiffMerge</h3>
 
 <p>P4Merge + story に比べて導入するソフトは１つだけでよい。
 求めているものの要求を満たしていてる。</p>
@@ -1358,40 +1270,36 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 日本語についての対応策としては　<a href="http://d.hatena.ne.jp/nakamura001/20110321/1300706226">強火で進め - ソースコードの比較/マージツール「DiffMerge」</a>
 を参考にした。</p>
 
-<p><img class="right" src="http://makotow.github.io/images/2013/02/diffmerge1.png">
-<img class="right" src="http://makotow.github.io/images/2013/02/diffmerge2.png"></p>
+<p><img class="right" src="http://makotow.github.io/images/2013/02/diffmerge1.png" />
+<img class="right" src="http://makotow.github.io/images/2013/02/diffmerge2.png" /></p>
 
 <h3 id="meld">meld</h3>
-
 <p>homebrewでインストール可能なのだが、ビルドに失敗したり色々と大変だった。</p>
 
 <p>gtk2+のビルドのことごとく失敗するので、githubをみて解決</p>
 
 <ul>
-<li>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/07/homebrew-gtk2-24-11/</li>
-<li>https://github.com/mxcl/homebrew/issues/13546</li>
+  <li>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/07/homebrew-gtk2-24-11/</li>
+  <li>https://github.com/mxcl/homebrew/issues/13546</li>
 </ul>
-
 
 <p>操作感がMacとは違うので違和感は感じる。
 機能的には問題なく使用可能</p>
 
-<h2 id="その他">その他</h2>
-
+<h2 id="section-1">その他</h2>
 <p>試してはいないが検索している上で出てきたキーワードを備忘として記載しておく。</p>
 
 <ul>
-<li>TextWrangler</li>
-<li>Kaleidoscope(有償）</li>
-<li>Beyond Compare</li>
-<li>Araxis</li>
+  <li>TextWrangler</li>
+  <li>Kaleidoscope(有償）</li>
+  <li>Beyond Compare</li>
+  <li>Araxis</li>
 </ul>
 
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="section-2">まとめ</h2>
 <p>Winmergeほどの使いやすがはないが、ちょっとづつ使ってみようと思う。
 今のところP4Mege+stroyが良い感じ。</p>
+
 ]]></content>
   </entry>
   
@@ -1413,48 +1321,40 @@ git で branch 作って作業して他の branch にマージということを
 
 <!-- more -->
 
-
-<h2 id="Octopress+変更点">Octopress 変更点</h2>
-
-<h3 id="ファイル一覧">ファイル一覧</h3>
-
-<p>思ったよりも変更する箇所はなく、
+<h2 id="octopress-">Octopress 変更点</h2>
+<p>### ファイル一覧 ###
+思ったよりも変更する箇所はなく、
 octopress/sass/custom 以下のファイルに設定を追加、
 CSSを書き換えることで変更可能
 フレームワーク部分にはほとんど手をいれることなく変更可能な作りとなっている。</p>
 
 <ul>
-<li>octopress/sass/custom/_styles.scss</li>
-<li>octopress/sass/custom/_fonts.scss</li>
-<li>octopress/sass/custom/_colors.scss</li>
+  <li>octopress/sass/custom/_styles.scss</li>
+  <li>octopress/sass/custom/_fonts.scss</li>
+  <li>octopress/sass/custom/_colors.scss</li>
 </ul>
 
+<h2 id="section">今回つかったツール</h2>
 
-<h2 id="今回つかったツール">今回つかったツール</h2>
-
-<h3 id="IDE">IDE</h3>
-
+<h3 id="ide">IDE</h3>
 <p>IntelliJ IDEA 12
 年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
 
-<h3 id="サイト">サイト</h3>
+<h3 id="section-1">サイト</h3>
 
 <ul>
-<li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
-<li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
+  <li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
+  <li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
 </ul>
 
-
-<h2 id="残作業">残作業</h2>
-
+<h2 id="section-2">残作業</h2>
 <p>凝り始めるときりがないので今回は一旦この段階で終了。
 今後は、</p>
 
 <ul>
-<li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
-<li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
+  <li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
+  <li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -1474,32 +1374,32 @@ CSSを書き換えることで変更可能
 <p>残り2冊はビジネススキル関連。アマゾンで評判だったので購入。</p>
 
 <ul>
-<li><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a></p></li>
-<li><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a></p></li>
+  <li>
+    <p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a></p>
+  </li>
 </ul>
-
 
 <p>この手の本の購入は久しぶり。
 各３冊途中までの感想を書いてみた。</p>
 
 <!-- more -->
 
-
-<h2 id="マンガでわかるプロジェクトマネジメント">マンガでわかるプロジェクトマネジメント</h2>
+<h2 id="section">マンガでわかるプロジェクトマネジメント</h2>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
-<h3 id="途中までの感想">途中までの感想</h3>
+<h3 id="section-1">途中までの感想</h3>
 
 <p>漫画ということでかなり読みやすい。先にPMの入門書を読んだ人にとっては当たり前のことが書いてあるかも知れないが、基本中の基本を学ぶには良い書籍と思う。</p>
 
-<h2 id="フェルドマン式知的生産術+―+国境、業界を越えて働く人に">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</h2>
+<h2 id="section-2">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</h2>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
-<h3 id="途中までの感想">途中までの感想</h3>
+<h3 id="section-3">途中までの感想</h3>
 
 <p>読んでいる途中で、「これは何についての書籍だったか？」と思うことが多々あり。
 言いたいことは章の一番最初に一言で書かれており、その後の文章では実体験を交えた説明をしているスタイル。</p>
@@ -1508,21 +1408,24 @@ CSSを書き換えることで変更可能
 
 <p>以下、読んでみて心に残っている言葉</p>
 
-<blockquote><p> 情報は「量」ではなく「つなぎ方」</p>
+<blockquote>
+  <p>情報は「量」ではなく「つなぎ方」</p>
+</blockquote>
 
-<p> 簡単なメッセージほど伝わりやすい</p></blockquote>
+<blockquote>
+  <p>簡単なメッセージほど伝わりやすい</p>
+</blockquote>
 
-<h2 id="ビジネススキル・イノベーション+―+「時間×思考×直感」67のパワフルな技術">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</h2>
+<h2 id="section-4">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</h2>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/510UNl%2BuWrL._SL160_.jpg" alt="ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/483345047X/makotownotes-22/ref=nosim/" title="ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">横田 尚哉 <br />プレジデント社 <br />売り上げランキング: 649<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
-<h3 id="途中までの感想">途中までの感想</h3>
+<h3 id="section-5">途中までの感想</h3>
 
 <p>まだ目次を見た段階だけけれどもどれも基本的な内容のように見えた。
 基本を抑えれていない自分にとって望んでいたもののようだ。</p>
 
-<h2 id="本記事においての試み">本記事においての試み</h2>
+<h2 id="section-6">本記事においての試み</h2>
 
 <p>ブログ内でアマゾンの画像を使いたかったためにアフリエイトIDを取得した。</p>
 
@@ -1541,36 +1444,41 @@ CSSを書き換えることで変更可能
 参考としたサイトを紹介。</p>
 
 <!-- more -->
-
-
 <p>以下のリンクを参考に移行。
 特につまる所もなく移行完了した。</p>
 
-<h2 id="Pocketの紹介">Pocketの紹介</h2>
+<h2 id="pocket">Pocketの紹介</h2>
+<p><a href="http://www.barasu.org/diary/8004.html">Instapaper から Pocketへ乗り換え | 後悔懺悔日記</a></p>
 
-<p> <a href="http://www.barasu.org/diary/8004.html">Instapaper から Pocketへ乗り換え | 後悔懺悔日記</a></p>
+<table>
+  <tbody>
+    <tr>
+      <td>[Pocket for Macでウェブの情報処理が飛躍的に楽になる</td>
+      <td>Lifehacking.jp](http://lifehacking.jp/2012/10/pocket-for-mac/)</td>
+    </tr>
+  </tbody>
+</table>
 
-<p> <a href="http://lifehacking.jp/2012/10/pocket-for-mac/">Pocket for Macでウェブの情報処理が飛躍的に楽になる | Lifehacking.jp</a></p>
+<h3 id="instapaper">Instapaperからの移行</h3>
 
-<h3 id="Instapaperからの移行">Instapaperからの移行</h3>
+<p><a href="http://getpocket.com/import/instapaper?e=1">Pocket: Import Instapaper</a></p>
 
-<p> <a href="http://getpocket.com/import/instapaper?e=1">Pocket: Import Instapaper</a></p>
+<h2 id="section">アプリケーション、アドオンなど</h2>
 
-<h2 id="アプリケーション、アドオンなど">アプリケーション、アドオンなど</h2>
+<h3 id="chrome-addon">Chrome-addon</h3>
 
-<h3 id="Chrome-addon">Chrome-addon</h3>
+<p><a href="https://chrome.google.com/webstore/detail/pocket-formerly-read-it-l/niloccemoadcdkdjlinkgdfekeahmflj/details">Pocket (formerly Read It Later)</a></p>
 
-<p> <a href="https://chrome.google.com/webstore/detail/pocket-formerly-read-it-l/niloccemoadcdkdjlinkgdfekeahmflj/details">Pocket (formerly Read It Later)</a></p>
+<h3 id="android">Android</h3>
 
-<h3 id="Android">Android</h3>
+<p><a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro">Google Play Pocket</a></p>
 
-<p> <a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro">Google Play Pocket</a></p>
+<h3 id="mac">Mac</h3>
 
-<h3 id="Mac">Mac</h3>
-
-<p> <a href="https://itunes.apple.com/jp/app/pocket-formerly-read-it-later/id309601447?mt=8&amp;ign-mpt=uo%3D4">Pocket (Formerly Read It Later)</a></p>
+<p><a href="https://itunes.apple.com/jp/app/pocket-formerly-read-it-later/id309601447?mt=8&amp;ign-mpt=uo%3D4">Pocket (Formerly Read It Later)</a></p>
 
 <hr />
+
 ]]></content>
   </entry>
   
@@ -1582,43 +1490,6 @@ CSSを書き換えることで変更可能
     <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
 
 <p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[gitignoreのメモ]]></title>
-    <link href="http://makotow.github.io/blog/2012/10/03/gitignore/"/>
-    <updated>2012-10-03T23:38:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/10/03/gitignore</id>
-    <content type="html"><![CDATA[<p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
-
-<p>今回Scala用に書いたものをメモ書きとして残す。</p>
-
-<p>主にsbtとScalaIDE用のものとなる。</p>
-
-<!-- more -->
-
-
-
-
-<div><script src='https://gist.github.com/3827256.js'></script>
-<noscript><pre><code>*.class
-*.log
-.cache
-# sbt specific
-dist/*
-target/
-lib_managed/
-src_managed/
-project/boot/
-project/target/
-project/plugins/project/
-# Scala-IDE specific
-.scala_dependencies     
-</code></pre></noscript></div>
-
-
-
 ]]></content>
   </entry>
   

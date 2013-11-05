@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-08-17T18:50:18+09:00</updated>
+  <updated>2013-11-06T02:00:32+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -24,75 +24,39 @@
 
 <p>reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。</p>
 
+<!-- more -->
 <h2> Contents </h2>
 
-
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#reveal.jsとは">reveal.jsとは</a>  </li>
-  <li><a href="#インストール">インストール</a>
-   <ul>
-   <li><a href="#Basic+Setup">Basic Setup</a>   </li>
-   <li><a href="#Full+Setup">Full Setup</a>   </li>
-  </ul>
-  <li><a href="#スライドを作成する">スライドを作成する</a>
-   <ul>
-   <li><a href="#HTML">HTML</a>
-    <ul>
-    <li><a href="#画像、リスト">画像、リスト</a>
-     <ul>
-     <li><a href="#画像">画像</a>     </li>
-     <li><a href="#リスト">リスト</a>     </li>
+<ul id="markdown-toc">
+  <li><a href="#revealjs">reveal.jsとは</a></li>
+  <li><a href="#section">インストール</a>    <ul>
+      <li><a href="#basic-setup">Basic Setup</a></li>
+      <li><a href="#full-setup">Full Setup</a></li>
     </ul>
-    </li>
-   </ul>
-   <li><a href="#Markdown">Markdown</a>
-    <ul>
-    <li><a href="#外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</a>    </li>
-    <li><a href="#HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</a>    </li>
-    <li><a href="#画像、リスト">画像、リスト</a>
-     <ul>
-     <li><a href="#画像">画像</a>     </li>
-     <li><a href="#リスト">リスト</a>     </li>
+  </li>
+  <li><a href="#section-1">スライドを作成する</a>    <ul>
+      <li><a href="#html">HTML</a></li>
     </ul>
-    </li>
-   </ul>
-   </li>
-  </ul>
-  <li><a href="#その他">その他</a>  </li>
-  <li><a href="#まとめ">まとめ</a>  </li>
-  </ul>
- </li>
- </ul>
+  </li>
+</ul>
 
-</p>
-
-<!-- more -->
-
-
-<h2 id="reveal.jsとは">reveal.jsとは</h2>
-
+<h2 id="revealjs">reveal.jsとは</h2>
 <p>HTMLでかっこいいスライドが作れるフレームワーク。
 ぐいんぐいん動いてみ見た目もよい。</p>
 
 <ul>
-<li><a href="https://github.com/hakimel/reveal.js">reveal.js</a></li>
-<li><a href="http://lab.hakim.se/reveal-js/#/">reveal.jsのデモ</a></li>
-<li><a href="https://github.com/hakimel/reveal.js/wiki/Example-Presentations">reveal.js使ったサンプル一覧</a></li>
+  <li><a href="https://github.com/hakimel/reveal.js">reveal.js</a></li>
+  <li><a href="http://lab.hakim.se/reveal-js/#/">reveal.jsのデモ</a></li>
+  <li><a href="https://github.com/hakimel/reveal.js/wiki/Example-Presentations">reveal.js使ったサンプル一覧</a></li>
 </ul>
 
+<h2 id="section">インストール</h2>
 
-<h2 id="インストール">インストール</h2>
-
-<h3 id="Basic+Setup">Basic Setup</h3>
-
+<h3 id="basic-setup">Basic Setup</h3>
 <p>簡単な方法としては、
 <a href="https://github.com/hakimel/reveal.js#basic-setup">Basic Setup</a> を参照して、<a href="https://github.com/hakimel/reveal.js/releases">https://github.com/hakimel/reveal.js/releases</a>から最新版をダウンロードしてindex.htmlを編集する。</p>
 
-<h3 id="Full+Setup">Full Setup</h3>
-
+<h3 id="full-setup">Full Setup</h3>
 <p>reveal.jsのフル機能を使いたい場合はこちらを使う。外部のmarkdown を取り込みたい場合などはFullSetupが必要。
 <a href="https://github.com/hakimel/reveal.js#full-setup">Full Setup</a>を参照して必要なnode.js, Gruntをインストールする。
 github から clone する。</p>
@@ -100,24 +64,99 @@ github から clone する。</p>
 <pre><code>$ git clone git@github.com:hakimel/reveal.js.git
 </code></pre>
 
-<h2 id="スライドを作成する">スライドを作成する</h2>
-
+<h2 id="section-1">スライドを作成する</h2>
 <p>基本的にはindex.htmlを眺めているとざっくりした書き方はわかってくる。
 スライドの作成方法としては次の2つがある。</p>
 
 <ul>
-<li>HTML</li>
-<li>Markdown</li>
+  <li>HTML</li>
+  <li>Markdown</li>
 </ul>
-
 
 <p>markdownを直接書く方法、外部ファイルのmarkdownファイルの読み込みできる。
 ここではhtml, markdown の2つで、スライド作成に必要になるであろう、画像埋め込み、リストについてメモをしておく。
 reveal.jsの特徴としてスライドを一次元的なものではなく2次元的にも作成できる(nested vertical slide)ものがある。</p>
 
-<h3 id="HTML">HTML</h3>
+<h3 id="html">HTML</h3>
 
 <p><code>&lt;section&gt;</code> タグで一枚のスライドになる。
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド１
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド２
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>nested vertical slide の作成方法としては <code>&lt;section&gt;</code> タグ内に <code>&lt;section&gt;</code> タグをネストすることで実現できる。 </p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド１
+</span><span class='line'>    <span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド1-1
+</span><span class='line'>    <span class="nt">&lt;/section&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド1-2
+</span><span class='line'>    <span class="nt">&lt;/section&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>    スライド２
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+#### 画像、リスト
+HTMLで記述する。
+
+##### 画像
+画像であれば `<img src="xxx" />`
+
+##### リスト
+`<ul><li /></ul>` を使用する。 
+
+### Markdown 
+htmlのなかにもMarkdownはかけるが、外部ファイルのMarkdownも読み込める。
+スライドだけではなくて配布資料としても使いたいのでMarkdownを埋め込めるのはとてもいい機能だと思える。
+ただし、外部Markdownを使うには Full Setup を実行し、grunt serve を実行する必要がある。
+
+#### 外部のMarkdown を読み込む場合
+外部ファイルとして用意したexample.mdを読み込む場合
+スライドのセパレータとnested vertical slideのセパレータを設定。
+
+- data-separator: スライドのセパレーター
+- data-vertical: nested vertical slide のセパレーター
+
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">data-markdown=</span><span class="s">&quot;example.md&quot;</span> <span class="na">data-separator=</span><span class="s">&quot;^\n\n\n&quot;</span> <span class="na">data-vertical=</span><span class="s">&quot;^\n\n&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+#### HTML内にMarkdown を書く場合
+以下のように記述し、section内にMarkdownで書く。
+
+
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -130,124 +169,11 @@ reveal.jsの特徴としてスライドを一次元的なものではなく2次�
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>スライド１
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/section&gt;</span>
-</span><span class='line'><span class="nt">&lt;section&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>スライド２
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/section&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>nested vertical slide の作成方法としては <code>&lt;section&gt;</code> タグ内に <code>&lt;section&gt;</code> タグをネストすることで実現できる。</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>スライド１
-</span><span class='line'><span class="ni">&amp;lt;</span>section<span class="ni">&amp;gt;</span>
-</span><span class='line'>スライド1-1
-</span><span class='line'><span class="ni">&amp;lt;</span>/section<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>section<span class="ni">&amp;gt;</span>
-</span><span class='line'>スライド1-2
-</span><span class='line'><span class="ni">&amp;lt;</span>/section<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;section&gt;</span>
-</span><span class='line'><span class="nt">&lt;section&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>スライド２
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/section&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h4 id="画像、リスト">画像、リスト</h4>
-
-<p>HTMLで記述する。</p>
-
-<h5 id="画像">画像</h5>
-
-<p>画像であれば <code>&lt;img src="xxx"&gt;&lt;/img&gt;</code></p>
-
-<h5 id="リスト">リスト</h5>
-
-<p><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code> を使用する。</p>
-
-<h3 id="Markdown">Markdown</h3>
-
-<p>htmlのなかにもMarkdownはかけるが、外部ファイルのMarkdownも読み込める。
-スライドだけではなくて配布資料としても使いたいのでMarkdownを埋め込めるのはとてもいい機能だと思える。
-ただし、外部Markdownを使うには Full Setup を実行し、grunt serve を実行する必要がある。</p>
-
-<h4 id="外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</h4>
-
-<p>外部ファイルとして用意したexample.mdを読み込む場合
-スライドのセパレータとnested vertical slideのセパレータを設定。</p>
-
-<ul>
-<li>data-separator: スライドのセパレーター</li>
-<li>data-vertical: nested vertical slide のセパレーター</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">data-markdown=</span><span class="s">&quot;example.md&quot;</span> <span class="na">data-separator=</span><span class="s">&quot;^\n\n\n&quot;</span> <span class="na">data-vertical=</span><span class="s">&quot;^\n\n&quot;</span><span class="nt">&gt;&lt;/section&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h4 id="HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</h4>
-
-<p>以下のように記述し、section内にMarkdownで書く。</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;section</span> <span class="na">data-markdown</span><span class="nt">&gt;&lt;/p&gt;</span>
-</span><span class='line'>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">data-markdown=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>    <span class="err">##</span> <span class="nx">Markdown</span> <span class="nx">support</span>
 </span><span class='line'>
@@ -262,48 +188,36 @@ reveal.jsの特徴としてスライドを一次元的なものではなく2次�
 </span><span class='line'>    <span class="o">&lt;</span><span class="err">/section&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/section&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h4 id="画像、リスト">画像、リスト</h4>
+#### 画像、リスト
+Markdownの記法で書ける。
 
-<p>Markdownの記法で書ける。</p>
+##### 画像
+`![Alt Text](path/to/img)`
+ただし、画像サイズの指定ができない。指定したい場合はHTMLのimgタグを使用する。
 
-<h5 id="画像">画像</h5>
-
-<p><code>![Alt Text](path/to/img)</code>
-ただし、画像サイズの指定ができない。指定したい場合はHTMLのimgタグを使用する。</p>
-
-<h5 id="リスト">リスト</h5>
-
-<p>以下のとおり
+##### リスト
+以下のとおり
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>- ABC
 </span><span class='line'>- DEF
-</span><span class='line'>- GHI</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>- GHI</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="その他">その他</h2>
+## その他
+画面遷移の方法、背景色の変更などはダウンロードしたディレクトリのindex.htmlをみることで理解できると思う。[^1]
 
-<p>画面遷移の方法、背景色の変更などはダウンロードしたディレクトリのindex.htmlをみることで理解できると思う。<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
 
-<h2 id="まとめ">まとめ</h2>
+## まとめ
+この記事ではreveal.jsでスライドを作成する前におそらく使うであろう機能、セットアップ時のメモを紹介した。
 
-<p>この記事ではreveal.jsでスライドを作成する前におそらく使うであろう機能、セットアップ時のメモを紹介した。</p>
 
-<p><div class="footnotes">
-	<ol>
-		<li id='fn:1'><p> 記事に書いても本当にindex.htmlと同じことしか書けない…
-<a href='#fnref:1' rev='footnote'>↩</a></p>
-</li>
-	</ol>
-</div>
-</p>
+
+[^1]: 記事に書いても本当にindex.htmlと同じことしか書けない…
+</section></section>
 ]]></content>
   </entry>
   

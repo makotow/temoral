@@ -9,7 +9,9 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="社内勉強会用の資料をつくらなかやなとおもっててプレゼンツールを探してみた。 PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。 reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。 &hellip;">
+  <meta name="description" content="下書きしてから１ヶ月放置してたけどせっかくなので公開します。 KindleのMacアプリはamazon.comのものしか読めないので、
+アカウント統合を行うことで読めるようになるのだけども、
+直接電話したりでめんどくさいので放置してた。 結果的にはAndroidエミュレータをインストールして、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,6 +99,54 @@ $(document).ready( function () {
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-06T00:54:00+09:00" pubdate data-updated="true">Nov 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>下書きしてから１ヶ月放置してたけどせっかくなので公開します。</p>
+
+<p>KindleのMacアプリはamazon.comのものしか読めないので、
+アカウント統合を行うことで読めるようになるのだけども、
+直接電話したりでめんどくさいので放置してた。</p>
+
+<p>結果的にはAndroidエミュレータをインストールして、
+そこにKindleアプリを入れて読むことにした。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/11/06/kindle-on-mac/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a></h1>
     
     
@@ -125,51 +175,6 @@ $(document).ready( function () {
 <p>PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。</p>
 
 <p>reveal.jsを見つけたので実際に作成する前に下調べをした時のメモを公開。</p>
-
-<h2> Contents </h2>
-
-
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#reveal.jsとは">reveal.jsとは</a>  </li>
-  <li><a href="#インストール">インストール</a>
-   <ul>
-   <li><a href="#Basic+Setup">Basic Setup</a>   </li>
-   <li><a href="#Full+Setup">Full Setup</a>   </li>
-  </ul>
-  <li><a href="#スライドを作成する">スライドを作成する</a>
-   <ul>
-   <li><a href="#HTML">HTML</a>
-    <ul>
-    <li><a href="#画像、リスト">画像、リスト</a>
-     <ul>
-     <li><a href="#画像">画像</a>     </li>
-     <li><a href="#リスト">リスト</a>     </li>
-    </ul>
-    </li>
-   </ul>
-   <li><a href="#Markdown">Markdown</a>
-    <ul>
-    <li><a href="#外部のMarkdown+を読み込む場合">外部のMarkdown を読み込む場合</a>    </li>
-    <li><a href="#HTML内にMarkdown+を書く場合">HTML内にMarkdown を書く場合</a>    </li>
-    <li><a href="#画像、リスト">画像、リスト</a>
-     <ul>
-     <li><a href="#画像">画像</a>     </li>
-     <li><a href="#リスト">リスト</a>     </li>
-    </ul>
-    </li>
-   </ul>
-   </li>
-  </ul>
-  <li><a href="#その他">その他</a>  </li>
-  <li><a href="#まとめ">まとめ</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
 
 </div>
   
@@ -212,27 +217,18 @@ $(document).ready( function () {
 
   <div class="entry-content"><h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#scala-io">Scala でファイルIO</a></li>
+  <li><a href="#api">API</a>    <ul>
+      <li><a href="#section">ラインごとに処理をする</a></li>
+      <li><a href="#section-1">便利メソッド</a></li>
+    </ul>
+  </li>
+  <li><a href="#try-with-resources-">try-with-resources は？</a></li>
+  <li><a href="#section-2">次のお題</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#Scala+でファイルIO">Scala でファイルIO</a>  </li>
-  <li><a href="#API">API</a>
-   <ul>
-   <li><a href="#ラインごとに処理をする">ラインごとに処理をする</a>   </li>
-   <li><a href="#便利メソッド">便利メソッド</a>   </li>
-  </ul>
-  <li><a href="#try-with-resources+は？">try-with-resources は？</a>  </li>
-  <li><a href="#次のお題">次のお題</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="Scala+でファイルIO">Scala でファイルIO</h2>
-
+<h2 id="scala-io">Scala でファイルIO</h2>
 <p>Scalaを書き始めたばかり(2009?2010?くらい)の頃はSourceイケてないよって情報ばかりだった。
 今ならどのような方法があるかしらべてみた</p>
 
@@ -277,29 +273,21 @@ $(document).ready( function () {
 
   <div class="entry-content"><h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#technology-radar-may-2013">Technology Radar May 2013</a></li>
+  <li><a href="#section">気になるキーワード</a>    <ul>
+      <li><a href="#infrastructure-as-code">Infrastructure as code</a></li>
+      <li><a href="#d3">D3</a></li>
+      <li><a href="#hystrix">Hystrix</a></li>
+      <li><a href="#log-management">Log Management</a></li>
+      <li><a href="#gatling">Gatling</a></li>
+      <li><a href="#section-1">その他気になったところ</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-2">終わりに</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#Technology+Radar+May+2013">Technology Radar May 2013</a>  </li>
-  <li><a href="#気になるキーワード">気になるキーワード</a>
-   <ul>
-   <li><a href="#Infrastructure+as+code">Infrastructure as code</a>   </li>
-   <li><a href="#D3">D3</a>   </li>
-   <li><a href="#Hystrix">Hystrix</a>   </li>
-   <li><a href="#Log+Management">Log Management</a>   </li>
-   <li><a href="#Gatling">Gatling</a>   </li>
-   <li><a href="#その他気になったところ">その他気になったところ</a>   </li>
-  </ul>
-  <li><a href="#終わりに">終わりに</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="Technology+Radar+May+2013">Technology Radar May 2013</h2>
+<h2 id="technology-radar-may-2013">Technology Radar May 2013</h2>
 
 <p>もう、２ヶ月もまえだが、Technology Radar May 2013が公開された。
 興味があるキーワードを自分なりに調べてみた。
@@ -311,13 +299,12 @@ $(document).ready( function () {
 Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査結果を公開しているもの。
 自分が読んでいる目的としては現在どのようなテクノロジーがあり、どれほど浸透しているかの確認や、
 新しいモノを見つけるために読んでいる。
-<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
 <ul>
-<li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
-<li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
+  <li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
+  <li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
 </ul>
-
 
 </div>
   
@@ -360,40 +347,29 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
 
   <div class="entry-content"><h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#section">概要</a></li>
+  <li><a href="#sample-code">Sample Code</a>    <ul>
+      <li><a href="#vec-trait">Vec trait</a></li>
+      <li><a href="#vectest">VecTest</a></li>
+    </ul>
+  </li>
+  <li><a href="#intellij-">IntelliJ からテスト実行</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#概要">概要</a>  </li>
-  <li><a href="#Sample+Code">Sample Code</a>
-   <ul>
-   <li><a href="#Vec+trait">Vec trait</a>   </li>
-   <li><a href="#VecTest">VecTest</a>   </li>
-  </ul>
-  <li><a href="#IntelliJ+からテスト実行">IntelliJ からテスト実行</a>  </li>
-  <li><a href="#雑感">雑感</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="概要">概要</h2>
-
-<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br/>
-<a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a></p>
+<h2 id="section">概要</h2>
+<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br />
+<a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a> </p>
 
 <p>の続きでIntelliJプロジェクトにScalaTestを追加したのでテストを書いてIntelliJのsbtconsoleからコンパイル、実行、テストをやってみる。</p>
 
 <p>書いている現在の各バージョン</p>
 
 <ul>
-<li>IntelliJ 12</li>
-<li>Scala 2.10.2</li>
-<li>ScalaTest 1.9.1</li>
+  <li>IntelliJ 12</li>
+  <li>Scala 2.10.2</li>
+  <li>ScalaTest 1.9.1</li>
 </ul>
-
 
 </div>
   
@@ -436,26 +412,17 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
 
   <div class="entry-content"><h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#section">概要</a></li>
+  <li><a href="#section-1">前回の作業内容</a></li>
+  <li><a href="#section-2">今日やること（依存ライブラリの追加）</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#概要">概要</a>  </li>
-  <li><a href="#前回の作業内容">前回の作業内容</a>  </li>
-  <li><a href="#今日やること（依存ライブラリの追加）">今日やること（依存ライブラリの追加）</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="概要">概要</h2>
+<h2 id="section">概要</h2>
 
 <p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
 
-<p>今回はScalaTestを導入。</p>
-
+<p>今回はScalaTestを導入。
 </div>
   
   
@@ -497,25 +464,15 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
 
   <div class="entry-content"><h2> Contents </h2>
 
-
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#必要なもの">必要なもの</a>  </li>
-  <li><a href="#手順">手順</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
+<ul id="markdown-toc">
+  <li><a href="#section">手順</a></li>
+</ul>
 
 <p>タイトルの通り、sbtでIntelliJのプロジェクトを作成する方法を記載。
 今までな何度も調べたが毎回忘れるのでメモ。</p>
 
 <p>簡単なプロジェクトを作りたいときなどに使用。
-ある程度大きなものを作る場合はきちんとsbtで設定するはず。</p>
-
+ある程度大きなものを作る場合はきちんとsbtで設定するはず。
 </div>
   
   
@@ -555,15 +512,12 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
   </header>
 
 
-  <div class="entry-content"><h2 id="octopress+アップデートまとめ">octopress アップデートまとめ</h2>
-
+  <div class="entry-content"><h2 id="octopress-">octopress アップデートまとめ</h2>
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
 
-<h2 id="やりたいこと">やりたいこと</h2>
-
-<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
-
+<h2 id="section">やりたいこと</h2>
+<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。
 </div>
   
   
@@ -603,53 +557,48 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
   </header>
 
 
-  <div class="entry-content"><h2 id="概要">概要</h2>
-
+  <div class="entry-content"><h2 id="section">概要</h2>
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
 
 <ul>
-<li>Google日本語入力を使用中</li>
-<li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
-<li>SublimeText2に制御が移るため、日本語消える。</li>
+  <li>Google日本語入力を使用中</li>
+  <li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
+  <li>SublimeText2に制御が移るため、日本語消える。</li>
 </ul>
 
-
-<h2 id="対策方法">対策方法</h2>
+<h2 id="section-1">対策方法</h2>
 
 <ul>
-<li>SublimeText2での制御を外す。</li>
-<li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
+  <li>SublimeText2での制御を外す。</li>
+  <li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
 </ul>
 
+<p>Sublime Text2 &gt; Preferences &gt; Key Bindings - Default を選択して、以下の部分をコメントアウト。 </p>
 
-<p>Sublime Text2 > Preferences > Key Bindings - Default を選択して、以下の部分をコメントアウト。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'>
-</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-</span><span class='line'>    <span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
-</span><span class='line'>    <span class="err">//</span>  <span class="p">[</span>
-</span><span class='line'>    <span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-</span><span class='line'>    <span class="err">//</span>  <span class="p">]</span>
-</span><span class='line'>    <span class="err">//</span> <span class="p">}</span><span class="err">,</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="json"><span class="line">
+</span><span class="line">    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
+</span><span class="line">    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+</span><span class="line">    <span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
+</span><span class="line">    <span class="err">//</span>  <span class="p">[</span>
+</span><span class="line">    <span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+</span><span class="line">    <span class="err">//</span>  <span class="p">]</span>
+</span><span class="line">    <span class="err">//</span> <span class="p">}</span><span class="err">,</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>以下のURLを参考にさせていただいた。</p>
 
 <ul>
-<li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
+  <li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
 </ul>
-
 </div>
   
   
@@ -687,7 +636,6 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
 
   <div class="entry-content"><div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
 <p>内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。
 やっちゃいけないことあるある集、解決方法をみてあーなるほどとなるなど学ぶことの多い本だった。</p>
 
@@ -703,65 +651,6 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
     <footer>
       <a rel="full-article" href="/blog/2013/05/05/sqlantipattern/">Read on &rarr;</a>
     </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/31/sh-tech-exists-command/">shでコマンドが存在するか確認する方法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-31T00:41:00+09:00" pubdate data-updated="true">Mar 31<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
-Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if </span>which brew &gt; /dev/null;then
-</span><span class='line'>   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>こんな方法もあるみたい</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;`which brew`&quot;</span> <span class="o">]</span>;<span class="k">then</span>
-</span><span class='line'>   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
   
 
 
@@ -816,6 +705,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
       </li>
     
@@ -831,15 +724,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/07/18/scala-intellij-idea-scalatest/">IntelliJ で ScalaTest</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 144.0%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 124.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.0%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 104.0%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 104.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 128.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 104.0%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 116.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.0%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(15)</a> <a href='/blog/categories/technology' style='font-size: 104.0%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.0%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.75%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.75%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.75%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 141.25%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 107.5%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 122.5%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 107.5%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 103.75%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 103.75%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.5%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 111.25%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 111.25%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.75%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.75%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.75%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.75%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.75%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 103.75%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 126.25%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.75%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.75%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 111.25%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.75%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 115.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 118.75%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.75%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.75%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.75%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.75%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.75%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.75%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.5%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(16)</a> <a href='/blog/categories/technology' style='font-size: 103.75%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 111.25%'>tools(3)</a> </span>
 </section>
 
 <section>
@@ -912,24 +801,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
 
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
 
 
@@ -938,7 +810,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

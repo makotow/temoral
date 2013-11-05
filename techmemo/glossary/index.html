@@ -116,106 +116,101 @@ $(document).ready( function () {
 適宜、見直し・修正を行なっています。</p>
 
 <h2>Contents</h2>
-
-
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#OS">OS</a>
-   <ul>
-   <li><a href="#CIFS+(Common+Internet+File+System)">CIFS (Common Internet File System)</a>   </li>
-  </ul>
-  <li><a href="#Storage">Storage</a>
-   <ul>
-   <li><a href="#SCSI">SCSI</a>   </li>
-   <li><a href="#iSCSI">iSCSI</a>   </li>
-  </ul>
-  <li><a href="#Network">Network</a>
-   <ul>
-   <li><a href="#NIC+Teaming">NIC Teaming</a>   </li>
-   <li><a href="#Link+Aggregation">Link Aggregation</a>   </li>
-   <li><a href="#TCP/IPオフロードエンジン">TCP/IPオフロードエンジン</a>   </li>
-  </ul>
-  <li><a href="#VMWare+(vSphere+5.1)">VMWare (vSphere 5.1)</a>
-   <ul>
-   <li><a href="#RDM+(Raw+Device+Mapping)">RDM (Raw Device Mapping)</a>
-    <ul>
-    <li><a href="#仮想互換モード">仮想互換モード</a>    </li>
-    <li><a href="#物理互換モード">物理互換モード</a>    </li>
-   </ul>
-   <li><a href="#DPM">DPM</a>
-    <ul>
-    <li><a href="#HA+と+DPM">HA と DPM</a>    </li>
-   </ul>
-   <li><a href="#DRS+(Distributed+Resource+Scheduler)">DRS (Distributed Resource Scheduler)</a>   </li>
-   <li><a href="#EVC+(Enhanced+vMotion+Compatibility)">EVC (Enhanced vMotion Compatibility)</a>   </li>
-   <li><a href="#Storage+vMotion">Storage vMotion</a>   </li>
-   <li><a href="#VAAI">VAAI</a>   </li>
-   <li><a href="#VSA+Manager">VSA Manager</a>   </li>
-   <li><a href="#バルーンドライバ">バルーンドライバ</a>   </li>
-   <li><a href="#VSS+(Volume+Shadow+Copy+Service)">VSS (Volume Shadow Copy Service)</a>   </li>
-   <li><a href="#sync+ドライバ">sync ドライバ</a>   </li>
-   <li><a href="#ネットワークI/Oコントロール">ネットワークI/Oコントロール</a>   </li>
-   <li><a href="#iSCSCIアダプタ">iSCSCIアダプタ</a>
-    <ul>
-    <li><a href="#適用型">適用型</a>    </li>
-    <li><a href="#ソフトウェア型">ソフトウェア型</a>    </li>
-    <li><a href="#ハードウェア型">ハードウェア型</a>    </li>
-   </ul>
-   <li><a href="#ストレージIOコントロール(SIOC)">ストレージIOコントロール(SIOC)</a>   </li>
-   <li><a href="#FT(Fault+Tolerance)">FT(Fault Tolerance)</a>   </li>
-   <li><a href="#WOL+(Wake+on+LAN)">WOL (Wake on LAN)</a>   </li>
-   <li><a href="#VA">VA</a>   </li>
-   <li><a href="#VCMSDS">VCMSDS</a>   </li>
-   <li><a href="#SAN+Boot">SAN Boot</a>   </li>
-   </ul>
+<ul id="markdown-toc">
+  <li><a href="#os">OS</a>    <ul>
+      <li><a href="#cifs-common-internet-file-system">CIFS (Common Internet File System)</a></li>
+    </ul>
   </li>
-  </ul>
- </li>
- </ul>
+  <li><a href="#storage">Storage</a>    <ul>
+      <li><a href="#scsi">SCSI</a></li>
+      <li><a href="#iscsi">iSCSI</a></li>
+    </ul>
+  </li>
+  <li><a href="#network">Network</a>    <ul>
+      <li><a href="#nic-teaming">NIC Teaming</a></li>
+      <li><a href="#link-aggregation">Link Aggregation</a></li>
+      <li><a href="#tcpip">TCP/IPオフロードエンジン</a></li>
+      <li><a href="#selective-ack">Selective ACK</a></li>
+      <li><a href="#ecn">ECN</a></li>
+    </ul>
+  </li>
+  <li><a href="#vmware-vsphere-51">VMWare (vSphere 5.1)</a>    <ul>
+      <li><a href="#rdm-raw-device-mapping">RDM (Raw Device Mapping)</a>        <ul>
+          <li><a href="#section">仮想互換モード</a></li>
+          <li><a href="#section-1">物理互換モード</a></li>
+        </ul>
+      </li>
+      <li><a href="#dpm">DPM</a>        <ul>
+          <li><a href="#ha--dpm">HA と DPM</a></li>
+        </ul>
+      </li>
+      <li><a href="#drs-distributed-resource-scheduler">DRS (Distributed Resource Scheduler)</a></li>
+      <li><a href="#evc-enhanced-vmotion-compatibility">EVC (Enhanced vMotion Compatibility)</a></li>
+      <li><a href="#storage-vmotion">Storage vMotion</a></li>
+      <li><a href="#vaai">VAAI</a></li>
+      <li><a href="#vsa-manager">VSA Manager</a></li>
+      <li><a href="#section-2">バルーンドライバ</a></li>
+      <li><a href="#vss-volume-shadow-copy-service">VSS (Volume Shadow Copy Service)</a></li>
+      <li><a href="#sync-">sync ドライバ</a></li>
+      <li><a href="#io">ネットワークI/Oコントロール</a></li>
+      <li><a href="#iscsci">iSCSCIアダプタ</a>        <ul>
+          <li><a href="#section-3">適用型</a></li>
+          <li><a href="#section-4">ソフトウェア型</a></li>
+          <li><a href="#section-5">ハードウェア型</a></li>
+        </ul>
+      </li>
+      <li><a href="#iosioc">ストレージIOコントロール(SIOC)</a></li>
+      <li><a href="#ftfault-tolerance">FT(Fault Tolerance)</a></li>
+      <li><a href="#wol-wake-on-lan">WOL (Wake on LAN)</a></li>
+      <li><a href="#va">VA</a></li>
+      <li><a href="#vcmsds">VCMSDS</a></li>
+      <li><a href="#san-boot">SAN Boot</a></li>
+    </ul>
+  </li>
+</ul>
 
-</p>
+<h2 id="os">OS</h2>
 
-<h2 id="OS">OS</h2>
-
-<h3 id="CIFS+(Common+Internet+File+System)">CIFS (Common Internet File System)</h3>
+<h3 id="cifs-common-internet-file-system">CIFS (Common Internet File System)</h3>
 
 <p>MSが開発したインターネット経由でファイルを共有するプロトコル。
 SMB(Server Meesage Block)をベースに開発。SBMはNetBIOSを使用しているが、CIFSはTCP/IPを使用する。
 CIFSは正式にドキュメントを公開しているため、Windows以外のOSやインターネット上を介してファイル共有サービス等を使用できる。
 CIFSを使用するアプリケーションとしてSambaがある。</p>
 
-<h2 id="Storage">Storage</h2>
+<h2 id="storage">Storage</h2>
 
-<h3 id="SCSI">SCSI</h3>
-
+<h3 id="scsi">SCSI</h3>
 <p>ハードウェア間のデータのやり取りをするインターフェース企画CPUの負荷を抑えることができる。</p>
 
-<h3 id="iSCSI">iSCSI</h3>
+<h3 id="iscsi">iSCSI</h3>
 
 <p>SCSIプロトコルをTCP/IPで使用する規格。</p>
 
-<h2 id="Network">Network</h2>
+<h2 id="network">Network</h2>
 
-<h3 id="NIC+Teaming">NIC Teaming</h3>
+<h3 id="nic-teaming">NIC Teaming</h3>
 
 <p>物理NICを１つの仮想的なNICとして束ねる技術。
 耐障害性の強化、使用帯域の向上を実現する。</p>
 
-<h3 id="Link+Aggregation">Link Aggregation</h3>
+<h3 id="link-aggregation">Link Aggregation</h3>
 
 <p>LANスイッチ感を接続する複数の物理リンクを1本に束ねる技術。 トランキングと呼ぶ。
 IEEE802.3ad で標準化され、CISCO用語ではEtherChannel。
 NICチーミングの1つ。</p>
 
-<h3 id="TCP/IPオフロードエンジン">TCP/IPオフロードエンジン</h3>
+<h3 id="tcpip">TCP/IPオフロードエンジン</h3>
 
 <p>NICがTCP/IPの処理の一部をCPUの代わりに実行する機能。</p>
 
-<h2 id="VMWare+(vSphere+5.1)">VMWare (vSphere 5.1)</h2>
+<h3 id="selective-ack">Selective ACK</h3>
 
-<h3 id="RDM+(Raw+Device+Mapping)">RDM (Raw Device Mapping)</h3>
+<h3 id="ecn">ECN</h3>
+
+<h2 id="vmware-vsphere-51">VMWare (vSphere 5.1)</h2>
+
+<h3 id="rdm-raw-device-mapping">RDM (Raw Device Mapping)</h3>
 
 <p>仮想マシンからストレージデバイス(LUN)を直接的に扱うための仕組み。
 実体は、使用するストレージデバイスのプロキシとして機能するVMFSボリュームのマッピングファイル。
@@ -226,23 +221,22 @@ VMFSファイルシステムの仮想ディスクが利用可能になるのと�
 <p>RDMを使用する場面としては、</p>
 
 <ul>
-<li>既存ファイルシステムをそのまま使用したい</li>
-<li>ストレージが提供するスナップショットを使用している場合</li>
-<li>MSFCを使って物理マシンをまたがるクラスタリングシステムを仮想マシンで構築する場合(共有ディスクをRDMとして構成する必要がある)</li>
+  <li>既存ファイルシステムをそのまま使用したい</li>
+  <li>ストレージが提供するスナップショットを使用している場合</li>
+  <li>MSFCを使って物理マシンをまたがるクラスタリングシステムを仮想マシンで構築する場合(共有ディスクをRDMとして構成する必要がある)</li>
 </ul>
 
-
-<h4 id="仮想互換モード">仮想互換モード</h4>
+<h4 id="section">仮想互換モード</h4>
 
 <p>VMFSのメリットを享受できる。</p>
 
-<h4 id="物理互換モード">物理互換モード</h4>
+<h4 id="section-1">物理互換モード</h4>
 
 <p>VMKernelが、すべてのSCSIコマンドをデバイスに渡す。
 REPORT LUNのみは例外でパススルーされない。
 MSFCを使用してクラスタリングシステムを構築する際には物理互換モードの必要がある。</p>
 
-<h3 id="DPM">DPM</h3>
+<h3 id="dpm">DPM</h3>
 
 <p>ワークロードにあわせて起動するホストの台数を最適化すること。
 DPMを設定する際に以下について考慮する
@@ -252,20 +246,20 @@ DPMを設定する際に以下について考慮する
  - DRSを完全自動とし、自動化レベルを保守的にしないようにする。ホスト起動後の仮想マシンバランスを最適化するため。
  - テンプレートが登録されているホストをDPMがパワーオフしてしまうことを避けるためテンプレートは1つのホストにまとめ、そのホストのDPMは無効化する。</p>
 
-<h4 id="HA+と+DPM">HA と DPM</h4>
+<h4 id="ha--dpm">HA と DPM</h4>
 
-<p> DPM、DRSはHAのアドミッションポリシーに従う。
+<p>DPM、DRSはHAのアドミッションポリシーに従う。
  アイドル状態のホストがあったとしても、HAの設定に違反する場合は仮想マシンの電源起動やホストの電源停止などは行われない。</p>
 
-<p> また、DPMはHAが有効になっているクラスタないではアドミッションポリシーが有効になっているかどうかにかかわらず、最低限2台のホストの電源は起動した状態を維持する</p>
+<p>また、DPMはHAが有効になっているクラスタないではアドミッションポリシーが有効になっているかどうかにかかわらず、最低限2台のホストの電源は起動した状態を維持する</p>
 
-<h3 id="DRS+(Distributed+Resource+Scheduler)">DRS (Distributed Resource Scheduler)</h3>
+<h3 id="drs-distributed-resource-scheduler">DRS (Distributed Resource Scheduler)</h3>
 
 <p>常に最適なパフォーマンスを得られるように、vMotionを利用して自動的に仮想マシンを再配置し、
 システム全体のパフォーマンスを維持する機能。
 同様にストレージの負荷を平準化するために、仮想マシンが格納されているデータ領域を自動的に再配置するストレージDRSも用意されている。</p>
 
-<h3 id="EVC+(Enhanced+vMotion+Compatibility)">EVC (Enhanced vMotion Compatibility)</h3>
+<h3 id="evc-enhanced-vmotion-compatibility">EVC (Enhanced vMotion Compatibility)</h3>
 
 <p>EVCを利用すること異なる CPU 世代間の vMotion による移行を可能とする。
 新しいCPU世代のサーバーをクラスタに追加した場合でもvMotionが可能な構成をとることができる。</p>
@@ -276,69 +270,68 @@ vCenterはvMotionを行う前にホスト間でCPU命令セットに互換性が
 <p>要件として、</p>
 
 <ul>
-<li>ESXiはクラスタ内にあること</li>
-<li>クラスタのホストCPUはAMDまたはIntelのどちらかであること</li>
-<li>クラスタのすべてのホストがvMotionの要件を満たしていること</li>
-<li>ホストCPUが使用するEVCモードを満たすこと</li>
-<li>ハードウェ仮想化サポートとNX/XD がBIOSで有効になっていること</li>
+  <li>ESXiはクラスタ内にあること</li>
+  <li>クラスタのホストCPUはAMDまたはIntelのどちらかであること</li>
+  <li>クラスタのすべてのホストがvMotionの要件を満たしていること</li>
+  <li>ホストCPUが使用するEVCモードを満たすこと</li>
+  <li>ハードウェ仮想化サポートとNX/XD がBIOSで有効になっていること</li>
 </ul>
-
 
 <p>see also: <a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;docType=kc&amp;docTypeID=DT_KB_1_1&amp;externalId=1003212">KnowledgeBase</a></p>
 
-<h3 id="Storage+vMotion">Storage vMotion</h3>
+<h3 id="storage-vmotion">Storage vMotion</h3>
 
-<h3 id="VAAI">VAAI</h3>
+<h3 id="vaai">VAAI</h3>
 
 <p>vStorage API for Array Integrationの略。
 共有ストレージ装置が保有するさまざまな機能を、ハイパーバイザと連携させることで有効活用するための機能</p>
 
-<h3 id="VSA+Manager">VSA Manager</h3>
+<h3 id="vsa-manager">VSA Manager</h3>
 
 <p>VMWare vSphere Storage Applications Manager</p>
 
-<h3 id="バルーンドライバ">バルーンドライバ</h3>
+<h3 id="section-2">バルーンドライバ</h3>
 
 <p>VMWare ESXiのメモリのオーバーコミットを実現する技術の1つ。
 ゲストOSにVMWare tools をインストールした際にインストールされる。
 ESXiと連携しアイドル状態の仮想マシンからメモリ税の税率にしたがってメモリ解放を行う。</p>
 
-<h3 id="VSS+(Volume+Shadow+Copy+Service)">VSS (Volume Shadow Copy Service)</h3>
+<h3 id="vss-volume-shadow-copy-service">VSS (Volume Shadow Copy Service)</h3>
 
 <p>Data Recoveryで使用する静止メカニズム。
 MSが開発し、WindowsServer2003移行のOSで実装されているスナップショット技術。
 VMWare ToolsにはVSSのリクエスタ機能が含まれている。</p>
 
-<h3 id="sync+ドライバ">sync ドライバ</h3>
+<h3 id="sync-">sync ドライバ</h3>
 
 <p>Data Recoveryで使用する静止メカニズム。</p>
 
-<h3 id="ネットワークI/Oコントロール">ネットワークI/Oコントロール</h3>
+<h3 id="io">ネットワークI/Oコントロール</h3>
 
-<h3 id="iSCSCIアダプタ">iSCSCIアダプタ</h3>
+<h3 id="iscsci">iSCSCIアダプタ</h3>
 
-<h4 id="適用型">適用型</h4>
+<h4 id="section-3">適用型</h4>
 
-<h4 id="ソフトウェア型">ソフトウェア型</h4>
+<h4 id="section-4">ソフトウェア型</h4>
 
-<h4 id="ハードウェア型">ハードウェア型</h4>
+<h4 id="section-5">ハードウェア型</h4>
 
-<h3 id="ストレージIOコントロール(SIOC)">ストレージIOコントロール(SIOC)</h3>
+<h3 id="iosioc">ストレージIOコントロール(SIOC)</h3>
 
 <p>ポリシーベースでストレージI/Oの優先度を制御できる。
 ディスクI/Oに対してシェア値を設定するとデータストアにたいして発行するI/Oキューをホスト間で協調して調整する。</p>
 
-<h3 id="FT(Fault+Tolerance)">FT(Fault Tolerance)</h3>
+<h3 id="ftfault-tolerance">FT(Fault Tolerance)</h3>
 
-<h3 id="WOL+(Wake+on+LAN)">WOL (Wake on LAN)</h3>
+<h3 id="wol-wake-on-lan">WOL (Wake on LAN)</h3>
 
-<h3 id="VA">VA</h3>
+<h3 id="va">VA</h3>
 
-<h3 id="VCMSDS">VCMSDS</h3>
+<h3 id="vcmsds">VCMSDS</h3>
 
 <p>LDAPディレクトリサービス</p>
 
-<h3 id="SAN+Boot">SAN Boot</h3>
+<h3 id="san-boot">SAN Boot</h3>
 
 <p>ストレージからOSを起動すること
 PXE boot と同じ。</p>
@@ -365,27 +358,19 @@ PXE boot と同じ。</p>
       
         <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/techmemo/glossary/index.html" data-via="makotow" data-counturl="http://makotow.github.io/techmemo/glossary/index.html" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/techmemo/glossary/index.html" data-via="makotow" data-counturl="http://makotow.github.io/techmemo/glossary/index.html" >Tweet</a>
   
   
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
   
 
-  
-  <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
-<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   
 
 
   
-   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/techmemo/glossary/index.html" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-  
 
   
-<a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fmakotow.github.io%2Fatom.xml'  target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-medium_2x.png' alt='follow us in feedly' width='71' height='28'></a>  
+
+
 </div>
 
       
@@ -442,6 +427,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
       </li>
     
@@ -457,15 +446,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/07/18/scala-intellij-idea-scalatest/">IntelliJ で ScalaTest</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 144.0%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 124.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.0%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 104.0%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 104.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 128.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 104.0%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 116.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.0%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(15)</a> <a href='/blog/categories/technology' style='font-size: 104.0%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.0%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.75%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.75%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.75%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 141.25%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 107.5%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 122.5%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 107.5%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 103.75%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 103.75%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.5%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 111.25%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 111.25%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.75%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.75%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.75%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.75%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.75%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 103.75%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 126.25%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.75%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.75%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 111.25%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.75%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 115.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 118.75%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.75%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.75%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.75%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.75%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.75%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.75%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.5%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(16)</a> <a href='/blog/categories/technology' style='font-size: 103.75%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 111.25%'>tools(3)</a> </span>
 </section>
 
 <section>
@@ -542,24 +527,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
 
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
 
 
@@ -568,7 +536,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

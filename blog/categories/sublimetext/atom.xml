@@ -4,7 +4,7 @@
   <title><![CDATA[Category: SublimeText | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/sublimetext/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-08-17T18:50:18+09:00</updated>
+  <updated>2013-11-06T02:00:32+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -18,27 +18,24 @@
     <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
-    <content type="html"><![CDATA[<h2 id="概要">概要</h2>
-
+    <content type="html"><![CDATA[<h2 id="section">概要</h2>
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
 
 <ul>
-<li>Google日本語入力を使用中</li>
-<li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
-<li>SublimeText2に制御が移るため、日本語消える。</li>
+  <li>Google日本語入力を使用中</li>
+  <li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
+  <li>SublimeText2に制御が移るため、日本語消える。</li>
 </ul>
 
-
-<h2 id="対策方法">対策方法</h2>
+<h2 id="section-1">対策方法</h2>
 
 <ul>
-<li>SublimeText2での制御を外す。</li>
-<li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
+  <li>SublimeText2での制御を外す。</li>
+  <li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
 </ul>
 
-
-<p>Sublime Text2 > Preferences > Key Bindings - Default を選択して、以下の部分をコメントアウト。
+<p>Sublime Text2 &gt; Preferences &gt; Key Bindings - Default を選択して、以下の部分をコメントアウト。 
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -47,30 +44,21 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="err">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="err">&lt;pre&gt;&lt;code&gt;//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'><span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-</span><span class='line'><span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
-</span><span class='line'><span class="err">//</span>  <span class="p">[</span>
-</span><span class='line'><span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-</span><span class='line'><span class="err">//</span>  <span class="p">]</span>
-</span><span class='line'><span class="err">//</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'><span class="err">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="err">&lt;p&gt;</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'>
+</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="err">“keys”:</span> <span class="err">[“tab”],</span> <span class="err">“command”:</span> <span class="err">“insert_best_completion”,</span> <span class="err">“args”:</span> <span class="err">{“default”:</span> <span class="err">“\t”,</span> <span class="err">“exact”:</span> <span class="err">true</span><span class="p">}</span> <span class="err">},</span>
+</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="err">“keys”:</span> <span class="err">[“tab”],</span> <span class="err">“command”:</span> <span class="err">“insert_best_completion”,</span> <span class="err">“args”:</span> <span class="err">{“default”:</span> <span class="err">“\t”,</span> <span class="err">“exact”:</span> <span class="err">false</span><span class="p">}</span><span class="err">,</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="err">“context”:</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="p">[</span>
+</span><span class='line'>    <span class="err">//</span>      <span class="p">{</span> <span class="err">“key”:</span> <span class="err">“setting.tab_completion”,</span> <span class="err">“operator”:</span> <span class="err">“equal”,</span> <span class="err">“operand”:</span> <span class="err">true</span> <span class="p">}</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="p">]</span>
+</span><span class='line'>    <span class="err">//</span> <span class="err">},</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>以下のURLを参考にさせていただいた。</p>
 
 <ul>
-<li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
+  <li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
 </ul>
-
 ]]></content>
   </entry>
   

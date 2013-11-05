@@ -4,7 +4,7 @@
   <title><![CDATA[Category: technology | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/technology/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-08-17T18:50:18+09:00</updated>
+  <updated>2013-11-06T02:00:32+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -20,29 +20,21 @@
     <id>http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#technology-radar-may-2013">Technology Radar May 2013</a></li>
+  <li><a href="#section">気になるキーワード</a>    <ul>
+      <li><a href="#infrastructure-as-code">Infrastructure as code</a></li>
+      <li><a href="#d3">D3</a></li>
+      <li><a href="#hystrix">Hystrix</a></li>
+      <li><a href="#log-management">Log Management</a></li>
+      <li><a href="#gatling">Gatling</a></li>
+      <li><a href="#section-1">その他気になったところ</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-2">終わりに</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#Technology+Radar+May+2013">Technology Radar May 2013</a>  </li>
-  <li><a href="#気になるキーワード">気になるキーワード</a>
-   <ul>
-   <li><a href="#Infrastructure+as+code">Infrastructure as code</a>   </li>
-   <li><a href="#D3">D3</a>   </li>
-   <li><a href="#Hystrix">Hystrix</a>   </li>
-   <li><a href="#Log+Management">Log Management</a>   </li>
-   <li><a href="#Gatling">Gatling</a>   </li>
-   <li><a href="#その他気になったところ">その他気になったところ</a>   </li>
-  </ul>
-  <li><a href="#終わりに">終わりに</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="Technology+Radar+May+2013">Technology Radar May 2013</h2>
+<h2 id="technology-radar-may-2013">Technology Radar May 2013</h2>
 
 <p>もう、２ヶ月もまえだが、Technology Radar May 2013が公開された。
 興味があるキーワードを自分なりに調べてみた。
@@ -54,86 +46,68 @@
 Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査結果を公開しているもの。
 自分が読んでいる目的としては現在どのようなテクノロジーがあり、どれほど浸透しているかの確認や、
 新しいモノを見つけるために読んでいる。
-<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
 <ul>
-<li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
-<li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
+  <li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
+  <li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
 </ul>
-
 
 <!-- more -->
 
-
-<h2 id="気になるキーワード">気になるキーワード</h2>
-
+<h2 id="section">気になるキーワード</h2>
 <p>特に目を引いたもの、興味のあるものについて調べてみた。</p>
 
-<h3 id="Infrastructure+as+code">Infrastructure as code</h3>
-
+<h3 id="infrastructure-as-code">Infrastructure as code</h3>
 <p>Continuous Delivery と DevOps についてたかいところまで到達している。
 infrastructure as code と
 infrastructure as code 、最近VergentやらChef, Puppetなどでインフラの自動化につく記事も多く見るようになってきた。</p>
 
-<h3 id="D3">D3</h3>
-
+<h3 id="d3">D3</h3>
 <p>コンテキストから察するに、おそらくこれのこと(最後のReference)
 <a href="http://d3js.org/">Data-Driven Documents</a>
 少しGalleryをみてみるとこんなにも綺麗に可視化できるものかと思ってしまった。</p>
 
-<h3 id="Hystrix">Hystrix</h3>
-
+<h3 id="hystrix">Hystrix</h3>
 <p>キーワードだけ。
 調べてはいない。</p>
 
 <p><a href="https://github.com/Netflix/Hystrix">Hystrix: Latency and Fault Tolerance for Distributed Systems</a></p>
 
-<h3 id="Log+Management">Log Management</h3>
+<h3 id="log-management">Log Management</h3>
 
 <p>ログの収集、集約、検索、フィルタのテクノロジー。（だと思う…）</p>
 
 <ul>
-<li><a href="http://logstash.net/">Logstash</a></li>
-<li><a href="http://graylog2.org/">Graylog2</a></li>
+  <li><a href="http://logstash.net/">Logstash</a></li>
+  <li><a href="http://graylog2.org/">Graylog2</a></li>
 </ul>
 
-
-<h3 id="Gatling">Gatling</h3>
-
+<h3 id="gatling">Gatling</h3>
 <p><a href="http://gatling-tool.org/">Gatling Project - stress tool</a></p>
 
 <p>Gatlingはパフォーマンステストのツール。
 Scalaで書かれている。</p>
 
-<h3 id="その他気になったところ">その他気になったところ</h3>
-
+<h3 id="section-1">その他気になったところ</h3>
 <ul>
-<li>Chef, PuppetがWindows対応.OctopusはWindos専用で作成されている。</li>
+  <li>Chef, PuppetがWindows対応.OctopusはWindos専用で作成されている。</li>
 </ul>
 
-
-<h2 id="終わりに">終わりに</h2>
-
+<h2 id="section-2">終わりに</h2>
 <p>Technoogy　Radarって日本語訳の需要あるかな。
 日本語にするって難しい。</p>
-
-<p><div class="footnotes">
-	<ol>
-		<li id='fn:1'><p>Technology Radarからリンクされている、
-</code></pre></p>
 
 <p><a href="http://martinfowler.com/articles/radar-faq.html">ThoughtWorks Technology Radar FAQ</a>
 を読むことで詳細を理解することができる。</p>
 
-
-
-
-<p><a href='#fnref:1' rev='footnote'>↩</a>
-
-</li>
-	</ol>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Technology Radarからリンクされている、<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-</p>
 ]]></content>
   </entry>
   

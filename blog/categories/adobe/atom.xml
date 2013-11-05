@@ -4,7 +4,7 @@
   <title><![CDATA[Category: adobe | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/adobe/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-08-17T18:50:18+09:00</updated>
+  <updated>2013-11-06T02:00:32+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -28,13 +28,12 @@
 
 <!-- more -->
 
-
-<h2 id="今回の環境">今回の環境</h2>
+<h2 id="section">今回の環境</h2>
 
 <pre><code>iMac Mountain Lion
 </code></pre>
 
-<h2 id="GitHub+を確認">GitHub を確認</h2>
+<h2 id="github-">GitHub を確認</h2>
 
 <p><a href="https://github.com/adobe/Source-Code-Pro">adobe / Source-Code-Pro</a> を見てみるとREADMEが充実しているので順番に実施していく。</p>
 
@@ -42,8 +41,7 @@
 
 <p>※ いろいろやってみたがここでは結果のみを記載</p>
 
-<h3 id="Pre-build+font+binaries">Pre-build font binaries</h3>
-
+<h3 id="pre-build-font-binaries">Pre-build font binaries</h3>
 <p><a href="https://github.com/downloads/adobe/Source-Code-Pro/SourceCodePro_FontsOnly-1.009.zip">ここから</a> ダウンロードして適当な場所にコピー。</p>
 
 <p>解凍後、フォント一覧がでてくるので~/Library/Fontsにコピーすると該当ユーザのみ使用可能となる。</p>

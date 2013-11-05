@@ -9,7 +9,8 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Contents 概要 前回の作業内容 今日やること（依存ライブラリの追加） 概要 sbt で IntelliJのプロジェクトを作成 で作成したプロジェクトに依存ライブラリを追加する方法の記録。 今回はScalaTestを導入。 前回の作業内容 sbt で IntelliJのプロジェクトを作成 &hellip;">
+  <meta name="description" content="Contents 概要 前回の作業内容 今日やること（依存ライブラリの追加） 概要 sbt で IntelliJのプロジェクトを作成 で作成したプロジェクトに依存ライブラリを追加する方法の記録。 今回はScalaTestを導入。 前回の作業内容
+sbt で IntelliJのプロジェクトを作成 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -119,66 +120,51 @@ $(document).ready( function () {
 
 <div class="entry-content"><h2> Contents </h2>
 
+<ul id="markdown-toc">
+  <li><a href="#section">概要</a></li>
+  <li><a href="#section-1">前回の作業内容</a></li>
+  <li><a href="#section-2">今日やること（依存ライブラリの追加）</a></li>
+</ul>
 
-<p>
-  <ul>
-
-  <ul>
-  <li><a href="#概要">概要</a>  </li>
-  <li><a href="#前回の作業内容">前回の作業内容</a>  </li>
-  <li><a href="#今日やること（依存ライブラリの追加）">今日やること（依存ライブラリの追加）</a>  </li>
-  </ul>
- </li>
- </ul>
-
-</p>
-
-<h2 id="概要">概要</h2>
+<h2 id="section">概要</h2>
 
 <p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
 
-<p>今回はScalaTestを導入。</p>
+<p>今回はScalaTestを導入。
+<!-- more --></p>
 
-<!-- more -->
-
-
-<h2 id="前回の作業内容">前回の作業内容</h2>
-
+<h2 id="section-1">前回の作業内容</h2>
 <p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> の成果</p>
 
 <ul>
-<li>sbtでIntelliJのプロジェクトを作った</li>
+  <li>sbtでIntelliJのプロジェクトを作った</li>
 </ul>
 
-
-<h2 id="今日やること（依存ライブラリの追加）">今日やること（依存ライブラリの追加）</h2>
+<h2 id="section-2">今日やること（依存ライブラリの追加）</h2>
 
 <ul>
-<li>依存するライブラリをsbtで定義しIntelliJ用の定義ファイルを再生成する。</li>
-<li>build.sbtをPROJECT_DIR に作成 (PROJECT_DIRはプロジェクトディレクトリ)</li>
+  <li>依存するライブラリをsbtで定義しIntelliJ用の定義ファイルを再生成する。</li>
+  <li>build.sbtをPROJECT_DIR に作成 (PROJECT_DIRはプロジェクトディレクトリ)</li>
 </ul>
 
-
 <p>build.sbt は次の内容これがわかれば他にも応用出来るはず。
-<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
-<div><script src='https://gist.github.com/5910249.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
+<div><script src="https://gist.github.com/5910249.js"></script>
+<noscript><pre><code /></pre></noscript></div>
 
 <p>以下手順</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd PROJECT_DIR
-</span><span class='line'>sbt
-</span><span class='line'>> reload
-</span><span class='line'>> update
-</span><span class='line'>> gen-idea</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd PROJECT_DIR
+</span><span class="line">sbt
+</span><span class="line">&gt; reload
+</span><span class="line">&gt; update
+</span><span class="line">&gt; gen-idea</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>IntelliJを開いていると自動的に変更を検知してリロードしてくれる。
 libraryDependenciesにscalatestを追加され、ScalaTestがつえるようになる。
@@ -187,13 +173,12 @@ libraryDependenciesにscalatestを追加され、ScalaTestがつえるように�
 <p>このシリーズ、きっとまだ続く。</p>
 
 <div class="footnotes">
-    <ol>
-        <li id='fn:1'><p> sbtのplugin.sbt, build.sbtはいつも調べてその場では理解するが忘れてしまう…
-<a href='#fnref:1' rev='footnote'>↩</a></p>
-</li>
-    </ol>
+  <ol>
+    <li id="fn:1">
+      <p>sbtのplugin.sbt, build.sbtはいつも調べてその場では理解するが忘れてしまう…<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-
 </div>
 
 
@@ -230,27 +215,19 @@ libraryDependenciesにscalatestを追加され、ScalaTestがつえるように�
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/" >Tweet</a>
   
   
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
   
 
-  
-  <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
-<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   
 
 
   
-   <a href="http://b.hatena.ne.jp/entry/http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-  
 
   
-<a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fmakotow.github.io%2Fatom.xml'  target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-medium_2x.png' alt='follow us in feedly' width='71' height='28'></a>  
+
+
 </div>
 
     
@@ -336,6 +313,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
       </li>
     
@@ -351,15 +332,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/07/18/scala-intellij-idea-scalatest/">IntelliJ で ScalaTest</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 144.0%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 124.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.0%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 104.0%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 104.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 128.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 104.0%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 116.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.0%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(15)</a> <a href='/blog/categories/technology' style='font-size: 104.0%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.0%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.75%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.75%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.75%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 141.25%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 107.5%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 122.5%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 107.5%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 103.75%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 103.75%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.5%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 111.25%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 111.25%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.75%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.75%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.75%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.75%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.75%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 103.75%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 126.25%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.75%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.75%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 111.25%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.75%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 115.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 118.75%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.75%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.75%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.75%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.75%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.75%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.75%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.5%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(16)</a> <a href='/blog/categories/technology' style='font-size: 103.75%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 111.25%'>tools(3)</a> </span>
 </section>
 
 <section>
@@ -436,24 +413,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
 
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
 
 
@@ -462,7 +422,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-08-17T18:50:18+09:00</updated>
+  <updated>2013-11-06T02:00:32+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -14,31 +14,122 @@
 
   
   <entry>
+    <title type="html"><![CDATA[MacでKindleを読む]]></title>
+    <link href="http://makotow.github.io/blog/2013/11/06/kindle-on-mac/"/>
+    <updated>2013-11-06T00:54:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/11/06/kindle-on-mac</id>
+    <content type="html"><![CDATA[<p>下書きしてから１ヶ月放置してたけどせっかくなので公開します。</p>
+
+<p>KindleのMacアプリはamazon.comのものしか読めないので、
+アカウント統合を行うことで読めるようになるのだけども、
+直接電話したりでめんどくさいので放置してた。</p>
+
+<p>結果的にはAndroidエミュレータをインストールして、
+そこにKindleアプリを入れて読むことにした。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">導入</a></li>
+  <li><a href="#section-2">仮想デバイスの作成</a></li>
+  <li><a href="#section-3">起動</a></li>
+  <li><a href="#section-4">類似アプリ</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>なんとなくAndroidエミュレータを入れて読めばいいんじゃないかとわかってから初めてみたが、
+標準のAndroidSDKでは遅くて使い物にならなかかったかつPlayストアが入っていなかったりでかなり苦戦した。</p>
+
+<h2 id="section-1">導入</h2>
+
+<p>Genymotion を導入する。
+本家サイトからダウンロードしてインストール。特に迷うところはない。</p>
+
+<p>本家: http://www.genymotion.com/</p>
+
+<p>ダウンロードするにはアカウントが必要なので作成する。仮想デバイスを作成する際にも必要となる。
+高速なエミュレータかつGoogleアプリが初期導入済みのデバイスを使用すれば最初からPlayストアが入っている。</p>
+
+<p>(インストール時のバージョンは1.3.0)</p>
+
+<p>GenymotionはVirtualBox上に仮想マシンを作成するためVirtualBoxを導入する。</p>
+
+<h2 id="section-2">仮想デバイスの作成</h2>
+
+<p>起動した画面から「Add」ボタンクリックすると認証ダイアログが出てくるので作成したアカウントを入力。</p>
+
+<p><img src="/images/2013/11/Genymotion-Add.png">
+<img src="/images/2013/11/Genymotion-Credential.png"></p>
+
+<p>仮想デバイスの一覧が表示される。</p>
+
+<p><img src="/images/2013/11/Create_a_new_virtual_device.png"></p>
+
+<p>好きなデバイスを選んで作成する。
+この時注意することは今回はPlayストアからKindleアプリをダウンロードして本を読むことが目標なので、</p>
+
+<pre><code>xxxx - with GoogleApps
+</code></pre>
+
+<p>となっている仮想デバイスを選ぶこと。</p>
+
+<p><img src="/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device.png">
+<img src="/images/2013/11/Virtual_device_creation_wizard.png"></p>
+
+<p>Next-＞Nextとボタンを押してくと、
+仮想デバイスのダウンロード、チェックが開始するのでしばらくまつ。</p>
+
+<p><img src="/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_done.png"></p>
+
+<p>ダウンロードが終わったら名前をつけて終了。</p>
+
+<p><img src="/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_name.png">
+<img src="/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_success.png"></p>
+
+<h2 id="section-3">起動</h2>
+
+<p>起動時の画面に行くと仮想デバイスリストにダウンロードしたデバイスが表示されているので、
+選択して　▶Play をクリックでデバイスが起動する。</p>
+
+<p>あとはAndroid端末と同じように使うことができる。</p>
+
+<h2 id="section-4">類似アプリ</h2>
+
+<p>他にも次のような類似のものがあったが、
+私の環境ではうまく動いてくれなかった。</p>
+
+<ul>
+  <li>BlueStacks</li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[SublimeText2で日本語入力をTabで。]]></title>
     <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
-    <content type="html"><![CDATA[<h2 id="概要">概要</h2>
-
+    <content type="html"><![CDATA[<h2 id="section">概要</h2>
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
 
 <ul>
-<li>Google日本語入力を使用中</li>
-<li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
-<li>SublimeText2に制御が移るため、日本語消える。</li>
+  <li>Google日本語入力を使用中</li>
+  <li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
+  <li>SublimeText2に制御が移るため、日本語消える。</li>
 </ul>
 
-
-<h2 id="対策方法">対策方法</h2>
+<h2 id="section-1">対策方法</h2>
 
 <ul>
-<li>SublimeText2での制御を外す。</li>
-<li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
+  <li>SublimeText2での制御を外す。</li>
+  <li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
 </ul>
 
-
-<p>Sublime Text2 > Preferences > Key Bindings - Default を選択して、以下の部分をコメントアウト。
+<p>Sublime Text2 &gt; Preferences &gt; Key Bindings - Default を選択して、以下の部分をコメントアウト。 
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -47,30 +138,21 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="err">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="err">&lt;pre&gt;&lt;code&gt;//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'><span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-</span><span class='line'><span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
-</span><span class='line'><span class="err">//</span>  <span class="p">[</span>
-</span><span class='line'><span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-</span><span class='line'><span class="err">//</span>  <span class="p">]</span>
-</span><span class='line'><span class="err">//</span> <span class="p">}</span><span class="err">,</span>
-</span><span class='line'><span class="err">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="err">&lt;p&gt;</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'>
+</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="err">“keys”:</span> <span class="err">[“tab”],</span> <span class="err">“command”:</span> <span class="err">“insert_best_completion”,</span> <span class="err">“args”:</span> <span class="err">{“default”:</span> <span class="err">“\t”,</span> <span class="err">“exact”:</span> <span class="err">true</span><span class="p">}</span> <span class="err">},</span>
+</span><span class='line'>    <span class="err">//</span> <span class="p">{</span> <span class="err">“keys”:</span> <span class="err">[“tab”],</span> <span class="err">“command”:</span> <span class="err">“insert_best_completion”,</span> <span class="err">“args”:</span> <span class="err">{“default”:</span> <span class="err">“\t”,</span> <span class="err">“exact”:</span> <span class="err">false</span><span class="p">}</span><span class="err">,</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="err">“context”:</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="p">[</span>
+</span><span class='line'>    <span class="err">//</span>      <span class="p">{</span> <span class="err">“key”:</span> <span class="err">“setting.tab_completion”,</span> <span class="err">“operator”:</span> <span class="err">“equal”,</span> <span class="err">“operand”:</span> <span class="err">true</span> <span class="p">}</span>
+</span><span class='line'>    <span class="err">//</span>  <span class="p">]</span>
+</span><span class='line'>    <span class="err">//</span> <span class="err">},</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>以下のURLを参考にさせていただいた。</p>
 
 <ul>
-<li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
+  <li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -79,31 +161,28 @@
     <link href="http://makotow.github.io/blog/2013/02/08/mac-difftools/"/>
     <updated>2013-02-08T00:40:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/02/08/mac-difftools</id>
-    <content type="html"><![CDATA[<p>色々探してみた。
+    <content type="html"><![CDATA[<p>色々探してみた。 
 要件としては</p>
 
 <ul>
-<li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
-<li>できれば比較状態から編集できる</li>
+  <li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
+  <li>できれば比較状態から編集できる</li>
 </ul>
-
 
 <p>MacOSXでは決定打となるようなツールはなかったが、
 ある程度の候補を上げることができたので記録する。</p>
 
 <!-- more -->
 
-
-<h2 id="試してみたツール">試してみたツール</h2>
-
+<h2 id="section">試してみたツール</h2>
 <p>探してみてスペック的に満たしていそうなものをためしてみた。
 参考としてURLや使用感を書いてみようと思う。</p>
 
-<h3 id="P4Merge+stroy">P4Merge+stroy</h3>
+<h3 id="p4mergestroy">P4Merge+stroy</h3>
 
 <p>MacのDiffツールといえばP4Mergeをよく見かける。しかし、ディレクトリ単位での比較ができないためスルーしていた。ディレクトリ単位で比較できるツールという観点で調べていたところstroyと連携することでディレクトリ単位の比較が実現できるようなので試してみた。</p>
 
-<p> <a href="http://www.atinfinity.info/wiki/index.php?Mac/stroy%E3%81%A8P4Merge%E3%82%92%E9%80%A3%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B">Mac/stroyとP4Mergeを連動させる</a>
+<p><a href="http://www.atinfinity.info/wiki/index.php?Mac/stroy%E3%81%A8P4Merge%E3%82%92%E9%80%A3%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B">Mac/stroyとP4Mergeを連動させる</a>
 を参考に試してみた。</p>
 
 <p>比較、マージもわかりやすく使いやすいように感じる。</p>
@@ -111,7 +190,7 @@
 <p><img class="left" src="/images/2013/02/stroy.png">
 <img class="right" src="/images/2013/02/p4merge.png"></p>
 
-<h3 id="DiffMerge">DiffMerge</h3>
+<h3 id="diffmerge">DiffMerge</h3>
 
 <p>P4Merge + story に比べて導入するソフトは１つだけでよい。
 求めているものの要求を満たしていてる。</p>
@@ -127,36 +206,32 @@
 <img class="right" src="/images/2013/02/diffmerge2.png"></p>
 
 <h3 id="meld">meld</h3>
-
 <p>homebrewでインストール可能なのだが、ビルドに失敗したり色々と大変だった。</p>
 
 <p>gtk2+のビルドのことごとく失敗するので、githubをみて解決</p>
 
 <ul>
-<li>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/07/homebrew-gtk2-24-11/</li>
-<li>https://github.com/mxcl/homebrew/issues/13546</li>
+  <li>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/07/homebrew-gtk2-24-11/</li>
+  <li>https://github.com/mxcl/homebrew/issues/13546</li>
 </ul>
-
 
 <p>操作感がMacとは違うので違和感は感じる。
 機能的には問題なく使用可能</p>
 
-<h2 id="その他">その他</h2>
-
+<h2 id="section-1">その他</h2>
 <p>試してはいないが検索している上で出てきたキーワードを備忘として記載しておく。</p>
 
 <ul>
-<li>TextWrangler</li>
-<li>Kaleidoscope(有償）</li>
-<li>Beyond Compare</li>
-<li>Araxis</li>
+  <li>TextWrangler</li>
+  <li>Kaleidoscope(有償）</li>
+  <li>Beyond Compare</li>
+  <li>Araxis</li>
 </ul>
 
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="section-2">まとめ</h2>
 <p>Winmergeほどの使いやすがはないが、ちょっとづつ使ってみようと思う。
 今のところP4Mege+stroyが良い感じ。</p>
+
 ]]></content>
   </entry>
   

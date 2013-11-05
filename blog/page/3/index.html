@@ -9,9 +9,8 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Adobeがコーディング用のソースコードをオープンソースで公開している。
-9/24 に開催されたCreate The Webで発表された。 Adobe公式ブログにも記事がアップされている。
-Announcing Source Code Pro 提供は、Sourceforge, GitHub, &hellip;">
+  <meta name="description" content="gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、 今回Scala用に書いたものをメモ書きとして残す。 主にsbtとScalaIDE用のものとなる。
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,6 +98,50 @@ $(document).ready( function () {
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/10/03/gitignore/">gitignoreのメモ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-03T23:38:00+09:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
+
+<p>今回Scala用に書いたものをメモ書きとして残す。</p>
+
+<p>主にsbtとScalaIDE用のものとなる。
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/10/03/gitignore/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/09/25/sourcecodeprofont/">Source Code Pro を Mac で試す。</a></h1>
     
     
@@ -169,8 +212,7 @@ $(document).ready( function () {
   </header>
 
 
-  <div class="entry-content"><p>タイトルの通りざっくりと追加してみた。</p>
-
+  <div class="entry-content"><p>タイトルの通りざっくりと追加してみた。
 </div>
   
   
@@ -251,28 +293,23 @@ $(document).ready( function () {
   </header>
 
 
-  <div class="entry-content"><h2 id="設定してみた感想">設定してみた感想</h2>
-
+  <div class="entry-content"><h2 id="section">設定してみた感想</h2>
 <p>構築好きとしてはかなり面白い。</p>
 
-<h2 id="とりあえずできた">とりあえずできた</h2>
-
+<h2 id="section-1">とりあえずできた</h2>
 <ul>
-<li>構築</li>
-<li>RSS追加</li>
-<li>コメント欄追加</li>
+  <li>構築</li>
+  <li>RSS追加</li>
+  <li>コメント欄追加</li>
 </ul>
 
-
-<h2 id="これからやる">これからやる</h2>
-
+<h2 id="section-2">これからやる</h2>
 <ul>
-<li>タグクラウド</li>
-<li>画像管理</li>
-<li>Plugin探索</li>
-<li>Theme カスタマイズ・変更</li>
+  <li>タグクラウド</li>
+  <li>画像管理</li>
+  <li>Plugin探索</li>
+  <li>Theme カスタマイズ・変更</li>
 </ul>
-
 </div>
   
   
@@ -315,12 +352,11 @@ $(document).ready( function () {
 <p>色々と探してみたが、以下のところに魅力を感じたためOctopress に決定。</p>
 
 <ul>
-<li>拡張性が高い</li>
-<li>Markdownで記述</li>
-<li>Plugin も豊富</li>
-<li>A blogging framework for hackers.</li>
+  <li>拡張性が高い</li>
+  <li>Markdownで記述</li>
+  <li>Plugin も豊富</li>
+  <li>A blogging framework for hackers.</li>
 </ul>
-
 
 <p>使い始めたばかりなので上に書いたことが間違っていることもあるかもしれないが、
 しばらく使ってみようと思う。</p>
@@ -364,7 +400,7 @@ tumblrの方にある少ない記事を少しづつ移動させる。</p>
   </header>
 
 
-  <div class="entry-content"><h2 id="ネットワーク設定覚書">ネットワーク設定覚書</h2>
+  <div class="entry-content"><h2 id="section">ネットワーク設定覚書</h2>
 
 <p>Ubuntuのバージョンアップ時にネットワークに繋がらなくなったことがあったため、
 覚書としてメモ。</p>
@@ -431,6 +467,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
       </li>
     
@@ -446,15 +486,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/07/18/scala-intellij-idea-scalatest/">IntelliJ で ScalaTest</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 144.0%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 124.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.0%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 104.0%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 104.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 128.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 104.0%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 116.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.0%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(15)</a> <a href='/blog/categories/technology' style='font-size: 104.0%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.0%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.75%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.75%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.75%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 141.25%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 107.5%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 122.5%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 107.5%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 103.75%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 103.75%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.5%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 111.25%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 111.25%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.75%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.75%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.75%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.75%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.75%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 103.75%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 126.25%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.75%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.75%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 111.25%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.75%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 115.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 118.75%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.75%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.75%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.75%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.75%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.75%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.75%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.5%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(16)</a> <a href='/blog/categories/technology' style='font-size: 103.75%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 111.25%'>tools(3)</a> </span>
 </section>
 
 <section>
@@ -527,24 +563,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
 
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
 
 
@@ -553,7 +572,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

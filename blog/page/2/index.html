@@ -9,7 +9,11 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)posted with amazlet at 13.02.18Steve Freeman Nat Pryce 翔泳社 売り上げランキング: 39,893Amazon.co &hellip;">
+  <meta name="description" content="zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
+Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。 1
+2
+3
+if which brew &gt; /dev/null;then . `brew --prefix`/etc/profile. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,6 +101,62 @@ $(document).ready( function () {
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/03/31/sh-tech-exists-command/">shでコマンドが存在するか確認する方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-31T00:41:00+09:00" pubdate data-updated="true">Mar 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
+Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if </span>which brew &gt; /dev/null;then
+</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class="line"><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>こんな方法もあるみたい</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;`which brew`&quot;</span> <span class="o">]</span>;<span class="k">then</span>
+</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class="line"><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/03/30/tddprac/">実践テスト駆動開発　読書録</a></h1>
     
     
@@ -121,7 +181,6 @@ $(document).ready( function () {
 
 
   <div class="entry-content"><div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
 
 <p>軽いメモ書き。
 個人的に結構なボリュームがある書籍であった。</p>
@@ -169,9 +228,6 @@ $(document).ready( function () {
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
-
-
 </div>
   
   
@@ -212,9 +268,6 @@ $(document).ready( function () {
 
 
   <div class="entry-content"><div class="amazlet-box" style="margin-bottom:20px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-
-
 
 </div>
   
@@ -257,7 +310,6 @@ $(document).ready( function () {
 
   <div class="entry-content"><div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-
 <p>漫画で学ぶプロジェクトマネジメント読書録を読んだ感想。</p>
 
 </div>
@@ -299,14 +351,13 @@ $(document).ready( function () {
   </header>
 
 
-  <div class="entry-content"><p>色々探してみた。
+  <div class="entry-content"><p>色々探してみた。 
 要件としては</p>
 
 <ul>
-<li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
-<li>できれば比較状態から編集できる</li>
+  <li>ディレクトリ単位で比較できるもの（Windowsのwinmergeみたいなもの）</li>
+  <li>できれば比較状態から編集できる</li>
 </ul>
-
 
 <p>MacOSXでは決定打となるようなツールはなかったが、
 ある程度の候補を上げることができたので記録する。</p>
@@ -411,10 +462,13 @@ git で branch 作って作業して他の branch にマージということを
 <p>残り2冊はビジネススキル関連。アマゾンで評判だったので購入。</p>
 
 <ul>
-<li><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a></p></li>
-<li><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a></p></li>
+  <li>
+    <p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a></p>
+  </li>
 </ul>
-
 
 <p>この手の本の購入は久しぶり。
 各３冊途中までの感想を書いてみた。</p>
@@ -512,51 +566,6 @@ git で branch 作って作業して他の branch にマージということを
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/gitignore/">gitignoreのメモ</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T23:38:00+09:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
-
-<p>今回Scala用に書いたものをメモ書きとして残す。</p>
-
-<p>主にsbtとScalaIDE用のものとなる。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/10/03/gitignore/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -608,6 +617,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
       </li>
     
@@ -623,15 +636,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/07/18/scala-intellij-idea-scalatest/">IntelliJ で ScalaTest</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 104.0%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 104.0%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 104.0%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 144.0%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 108.0%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 124.0%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 108.0%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 104.0%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 104.0%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 108.0%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 112.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 104.0%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 104.0%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 104.0%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 104.0%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 104.0%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 128.0%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 104.0%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 104.0%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 112.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 104.0%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 116.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 104.0%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 104.0%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 104.0%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 104.0%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 104.0%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 104.0%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 108.0%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(15)</a> <a href='/blog/categories/technology' style='font-size: 104.0%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.0%'>tools(2)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.75%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.75%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.75%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 141.25%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 107.5%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 122.5%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 107.5%'>business(2)</a> <a href='/blog/categories/css' style='font-size: 103.75%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 103.75%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.5%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 111.25%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 111.25%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.75%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.75%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.75%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.75%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.75%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 103.75%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 126.25%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.75%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.75%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 111.25%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.75%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 115.0%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 118.75%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.75%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.75%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.75%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.75%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.75%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.75%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.5%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(16)</a> <a href='/blog/categories/technology' style='font-size: 103.75%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 111.25%'>tools(3)</a> </span>
 </section>
 
 <section>
@@ -704,24 +713,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
 
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
 
 
@@ -730,7 +722,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

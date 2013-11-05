@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-08-17T18:50:18+09:00</updated>
+  <updated>2013-11-06T02:00:32+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -18,32 +18,26 @@
     <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
     <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
-    <content type="html"><![CDATA[<h2 id="octopress+アップデートまとめ">octopress アップデートまとめ</h2>
-
+    <content type="html"><![CDATA[<h2 id="octopress-">octopress アップデートまとめ</h2>
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
 
-<h2 id="やりたいこと">やりたいこと</h2>
+<h2 id="section">やりたいこと</h2>
+<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。
+<!-- more --></p>
 
-<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。</p>
-
-<!-- more -->
-
-
-<h2 id="マニュアル">マニュアル</h2>
+<h2 id="section-1">マニュアル</h2>
 
 <p>ここに親切に書いてある。</p>
 
 <ul>
-<li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
+  <li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
 </ul>
-
 
 <p>基本はこの通りやっていけば大丈夫。
 カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
 
-<h3 id="+α">+α</h3>
-
+<h3 id="section-2">+α</h3>
 <p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
 
 <p>ブランチを作って作業</p>
@@ -63,8 +57,6 @@
 <p>
 2013/05/06 15:00 追記： _layout/post.htmlにrelated_postを表示するプラグインの記述を入れていた。
 </p>
-
-
 <pre><code>git add/rm ...
 git commit -m "pull upstream."
 </code></pre>
@@ -85,6 +77,7 @@ git commit -m "pull upstream."
 </code></pre>
 
 <p>以上</p>
+
 ]]></content>
   </entry>
   
@@ -106,48 +99,40 @@ git で branch 作って作業して他の branch にマージということを
 
 <!-- more -->
 
-
-<h2 id="Octopress+変更点">Octopress 変更点</h2>
-
-<h3 id="ファイル一覧">ファイル一覧</h3>
-
-<p>思ったよりも変更する箇所はなく、
+<h2 id="octopress-">Octopress 変更点</h2>
+<p>### ファイル一覧 ###
+思ったよりも変更する箇所はなく、
 octopress/sass/custom 以下のファイルに設定を追加、
 CSSを書き換えることで変更可能
 フレームワーク部分にはほとんど手をいれることなく変更可能な作りとなっている。</p>
 
 <ul>
-<li>octopress/sass/custom/_styles.scss</li>
-<li>octopress/sass/custom/_fonts.scss</li>
-<li>octopress/sass/custom/_colors.scss</li>
+  <li>octopress/sass/custom/_styles.scss</li>
+  <li>octopress/sass/custom/_fonts.scss</li>
+  <li>octopress/sass/custom/_colors.scss</li>
 </ul>
 
+<h2 id="section">今回つかったツール</h2>
 
-<h2 id="今回つかったツール">今回つかったツール</h2>
-
-<h3 id="IDE">IDE</h3>
-
+<h3 id="ide">IDE</h3>
 <p>IntelliJ IDEA 12
 年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
 
-<h3 id="サイト">サイト</h3>
+<h3 id="section-1">サイト</h3>
 
 <ul>
-<li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
-<li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
+  <li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
+  <li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
 </ul>
 
-
-<h2 id="残作業">残作業</h2>
-
+<h2 id="section-2">残作業</h2>
 <p>凝り始めるときりがないので今回は一旦この段階で終了。
 今後は、</p>
 
 <ul>
-<li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
-<li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
+  <li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
+  <li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -167,18 +152,16 @@ CSSを書き換えることで変更可能
     <link href="http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post/"/>
     <updated>2012-08-23T23:26:00+09:00</updated>
     <id>http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post</id>
-    <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。</p>
-
-<!-- more -->
-
+    <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。
+<!-- more --></p>
 
 <p>参考にさせて頂いたのはこのあたり。</p>
 
-<h2 id="Tag+Cloud">Tag Cloud</h2>
+<h2 id="tag-cloud">Tag Cloud</h2>
 
 <p><a href="http://qiita.com/items/944db11e257782749270">Octopressのサイドバーにタグリストやタグクラウドを表示させよう！</a></p>
 
-<h2 id="Related+Posts">Related Posts</h2>
+<h2 id="related-posts">Related Posts</h2>
 
 <p><a href="http://blog.glidenote.com/blog/2012/01/04/octopress-related-posts/">OctopressでRelated Posts(関連エントリー)を表示させるようにした</a></p>
 
@@ -195,7 +178,6 @@ Related Postsが表示されていないのはなぜかわからないが、も�
     <content type="html"><![CDATA[<p>なんとなく、ポスト一覧を見ているとREAD MOREみたいなものが欲しくなったので探してみた。</p>
 
 <!-- more -->
-
 
 <p><code>&lt;!-- more --&gt;</code>  をポストに追加すれば良いようなので、</p>
 
@@ -225,45 +207,27 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1 id=&quot;usage+rake+new_post[my-new-post]+or+rake+new_post[&#39;my+new+post&#39;]+or+rake+new_post+(defaults+to++new-post+)&quot;&gt;usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">desc</span> <span class="s2">&quot;Begin a new post in </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># usage rake new_post[my-new-post] or rake new_post[‘my new post’] or rake new_post (defaults to “new-post”)</span>
+</span><span class='line'><span class="n">desc</span> <span class="err">“</span><span class="no">Begin</span> <span class="n">a</span> <span class="kp">new</span> <span class="n">post</span> <span class="k">in</span> <span class="c1">#{source_dir}/#{posts_dir}”</span>
 </span><span class='line'><span class="n">task</span> <span class="ss">:new_post</span><span class="p">,</span> <span class="ss">:title</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class='line'>  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run &lt;code&gt;rake install&lt;/code&gt; to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">mkdir_p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="n">args</span><span class="o">.</span><span class="n">with_defaults</span><span class="p">(</span><span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">&#39;new-post&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="err">“</span><span class="c1">### You haven’t set anything up yet. First run &lt;code&gt;rake install&lt;/code&gt; to set up an Octopress theme.” unless File.directory?(source_dir)</span>
+</span><span class='line'>  <span class="n">mkdir_p</span> <span class="err">“</span><span class="c1">#{source_dir}/#{posts_dir}”</span>
+</span><span class='line'>  <span class="n">args</span><span class="o">.</span><span class="n">with_defaults</span><span class="p">(</span><span class="ss">:title</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="err">‘</span><span class="kp">new</span><span class="o">-</span><span class="n">post</span><span class="err">’</span><span class="p">)</span>
 </span><span class='line'>  <span class="n">title</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">title</span>
-</span><span class='line'>  <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">to_url</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">new_post_ext</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;abort(&quot;rake aborted!&quot;) if ask(&quot;</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="sr"> already exists. Do you want to overwrite?&quot;, [&#39;y&#39;, &#39;n&#39;]) == &#39;n&#39;</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
-</span><span class='line'><span class="sr">  puts &quot;Creating new post: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="sr">&quot;</span>
-</span><span class='line'><span class="sr">  open(filename, &#39;w&#39;) do |post|&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;layout: post&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;title: </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;amp;/</span><span class="p">,</span><span class="s1">&#39;&amp;amp;amp;&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;date: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;comments: true&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;categories: &quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">filename</span> <span class="o">=</span> <span class="err">“</span><span class="c1">#{source_dir}/#{posts_dir}/#{Time.now.strftime(‘%Y-%m-%d’)}-#{title.to_url}.#{new_post_ext}”</span>
+</span><span class='line'>  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">abort</span><span class="p">(</span><span class="err">“</span><span class="n">rake</span> <span class="n">aborted!</span><span class="err">”</span><span class="p">)</span> <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="err">“</span><span class="c1">#{filename} already exists. Do you want to overwrite?”, [‘y’, ‘n’]) == ‘n’</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="err">“</span><span class="no">Creating</span> <span class="kp">new</span> <span class="ss">post</span><span class="p">:</span> <span class="c1">#{filename}”</span>
+</span><span class='line'>  <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="err">‘</span><span class="n">w</span><span class="err">’</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">layout</span><span class="p">:</span> <span class="n">post</span><span class="err">”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">title</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;amp;/</span><span class="p">,</span><span class="err">’</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="err">’</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="err">”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">date</span><span class="p">:</span> <span class="c1">#{Time.now.strftime(‘%Y-%m-%d %H:%M’)}”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">comments</span><span class="p">:</span> <span class="kp">true</span><span class="err">”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">categories</span><span class="p">:</span> <span class="err">“</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
+</span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
@@ -291,46 +255,28 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1 id=&quot;usage+rake+new_post[my-new-post]+or+rake+new_post[&#39;my+new+post&#39;]+or+rake+new_post+(defaults+to++new-post+)&quot;&gt;usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">desc</span> <span class="s2">&quot;Begin a new post in </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># usage rake new_post[my-new-post] or rake new_post[‘my new post’] or rake new_post (defaults to “new-post”)</span>
+</span><span class='line'><span class="n">desc</span> <span class="err">“</span><span class="no">Begin</span> <span class="n">a</span> <span class="kp">new</span> <span class="n">post</span> <span class="k">in</span> <span class="c1">#{source_dir}/#{posts_dir}”</span>
 </span><span class='line'><span class="n">task</span> <span class="ss">:new_post</span><span class="p">,</span> <span class="ss">:title</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class='line'>  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run &lt;code&gt;rake install&lt;/code&gt; to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">mkdir_p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="n">args</span><span class="o">.</span><span class="n">with_defaults</span><span class="p">(</span><span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">&#39;new-post&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="err">“</span><span class="c1">### You haven’t set anything up yet. First run &lt;code&gt;rake install&lt;/code&gt; to set up an Octopress theme.” unless File.directory?(source_dir)</span>
+</span><span class='line'>  <span class="n">mkdir_p</span> <span class="err">“</span><span class="c1">#{source_dir}/#{posts_dir}”</span>
+</span><span class='line'>  <span class="n">args</span><span class="o">.</span><span class="n">with_defaults</span><span class="p">(</span><span class="ss">:title</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="err">‘</span><span class="kp">new</span><span class="o">-</span><span class="n">post</span><span class="err">’</span><span class="p">)</span>
 </span><span class='line'>  <span class="n">title</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">title</span>
-</span><span class='line'>  <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">to_url</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">new_post_ext</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;abort(&quot;rake aborted!&quot;) if ask(&quot;</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="sr"> already exists. Do you want to overwrite?&quot;, [&#39;y&#39;, &#39;n&#39;]) == &#39;n&#39;</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
-</span><span class='line'><span class="sr">  puts &quot;Creating new post: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="sr">&quot;</span>
-</span><span class='line'><span class="sr">  open(filename, &#39;w&#39;) do |post|&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;layout: post&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;title: </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;amp;/</span><span class="p">,</span><span class="s1">&#39;&amp;amp;amp;&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;date: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;comments: true&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;categories: &quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;&amp;lt;!-- more --&amp;gt;&quot;</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">filename</span> <span class="o">=</span> <span class="err">“</span><span class="c1">#{source_dir}/#{posts_dir}/#{Time.now.strftime(‘%Y-%m-%d’)}-#{title.to_url}.#{new_post_ext}”</span>
+</span><span class='line'>  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">abort</span><span class="p">(</span><span class="err">“</span><span class="n">rake</span> <span class="n">aborted!</span><span class="err">”</span><span class="p">)</span> <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="err">“</span><span class="c1">#{filename} already exists. Do you want to overwrite?”, [‘y’, ‘n’]) == ‘n’</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="err">“</span><span class="no">Creating</span> <span class="kp">new</span> <span class="ss">post</span><span class="p">:</span> <span class="c1">#{filename}”</span>
+</span><span class='line'>  <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="err">‘</span><span class="n">w</span><span class="err">’</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">layout</span><span class="p">:</span> <span class="n">post</span><span class="err">”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">title</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;amp;/</span><span class="p">,</span><span class="err">’</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="err">’</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="err">”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">date</span><span class="p">:</span> <span class="c1">#{Time.now.strftime(‘%Y-%m-%d %H:%M’)}”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">comments</span><span class="p">:</span> <span class="kp">true</span><span class="err">”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">categories</span><span class="p">:</span> <span class="err">“</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
+</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="o">&lt;!--</span> <span class="n">more</span> <span class="o">--&gt;</span><span class="err">”</span>
+</span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
@@ -346,25 +292,13 @@ Related Postsが表示されていないのはなぜかわからないが、も�
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gu">@@ -108,6 +108,7 @@ task :new_post, :title do |t, args|&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt; post.puts &quot;comments: true&quot;
-</span><span class='line'> post.puts &quot;categories: &quot;
-</span><span class='line'> post.puts &quot;---&quot;
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;ul&gt;
-</span><span class='line'>&lt;li&gt; post.puts &quot;&lt;!-- more --&gt;&quot;
-</span><span class='line'>end
-</span><span class='line'>end&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
+</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gu">@@ -108,6 +108,7 @@ task :new_post, :title do |t, args|</span>
+</span><span class='line'>     post.puts “comments: true”
+</span><span class='line'>     post.puts “categories: “
+</span><span class='line'>     post.puts “—”
+</span><span class='line'><span class="gi">+    post.puts “&lt;!-- more --&gt;”</span>
+</span><span class='line'>   end
+</span><span class='line'> end&lt;/p&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
