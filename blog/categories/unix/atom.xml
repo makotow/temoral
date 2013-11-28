@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <title><![CDATA[Category: unix | Software Technology Memorandum and thoughts]]></title>
+  <link href="http://makotow.github.io/blog/categories/unix/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
   <updated>2013-11-29T00:01:25+09:00</updated>
   <id>http://makotow.github.io/</id>

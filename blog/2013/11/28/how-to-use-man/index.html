@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: skill - Software Technology Memorandum and thoughts</title>
+  <title>man の使い方 - Software Technology Memorandum and thoughts</title>
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Category: skill">
+  <meta name="description" content="man の使い方を調べたのでメモ。
+主にオプションについて。 Contents 基本 man 見た時のsection番号について 特定の章を読む キーワードで検索したい場合 参考 基本 基本の使い方
+調べたいコマンドを引数に指定 % man ls man 見た時のsection番号について &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.ioblog/categories/skill">
+  <link rel="canonical" href="http://makotow.github.io/blog/2013/11/28/how-to-use-man">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
@@ -90,36 +92,167 @@ $(document).ready( function () {
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: skill</h1>
+    
+      <h1 class="entry-title">man の使い方</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-28T23:48:00+09:00" pubdate data-updated="true">Nov 28<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>man の使い方を調べたのでメモ。
+主にオプションについて。
+<!-- more --></p>
 
-  
-  <h2>2012</h2>
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">基本</a></li>
+  <li><a href="#man-section">man 見た時のsection番号について</a></li>
+  <li><a href="#section-1">特定の章を読む</a></li>
+  <li><a href="#section-2">キーワードで検索したい場合</a></li>
+  <li><a href="#section-3">参考</a></li>
+</ul>
 
-<article>
-  
-<h1><a href="/blog/2012/12/09/buying-books/">最近購入した本(2012/12)</a></h1>
-<time datetime="2012-12-09T22:41:00+09:00" pubdate><span class='month'>Dec</span> <span class='day'>09</span> <span class='year'>2012</span></time>
+<h2 id="section">基本</h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/books/'>books</a>, <a class='category' href='/blog/categories/business/'>business</a>, <a class='category' href='/blog/categories/project-management/'>project management</a>, <a class='category' href='/blog/categories/skill/'>skill</a></span>
-</footer>
+<p>基本の使い方
+調べたいコマンドを引数に指定</p>
 
+<pre><code>% man ls
+</code></pre>
 
-</article>
+<h2 id="man-section">man 見た時のsection番号について</h2>
+
+<p>いつも調べても忘れてしまうのでメモ
+個人用途では、3, 7, 8くらいは使う。</p>
+
+<ul>
+  <li>1章 汎用コマンド</li>
+  <li>2章 システムコール</li>
+  <li>3章 ライブラリ関数、特に標準Cライブラリ関数</li>
+  <li>4章 特殊なファイル（主に /dev にあるデバイス）とドライバ</li>
+  <li>5章 ファイル形式とその使用法</li>
+  <li>6章 ゲームとスクリーンセーバー</li>
+  <li>7章 その他</li>
+  <li>8章 システム管理コマンドとデーモン</li>
+</ul>
+
+<h2 id="section-1">特定の章を読む</h2>
+
+<pre><code>% man 3 ls
+</code></pre>
+
+<p>章番号を指定する</p>
+
+<h2 id="section-2">キーワードで検索したい場合</h2>
+
+<pre><code>man -k keyword
+</code></pre>
+
+<h2 id="section-3">参考</h2>
+
+<p>man の man を読むと、結構な量のオプションが出てくる。
+man -k オプションは aproposコマンドと同様の結果とか初めて知った。</p>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Makoto WATANABE (makotow)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-28T23:48:00+09:00" pubdate data-updated="true">Nov 28<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/command/'>command</a>, <a class='category' href='/blog/categories/unix/'>unix</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/blog/2013/11/28/how-to-use-man/" data-via="makotow" data-counturl="http://makotow.github.io/blog/2013/11/28/how-to-use-man/" >Tweet</a>
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
+</div>
+
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/06/kindle-on-mac/" title="Previous Post: MacでKindleを読む">&laquo; MacでKindleを読む</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -250,7 +383,10 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
       var disqus_shortname = 'makotownotes';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.io/blog/2013/11/28/how-to-use-man/';
+        var disqus_url = 'http://makotow.github.io/blog/2013/11/28/how-to-use-man/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

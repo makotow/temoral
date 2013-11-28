@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TechMemo | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/techmemo/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-11-06T02:00:32+09:00</updated>
+  <updated>2013-11-29T00:01:25+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[man の使い方]]></title>
+    <link href="http://makotow.github.io/blog/2013/11/28/how-to-use-man/"/>
+    <updated>2013-11-28T23:48:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/11/28/how-to-use-man</id>
+    <content type="html"><![CDATA[<p>man の使い方を調べたのでメモ。
+主にオプションについて。
+<!-- more --></p>
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">基本</a></li>
+  <li><a href="#man-section">man 見た時のsection番号について</a></li>
+  <li><a href="#section-1">特定の章を読む</a></li>
+  <li><a href="#section-2">キーワードで検索したい場合</a></li>
+  <li><a href="#section-3">参考</a></li>
+</ul>
+
+<h2 id="section">基本</h2>
+
+<p>基本の使い方
+調べたいコマンドを引数に指定</p>
+
+<pre><code>% man ls
+</code></pre>
+
+<h2 id="man-section">man 見た時のsection番号について</h2>
+
+<p>いつも調べても忘れてしまうのでメモ
+個人用途では、3, 7, 8くらいは使う。</p>
+
+<ul>
+  <li>1章 汎用コマンド</li>
+  <li>2章 システムコール</li>
+  <li>3章 ライブラリ関数、特に標準Cライブラリ関数</li>
+  <li>4章 特殊なファイル（主に /dev にあるデバイス）とドライバ</li>
+  <li>5章 ファイル形式とその使用法</li>
+  <li>6章 ゲームとスクリーンセーバー</li>
+  <li>7章 その他</li>
+  <li>8章 システム管理コマンドとデーモン</li>
+</ul>
+
+<h2 id="section-1">特定の章を読む</h2>
+
+<pre><code>% man 3 ls
+</code></pre>
+
+<p>章番号を指定する</p>
+
+<h2 id="section-2">キーワードで検索したい場合</h2>
+
+<pre><code>man -k keyword
+</code></pre>
+
+<h2 id="section-3">参考</h2>
+
+<p>man の man を読むと、結構な量のオプションが出てくる。
+man -k オプションは aproposコマンドと同様の結果とか初めて知った。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[MacでKindleを読む]]></title>
@@ -592,75 +654,6 @@ SBT Console使うことでIntelliJ内で完結するのは便利だと思う。<
     </li>
     <li id="fn:2">
       <p>dot productのコードは本当は v1 dot v2 とか書きたい。Scala力が不足…<a href="#fnref:2" rel="reference">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
-    <updated>2013-07-03T00:14:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
-    <content type="html"><![CDATA[<h2> Contents </h2>
-
-<ul id="markdown-toc">
-  <li><a href="#section">概要</a></li>
-  <li><a href="#section-1">前回の作業内容</a></li>
-  <li><a href="#section-2">今日やること（依存ライブラリの追加）</a></li>
-</ul>
-
-<h2 id="section">概要</h2>
-
-<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
-
-<p>今回はScalaTestを導入。
-<!-- more --></p>
-
-<h2 id="section-1">前回の作業内容</h2>
-<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> の成果</p>
-
-<ul>
-  <li>sbtでIntelliJのプロジェクトを作った</li>
-</ul>
-
-<h2 id="section-2">今日やること（依存ライブラリの追加）</h2>
-
-<ul>
-  <li>依存するライブラリをsbtで定義しIntelliJ用の定義ファイルを再生成する。</li>
-  <li>build.sbtをPROJECT_DIR に作成 (PROJECT_DIRはプロジェクトディレクトリ)</li>
-</ul>
-
-<p>build.sbt は次の内容これがわかれば他にも応用出来るはず。
-<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
-
-<p><div><script src='https://gist.github.com/5910249.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-</p>
-
-<p>以下手順
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd PROJECT_DIR
-</span><span class='line'>sbt
-</span><span class='line'>&gt; reload
-</span><span class='line'>&gt; update
-</span><span class='line'>&gt; gen-idea</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>IntelliJを開いていると自動的に変更を検知してリロードしてくれる。
-libraryDependenciesにscalatestを追加され、ScalaTestがつえるようになる。
-これでひと通りソース書いてテストができる。</p>
-
-<p>このシリーズ、きっとまだ続く。</p>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>sbtのplugin.sbt, build.sbtはいつも調べてその場では理解するが忘れてしまう…<a href="#fnref:1" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>
