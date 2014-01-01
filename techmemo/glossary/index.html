@@ -132,6 +132,8 @@ $(document).ready( function () {
       <li><a href="#tcpip">TCP/IPオフロードエンジン</a></li>
       <li><a href="#selective-ack">Selective ACK</a></li>
       <li><a href="#ecn">ECN</a></li>
+      <li><a href="#gns-emulator">GNS (emulator)</a></li>
+      <li><a href="#vyatta">Vyatta</a></li>
     </ul>
   </li>
   <li><a href="#vmware-vsphere-51">VMWare (vSphere 5.1)</a>    <ul>
@@ -165,6 +167,37 @@ $(document).ready( function () {
       <li><a href="#va">VA</a></li>
       <li><a href="#vcmsds">VCMSDS</a></li>
       <li><a href="#san-boot">SAN Boot</a></li>
+    </ul>
+  </li>
+  <li><a href="#linux-commands">Linux Commands</a>    <ul>
+      <li><a href="#section-6">性能解析系</a>        <ul>
+          <li><a href="#sar">sar</a></li>
+          <li><a href="#stat-vmstat-iostat-dstat">*stat 系　(vmstat, iostat, dstat)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#software-engineering">Software Engineering</a>    <ul>
+      <li><a href="#framework">Framework</a>        <ul>
+          <li><a href="#skinny-framework">Skinny framework</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-7">開発環境</a>        <ul>
+          <li><a href="#yeoman">Yeoman</a></li>
+          <li><a href="#yo">Yo</a></li>
+          <li><a href="#grunt">Grunt</a></li>
+          <li><a href="#bower">Bower</a></li>
+        </ul>
+      </li>
+      <li><a href="#continuous-integration">Continuous Integration</a>        <ul>
+          <li><a href="#jenkins">Jenkins</a></li>
+        </ul>
+      </li>
+      <li><a href="#scm">SCM</a>        <ul>
+          <li><a href="#git">Git</a></li>
+          <li><a href="#svn">SVN</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -207,6 +240,18 @@ NICチーミングの1つ。</p>
 <h3 id="selective-ack">Selective ACK</h3>
 
 <h3 id="ecn">ECN</h3>
+
+<h3 id="gns-emulator">GNS (emulator)</h3>
+
+<p>GUIのネットワークシミュレータ。
+Vyattaなどで仮想的にネットワークの構築が可能。
+実態は　Virtual Boxの仮想マシンをインストールして実行する。</p>
+
+<p>http://www.gns3.net/</p>
+
+<h3 id="vyatta">Vyatta</h3>
+
+<p>Brocadeになった？</p>
 
 <h2 id="vmware-vsphere-51">VMWare (vSphere 5.1)</h2>
 
@@ -336,6 +381,61 @@ VMWare ToolsにはVSSのリクエスタ機能が含まれている。</p>
 <p>ストレージからOSを起動すること
 PXE boot と同じ。</p>
 
+<h2 id="linux-commands">Linux Commands</h2>
+
+<h3 id="section-6">性能解析系</h3>
+
+<h4 id="sar">sar</h4>
+
+<pre><code>system analysis report の略、様々な情報が取得できる
+</code></pre>
+
+<h4 id="stat-vmstat-iostat-dstat">*stat 系　(vmstat, iostat, dstat)</h4>
+
+<h2 id="software-engineering">Software Engineering</h2>
+
+<h3 id="framework">Framework</h3>
+
+<h4 id="skinny-framework">Skinny framework</h4>
+
+<p>http://skinny-framework.org/</p>
+
+<h3 id="section-7">開発環境</h3>
+
+<h4 id="yeoman">Yeoman</h4>
+
+<p>http://yeoman.io/</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Yeoman 1.0 is more than just a tool. It's a workflow; a collection of tools and best practices working in harmony to make developing for the web even better.
+</span><span class="line">Our workflow is comprised of three tools for improving your productivity and satisfaction when building a web app: yo (the scaffolding tool), grunt (the build tool) and bower (for package management).
+</span><span class="line">Yo scaffolds out a new application, writing your Grunt configuration and pulling in relevant Grunt tasks that you might need for your build.
+</span><span class="line">Grunt is used to build, preview and test your project, thanks to help from tasks curated by the Yeoman team and grunt-contrib.
+</span><span class="line">Bower is used for dependency management, so that you no longer have to manually download and manage your scripts.
+</span><span class="line">All three of these tools are developed and maintained separately, but work well together as part of our prescribed workflow for keeping you effective.</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="yo">Yo</h4>
+
+<h4 id="grunt">Grunt</h4>
+
+<h4 id="bower">Bower</h4>
+
+<h3 id="continuous-integration">Continuous Integration</h3>
+
+<h4 id="jenkins">Jenkins</h4>
+
+<h3 id="scm">SCM</h3>
+
+<h4 id="git">Git</h4>
+
+<h4 id="svn">SVN</h4>
+
+
   
     <footer>
       <p class="meta">
@@ -358,17 +458,15 @@ PXE boot と同じ。</p>
       
         <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://makotow.github.io/techmemo/glossary/index.html" data-via="makotow" data-counturl="http://makotow.github.io/techmemo/glossary/index.html" >Tweet</a>
-  
   
   
 
   
+<div> <a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u="><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=&amp;url="><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;summary="><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url="><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a> </div>
+<!--
+<div> <a class="mt-facebook mt-share-inline-square-sm" href="https://www.facebook.com/sharer/sharer.php?u="><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-square-sm" href="http://twitter.com/intent/tweet?text=&amp;url="><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-square-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;summary="><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-square-sm" href="https://plus.google.com/share?url="><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a> </div>
+-->
 
-
-  
-
-  
 
 
 </div>
@@ -395,36 +493,24 @@ PXE boot と同じ。</p>
   
 twitter: <a href="https://twitter.com/makotow">@makotow</a>
 <br/>
-hoverboard.io:<a href="http://hoverboard.io/makotow">hoverboard.io(under constructing) </a>
- <br/>
-<p>
-Software Development Engineer. 
-</p>
-<br/>
-<p>
-Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し定まらない感じ。 フィールドを縦横無尽に動きまわりたい。
-</p>
-</section>
-<section>
-<h2>興味</h2>
-<ul>
-    <li>性能評価</li>
-    <li>分散処理</li>
-    <li>SCM</li>
-    <li>Scrum</li>
-    <li>Agile</li>
-    <li>Testing</li>
-    <li>CI</li>
-    <li>Scala</li>
-    <li>Ruby</li>
-    <li>VMWare</li>
-    <li>Hadoop関連</li>
-</ul>
 
+    <p>
+        Software Development Engineer. SI屋勤務。
+    </p>
+
+    <p>
+    興味: Git/Scrum/Agile/Testing/CI/Scala/Ruby/ <br/>
+        VMWare/JavaScript/HPC/AWS　<br/>
+        高みを目指して。
+    </p>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/31/data-aggregation-2013/">2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/11/28/how-to-use-man/">man の使い方</a>
@@ -442,15 +528,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/08/04/scala-file-io/">ScalaでIO</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/18/technology-radar-may-2013-hot-topic/">Technology Radar May 2013の気になるところ(1)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.52941176470588%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.52941176470588%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.52941176470588%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 138.8235294117647%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 107.05882352941177%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 121.17647058823529%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 107.05882352941177%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.52941176470588%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.52941176470588%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 103.52941176470588%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.05882352941177%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.58823529411765%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 110.58823529411765%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.52941176470588%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.52941176470588%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.52941176470588%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.52941176470588%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 103.52941176470588%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 124.70588235294117%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.52941176470588%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.52941176470588%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.58823529411765%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.52941176470588%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 114.11764705882354%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 117.64705882352942%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.52941176470588%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.52941176470588%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.52941176470588%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.52941176470588%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.52941176470588%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.52941176470588%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.05882352941177%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(17)</a> <a href='/blog/categories/technology' style='font-size: 103.52941176470588%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.58823529411765%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.52941176470588%'>unix(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.52941176470588%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.52941176470588%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.52941176470588%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 142.35294117647058%'>Article(12)</a> <a href='/blog/categories/blog' style='font-size: 107.05882352941177%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 121.17647058823529%'>books(6)</a> <a href='/blog/categories/buffer' style='font-size: 103.52941176470588%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 107.05882352941177%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.52941176470588%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.52941176470588%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.52941176470588%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.52941176470588%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.05882352941177%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.58823529411765%'>git(3)</a> <a href='/blog/categories/ifttt' style='font-size: 103.52941176470588%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.58823529411765%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.52941176470588%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.52941176470588%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.52941176470588%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.52941176470588%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.52941176470588%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 103.52941176470588%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 124.70588235294117%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.52941176470588%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.52941176470588%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.58823529411765%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.52941176470588%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 114.11764705882354%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 117.64705882352942%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.52941176470588%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.52941176470588%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.52941176470588%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.52941176470588%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.52941176470588%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.52941176470588%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.05882352941177%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(17)</a> <a href='/blog/categories/technology' style='font-size: 103.52941176470588%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.58823529411765%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.52941176470588%'>unix(1)</a> </span>
 </section>
 
 <section>
@@ -502,7 +584,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Makoto WATANABE (makotow) -
+  Copyright &copy; 2014 - Makoto WATANABE (makotow) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

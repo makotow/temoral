@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Buffer | Software Technology Memorandum and thoughts]]></title>
+  <link href="http://makotow.github.io/blog/categories/buffer/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-01-01T19:00:47+09:00</updated>
+  <id>http://makotow.github.io/</id>
+  <author>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)]]></title>
+    <link href="http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/"/>
+    <updated>2013-12-31T20:23:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/12/31/data-aggregation-2013</id>
+    <content type="html"><![CDATA[<p>
+2013年に構築できた情報集約の方法をまとめてみた。<br />
+結果的にIFTTT, Buffer, Evernoteのすごさがわかった。
+</p>
+
+<p>
+使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。
+使ってるサービスの詳細は最後にまとめてあるリンクを参照。
+</p>
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">サービス相関図</a></li>
+  <li><a href="#section-2">基本フロー</a>    <ul>
+      <li><a href="#chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</a></li>
+      <li><a href="#feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#twitter--tweevie--evernote">twitter → Tweevie → Evernote</a></li>
+      <li><a href="#twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-3">おまけ</a>    <ul>
+      <li><a href="#gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</a></li>
+      <li><a href="#google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-4">要するに</a></li>
+  <li><a href="#section-5">参考</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>データ集約の流れを数年前からEvernoteへ全て集めてた。
+2013年は使用するデバイスが多くなったため、
+いままでブラウザメインでやっていたことが他のデバイスでアクションすると情報が散らばった場所に保存される状態になっていた。</p>
+
+<p>なんとなく形になったので2013年の記録として残しておく。</p>
+
+<h2 id="section-1">サービス相関図</h2>
+
+<p><img src="/images/2013/12/data-aggregation/data-aggregation.001.png"></p>
+
+<h2 id="section-2">基本フロー</h2>
+
+<h3 id="chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</h3>
+
+<p>ウェブブラウズ中に気になった記事をBuffer経由で蓄積する。
+PC,スマートフォン、タブレットとどの端末からでも同じフローでデータを集約できる。
+情報ソースとしては「Gunosy」とか「はてぶ」とか「twitterのTL」とかいろいろ。</p>
+
+<h3 id="feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に主に使用、スマートフォンやタブレット、英語の記事を後て読むときなどにつかう。Android版Feedlyだと長押しでできる。</p>
+
+<h3 id="feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に記事を読んだ後などに使用。
+Bufferで共有すると、twitterにも自動でツイートされる。</p>
+
+<h3 id="twitter--tweevie--evernote">twitter → Tweevie → Evernote</h3>
+
+<p>一日分のツイートをEvernoteへ保存する。
+何気なく検索するとそれっぽいものがでてくるようになる。</p>
+
+<h3 id="twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</h3>
+
+<p>twitter上で fav したものを IFTTT 経由で Evernoteへ保存する。<br />
+fav は後で読もうと思ったリンク等なので、せっかくfavしたものを忘れないように。</p>
+
+<h2 id="section-3">おまけ</h2>
+
+<p>あまり使ってないけども、IFTTTの機能で次のようなこともできる。</p>
+
+<h3 id="gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</h3>
+
+<p>GmailでスターをつけるとIFTTT経由でEvernoteのノートが作成される。
+たまに使うがEvernoteに保存される状態が微妙なので別の方法を考えるかも。</p>
+
+<h3 id="google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</h3>
+
+<p>カレンダーの予定に特定のキーワードを入れると IFTTT 経由で Evernoteに保存される。
+仕組みは作ってみたが今のところ使いどころがない。</p>
+
+<h2 id="section-4">要するに</h2>
+
+<p>書いてみると Buffer と IFTTT なしではこの環境は構築できない。<br />
+さらに全てを記憶するEvernote。</p>
+
+<p>最終的には Evernote の特定のノートブックを見ればいいので散らばっていたデータをうまくまとめれてたと思う。</p>
+
+<p>要するに Buffer、Evernote、IFTTT すげーってことです。</p>
+
+<h2 id="section-5">参考</h2>
+
+<ul>
+  <li><a href="https://ifttt.com/">IFTTT</a></li>
+  <li><a href="https://bufferapp.com/app">Buffer</a></li>
+  <li><a href="http://evernote.com/intl/jp/">Evernote</a></li>
+  <li><a href="https://feedly.com/">Feedly</a></li>
+  <li><a href="http://twieve.net/ja">Twieve</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

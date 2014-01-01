@@ -4,7 +4,7 @@
   <title><![CDATA[Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-11-29T00:01:25+09:00</updated>
+  <updated>2014-01-01T19:00:47+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,117 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)]]></title>
+    <link href="http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/"/>
+    <updated>2013-12-31T20:23:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/12/31/data-aggregation-2013</id>
+    <content type="html"><![CDATA[<p>
+2013年に構築できた情報集約の方法をまとめてみた。<br />
+結果的にIFTTT, Buffer, Evernoteのすごさがわかった。
+</p>
+
+<p>
+使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。
+使ってるサービスの詳細は最後にまとめてあるリンクを参照。
+</p>
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">サービス相関図</a></li>
+  <li><a href="#section-2">基本フロー</a>    <ul>
+      <li><a href="#chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</a></li>
+      <li><a href="#feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#twitter--tweevie--evernote">twitter → Tweevie → Evernote</a></li>
+      <li><a href="#twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-3">おまけ</a>    <ul>
+      <li><a href="#gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</a></li>
+      <li><a href="#google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-4">要するに</a></li>
+  <li><a href="#section-5">参考</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>データ集約の流れを数年前からEvernoteへ全て集めてた。
+2013年は使用するデバイスが多くなったため、
+いままでブラウザメインでやっていたことが他のデバイスでアクションすると情報が散らばった場所に保存される状態になっていた。</p>
+
+<p>なんとなく形になったので2013年の記録として残しておく。</p>
+
+<h2 id="section-1">サービス相関図</h2>
+
+<p><img src="http://makotow.github.io/images/2013/12/data-aggregation/data-aggregation.001.png" /></p>
+
+<h2 id="section-2">基本フロー</h2>
+
+<h3 id="chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</h3>
+
+<p>ウェブブラウズ中に気になった記事をBuffer経由で蓄積する。
+PC,スマートフォン、タブレットとどの端末からでも同じフローでデータを集約できる。
+情報ソースとしては「Gunosy」とか「はてぶ」とか「twitterのTL」とかいろいろ。</p>
+
+<h3 id="feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に主に使用、スマートフォンやタブレット、英語の記事を後て読むときなどにつかう。Android版Feedlyだと長押しでできる。</p>
+
+<h3 id="feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に記事を読んだ後などに使用。
+Bufferで共有すると、twitterにも自動でツイートされる。</p>
+
+<h3 id="twitter--tweevie--evernote">twitter → Tweevie → Evernote</h3>
+
+<p>一日分のツイートをEvernoteへ保存する。
+何気なく検索するとそれっぽいものがでてくるようになる。</p>
+
+<h3 id="twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</h3>
+
+<p>twitter上で fav したものを IFTTT 経由で Evernoteへ保存する。<br />
+fav は後で読もうと思ったリンク等なので、せっかくfavしたものを忘れないように。</p>
+
+<h2 id="section-3">おまけ</h2>
+
+<p>あまり使ってないけども、IFTTTの機能で次のようなこともできる。</p>
+
+<h3 id="gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</h3>
+
+<p>GmailでスターをつけるとIFTTT経由でEvernoteのノートが作成される。
+たまに使うがEvernoteに保存される状態が微妙なので別の方法を考えるかも。</p>
+
+<h3 id="google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</h3>
+
+<p>カレンダーの予定に特定のキーワードを入れると IFTTT 経由で Evernoteに保存される。
+仕組みは作ってみたが今のところ使いどころがない。</p>
+
+<h2 id="section-4">要するに</h2>
+
+<p>書いてみると Buffer と IFTTT なしではこの環境は構築できない。<br />
+さらに全てを記憶するEvernote。</p>
+
+<p>最終的には Evernote の特定のノートブックを見ればいいので散らばっていたデータをうまくまとめれてたと思う。</p>
+
+<p>要するに Buffer、Evernote、IFTTT すげーってことです。</p>
+
+<h2 id="section-5">参考</h2>
+
+<ul>
+  <li><a href="https://ifttt.com/">IFTTT</a></li>
+  <li><a href="https://bufferapp.com/app">Buffer</a></li>
+  <li><a href="http://evernote.com/intl/jp/">Evernote</a></li>
+  <li><a href="https://feedly.com/">Feedly</a></li>
+  <li><a href="http://twieve.net/ja">Twieve</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[man の使い方]]></title>
@@ -1492,55 +1603,6 @@ CSSを書き換えることで変更可能
 <p>ブログ内でアマゾンの画像を使いたかったためにアフリエイトIDを取得した。</p>
 
 <p>規約的には問題無いと思っているが、もし違反しているようなことがあれば教えて欲しい。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[InstapaperからPocketへ移行]]></title>
-    <link href="http://makotow.github.io/blog/2012/11/26/instapaper-to-pocket/"/>
-    <updated>2012-11-26T16:30:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/11/26/instapaper-to-pocket</id>
-    <content type="html"><![CDATA[<p>Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。</p>
-
-<p>最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
-参考としたサイトを紹介。</p>
-
-<!-- more -->
-<p>以下のリンクを参考に移行。
-特につまる所もなく移行完了した。</p>
-
-<h2 id="pocket">Pocketの紹介</h2>
-<p><a href="http://www.barasu.org/diary/8004.html">Instapaper から Pocketへ乗り換え | 後悔懺悔日記</a></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>[Pocket for Macでウェブの情報処理が飛躍的に楽になる</td>
-      <td>Lifehacking.jp](http://lifehacking.jp/2012/10/pocket-for-mac/)</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="instapaper">Instapaperからの移行</h3>
-
-<p><a href="http://getpocket.com/import/instapaper?e=1">Pocket: Import Instapaper</a></p>
-
-<h2 id="section">アプリケーション、アドオンなど</h2>
-
-<h3 id="chrome-addon">Chrome-addon</h3>
-
-<p><a href="https://chrome.google.com/webstore/detail/pocket-formerly-read-it-l/niloccemoadcdkdjlinkgdfekeahmflj/details">Pocket (formerly Read It Later)</a></p>
-
-<h3 id="android">Android</h3>
-
-<p><a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro">Google Play Pocket</a></p>
-
-<h3 id="mac">Mac</h3>
-
-<p><a href="https://itunes.apple.com/jp/app/pocket-formerly-read-it-later/id309601447?mt=8&amp;ign-mpt=uo%3D4">Pocket (Formerly Read It Later)</a></p>
-
-<hr />
-
 ]]></content>
   </entry>
   

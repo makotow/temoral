@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Article | Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/blog/categories/article/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2013-11-29T00:01:25+09:00</updated>
+  <updated>2014-01-01T19:00:47+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,117 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)]]></title>
+    <link href="http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/"/>
+    <updated>2013-12-31T20:23:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2013/12/31/data-aggregation-2013</id>
+    <content type="html"><![CDATA[<p>
+2013年に構築できた情報集約の方法をまとめてみた。<br />
+結果的にIFTTT, Buffer, Evernoteのすごさがわかった。
+</p>
+
+<p>
+使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。
+使ってるサービスの詳細は最後にまとめてあるリンクを参照。
+</p>
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">サービス相関図</a></li>
+  <li><a href="#section-2">基本フロー</a>    <ul>
+      <li><a href="#chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</a></li>
+      <li><a href="#feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#twitter--tweevie--evernote">twitter → Tweevie → Evernote</a></li>
+      <li><a href="#twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-3">おまけ</a>    <ul>
+      <li><a href="#gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</a></li>
+      <li><a href="#google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-4">要するに</a></li>
+  <li><a href="#section-5">参考</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>データ集約の流れを数年前からEvernoteへ全て集めてた。
+2013年は使用するデバイスが多くなったため、
+いままでブラウザメインでやっていたことが他のデバイスでアクションすると情報が散らばった場所に保存される状態になっていた。</p>
+
+<p>なんとなく形になったので2013年の記録として残しておく。</p>
+
+<h2 id="section-1">サービス相関図</h2>
+
+<p><img src="/images/2013/12/data-aggregation/data-aggregation.001.png"></p>
+
+<h2 id="section-2">基本フロー</h2>
+
+<h3 id="chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</h3>
+
+<p>ウェブブラウズ中に気になった記事をBuffer経由で蓄積する。
+PC,スマートフォン、タブレットとどの端末からでも同じフローでデータを集約できる。
+情報ソースとしては「Gunosy」とか「はてぶ」とか「twitterのTL」とかいろいろ。</p>
+
+<h3 id="feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に主に使用、スマートフォンやタブレット、英語の記事を後て読むときなどにつかう。Android版Feedlyだと長押しでできる。</p>
+
+<h3 id="feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に記事を読んだ後などに使用。
+Bufferで共有すると、twitterにも自動でツイートされる。</p>
+
+<h3 id="twitter--tweevie--evernote">twitter → Tweevie → Evernote</h3>
+
+<p>一日分のツイートをEvernoteへ保存する。
+何気なく検索するとそれっぽいものがでてくるようになる。</p>
+
+<h3 id="twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</h3>
+
+<p>twitter上で fav したものを IFTTT 経由で Evernoteへ保存する。<br />
+fav は後で読もうと思ったリンク等なので、せっかくfavしたものを忘れないように。</p>
+
+<h2 id="section-3">おまけ</h2>
+
+<p>あまり使ってないけども、IFTTTの機能で次のようなこともできる。</p>
+
+<h3 id="gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</h3>
+
+<p>GmailでスターをつけるとIFTTT経由でEvernoteのノートが作成される。
+たまに使うがEvernoteに保存される状態が微妙なので別の方法を考えるかも。</p>
+
+<h3 id="google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</h3>
+
+<p>カレンダーの予定に特定のキーワードを入れると IFTTT 経由で Evernoteに保存される。
+仕組みは作ってみたが今のところ使いどころがない。</p>
+
+<h2 id="section-4">要するに</h2>
+
+<p>書いてみると Buffer と IFTTT なしではこの環境は構築できない。<br />
+さらに全てを記憶するEvernote。</p>
+
+<p>最終的には Evernote の特定のノートブックを見ればいいので散らばっていたデータをうまくまとめれてたと思う。</p>
+
+<p>要するに Buffer、Evernote、IFTTT すげーってことです。</p>
+
+<h2 id="section-5">参考</h2>
+
+<ul>
+  <li><a href="https://ifttt.com/">IFTTT</a></li>
+  <li><a href="https://bufferapp.com/app">Buffer</a></li>
+  <li><a href="http://evernote.com/intl/jp/">Evernote</a></li>
+  <li><a href="https://feedly.com/">Feedly</a></li>
+  <li><a href="http://twieve.net/ja">Twieve</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Technology Radar May 2013の気になるところ(1)]]></title>
@@ -279,36 +390,6 @@ Scalaで書かれている。</p>
   <li>マルチ学習</li>
   <li>暗黙知・形式知</li>
 </ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[フェルドマン式知的生産術　読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/01/feldman/"/>
-    <updated>2013-03-01T00:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/01/feldman</id>
-    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:20px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<!-- more -->
-
-<p><br />
-著者の主張は章のタイトルでほとんどが表現されているように感じた。</p>
-
-<p>内容は実体験をもとにした理論付け</p>
-
-<ul>
-  <li>理論付けとして、政治の話、お金の話が多い（著者の背景上）</li>
-  <li>数字が文章中におおいため納得しやすい。</li>
-  <li>分量的にはそれほどではないためこういうことも覚えておこうといった感じで読むのがいいかもしれない。</li>
-</ul>
-
-<p>時間管理の章ぐらいから自分が知りたい情報が多かった。
-次の日のスケジュールをつくるところはわかってはいるけどもできなかった。予実管理に終始してしまったところだった。</p>
-
-<p>今後はここに書いてある例でやっていきたい。</p>
-
-<p>最終的には、時間管理の章以降は付箋を貼る箇所が多くなった。</p>
-
 ]]></content>
   </entry>
   

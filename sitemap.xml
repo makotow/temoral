@@ -115,6 +115,10 @@
         <lastmod>2013-11-29T00:01:01+09:00</lastmod>
     </url>
     <url>
+        <loc>http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/</loc>
+        <lastmod>2014-01-01T19:00:13+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://makotow.github.io/404.html</loc>
         <lastmod>2013-08-18T00:18:56+09:00</lastmod>
     </url>
@@ -124,7 +128,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/blog/archives/</loc>
-        <lastmod>2013-11-29T00:01:01+09:00</lastmod>
+        <lastmod>2014-01-01T19:00:13+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/books/</loc>
@@ -132,7 +136,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/</loc>
-        <lastmod>2013-11-29T00:01:01+09:00</lastmod>
+        <lastmod>2014-01-01T19:00:13+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/robots.txt</loc>
@@ -140,7 +144,7 @@
     </url>
     <url>
         <loc>http://makotow.github.io/techmemo/glossary/</loc>
-        <lastmod>2013-10-07T00:52:59+09:00</lastmod>
+        <lastmod>2013-11-29T00:23:01+09:00</lastmod>
     </url>
     <url>
         <loc>http://makotow.github.io/techmemo/</loc>
@@ -148,6 +152,6 @@
     </url>
     <url>
         <loc>http://makotow.github.io/techmemo/octopress-tips/</loc>
-        <lastmod>2013-08-18T00:18:56+09:00</lastmod>
+        <lastmod>2013-12-29T19:05:30+09:00</lastmod>
     </url>
 </urlset>

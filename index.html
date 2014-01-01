@@ -9,9 +9,8 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="man の使い方を調べたのでメモ。
-主にオプションについて。
-">
+  <meta name="description" content="2013年に構築できた情報集約の方法をまとめてみた。
+結果的にIFTTT, Buffer, Evernoteのすごさがわかった。 使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +92,54 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/31/data-aggregation-2013/">2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-31T20:23:00+09:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+2013年に構築できた情報集約の方法をまとめてみた。<br />
+結果的にIFTTT, Buffer, Evernoteのすごさがわかった。
+</p>
+
+<p>
+使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。
+使ってるサービスの詳細は最後にまとめてあるリンクを参照。
+</p>
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/12/31/data-aggregation-2013/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -570,83 +617,6 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/05/sublimetext-japanese-input/">SublimeText2で日本語入力をTabで。</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-05T17:50:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="section">概要</h2>
-<p>ちょっと不便だなと思いつつ放置して使ってたけど、
-少し調べたらわかったのでメモ。</p>
-
-<ul>
-  <li>Google日本語入力を使用中</li>
-  <li>SublimeText2上で日本語入力中に入力候補が表示される→Tabで候補を選ぼうとする。</li>
-  <li>SublimeText2に制御が移るため、日本語消える。</li>
-</ul>
-
-<h2 id="section-1">対策方法</h2>
-
-<ul>
-  <li>SublimeText2での制御を外す。</li>
-  <li>解決したかが外したことによる影響はまだ出ていないので様子見</li>
-</ul>
-
-<p>Sublime Text2 &gt; Preferences &gt; Key Bindings - Default を選択して、以下の部分をコメントアウト。 </p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="json"><span class="line">
-</span><span class="line">    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span><span class="err">,</span>
-</span><span class="line">    <span class="err">//</span> <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tab&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;insert_best_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;\t&quot;</span><span class="p">,</span> <span class="nt">&quot;exact&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-</span><span class="line">    <span class="err">//</span>  <span class="nt">&quot;context&quot;</span><span class="p">:</span>
-</span><span class="line">    <span class="err">//</span>  <span class="p">[</span>
-</span><span class="line">    <span class="err">//</span>      <span class="p">{</span> <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;setting.tab_completion&quot;</span><span class="p">,</span> <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="nt">&quot;operand&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-</span><span class="line">    <span class="err">//</span>  <span class="p">]</span>
-</span><span class="line">    <span class="err">//</span> <span class="p">}</span><span class="err">,</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>以下のURLを参考にさせていただいた。</p>
-
-<ul>
-  <li><a href="http://www.sanographix.net/2013/02/sublime-text-2/">Sublime Text 2 の設定したメモ</a></li>
-</ul>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -664,36 +634,24 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
   
 twitter: <a href="https://twitter.com/makotow">@makotow</a>
 <br/>
-hoverboard.io:<a href="http://hoverboard.io/makotow">hoverboard.io(under constructing) </a>
- <br/>
-<p>
-Software Development Engineer. 
-</p>
-<br/>
-<p>
-Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し定まらない感じ。 フィールドを縦横無尽に動きまわりたい。
-</p>
-</section>
-<section>
-<h2>興味</h2>
-<ul>
-    <li>性能評価</li>
-    <li>分散処理</li>
-    <li>SCM</li>
-    <li>Scrum</li>
-    <li>Agile</li>
-    <li>Testing</li>
-    <li>CI</li>
-    <li>Scala</li>
-    <li>Ruby</li>
-    <li>VMWare</li>
-    <li>Hadoop関連</li>
-</ul>
 
+    <p>
+        Software Development Engineer. SI屋勤務。
+    </p>
+
+    <p>
+    興味: Git/Scrum/Agile/Testing/CI/Scala/Ruby/ <br/>
+        VMWare/JavaScript/HPC/AWS　<br/>
+        高みを目指して。
+    </p>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/31/data-aggregation-2013/">2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/11/28/how-to-use-man/">man の使い方</a>
@@ -711,15 +669,11 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
         <a href="/blog/2013/08/04/scala-file-io/">ScalaでIO</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/18/technology-radar-may-2013-hot-topic/">Technology Radar May 2013の気になるところ(1)</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.52941176470588%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.52941176470588%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.52941176470588%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 138.8235294117647%'>Article(11)</a> <a href='/blog/categories/blog' style='font-size: 107.05882352941177%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 121.17647058823529%'>books(6)</a> <a href='/blog/categories/business' style='font-size: 107.05882352941177%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.52941176470588%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.52941176470588%'>css(1)</a> <a href='/blog/categories/font' style='font-size: 103.52941176470588%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.05882352941177%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.58823529411765%'>git(3)</a> <a href='/blog/categories/intellij' style='font-size: 110.58823529411765%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.52941176470588%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.52941176470588%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.52941176470588%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.52941176470588%'>macosx(1)</a> <a href='/blog/categories/network' style='font-size: 103.52941176470588%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 124.70588235294117%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.52941176470588%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.52941176470588%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.58823529411765%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.52941176470588%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 114.11764705882354%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 117.64705882352942%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.52941176470588%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.52941176470588%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.52941176470588%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.52941176470588%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.52941176470588%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.52941176470588%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.05882352941177%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(17)</a> <a href='/blog/categories/technology' style='font-size: 103.52941176470588%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.58823529411765%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.52941176470588%'>unix(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.52941176470588%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.52941176470588%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.52941176470588%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 142.35294117647058%'>Article(12)</a> <a href='/blog/categories/blog' style='font-size: 107.05882352941177%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 121.17647058823529%'>books(6)</a> <a href='/blog/categories/buffer' style='font-size: 103.52941176470588%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 107.05882352941177%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.52941176470588%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.52941176470588%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.52941176470588%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.52941176470588%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.05882352941177%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.58823529411765%'>git(3)</a> <a href='/blog/categories/ifttt' style='font-size: 103.52941176470588%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.58823529411765%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.52941176470588%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.52941176470588%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.52941176470588%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.52941176470588%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.52941176470588%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 103.52941176470588%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 124.70588235294117%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.52941176470588%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.52941176470588%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.58823529411765%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.52941176470588%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 114.11764705882354%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 117.64705882352942%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.52941176470588%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.52941176470588%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.52941176470588%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.52941176470588%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.52941176470588%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.52941176470588%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.05882352941177%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(17)</a> <a href='/blog/categories/technology' style='font-size: 103.52941176470588%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.58823529411765%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.52941176470588%'>unix(1)</a> </span>
 </section>
 
 <section>
@@ -770,7 +724,7 @@ Scala、Ruby、JavaScriptなどに軸を置きつつ、いろいろ手を出し�
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Makoto WATANABE (makotow) -
+  Copyright &copy; 2014 - Makoto WATANABE (makotow) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

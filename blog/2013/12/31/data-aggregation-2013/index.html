@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど) - Software Technology Memorandum and thoughts</title>
+  <meta name="author" content="Makoto WATANABE (makotow)">
+
+  
+  <meta name="description" content="2013年に構築できた情報集約の方法をまとめてみた。
+結果的にIFTTT, Buffer, Evernoteのすごさがわかった。 使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://makotow.github.io/blog/2013/12/31/data-aggregation-2013">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+
+
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/footnote.js" type="text/javascript"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34175052-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Software Technology Memorandum and thoughts</a></h1>
+  
+    <h2>Mostly software technology memorandum at random times powerd by makotow.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:makotow.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/techmemo">Tech memo</a></li>
+  <li><a href="https://twitter.com/makotow">Twitter</a></li>
+  <li><a href="https://github.com/makotow">GitHub</a></li>
+  <li><a href="/books">Books</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-31T20:23:00+09:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+2013年に構築できた情報集約の方法をまとめてみた。<br />
+結果的にIFTTT, Buffer, Evernoteのすごさがわかった。
+</p>
+
+<p>
+使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。
+使ってるサービスの詳細は最後にまとめてあるリンクを参照。
+</p>
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">サービス相関図</a></li>
+  <li><a href="#section-2">基本フロー</a>    <ul>
+      <li><a href="#chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</a></li>
+      <li><a href="#feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</a></li>
+      <li><a href="#twitter--tweevie--evernote">twitter → Tweevie → Evernote</a></li>
+      <li><a href="#twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-3">おまけ</a>    <ul>
+      <li><a href="#gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</a></li>
+      <li><a href="#google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-4">要するに</a></li>
+  <li><a href="#section-5">参考</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>データ集約の流れを数年前からEvernoteへ全て集めてた。
+2013年は使用するデバイスが多くなったため、
+いままでブラウザメインでやっていたことが他のデバイスでアクションすると情報が散らばった場所に保存される状態になっていた。</p>
+
+<p>なんとなく形になったので2013年の記録として残しておく。</p>
+
+<h2 id="section-1">サービス相関図</h2>
+
+<p><img src="/images/2013/12/data-aggregation/data-aggregation.001.png" /></p>
+
+<h2 id="section-2">基本フロー</h2>
+
+<h3 id="chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</h3>
+
+<p>ウェブブラウズ中に気になった記事をBuffer経由で蓄積する。
+PC,スマートフォン、タブレットとどの端末からでも同じフローでデータを集約できる。
+情報ソースとしては「Gunosy」とか「はてぶ」とか「twitterのTL」とかいろいろ。</p>
+
+<h3 id="feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に主に使用、スマートフォンやタブレット、英語の記事を後て読むときなどにつかう。Android版Feedlyだと長押しでできる。</p>
+
+<h3 id="feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</h3>
+
+<p>RSSリーダーで購読しているフィードを見ている時に記事を読んだ後などに使用。
+Bufferで共有すると、twitterにも自動でツイートされる。</p>
+
+<h3 id="twitter--tweevie--evernote">twitter → Tweevie → Evernote</h3>
+
+<p>一日分のツイートをEvernoteへ保存する。
+何気なく検索するとそれっぽいものがでてくるようになる。</p>
+
+<h3 id="twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</h3>
+
+<p>twitter上で fav したものを IFTTT 経由で Evernoteへ保存する。<br />
+fav は後で読もうと思ったリンク等なので、せっかくfavしたものを忘れないように。</p>
+
+<h2 id="section-3">おまけ</h2>
+
+<p>あまり使ってないけども、IFTTTの機能で次のようなこともできる。</p>
+
+<h3 id="gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</h3>
+
+<p>GmailでスターをつけるとIFTTT経由でEvernoteのノートが作成される。
+たまに使うがEvernoteに保存される状態が微妙なので別の方法を考えるかも。</p>
+
+<h3 id="google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</h3>
+
+<p>カレンダーの予定に特定のキーワードを入れると IFTTT 経由で Evernoteに保存される。
+仕組みは作ってみたが今のところ使いどころがない。</p>
+
+<h2 id="section-4">要するに</h2>
+
+<p>書いてみると Buffer と IFTTT なしではこの環境は構築できない。<br />
+さらに全てを記憶するEvernote。</p>
+
+<p>最終的には Evernote の特定のノートブックを見ればいいので散らばっていたデータをうまくまとめれてたと思う。</p>
+
+<p>要するに Buffer、Evernote、IFTTT すげーってことです。</p>
+
+<h2 id="section-5">参考</h2>
+
+<ul>
+  <li><a href="https://ifttt.com/">IFTTT</a></li>
+  <li><a href="https://bufferapp.com/app">Buffer</a></li>
+  <li><a href="http://evernote.com/intl/jp/">Evernote</a></li>
+  <li><a href="https://feedly.com/">Feedly</a></li>
+  <li><a href="http://twieve.net/ja">Twieve</a></li>
+</ul>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Makoto WATANABE (makotow)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-31T20:23:00+09:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/buffer/'>Buffer</a>, <a class='category' href='/blog/categories/evernote/'>Evernote</a>, <a class='category' href='/blog/categories/ifttt/'>IFTTT</a>, <a class='category' href='/blog/categories/memorandum/'>memorandum</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+
+  
+<div> <a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u="><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=&amp;url="><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;summary="><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url="><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a> </div>
+<!--
+<div> <a class="mt-facebook mt-share-inline-square-sm" href="https://www.facebook.com/sharer/sharer.php?u="><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-square-sm" href="http://twitter.com/intent/tweet?text=&amp;url="><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-square-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;summary="><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-square-sm" href="https://plus.google.com/share?url="><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a> </div>
+-->
+
+
+
+</div>
+
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/28/how-to-use-man/" title="Previous Post: man の使い方">&laquo; man の使い方</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+
+ <img class="left half" src="/images/profile/profile.png">
+  
+twitter: <a href="https://twitter.com/makotow">@makotow</a>
+<br/>
+
+    <p>
+        Software Development Engineer. SI屋勤務。
+    </p>
+
+    <p>
+    興味: Git/Scrum/Agile/Testing/CI/Scala/Ruby/ <br/>
+        VMWare/JavaScript/HPC/AWS　<br/>
+        高みを目指して。
+    </p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/31/data-aggregation-2013/">2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/28/how-to-use-man/">man の使い方</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/scala-file-io/">ScalaでIO</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Tag Cloud</h1>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.52941176470588%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.52941176470588%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.52941176470588%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 142.35294117647058%'>Article(12)</a> <a href='/blog/categories/blog' style='font-size: 107.05882352941177%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 121.17647058823529%'>books(6)</a> <a href='/blog/categories/buffer' style='font-size: 103.52941176470588%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 107.05882352941177%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.52941176470588%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.52941176470588%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.52941176470588%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.52941176470588%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 107.05882352941177%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.58823529411765%'>git(3)</a> <a href='/blog/categories/ifttt' style='font-size: 103.52941176470588%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.58823529411765%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.52941176470588%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.52941176470588%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.52941176470588%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.52941176470588%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.52941176470588%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.52941176470588%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 103.52941176470588%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 124.70588235294117%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.52941176470588%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.52941176470588%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.58823529411765%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.52941176470588%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 114.11764705882354%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 117.64705882352942%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.52941176470588%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.52941176470588%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.52941176470588%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.52941176470588%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.52941176470588%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.52941176470588%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 107.05882352941177%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(17)</a> <a href='/blog/categories/technology' style='font-size: 103.52941176470588%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.58823529411765%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.52941176470588%'>unix(1)</a> </span>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/makotow">@makotow</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'makotow',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+
+    <a class="twitter-timeline" href="https://twitter.com/makotow" data-widget-id="331289848642150400">@makotow からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
+    <a href="http://twitter.com/makotow" class="twitter-follow-button" data-show-count="true">Follow @makotow</a>
+  
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Makoto WATANABE (makotow) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'makotownotes';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/';
+        var disqus_url = 'http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
