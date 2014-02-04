@@ -4,7 +4,7 @@
   <title><![CDATA[Software Technology Memorandum and thoughts]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-01-02T00:15:15+09:00</updated>
+  <updated>2014-02-05T00:16:21+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,403 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Brewfileでパッケージ管理]]></title>
+    <link href="http://makotow.github.io/blog/2014/02/05/brewfile/"/>
+    <updated>2014-02-05T00:15:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/02/05/brewfile</id>
+    <content type="html"><![CDATA[<p>今まで、Mac上のアプリケーションはbrew listの出力結果、 /Application配下の一覧で管理していたがhomebrew標準機能でファイルに書いたパッケージを一括してインストールできるBrewfileを使ってみました。
+ほとんどこのページを参考にさせていただきました。</p>
+
+<p><a href="http://blog.livedoor.jp/sonots/archives/35251881.html">「BrewfileでHomebrewパッケージを管理する」をやってみた</a></p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">環境</a></li>
+  <li><a href="#section-2">使い方</a></li>
+  <li><a href="#section-3">留意点</a></li>
+  <li><a href="#section-4">作ったファイル</a></li>
+  <li><a href="#section-5">まとめ</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>たまたまツイートを見てたらBrewfileなるものが目についたため homebrew標準でできるようなのでやってみた。
+最近導入した brew-cask もこれで管理できる。</p>
+
+<h2 id="section-1">環境</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>brew &#8211;config </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">-&gt; % brew --config
+</span><span class="line">HOMEBREW_VERSION: 0.9.5
+</span><span class="line">ORIGIN: https://github.com/Homebrew/homebrew.git
+</span><span class="line">HEAD: 406d954664c33e2a23e8e95f016f644e66829ef4
+</span><span class="line">HOMEBREW_PREFIX: /usr/local
+</span><span class="line">HOMEBREW_CELLAR: /usr/local/Cellar
+</span><span class="line">CPU: quad-core 64-bit ivybridge
+</span><span class="line">OS X: 10.9.1-x86_64
+</span><span class="line">Xcode: 5.0.2
+</span><span class="line">CLT: 5.0.1.0.1.1382131676
+</span><span class="line">GCC-4.2: build 5666
+</span><span class="line">Clang: 5.0 build 500
+</span><span class="line">X11: 2.7.5 =&gt; /opt/X11
+</span><span class="line">System Ruby: 1.8.7-358
+</span><span class="line">Perl: /usr/bin/perl
+</span><span class="line">Python: /usr/local/bin/python =&gt; /usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+</span><span class="line">Ruby: /usr/local/opt/rbenv/shims/ruby =&gt; /usr/local/Cellar/rbenv/0.4.0/shims/ruby</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">使い方</h2>
+
+<p>Brewfile のあるディレクトリで</p>
+
+<pre><code>brew bundle
+</code></pre>
+
+<p>でBrewfileに書かれているパッケージがインストールされる。</p>
+
+<p>brew cask を使っているところはパスワードを聞かれることもあるので都度入力</p>
+
+<h2 id="section-3">留意点</h2>
+
+<p>参考ページにもあるがBrewfileないで</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>tup </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tup phinze/homebrew-cask</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>を実行した際にすでに追加されているリポジトリだと途中で止まってしまう。</p>
+
+<p>なので</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>tup2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tup phinze/homebrew-cask || true</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>おなじように、install するときに formulaが消えてたり、古いバージョンがあると途中で止まってしまうため
+以下のように編集</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>install </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">install X ||  brew upgrade X || true</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-4">作ったファイル</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Brewfile</span><a href="https://gist.github.com/makotow/8804694">link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+<span class="line-number">69</span>
+<span class="line-number">70</span>
+<span class="line-number">71</span>
+<span class="line-number">72</span>
+<span class="line-number">73</span>
+<span class="line-number">74</span>
+<span class="line-number">75</span>
+<span class="line-number">76</span>
+<span class="line-number">77</span>
+<span class="line-number">78</span>
+<span class="line-number">79</span>
+<span class="line-number">80</span>
+<span class="line-number">81</span>
+<span class="line-number">82</span>
+<span class="line-number">83</span>
+<span class="line-number">84</span>
+<span class="line-number">85</span>
+<span class="line-number">86</span>
+<span class="line-number">87</span>
+<span class="line-number">88</span>
+<span class="line-number">89</span>
+<span class="line-number">90</span>
+<span class="line-number">91</span>
+<span class="line-number">92</span>
+<span class="line-number">93</span>
+<span class="line-number">94</span>
+<span class="line-number">95</span>
+<span class="line-number">96</span>
+<span class="line-number">97</span>
+<span class="line-number">98</span>
+<span class="line-number">99</span>
+<span class="line-number">100</span>
+<span class="line-number">101</span>
+<span class="line-number">102</span>
+<span class="line-number">103</span>
+<span class="line-number">104</span>
+<span class="line-number">105</span>
+<span class="line-number">106</span>
+<span class="line-number">107</span>
+<span class="line-number">108</span>
+<span class="line-number">109</span>
+<span class="line-number">110</span>
+<span class="line-number">111</span>
+<span class="line-number">112</span>
+<span class="line-number">113</span>
+<span class="line-number">114</span>
+<span class="line-number">115</span>
+<span class="line-number">116</span>
+<span class="line-number">117</span>
+<span class="line-number">118</span>
+<span class="line-number">119</span>
+<span class="line-number">120</span>
+<span class="line-number">121</span>
+<span class="line-number">122</span>
+<span class="line-number">123</span>
+<span class="line-number">124</span>
+<span class="line-number">125</span>
+<span class="line-number">126</span>
+<span class="line-number">127</span>
+<span class="line-number">128</span>
+<span class="line-number">129</span>
+<span class="line-number">130</span>
+<span class="line-number">131</span>
+<span class="line-number">132</span>
+<span class="line-number">133</span>
+<span class="line-number">134</span>
+<span class="line-number">135</span>
+<span class="line-number">136</span>
+<span class="line-number">137</span>
+<span class="line-number">138</span>
+<span class="line-number">139</span>
+<span class="line-number">140</span>
+<span class="line-number">141</span>
+<span class="line-number">142</span>
+<span class="line-number">143</span>
+<span class="line-number">144</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># latest
+</span><span class="line">update
+</span><span class="line">
+</span><span class="line"># add repository
+</span><span class="line">tap homebrew/binary || true
+</span><span class="line">tap phinze/homebrew-cask || true
+</span><span class="line">tap homebrew/dupes || true
+</span><span class="line">tap homebrew/science || true
+</span><span class="line">
+</span><span class="line"># install package
+</span><span class="line">
+</span><span class="line">install ack || brew upgrade ack || true
+</span><span class="line">install ant || brew upgrade ant || true
+</span><span class="line">install apple-gcc42 || brew upgrade apple-gcc42 || true
+</span><span class="line">install atk || brew upgrade atk || true
+</span><span class="line">install autoconf || brew upgrade autoconf || true
+</span><span class="line">install automake || brew upgrade automake || true
+</span><span class="line">install bash || brew upgrade bash || true
+</span><span class="line">install boost || brew upgrade boost || true
+</span><span class="line">install brew-cask || brew upgrade brew-cask || true
+</span><span class="line">install cairo || brew upgrade cairo || true
+</span><span class="line">install cloog || brew upgrade cloog || true
+</span><span class="line">install cmatrix || brew upgrade cmatrix || true
+</span><span class="line">install colordiff || brew upgrade colordiff || true
+</span><span class="line">install cscope || brew upgrade cscope || true
+</span><span class="line">install emacs || brew upgrade emacs || true
+</span><span class="line">install fontconfig || brew upgrade fontconfig || true
+</span><span class="line">install fontforge || brew upgrade fontforge || true
+</span><span class="line">install fortune || brew upgrade fortune || true
+</span><span class="line">install freetype || brew upgrade freetype || true
+</span><span class="line">install gdbm || brew upgrade gdbm || true
+</span><span class="line">install gdk-pixbuf || brew upgrade gdk-pixbuf || true
+</span><span class="line">install gettext || brew upgrade gettext || true
+</span><span class="line">install gfortran || brew upgrade gfortran || true
+</span><span class="line">install ghc || brew upgrade ghc || true
+</span><span class="line">install git || brew upgrade git || true
+</span><span class="line">install git-flow || brew upgrade git-flow || true
+</span><span class="line">install giter8 || brew upgrade giter8 || true
+</span><span class="line">install glib || brew upgrade glib || true
+</span><span class="line">install gmp || brew upgrade gmp || true
+</span><span class="line">install go --cross-compile-all || brew upgrade go || true
+</span><span class="line">install gobject-introspection || brew upgrade gobject-introspection || true
+</span><span class="line">install gradle || brew upgrade gradle || true
+</span><span class="line">install groovy || brew upgrade groovy || true
+</span><span class="line">install gtk+ || brew upgrade gtk+ || true
+</span><span class="line">install gtksourceview || brew upgrade gtksourceview || true
+</span><span class="line">install harfbuzz || brew upgrade harfbuzz || true
+</span><span class="line">install haskell-platform || brew upgrade haskell-platform || true
+</span><span class="line">install htop-osx || brew upgrade htop-osx || true
+</span><span class="line">install hub || brew upgrade hub || true
+</span><span class="line">install icu4c || brew upgrade icu4c || true
+</span><span class="line">install intltool || brew upgrade intltool || true
+</span><span class="line">install isl || brew upgrade isl || true
+</span><span class="line">install jmeter || brew upgrade jmeter || true
+</span><span class="line">install jpeg || brew upgrade jpeg || true
+</span><span class="line">install less || brew upgrade less || true
+</span><span class="line">install libevent || brew upgrade libevent || true
+</span><span class="line">install libffi || brew upgrade libffi || true
+</span><span class="line">install libmpc || brew upgrade libmpc || true
+</span><span class="line">install libpng || brew upgrade libpng || true
+</span><span class="line">install libtiff || brew upgrade libtiff || true
+</span><span class="line">install libtool || brew upgrade libtool || true
+</span><span class="line">install libyaml || brew upgrade libyaml || true
+</span><span class="line">install lv || brew upgrade lv || true
+</span><span class="line">install macvim || brew upgrade macvim || true
+</span><span class="line">install markdown || brew upgrade markdown || true
+</span><span class="line">install maven || brew upgrade maven || true
+</span><span class="line">install meld || brew upgrade meld || true
+</span><span class="line">install mercurial || brew upgrade mercurial || true
+</span><span class="line">install mpfr || brew upgrade mpfr || true
+</span><span class="line">install mysql || brew upgrade mysql || true
+</span><span class="line">install neon || brew upgrade neon || true
+</span><span class="line">install nkf || brew upgrade nkf || true
+</span><span class="line">install nmap || brew upgrade nmap || true
+</span><span class="line">install node || brew upgrade node || true
+</span><span class="line">install openssl || brew upgrade openssl || true
+</span><span class="line">install ossp-uuid || brew upgrade ossp-uuid || true
+</span><span class="line">install pango || brew upgrade pango || true
+</span><span class="line">install pcre || brew upgrade pcre || true
+</span><span class="line">install pixman || brew upgrade pixman || true
+</span><span class="line">install pkg-config || brew upgrade pkg-config || true
+</span><span class="line">install play || brew upgrade play || true
+</span><span class="line">install postgresql || brew upgrade postgresql || true
+</span><span class="line">install pow || brew upgrade pow || true
+</span><span class="line">install pstree || brew upgrade pstree || true
+</span><span class="line">install py2cairo || brew upgrade py2cairo || true
+</span><span class="line">install pygobject || brew upgrade pygobject || true
+</span><span class="line">install pygtk || brew upgrade pygtk || true
+</span><span class="line">install pygtksourceview || brew upgrade pygtksourceview || true
+</span><span class="line">install python || brew upgrade python || true
+</span><span class="line">install rarian || brew upgrade rarian || true
+</span><span class="line">install rbenv || brew upgrade rbenv || true
+</span><span class="line">install readline || brew upgrade readline || true
+</span><span class="line">install reattach-to-user-namespace || brew upgrade reattach-to-user-namespace || true
+</span><span class="line">install ruby-build || brew upgrade ruby-build || true
+</span><span class="line">install sbt || brew upgrade sbt || true
+</span><span class="line">install scala || brew upgrade scala || true
+</span><span class="line">install scons || brew upgrade scons || true
+</span><span class="line">install serf || brew upgrade serf || true
+</span><span class="line">install source-highlight || brew upgrade source-highlight || true
+</span><span class="line">install sqlite || brew upgrade sqlite || true
+</span><span class="line">install subversion || brew upgrade subversion || true
+</span><span class="line">install the_silver_searcher || brew upgrade the_silver_searcher || true
+</span><span class="line">install tig || brew upgrade tig || true
+</span><span class="line">install tmux || brew upgrade tmux || true
+</span><span class="line">install tomcat || brew upgrade tomcat || true
+</span><span class="line">install tree || brew upgrade tree || true
+</span><span class="line">install vim || brew upgrade vim || true
+</span><span class="line">install watch || brew upgrade watch || true
+</span><span class="line">install wget || brew upgrade wget || true
+</span><span class="line">install xctool || brew upgrade xctool || true
+</span><span class="line">install xz || brew upgrade xz || true
+</span><span class="line">install yuicompressor || brew upgrade yuicompressor || true
+</span><span class="line">install z || brew upgrade z || true
+</span><span class="line">install zsh || brew upgrade zsh || true
+</span><span class="line">install zsh-completions || brew upgrade zsh-completions || true
+</span><span class="line">
+</span><span class="line"># brew cask
+</span><span class="line">cask install alfred || cask upgrade alfred || true
+</span><span class="line">cask install diffmerge || cask upgrade diffmerge || true
+</span><span class="line">cask install rstudio || cask upgrade rstudio || true
+</span><span class="line">cask install vagrant || cask upgrade vagrant || true
+</span><span class="line">cask install vlc || cask upgrade vlc || true
+</span><span class="line">cask install dash || cask upgrade dash || true
+</span><span class="line">cask install p4merge || cask upgrade p4merge || true
+</span><span class="line">cask install sourcetree || cask upgrade sourcetree || true
+</span><span class="line">cask install virtualbox || cask upgrade virtualbox || true
+</span><span class="line">cask install xquartz || cask upgrade xquartz || true
+</span><span class="line">cask install xmind || cask upgrade xmind || true
+</span><span class="line">cask install wireshark || cask upgrade wireshark || true
+</span><span class="line">cask install google-chrome || cask upgrade google-chrome || true
+</span><span class="line">cask install google-drive || cask upgrade google-drive || true
+</span><span class="line">cask install google-web-designer || cask upgrade google-web-designer || true
+</span><span class="line">cask install keyremap4macbook || cask upgrade keyremap4macbook || true
+</span><span class="line">cask install sublime-text || cask upgrade sublime-text || true
+</span><span class="line">cask install skype || cask upgrade skype || true
+</span><span class="line">cask install skitch || cask upgrade skitch || true
+</span><span class="line">cask install bettertouchtool || cask upgrade bettertouchtool || true
+</span><span class="line">cask install bitcasa || cask upgrade bitcasa || true
+</span><span class="line">cask install dropbox || cask upgrade dropbox || true
+</span><span class="line">cask install evernote || cask upgrade evernote || true
+</span><span class="line">cask install mendeley || cask upgrade mendeley || true
+</span><span class="line">cask install mysql-workbench || cask upgrade mysql-workbench || true
+</span><span class="line">cask install iterm2 || cask upgrade iterm2 || true</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-5">まとめ</h2>
+
+<p>必要なものはこのファイルに書いていくことで必要なアプリケーションが管理出来る状態となった。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)]]></title>
@@ -1495,8 +1892,10 @@ git で branch 作って作業して他の branch にマージということを
 <!-- more -->
 
 <h2 id="octopress-">Octopress 変更点</h2>
-<p>### ファイル一覧 ###
-思ったよりも変更する箇所はなく、
+
+<h3 id="section">ファイル一覧</h3>
+
+<p>思ったよりも変更する箇所はなく、
 octopress/sass/custom 以下のファイルに設定を追加、
 CSSを書き換えることで変更可能
 フレームワーク部分にはほとんど手をいれることなく変更可能な作りとなっている。</p>
@@ -1507,20 +1906,20 @@ CSSを書き換えることで変更可能
   <li>octopress/sass/custom/_colors.scss</li>
 </ul>
 
-<h2 id="section">今回つかったツール</h2>
+<h2 id="section-1">今回つかったツール</h2>
 
 <h3 id="ide">IDE</h3>
 <p>IntelliJ IDEA 12
 年末セールで買った。Ruby プラグインをインストールすることでSASSにも対応するので使ってみた。</p>
 
-<h3 id="section-1">サイト</h3>
+<h3 id="section-2">サイト</h3>
 
 <ul>
   <li>Adobe Kuler 言わずもがなAdobeの配色サイト、色を決める材料に。</li>
   <li>Google Web Fonts グーグルが保持しているフォントをCSSで取り込み。</li>
 </ul>
 
-<h2 id="section-2">残作業</h2>
+<h2 id="section-3">残作業</h2>
 <p>凝り始めるときりがないので今回は一旦この段階で終了。
 今後は、</p>
 
@@ -1528,81 +1927,6 @@ CSSを書き換えることで変更可能
   <li>見出し(h1, h2, h3)あたりのデザインを考える。</li>
   <li>themeを作成したはいいが正しいthemeの作り方になっているか不明なため調査する。</li>
 </ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[最近購入した本(2012/12)]]></title>
-    <link href="http://makotow.github.io/blog/2012/12/09/buying-books/"/>
-    <updated>2012-12-09T22:41:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/12/09/buying-books</id>
-    <content type="html"><![CDATA[<p>社会人としての常識がかけていると痛感し始めているので、
-当たり前なこと、基本的なことが書かれている書籍を３冊購入。</p>
-
-<p>1冊はPM関係で<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a></p>
-
-<p>最近の立場としてどうしてもPM寄りになるため基本から整理をしようと思う。
-技術者としての視点を持ちつつPMの立場も理解したい。</p>
-
-<p>残り2冊はビジネススキル関連。アマゾンで評判だったので購入。</p>
-
-<ul>
-  <li>
-    <p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a></p>
-  </li>
-  <li>
-    <p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a></p>
-  </li>
-</ul>
-
-<p>この手の本の購入は久しぶり。
-各３冊途中までの感想を書いてみた。</p>
-
-<!-- more -->
-
-<h2 id="section">マンガでわかるプロジェクトマネジメント</h2>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<h3 id="section-1">途中までの感想</h3>
-
-<p>漫画ということでかなり読みやすい。先にPMの入門書を読んだ人にとっては当たり前のことが書いてあるかも知れないが、基本中の基本を学ぶには良い書籍と思う。</p>
-
-<h2 id="section-2">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</h2>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<h3 id="section-3">途中までの感想</h3>
-
-<p>読んでいる途中で、「これは何についての書籍だったか？」と思うことが多々あり。
-言いたいことは章の一番最初に一言で書かれており、その後の文章では実体験を交えた説明をしているスタイル。</p>
-
-<p>１ページ当たりの文字数はそれほど多くないので集中すれば2,3時間で完読できるのではないかと思う。</p>
-
-<p>以下、読んでみて心に残っている言葉</p>
-
-<blockquote>
-  <p>情報は「量」ではなく「つなぎ方」</p>
-</blockquote>
-
-<blockquote>
-  <p>簡単なメッセージほど伝わりやすい</p>
-</blockquote>
-
-<h2 id="section-4">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</h2>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/510UNl%2BuWrL._SL160_.jpg" alt="ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/483345047X/makotownotes-22/ref=nosim/" title="ビジネススキル・イノベーション ― 「時間×思考×直感」67のパワフルな技術" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">横田 尚哉 <br />プレジデント社 <br />売り上げランキング: 649<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/483345047X/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<h3 id="section-5">途中までの感想</h3>
-
-<p>まだ目次を見た段階だけけれどもどれも基本的な内容のように見えた。
-基本を抑えれていない自分にとって望んでいたもののようだ。</p>
-
-<h2 id="section-6">本記事においての試み</h2>
-
-<p>ブログ内でアマゾンの画像を使いたかったためにアフリエイトIDを取得した。</p>
-
-<p>規約的には問題無いと思っているが、もし違反しているようなことがあれば教えて欲しい。</p>
 ]]></content>
   </entry>
   

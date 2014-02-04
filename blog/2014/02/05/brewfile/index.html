@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Brewfileでパッケージ管理 - Software Technology Memorandum and thoughts</title>
+  <meta name="author" content="Makoto WATANABE (makotow)">
+
+  
+  <meta name="description" content="今まで、Mac上のアプリケーションはbrew listの出力結果、 /Application配下の一覧で管理していたがhomebrew標準機能でファイルに書いたパッケージを一括してインストールできるBrewfileを使ってみました。
+ほとんどこのページを参考にさせていただきました。 「 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://makotow.github.io/blog/2014/02/05/brewfile">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Software Technology Memorandum and thoughts" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+
+
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/footnote.js" type="text/javascript"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34175052-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Software Technology Memorandum and thoughts</a></h1>
+  
+    <h2>Mostly software technology memorandum at random times powerd by makotow.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:makotow.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/techmemo">Tech memo</a></li>
+  <li><a href="https://twitter.com/makotow">Twitter</a></li>
+  <li><a href="https://github.com/makotow">GitHub</a></li>
+  <li><a href="/books">Books</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Brewfileでパッケージ管理</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-05T00:15:00+09:00" pubdate data-updated="true">Feb 5<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>今まで、Mac上のアプリケーションはbrew listの出力結果、 /Application配下の一覧で管理していたがhomebrew標準機能でファイルに書いたパッケージを一括してインストールできるBrewfileを使ってみました。
+ほとんどこのページを参考にさせていただきました。</p>
+
+<p><a href="http://blog.livedoor.jp/sonots/archives/35251881.html">「BrewfileでHomebrewパッケージを管理する」をやってみた</a></p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">環境</a></li>
+  <li><a href="#section-2">使い方</a></li>
+  <li><a href="#section-3">留意点</a></li>
+  <li><a href="#section-4">作ったファイル</a></li>
+  <li><a href="#section-5">まとめ</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>たまたまツイートを見てたらBrewfileなるものが目についたため homebrew標準でできるようなのでやってみた。
+最近導入した brew-cask もこれで管理できる。</p>
+
+<h2 id="section-1">環境</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>brew &#8211;config </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">-&gt; % brew --config
+</span><span class="line">HOMEBREW_VERSION: 0.9.5
+</span><span class="line">ORIGIN: https://github.com/Homebrew/homebrew.git
+</span><span class="line">HEAD: 406d954664c33e2a23e8e95f016f644e66829ef4
+</span><span class="line">HOMEBREW_PREFIX: /usr/local
+</span><span class="line">HOMEBREW_CELLAR: /usr/local/Cellar
+</span><span class="line">CPU: quad-core 64-bit ivybridge
+</span><span class="line">OS X: 10.9.1-x86_64
+</span><span class="line">Xcode: 5.0.2
+</span><span class="line">CLT: 5.0.1.0.1.1382131676
+</span><span class="line">GCC-4.2: build 5666
+</span><span class="line">Clang: 5.0 build 500
+</span><span class="line">X11: 2.7.5 =&gt; /opt/X11
+</span><span class="line">System Ruby: 1.8.7-358
+</span><span class="line">Perl: /usr/bin/perl
+</span><span class="line">Python: /usr/local/bin/python =&gt; /usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+</span><span class="line">Ruby: /usr/local/opt/rbenv/shims/ruby =&gt; /usr/local/Cellar/rbenv/0.4.0/shims/ruby</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">使い方</h2>
+
+<p>Brewfile のあるディレクトリで</p>
+
+<pre><code>brew bundle
+</code></pre>
+
+<p>でBrewfileに書かれているパッケージがインストールされる。</p>
+
+<p>brew cask を使っているところはパスワードを聞かれることもあるので都度入力</p>
+
+<h2 id="section-3">留意点</h2>
+
+<p>参考ページにもあるがBrewfileないで</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>tup </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tup phinze/homebrew-cask</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>を実行した際にすでに追加されているリポジトリだと途中で止まってしまう。</p>
+
+<p>なので</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>tup2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tup phinze/homebrew-cask || true</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>おなじように、install するときに formulaが消えてたり、古いバージョンがあると途中で止まってしまうため
+以下のように編集</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>install </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">install X ||  brew upgrade X || true</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-4">作ったファイル</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Brewfile</span><a href="https://gist.github.com/makotow/8804694">link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+<span class="line-number">69</span>
+<span class="line-number">70</span>
+<span class="line-number">71</span>
+<span class="line-number">72</span>
+<span class="line-number">73</span>
+<span class="line-number">74</span>
+<span class="line-number">75</span>
+<span class="line-number">76</span>
+<span class="line-number">77</span>
+<span class="line-number">78</span>
+<span class="line-number">79</span>
+<span class="line-number">80</span>
+<span class="line-number">81</span>
+<span class="line-number">82</span>
+<span class="line-number">83</span>
+<span class="line-number">84</span>
+<span class="line-number">85</span>
+<span class="line-number">86</span>
+<span class="line-number">87</span>
+<span class="line-number">88</span>
+<span class="line-number">89</span>
+<span class="line-number">90</span>
+<span class="line-number">91</span>
+<span class="line-number">92</span>
+<span class="line-number">93</span>
+<span class="line-number">94</span>
+<span class="line-number">95</span>
+<span class="line-number">96</span>
+<span class="line-number">97</span>
+<span class="line-number">98</span>
+<span class="line-number">99</span>
+<span class="line-number">100</span>
+<span class="line-number">101</span>
+<span class="line-number">102</span>
+<span class="line-number">103</span>
+<span class="line-number">104</span>
+<span class="line-number">105</span>
+<span class="line-number">106</span>
+<span class="line-number">107</span>
+<span class="line-number">108</span>
+<span class="line-number">109</span>
+<span class="line-number">110</span>
+<span class="line-number">111</span>
+<span class="line-number">112</span>
+<span class="line-number">113</span>
+<span class="line-number">114</span>
+<span class="line-number">115</span>
+<span class="line-number">116</span>
+<span class="line-number">117</span>
+<span class="line-number">118</span>
+<span class="line-number">119</span>
+<span class="line-number">120</span>
+<span class="line-number">121</span>
+<span class="line-number">122</span>
+<span class="line-number">123</span>
+<span class="line-number">124</span>
+<span class="line-number">125</span>
+<span class="line-number">126</span>
+<span class="line-number">127</span>
+<span class="line-number">128</span>
+<span class="line-number">129</span>
+<span class="line-number">130</span>
+<span class="line-number">131</span>
+<span class="line-number">132</span>
+<span class="line-number">133</span>
+<span class="line-number">134</span>
+<span class="line-number">135</span>
+<span class="line-number">136</span>
+<span class="line-number">137</span>
+<span class="line-number">138</span>
+<span class="line-number">139</span>
+<span class="line-number">140</span>
+<span class="line-number">141</span>
+<span class="line-number">142</span>
+<span class="line-number">143</span>
+<span class="line-number">144</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># latest
+</span><span class="line">update
+</span><span class="line">
+</span><span class="line"># add repository
+</span><span class="line">tap homebrew/binary || true
+</span><span class="line">tap phinze/homebrew-cask || true
+</span><span class="line">tap homebrew/dupes || true
+</span><span class="line">tap homebrew/science || true
+</span><span class="line">
+</span><span class="line"># install package
+</span><span class="line">
+</span><span class="line">install ack || brew upgrade ack || true
+</span><span class="line">install ant || brew upgrade ant || true
+</span><span class="line">install apple-gcc42 || brew upgrade apple-gcc42 || true
+</span><span class="line">install atk || brew upgrade atk || true
+</span><span class="line">install autoconf || brew upgrade autoconf || true
+</span><span class="line">install automake || brew upgrade automake || true
+</span><span class="line">install bash || brew upgrade bash || true
+</span><span class="line">install boost || brew upgrade boost || true
+</span><span class="line">install brew-cask || brew upgrade brew-cask || true
+</span><span class="line">install cairo || brew upgrade cairo || true
+</span><span class="line">install cloog || brew upgrade cloog || true
+</span><span class="line">install cmatrix || brew upgrade cmatrix || true
+</span><span class="line">install colordiff || brew upgrade colordiff || true
+</span><span class="line">install cscope || brew upgrade cscope || true
+</span><span class="line">install emacs || brew upgrade emacs || true
+</span><span class="line">install fontconfig || brew upgrade fontconfig || true
+</span><span class="line">install fontforge || brew upgrade fontforge || true
+</span><span class="line">install fortune || brew upgrade fortune || true
+</span><span class="line">install freetype || brew upgrade freetype || true
+</span><span class="line">install gdbm || brew upgrade gdbm || true
+</span><span class="line">install gdk-pixbuf || brew upgrade gdk-pixbuf || true
+</span><span class="line">install gettext || brew upgrade gettext || true
+</span><span class="line">install gfortran || brew upgrade gfortran || true
+</span><span class="line">install ghc || brew upgrade ghc || true
+</span><span class="line">install git || brew upgrade git || true
+</span><span class="line">install git-flow || brew upgrade git-flow || true
+</span><span class="line">install giter8 || brew upgrade giter8 || true
+</span><span class="line">install glib || brew upgrade glib || true
+</span><span class="line">install gmp || brew upgrade gmp || true
+</span><span class="line">install go --cross-compile-all || brew upgrade go || true
+</span><span class="line">install gobject-introspection || brew upgrade gobject-introspection || true
+</span><span class="line">install gradle || brew upgrade gradle || true
+</span><span class="line">install groovy || brew upgrade groovy || true
+</span><span class="line">install gtk+ || brew upgrade gtk+ || true
+</span><span class="line">install gtksourceview || brew upgrade gtksourceview || true
+</span><span class="line">install harfbuzz || brew upgrade harfbuzz || true
+</span><span class="line">install haskell-platform || brew upgrade haskell-platform || true
+</span><span class="line">install htop-osx || brew upgrade htop-osx || true
+</span><span class="line">install hub || brew upgrade hub || true
+</span><span class="line">install icu4c || brew upgrade icu4c || true
+</span><span class="line">install intltool || brew upgrade intltool || true
+</span><span class="line">install isl || brew upgrade isl || true
+</span><span class="line">install jmeter || brew upgrade jmeter || true
+</span><span class="line">install jpeg || brew upgrade jpeg || true
+</span><span class="line">install less || brew upgrade less || true
+</span><span class="line">install libevent || brew upgrade libevent || true
+</span><span class="line">install libffi || brew upgrade libffi || true
+</span><span class="line">install libmpc || brew upgrade libmpc || true
+</span><span class="line">install libpng || brew upgrade libpng || true
+</span><span class="line">install libtiff || brew upgrade libtiff || true
+</span><span class="line">install libtool || brew upgrade libtool || true
+</span><span class="line">install libyaml || brew upgrade libyaml || true
+</span><span class="line">install lv || brew upgrade lv || true
+</span><span class="line">install macvim || brew upgrade macvim || true
+</span><span class="line">install markdown || brew upgrade markdown || true
+</span><span class="line">install maven || brew upgrade maven || true
+</span><span class="line">install meld || brew upgrade meld || true
+</span><span class="line">install mercurial || brew upgrade mercurial || true
+</span><span class="line">install mpfr || brew upgrade mpfr || true
+</span><span class="line">install mysql || brew upgrade mysql || true
+</span><span class="line">install neon || brew upgrade neon || true
+</span><span class="line">install nkf || brew upgrade nkf || true
+</span><span class="line">install nmap || brew upgrade nmap || true
+</span><span class="line">install node || brew upgrade node || true
+</span><span class="line">install openssl || brew upgrade openssl || true
+</span><span class="line">install ossp-uuid || brew upgrade ossp-uuid || true
+</span><span class="line">install pango || brew upgrade pango || true
+</span><span class="line">install pcre || brew upgrade pcre || true
+</span><span class="line">install pixman || brew upgrade pixman || true
+</span><span class="line">install pkg-config || brew upgrade pkg-config || true
+</span><span class="line">install play || brew upgrade play || true
+</span><span class="line">install postgresql || brew upgrade postgresql || true
+</span><span class="line">install pow || brew upgrade pow || true
+</span><span class="line">install pstree || brew upgrade pstree || true
+</span><span class="line">install py2cairo || brew upgrade py2cairo || true
+</span><span class="line">install pygobject || brew upgrade pygobject || true
+</span><span class="line">install pygtk || brew upgrade pygtk || true
+</span><span class="line">install pygtksourceview || brew upgrade pygtksourceview || true
+</span><span class="line">install python || brew upgrade python || true
+</span><span class="line">install rarian || brew upgrade rarian || true
+</span><span class="line">install rbenv || brew upgrade rbenv || true
+</span><span class="line">install readline || brew upgrade readline || true
+</span><span class="line">install reattach-to-user-namespace || brew upgrade reattach-to-user-namespace || true
+</span><span class="line">install ruby-build || brew upgrade ruby-build || true
+</span><span class="line">install sbt || brew upgrade sbt || true
+</span><span class="line">install scala || brew upgrade scala || true
+</span><span class="line">install scons || brew upgrade scons || true
+</span><span class="line">install serf || brew upgrade serf || true
+</span><span class="line">install source-highlight || brew upgrade source-highlight || true
+</span><span class="line">install sqlite || brew upgrade sqlite || true
+</span><span class="line">install subversion || brew upgrade subversion || true
+</span><span class="line">install the_silver_searcher || brew upgrade the_silver_searcher || true
+</span><span class="line">install tig || brew upgrade tig || true
+</span><span class="line">install tmux || brew upgrade tmux || true
+</span><span class="line">install tomcat || brew upgrade tomcat || true
+</span><span class="line">install tree || brew upgrade tree || true
+</span><span class="line">install vim || brew upgrade vim || true
+</span><span class="line">install watch || brew upgrade watch || true
+</span><span class="line">install wget || brew upgrade wget || true
+</span><span class="line">install xctool || brew upgrade xctool || true
+</span><span class="line">install xz || brew upgrade xz || true
+</span><span class="line">install yuicompressor || brew upgrade yuicompressor || true
+</span><span class="line">install z || brew upgrade z || true
+</span><span class="line">install zsh || brew upgrade zsh || true
+</span><span class="line">install zsh-completions || brew upgrade zsh-completions || true
+</span><span class="line">
+</span><span class="line"># brew cask
+</span><span class="line">cask install alfred || cask upgrade alfred || true
+</span><span class="line">cask install diffmerge || cask upgrade diffmerge || true
+</span><span class="line">cask install rstudio || cask upgrade rstudio || true
+</span><span class="line">cask install vagrant || cask upgrade vagrant || true
+</span><span class="line">cask install vlc || cask upgrade vlc || true
+</span><span class="line">cask install dash || cask upgrade dash || true
+</span><span class="line">cask install p4merge || cask upgrade p4merge || true
+</span><span class="line">cask install sourcetree || cask upgrade sourcetree || true
+</span><span class="line">cask install virtualbox || cask upgrade virtualbox || true
+</span><span class="line">cask install xquartz || cask upgrade xquartz || true
+</span><span class="line">cask install xmind || cask upgrade xmind || true
+</span><span class="line">cask install wireshark || cask upgrade wireshark || true
+</span><span class="line">cask install google-chrome || cask upgrade google-chrome || true
+</span><span class="line">cask install google-drive || cask upgrade google-drive || true
+</span><span class="line">cask install google-web-designer || cask upgrade google-web-designer || true
+</span><span class="line">cask install keyremap4macbook || cask upgrade keyremap4macbook || true
+</span><span class="line">cask install sublime-text || cask upgrade sublime-text || true
+</span><span class="line">cask install skype || cask upgrade skype || true
+</span><span class="line">cask install skitch || cask upgrade skitch || true
+</span><span class="line">cask install bettertouchtool || cask upgrade bettertouchtool || true
+</span><span class="line">cask install bitcasa || cask upgrade bitcasa || true
+</span><span class="line">cask install dropbox || cask upgrade dropbox || true
+</span><span class="line">cask install evernote || cask upgrade evernote || true
+</span><span class="line">cask install mendeley || cask upgrade mendeley || true
+</span><span class="line">cask install mysql-workbench || cask upgrade mysql-workbench || true
+</span><span class="line">cask install iterm2 || cask upgrade iterm2 || true</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-5">まとめ</h2>
+
+<p>必要なものはこのファイルに書いていくことで必要なアプリケーションが管理出来る状態となった。</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Makoto WATANABE (makotow)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-05T00:15:00+09:00" pubdate data-updated="true">Feb 5<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/brew/'>brew</a>, <a class='category' href='/blog/categories/macxosx/'>macxosx</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+
+  
+<div><a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u=http://makotow.github.io/blog/2014/02/05/brewfile/"><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=Brewfileでパッケージ管理&amp;url=http://makotow.github.io/blog/2014/02/05/brewfile/"><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://makotow.github.io/blog/2014/02/05/brewfile/&amp;summary=Brewfileでパッケージ管理"><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url=http://makotow.github.io/blog/2014/02/05/brewfile/"><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a></div>
+
+
+
+</div>
+
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/31/data-aggregation-2013/" title="Previous Post: 2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)">&laquo; 2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+
+<img class="left half" src="/images/profile/profile.png">
+  
+twitter: <a href="https://twitter.com/makotow">@makotow</a>
+<br/>
+
+    <p>
+        Software Development Engineer. SI屋勤務。
+    </p>
+
+    <p>
+    興味: Git/Scrum/Agile/Testing/CI/Scala/Ruby/ <br/>
+        VMWare/JavaScript/HPC/AWS　<br/>
+        高みを目指して。
+    </p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/31/data-aggregation-2013/">2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/28/how-to-use-man/">man の使い方</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/17/presentation-using-reveal-dot-js/">reveal.jsを使ってみる</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Tag Cloud</h1>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.33333333333333%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.33333333333333%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.33333333333333%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 140.0%'>Article(12)</a> <a href='/blog/categories/blog' style='font-size: 106.66666666666667%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 120.0%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 103.33333333333333%'>brew(1)</a> <a href='/blog/categories/buffer' style='font-size: 103.33333333333333%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 106.66666666666667%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.33333333333333%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.33333333333333%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.33333333333333%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.33333333333333%'>font(1)</a> <a href='/blog/categories/gist' style='font-size: 106.66666666666667%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.0%'>git(3)</a> <a href='/blog/categories/ifttt' style='font-size: 103.33333333333333%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.33333333333333%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.33333333333333%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.33333333333333%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.33333333333333%'>macosx(1)</a> <a href='/blog/categories/macxosx' style='font-size: 103.33333333333333%'>macxosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.33333333333333%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 103.33333333333333%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 123.33333333333333%'>octopress(7)</a> <a href='/blog/categories/pocket' style='font-size: 103.33333333333333%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.33333333333333%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.33333333333333%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 113.33333333333333%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 116.66666666666667%'>scala(5)</a> <a href='/blog/categories/scrum' style='font-size: 103.33333333333333%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.33333333333333%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.33333333333333%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.33333333333333%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.33333333333333%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.33333333333333%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.66666666666667%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(18)</a> <a href='/blog/categories/technology' style='font-size: 103.33333333333333%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.0%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.33333333333333%'>unix(1)</a> </span>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/makotow">@makotow</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'makotow',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+
+    <a class="twitter-timeline" href="https://twitter.com/makotow" data-widget-id="331289848642150400">@makotow からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
+    <a href="http://twitter.com/makotow" class="twitter-follow-button" data-show-count="true">Follow @makotow</a>
+  
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Makoto WATANABE (makotow) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'makotownotes';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.io/blog/2014/02/05/brewfile/';
+        var disqus_url = 'http://makotow.github.io/blog/2014/02/05/brewfile/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
