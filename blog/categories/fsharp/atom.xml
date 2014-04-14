@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: fsharp | Software Technology Memorandum and thoughts]]></title>
+  <link href="http://makotow.github.io/blog/categories/fsharp/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-04-15T00:58:24+09:00</updated>
+  <id>http://makotow.github.io/</id>
+  <author>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[20140415時点の近況]]></title>
+    <link href="http://makotow.github.io/blog/2014/04/15/tech201404/"/>
+    <updated>2014-04-15T00:16:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/04/15/tech201404</id>
+    <content type="html"><![CDATA[<p>２ヶ月記事更新なしだったので近況とか。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">2014年にはいってから注目しているテクノロジー</a>    <ul>
+      <li><a href="#aws-amazon-web-services">AWS (Amazon Web Services)</a></li>
+      <li><a href="#scala">Scala</a></li>
+      <li><a href="#go-lang">Go Lang</a></li>
+      <li><a href="#fsharp">FSharp</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-1">その他</a></li>
+</ul>
+
+<h2 id="section">2014年にはいってから注目しているテクノロジー</h2>
+
+<p>今年に入ってから興味を持って本格的に追い始めたもの。</p>
+
+<p>今更感があるかもしれないけども記録しておく。</p>
+
+<h3 id="aws-amazon-web-services">AWS (Amazon Web Services)</h3>
+
+<p>言わずもがなクラウド環境。
+現段階では一択だと思っている。（エンタープライズ用途としても）</p>
+
+<p>個人的にEC2を使い始めてみた。</p>
+
+<p>作ったアプリを動かしたりデータ収集したりするサーバにしたいと思ってる。</p>
+
+<p>検証環境としての使用も模索中。</p>
+
+<h3 id="scala">Scala</h3>
+
+<p>もう何年も前からやっている。ある程度の規模のアプリを作ったりはしていなかったので現在作成中
+Scala + JavaFX8 でクライアントアプリを作成中</p>
+
+<p>１つ作ったあとはMacOSXのDiffアプリを作ってみたい。</p>
+
+<h3 id="go-lang">Go Lang</h3>
+
+<p>最近流行っていたのでキャッチアップ。
+言語仕様とかまだ把握しきれていない。</p>
+
+<h3 id="fsharp">FSharp</h3>
+
+<p>Mac上に環境作ってHello Worldレベル。
+ものにするというかは新しい観点を身につけるために学習する。</p>
+
+<h2 id="section-1">その他</h2>
+
+<ul>
+  <li>読書記録も１年近く書いていないので復活させようと思います。</li>
+  <li>git とか sbt についてはなんとなくレベルアップ。</li>
+  <li>IntelliJ IDEA をほぼ毎日使ってる。ライセンス分くらいは使っているはず。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
