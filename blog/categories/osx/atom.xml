@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: macxosx | Software Technology Memorandum and thoughts]]></title>
-  <link href="http://makotow.github.io/blog/categories/macxosx/atom.xml" rel="self"/>
+  <title><![CDATA[Category: osx | Software Technology Memorandum and thoughts]]></title>
+  <link href="http://makotow.github.io/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-02-05T00:16:21+09:00</updated>
+  <updated>2014-04-15T00:39:39+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
