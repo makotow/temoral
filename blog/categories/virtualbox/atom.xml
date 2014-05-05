@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: virtualbox | Software Technology Memorandum and thoughts]]></title>
+  <link href="http://makotow.github.io/blog/categories/virtualbox/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-05-05T18:28:23+09:00</updated>
+  <id>http://makotow.github.io/</id>
+  <author>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Virtual Box ゲストから外部ネットワークにつながらない（解決済み）]]></title>
+    <link href="http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"/>
+    <updated>2014-05-05T18:12:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat</id>
+    <content type="html"><![CDATA[<p>WEB+DB Press vol80 の「テスト駆動インフラ」を写経中に遭遇した名前解決が出来なかった事象に対する対処方法。</p>
+
+<p>結果的には Virtual Box の設定を変更することで対応出来たので備忘録。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vP1yUfkZL._SL160_.jpg" alt="WEB+DB PRESS Vol.80" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">WEB+DB PRESS Vol.80</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 14.05.04</div></div><div class="amazlet-detail">鶴長 鎮一 宮下 剛輔 縣 俊貴 中村 知成 西尾 泰和 新井 俊一 南川 毅文 伊藤 直也 石垣 憲一 浅木 朗 渡邊 恵太 中島 聡 はまちや2 竹原 川添 貴生 河合 宜文 <br />技術評論社 <br />売り上げランキング: 463<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+<p>今回使ったソフトウェアのバージョン</p>
+
+<pre><code>OSX: 10.9.2
+Vagrant: 1.5.4
+ruby: 2.1.0p0
+VirtualBox: 4.3.10-93012
+Guest OS: CentOS 6.4
+</code></pre>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#webdb-vol80-ci">WEB+DB vol80 のインフラCIを写経中に遭遇</a>    <ul>
+      <li><a href="#puppet--rpm-">puppet を rpm でインストールするところでエラー</a></li>
+      <li><a href="#section">原因解析</a></li>
+      <li><a href="#section-1">対応</a></li>
+      <li><a href="#section-2">解決</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="webdb-vol80-ci">WEB+DB vol80 のインフラCIを写経中に遭遇</h2>
+
+<p>vagrant ファイルやらプロビジョニングに必要なもの（puppetのインストールとか）を作成後に</p>
+
+<pre><code>vagrant up
+</code></pre>
+
+<p>実行してしばらく放置してた。</p>
+
+<p>結果画面を見ると puppet がインストール失敗しているメッセージが出力されて仮想マシンはブートされていた。</p>
+
+<h3 id="puppet--rpm-">puppet を rpm でインストールするところでエラー</h3>
+
+<p>出力ログを見ていくとpuppetだけではなくて CentOSのイメージをダウンロードするところでもhostが見つからない旨のエラーメッセージが出力されていた。</p>
+
+<h3 id="section">原因解析</h3>
+
+<p>仮想マシンは作成されておりsshでログインできるためゲストOSで調査をする。</p>
+
+<p>出力されているエラーからネットワークにつながらないと推測できた。</p>
+
+<p>ping を適当な FQDN へ打ってみたが返答がないため推測はあっているようだ。</p>
+
+<p>ネットワークつながらないということは、</p>
+
+<ul>
+  <li>F/Wではじいている(F/W相当のフィルタ機能など)</li>
+  <li>名前解決ができていないということ</li>
+</ul>
+
+<p>が考えられるので、
+とりあえず F/W が原因ではないことの切り分けをするため、iptables のサービスを停止して再度 ping。</p>
+
+<p>想定通り事象は解決しないので再度 iptables のサービスを起動。</p>
+
+<p>次は名前解決をできるようにすれば事象は解決すること確認するため、</p>
+
+<p>DNS を明示的に Google Public DNSへ向けてみる（8.8.8.8,8.8.4.4)</p>
+
+<p>/etc/sysconfig/network-scripts/ifcfg-eth0 へ以下を追加し、</p>
+
+<pre><code>DNS1=8.8.8.8
+DNS2=8.8.4.4
+</code></pre>
+
+<p>network サービスを再起動</p>
+
+<pre><code>sudo service network restart
+</code></pre>
+
+<p>/etc/resolve.conf の nameserver に 8.8.8.8 と 8.8.4.4 が登録されているのを確認。
+(NIC起動時に ifcfg-eth0 へ追加した DNS のアドレスが /etc/resolve.conf へ書き込まれる)</p>
+
+<p>ping は通るようになった。</p>
+
+<p>名前解決が根本の原因なのでどこで対応するか考える。
+OS の プロビジョニング中に起きているのでそれ以前で対処しないといけない。</p>
+
+<h3 id="section-1">対応</h3>
+
+<p>プロビジョニング中に起きている事象なので puppet の設定で書くのには違和感を感じた。
+vagrantで対応できないか探ってみた。</p>
+
+<p>調べてみると VirtualBox のネットワーク設定が NAT の場合のDNSの挙動に関する設定が VirtualBox 自体に存在していた。
+Vagrantファイルに設定を追加することで対応完了。 <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<ul>
+  <li>参照URL
+    <ul>
+      <li><a href="http://www.virtualbox.org/manual/ch09.html#nat-adv-dns">9.11.5. Enabling DNS proxy in NAT mode</a></li>
+      <li><a href="http://www.virtualbox.org/manual/ch09.html#nat_host_resolver_proxy">9.11.6. Using the host’s resolver as a DNS proxy in NAT mode</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="err">“</span><span class="mi">2</span><span class="err">”</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="c1"># add for dns</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="ss">:virtualbox</span> <span class="k">do</span> <span class="o">|</span><span class="n">vb</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">vb</span><span class="o">.</span><span class="n">customize</span> <span class="o">[</span><span class="err">“</span><span class="n">modifyvm</span><span class="err">”</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="err">“–</span><span class="n">natdnshostresolver1</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">on</span><span class="err">”</span><span class="o">]</span>
+</span><span class='line'>    <span class="n">vb</span><span class="o">.</span><span class="n">customize</span> <span class="o">[</span><span class="err">“</span><span class="n">modifyvm</span><span class="err">”</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="err">“–</span><span class="n">natdnsproxy1</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">on</span><span class="err">”</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="err">…</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3 id="section-2">解決</h3>
+
+<p>仮想マシンを破棄してプロビジョニングし直す。</p>
+
+<p>puppet のインストール完了し無事テストが出来るようになった。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>どちらかを設定すれば動作するように見えたがどちらも on にしないと通信ができなかった。<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]></content>
+  </entry>
+  
+</feed>

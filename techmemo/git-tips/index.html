@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="git-tips Apr 15th, 2014 Git を使っていて調べたこと書いていくページ。
-よく使うコマンド。 Contents 変更を戻したいとき リモートリポジトリを追加 タグをつける タグの一覧 SSH鍵認証しているはずなのに push する際にid, passを聞かれる &hellip;">
+よく使うコマンド。 Contents 変更を戻したいとき commit 前の変更をすべてなくしたいとき。（git add 前に戻る） git add -A とかした後に不要ファイル見つけた場合など &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -116,7 +116,11 @@ $(document).ready( function () {
 <h2> Contents </h2>
 
 <ul id="markdown-toc">
-  <li><a href="#section">変更を戻したいとき</a></li>
+  <li><a href="#section">変更を戻したいとき</a>    <ul>
+      <li><a href="#commit-git-add-">commit 前の変更をすべてなくしたいとき。（git add 前に戻る）</a></li>
+      <li><a href="#git-add--a-">git add -A とかした後に不要ファイル見つけた場合など。</a></li>
+    </ul>
+  </li>
   <li><a href="#section-1">リモートリポジトリを追加</a></li>
   <li><a href="#section-2">タグをつける</a></li>
   <li><a href="#section-3">タグの一覧</a></li>
@@ -125,30 +129,46 @@ $(document).ready( function () {
 
 <h2 id="section">変更を戻したいとき</h2>
 
-<p>commit 前の変更をすべてなくしたいとき。
-（git add 前に戻る）</p>
+<h3 id="commit-git-add-">commit 前の変更をすべてなくしたいとき。（git add 前に戻る）</h3>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">git checkout .</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>たぶん、
-上記コマンドで変更をなかったコトにして</p>
+<p>上記コマンドで変更をなかったコトにして</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">git clean -n</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>で管理されていないを消すリストを出力
+<p>で管理されていない消すリストを出力
 実際には消してない</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">git clean -f</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>で全削除</p>
+
+<h3 id="git-add--a-">git add -A とかした後に不要ファイル見つけた場合など。</h3>
+
+<p>ファイルシステム上には残しておきたい場合かつgitからは消したい場合</p>
+
+<p>ファイル単位</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">git rm --cached file</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>フォルダ単位</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">git rm -r --cached directory</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h2 id="section-1">リモートリポジトリを追加</h2>
 
-<p>リモートブランチを追加
-origin - 別名
-url - 実際のURL</p>
+<p>リモートブランチを追加</p>
+
+<ul>
+  <li>origin : 別名</li>
+  <li>url : 実際のURL</li>
+</ul>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">git add remote origin url</span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -266,6 +286,10 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/">Virtual Box ゲストから外部ネットワークにつながらない（解決済み）</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/15/tech201404/">20140415時点の近況</a>
       </li>
     
@@ -281,15 +305,11 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
         <a href="/blog/2013/11/28/how-to-use-man/">man の使い方</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.33333333333333%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.33333333333333%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.33333333333333%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 143.33333333333334%'>Article(13)</a> <a href='/blog/categories/aws' style='font-size: 103.33333333333333%'>aws(1)</a> <a href='/blog/categories/blog' style='font-size: 106.66666666666667%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 120.0%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 103.33333333333333%'>brew(1)</a> <a href='/blog/categories/buffer' style='font-size: 103.33333333333333%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 106.66666666666667%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.33333333333333%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.33333333333333%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.33333333333333%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.33333333333333%'>font(1)</a> <a href='/blog/categories/fsharp' style='font-size: 103.33333333333333%'>fsharp(1)</a> <a href='/blog/categories/gist' style='font-size: 106.66666666666667%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.0%'>git(3)</a> <a href='/blog/categories/go-lang' style='font-size: 103.33333333333333%'>go-lang(1)</a> <a href='/blog/categories/ifttt' style='font-size: 103.33333333333333%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.33333333333333%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.33333333333333%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>Linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.33333333333333%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.33333333333333%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.33333333333333%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 103.33333333333333%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 123.33333333333333%'>octopress(7)</a> <a href='/blog/categories/osx' style='font-size: 103.33333333333333%'>osx(1)</a> <a href='/blog/categories/pocket' style='font-size: 103.33333333333333%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.33333333333333%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.33333333333333%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 113.33333333333333%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(6)</a> <a href='/blog/categories/scrum' style='font-size: 103.33333333333333%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.33333333333333%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.33333333333333%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.33333333333333%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.33333333333333%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.33333333333333%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.66666666666667%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(18)</a> <a href='/blog/categories/technology' style='font-size: 103.33333333333333%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.0%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.33333333333333%'>unix(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.33333333333333%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.33333333333333%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.33333333333333%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 143.33333333333334%'>Article(13)</a> <a href='/blog/categories/aws' style='font-size: 103.33333333333333%'>aws(1)</a> <a href='/blog/categories/blog' style='font-size: 106.66666666666667%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 120.0%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 103.33333333333333%'>brew(1)</a> <a href='/blog/categories/buffer' style='font-size: 103.33333333333333%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 106.66666666666667%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.33333333333333%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.33333333333333%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.33333333333333%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.33333333333333%'>font(1)</a> <a href='/blog/categories/fsharp' style='font-size: 103.33333333333333%'>fsharp(1)</a> <a href='/blog/categories/gist' style='font-size: 106.66666666666667%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.0%'>git(3)</a> <a href='/blog/categories/go-lang' style='font-size: 103.33333333333333%'>go-lang(1)</a> <a href='/blog/categories/ifttt' style='font-size: 103.33333333333333%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.33333333333333%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.33333333333333%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.33333333333333%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.33333333333333%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.33333333333333%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 106.66666666666667%'>network(2)</a> <a href='/blog/categories/octopress' style='font-size: 123.33333333333333%'>octopress(7)</a> <a href='/blog/categories/osx' style='font-size: 103.33333333333333%'>osx(1)</a> <a href='/blog/categories/pocket' style='font-size: 103.33333333333333%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.33333333333333%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.33333333333333%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 113.33333333333333%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(6)</a> <a href='/blog/categories/scrum' style='font-size: 103.33333333333333%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.33333333333333%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.33333333333333%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.33333333333333%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.33333333333333%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.33333333333333%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.66666666666667%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 103.33333333333333%'>Techmemo(1)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(18)</a> <a href='/blog/categories/technology' style='font-size: 103.33333333333333%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.0%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.33333333333333%'>unix(1)</a> <a href='/blog/categories/vagrant' style='font-size: 103.33333333333333%'>vagrant(1)</a> <a href='/blog/categories/virtualbox' style='font-size: 103.33333333333333%'>virtualbox(1)</a> </span>
 </section>
 
 <section>

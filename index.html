@@ -9,7 +9,7 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="２ヶ月記事更新なしだったので近況とか。 ">
+  <meta name="description" content="WEB+DB Press vol80 の「テスト駆動インフラ」を写経中に遭遇した名前解決が出来なかった事象に対する対処方法。 結果的には Virtual Box の設定を変更することで対応出来たので備忘録。 WEB+DB PRESS Vol.80posted with amazlet at 14. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,60 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/">Virtual Box ゲストから外部ネットワークにつながらない（解決済み）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-05T18:12:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>WEB+DB Press vol80 の「テスト駆動インフラ」を写経中に遭遇した名前解決が出来なかった事象に対する対処方法。</p>
+
+<p>結果的には Virtual Box の設定を変更することで対応出来たので備忘録。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vP1yUfkZL._SL160_.jpg" alt="WEB+DB PRESS Vol.80" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">WEB+DB PRESS Vol.80</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 14.05.04</div></div><div class="amazlet-detail">鶴長 鎮一 宮下 剛輔 縣 俊貴 中村 知成 西尾 泰和 新井 俊一 南川 毅文 伊藤 直也 石垣 憲一 浅木 朗 渡邊 恵太 中島 聡 はまちや2 竹原 川添 貴生 河合 宜文 <br />技術評論社 <br />売り上げランキング: 463<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+<p>今回使ったソフトウェアのバージョン</p>
+
+<pre><code>OSX: 10.9.2
+Vagrant: 1.5.4
+ruby: 2.1.0p0
+VirtualBox: 4.3.10-93012
+Guest OS: CentOS 6.4
+</code></pre>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -554,58 +608,6 @@ Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-03T00:14:00+09:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2> Contents </h2>
-
-<ul id="markdown-toc">
-  <li><a href="#section">概要</a></li>
-  <li><a href="#section-1">前回の作業内容</a></li>
-  <li><a href="#section-2">今日やること（依存ライブラリの追加）</a></li>
-</ul>
-
-<h2 id="section">概要</h2>
-
-<p><a href="/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
-
-<p>今回はScalaTestを導入。
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -639,6 +641,10 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/">Virtual Box ゲストから外部ネットワークにつながらない（解決済み）</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/15/tech201404/">20140415時点の近況</a>
       </li>
     
@@ -654,15 +660,11 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
         <a href="/blog/2013/11/28/how-to-use-man/">man の使い方</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/06/kindle-on-mac/">MacでKindleを読む</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.33333333333333%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.33333333333333%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.33333333333333%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 143.33333333333334%'>Article(13)</a> <a href='/blog/categories/aws' style='font-size: 103.33333333333333%'>aws(1)</a> <a href='/blog/categories/blog' style='font-size: 106.66666666666667%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 120.0%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 103.33333333333333%'>brew(1)</a> <a href='/blog/categories/buffer' style='font-size: 103.33333333333333%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 106.66666666666667%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.33333333333333%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.33333333333333%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.33333333333333%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.33333333333333%'>font(1)</a> <a href='/blog/categories/fsharp' style='font-size: 103.33333333333333%'>fsharp(1)</a> <a href='/blog/categories/gist' style='font-size: 106.66666666666667%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.0%'>git(3)</a> <a href='/blog/categories/go-lang' style='font-size: 103.33333333333333%'>go-lang(1)</a> <a href='/blog/categories/ifttt' style='font-size: 103.33333333333333%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.33333333333333%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.33333333333333%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>Linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.33333333333333%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.33333333333333%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.33333333333333%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 103.33333333333333%'>network(1)</a> <a href='/blog/categories/octopress' style='font-size: 123.33333333333333%'>octopress(7)</a> <a href='/blog/categories/osx' style='font-size: 103.33333333333333%'>osx(1)</a> <a href='/blog/categories/pocket' style='font-size: 103.33333333333333%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.33333333333333%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.33333333333333%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 113.33333333333333%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(6)</a> <a href='/blog/categories/scrum' style='font-size: 103.33333333333333%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.33333333333333%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.33333333333333%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.33333333333333%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.33333333333333%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.33333333333333%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.66666666666667%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(18)</a> <a href='/blog/categories/technology' style='font-size: 103.33333333333333%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.0%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.33333333333333%'>unix(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 103.33333333333333%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 103.33333333333333%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 103.33333333333333%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 143.33333333333334%'>Article(13)</a> <a href='/blog/categories/aws' style='font-size: 103.33333333333333%'>aws(1)</a> <a href='/blog/categories/blog' style='font-size: 106.66666666666667%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 120.0%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 103.33333333333333%'>brew(1)</a> <a href='/blog/categories/buffer' style='font-size: 103.33333333333333%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 106.66666666666667%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 103.33333333333333%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 103.33333333333333%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 103.33333333333333%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 103.33333333333333%'>font(1)</a> <a href='/blog/categories/fsharp' style='font-size: 103.33333333333333%'>fsharp(1)</a> <a href='/blog/categories/gist' style='font-size: 106.66666666666667%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 110.0%'>git(3)</a> <a href='/blog/categories/go-lang' style='font-size: 103.33333333333333%'>go-lang(1)</a> <a href='/blog/categories/ifttt' style='font-size: 103.33333333333333%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.0%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 103.33333333333333%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 103.33333333333333%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>Linux(1)</a> <a href='/blog/categories/linux' style='font-size: 103.33333333333333%'>linux(1)</a> <a href='/blog/categories/mac' style='font-size: 103.33333333333333%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 103.33333333333333%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 103.33333333333333%'>memorandum(1)</a> <a href='/blog/categories/network' style='font-size: 106.66666666666667%'>network(2)</a> <a href='/blog/categories/octopress' style='font-size: 123.33333333333333%'>octopress(7)</a> <a href='/blog/categories/osx' style='font-size: 103.33333333333333%'>osx(1)</a> <a href='/blog/categories/pocket' style='font-size: 103.33333333333333%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 103.33333333333333%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 110.0%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 103.33333333333333%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 113.33333333333333%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 120.0%'>scala(6)</a> <a href='/blog/categories/scrum' style='font-size: 103.33333333333333%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 103.33333333333333%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 103.33333333333333%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 103.33333333333333%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 103.33333333333333%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 103.33333333333333%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 106.66666666666667%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 103.33333333333333%'>Techmemo(1)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(18)</a> <a href='/blog/categories/technology' style='font-size: 103.33333333333333%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.0%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 103.33333333333333%'>unix(1)</a> <a href='/blog/categories/vagrant' style='font-size: 103.33333333333333%'>vagrant(1)</a> <a href='/blog/categories/virtualbox' style='font-size: 103.33333333333333%'>virtualbox(1)</a> </span>
 </section>
 
 <section>
