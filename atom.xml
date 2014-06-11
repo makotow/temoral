@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Software Technology Memorandum and thoughts]]></title>
+  <title><![CDATA[Faster and Faster]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-05-05T18:28:23+09:00</updated>
+  <updated>2014-06-12T00:14:20+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,115 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ブログタイトル変えました]]></title>
+    <link href="http://makotow.github.io/blog/2014/06/11/change-blog-title/"/>
+    <updated>2014-06-11T23:18:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/06/11/change-blog-title</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">ブログタイトル変更</a></li>
+  <li><a href="#section-1">理由とか想い</a></li>
+  <li><a href="#section-2">ついでに</a></li>
+</ul>
+
+<h2 id="section">ブログタイトル変更</h2>
+
+<p>「Software Technology Memorandum and thoughts」から
+「Faster and Faster」 に変更しました。</p>
+
+<p>有名ブログでもないしこれからも気持ちが変わればバンバン変えていこうと思います。</p>
+
+<h2 id="section-1">理由とか想い</h2>
+
+<p>前のタイトルは「Software Technology Memorandum and thoughts」でした。
+ブログの内容を表すタイトルとしてそのまま書いていました。</p>
+
+<p>これからは「こうなりたい」という思いを込めて変えてみました。</p>
+
+<pre><code>速く、もっと速く
+</code></pre>
+
+<p>仕事を始めてある程度年数もたち、諸先輩方ほど経験は積んでいないけれどもひと通りは社会に適応できるようになって思ったのが、
+速いことは何事においてもいいことだと最近強く思うようになりました。</p>
+
+<p>これからも自分は速さを重要視して、何事においても「もっと速く」という思いを忘れないようにブログタイトルを変更してみました。</p>
+
+<h2 id="section-2">ついでに</h2>
+
+<p>ブログデザインも変えてみました。
+かなりミニマルになったのではないかと思います。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OSX のキーバインド周り]]></title>
+    <link href="http://makotow.github.io/blog/2014/06/11/macosx-keybinding/"/>
+    <updated>2014-06-11T23:17:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/06/11/macosx-keybinding</id>
+    <content type="html"><![CDATA[<p>WWDC 2014 で Macbook Pro は新しく発表されないようだったので、
+少し前に Macbook Pro 13 インチを購入してみました。</p>
+
+<p>brew, brew-cask でソフトウェアの導入は自動化済み（<a href="http://makotow.github.io/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）
+ 、設定ファイル一式は github から clone 、またはDropboxの同期でセットアップできたので特に苦労した覚えはなかったが、
+使いはじめるとOSX周りのキーバインドの設定を自動化できてなかったので備忘のためメモ。</p>
+
+<p>OSX設定の自動化もおできるといいのだけれども今のところ見つからず。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">キーバインド、設定など</a>    <ul>
+      <li><a href="#mission-">Mission コントロール</a></li>
+      <li><a href="#spotlight-">spotlight バインド変更</a></li>
+      <li><a href="#keyremap4macbook">KeyRemap4MacBook</a></li>
+      <li><a href="#controlcaps-lock-">Control　を　Caps Lock に割り当て</a></li>
+      <li><a href="#trackpad">Trackpad　</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section">キーバインド、設定など</h2>
+
+<h3 id="mission-">Mission コントロール</h3>
+
+<p>Ctrl　＋　→、Ctrl + ←　でスペースの移動ができるが無効に設定</p>
+
+<p>System Preferences &gt; Keyboard &gt; Shortcut &gt; Mission Control &gt; Mission Controlの
+Move left a space, Move right a space のチェックを外す</p>
+
+<h3 id="spotlight-">spotlight バインド変更</h3>
+
+<p>Ctrl + Space に割り当てらているので、
+F1に再割当て</p>
+
+<p>System Preferences &gt; Keyboard &gt; Shortcut &gt; Spotlight &gt; Show Spotlight search field
+をF1へ。</p>
+
+<h3 id="keyremap4macbook">KeyRemap4MacBook</h3>
+
+<ul>
+  <li>英字、日本語入力の切り替え（USキーボードのため）</li>
+  <li>Fn に Cmd　を割り当て</li>
+  <li>option(右側）にFnを割り当て</li>
+</ul>
+
+<p><img src="http://makotow.github.io/images/2014/06/KeyRemap4MacBook.png" /></p>
+
+<h3 id="controlcaps-lock-">Control　を　Caps Lock に割り当て</h3>
+
+<p>System Preferences &gt; Keyboard &gt; Modifier Keys </p>
+
+<p>Caps Lock を Controlへする。</p>
+
+<h3 id="trackpad">Trackpad　</h3>
+
+<p>System Preferences &gt; Point &amp; Click &gt; Three Finger drag にチェックを入れる。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Virtual Box ゲストから外部ネットワークにつながらない（解決済み）]]></title>
@@ -1924,81 +2033,6 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
   <li>マルチ学習</li>
   <li>暗黙知・形式知</li>
 </ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[フェルドマン式知的生産術　読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/01/feldman/"/>
-    <updated>2013-03-01T00:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/01/feldman</id>
-    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:20px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51ce0O0AUwL._SL160_.jpg" alt="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">フェルドマン式知的生産術 ― 国境、業界を越えて働く人に</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4833420244/makotownotes-22/ref=nosim/" title="フェルドマン式知的生産術 ― 国境、業界を越えて働く人に" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">ロバート・アラン フェルドマン <br />プレジデント社 <br />売り上げランキング: 10486<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833420244/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<!-- more -->
-
-<p><br />
-著者の主張は章のタイトルでほとんどが表現されているように感じた。</p>
-
-<p>内容は実体験をもとにした理論付け</p>
-
-<ul>
-  <li>理論付けとして、政治の話、お金の話が多い（著者の背景上）</li>
-  <li>数字が文章中におおいため納得しやすい。</li>
-  <li>分量的にはそれほどではないためこういうことも覚えておこうといった感じで読むのがいいかもしれない。</li>
-</ul>
-
-<p>時間管理の章ぐらいから自分が知りたい情報が多かった。
-次の日のスケジュールをつくるところはわかってはいるけどもできなかった。予実管理に終始してしまったところだった。</p>
-
-<p>今後はここに書いてある例でやっていきたい。</p>
-
-<p>最終的には、時間管理の章以降は付箋を貼る箇所が多くなった。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[漫画で学ぶプロジェクトマネジメント読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/02/20/pmintro/"/>
-    <updated>2013-02-20T01:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/02/20/pmintro</id>
-    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/517oihajcyL._SL160_.jpg" alt="マンガでわかるプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">マンガでわかるプロジェクトマネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4274068544/makotownotes-22/ref=nosim/" title="マンガでわかるプロジェクトマネジメント" target="_blank">amazlet</a> at 12.12.09</div></div><div class="amazlet-detail">広兼 修 <br />オーム社 <br />売り上げランキング: 7711<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068544/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<p>漫画で学ぶプロジェクトマネジメント読書録を読んだ感想。</p>
-
-<!-- more -->
-
-<p>自分としては、基本をすっとばして物事をやっているため、
-優しいくらいの基本を学べてよかったと思う。
-体系的に学ぶ第一歩となるのではないかと思う。</p>
-
-<p>本書の特徴として、</p>
-
-<ul>
-  <li>非常に容易(わかり易く解説してある）</li>
-  <li>漫画のためサクサクよめる</li>
-  <li>一部、フォローのためのコラムあり</li>
-  <li>内容にPMBOKなどの用語が出てくるため、次になにを学ぶかがわかる。（調べるべきキーワードがわかりやすい）</li>
-  <li>新入社員、新米PM、PMとは何をやっているかを知りたい人向け</li>
-</ul>
-
-<h2 id="section">今後の指針</h2>
-<p>プロジェクト・マネジメントで自分が読んだものでおすすめできるものを挙げる。</p>
-
-<h3 id="section-1">プロジェクト・マネジメント</h3>
-<p>なんかかPMに近い立場を体験したあとに読むと勉強になるはず。
-読むたびに新しい発見がありそう。</p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/4106A8SHJRL._SL160_.jpg" alt="アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アート・オブ・プロジェクトマネジメント ―マイクロソフトで培われた実践手法 (THEORY/IN/PRACTICE)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Scott Berkun <br />オライリー・ジャパン <br />売り上げランキング: 51,421<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873112990/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<h3 id="section-2">アジャイル開発</h3>
-
-<p>アジャイル開発に興味が出たら</p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg" alt="アジャイルサムライ−達人開発者への道−" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルサムライ−達人開発者への道−</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Jonathan Rasmusson <br />オーム社 <br />売り上げランキング: 2,147<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51A8BTrHYxL._SL160_.jpg" alt="アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.19</div></div><div class="amazlet-detail">Mike Cohn マイク コーン <br />毎日コミュニケーションズ <br />売り上げランキング: 20,349<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839924023/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
 ]]></content>
   </entry>
   

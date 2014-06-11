@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: osx | Software Technology Memorandum and thoughts]]></title>
+  <title><![CDATA[Category: osx | Faster and Faster]]></title>
   <link href="http://makotow.github.io/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-05-05T18:28:23+09:00</updated>
+  <updated>2014-06-12T00:14:20+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OSX のキーバインド周り]]></title>
+    <link href="http://makotow.github.io/blog/2014/06/11/macosx-keybinding/"/>
+    <updated>2014-06-11T23:17:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/06/11/macosx-keybinding</id>
+    <content type="html"><![CDATA[<p>WWDC 2014 で Macbook Pro は新しく発表されないようだったので、
+少し前に Macbook Pro 13 インチを購入してみました。</p>
+
+<p>brew, brew-cask でソフトウェアの導入は自動化済み（<a href="/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）
+ 、設定ファイル一式は github から clone 、またはDropboxの同期でセットアップできたので特に苦労した覚えはなかったが、
+使いはじめるとOSX周りのキーバインドの設定を自動化できてなかったので備忘のためメモ。</p>
+
+<p>OSX設定の自動化もおできるといいのだけれども今のところ見つからず。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">キーバインド、設定など</a>    <ul>
+      <li><a href="#mission-">Mission コントロール</a></li>
+      <li><a href="#spotlight-">spotlight バインド変更</a></li>
+      <li><a href="#keyremap4macbook">KeyRemap4MacBook</a></li>
+      <li><a href="#controlcaps-lock-">Control　を　Caps Lock に割り当て</a></li>
+      <li><a href="#trackpad">Trackpad　</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section">キーバインド、設定など</h2>
+
+<h3 id="mission-">Mission コントロール</h3>
+
+<p>Ctrl　＋　→、Ctrl + ←　でスペースの移動ができるが無効に設定</p>
+
+<p>System Preferences &gt; Keyboard &gt; Shortcut &gt; Mission Control &gt; Mission Controlの
+Move left a space, Move right a space のチェックを外す</p>
+
+<h3 id="spotlight-">spotlight バインド変更</h3>
+
+<p>Ctrl + Space に割り当てらているので、
+F1に再割当て</p>
+
+<p>System Preferences &gt; Keyboard &gt; Shortcut &gt; Spotlight &gt; Show Spotlight search field
+をF1へ。</p>
+
+<h3 id="keyremap4macbook">KeyRemap4MacBook</h3>
+
+<ul>
+  <li>英字、日本語入力の切り替え（USキーボードのため）</li>
+  <li>Fn に Cmd　を割り当て</li>
+  <li>option(右側）にFnを割り当て</li>
+</ul>
+
+<p><img src="/images/2014/06/KeyRemap4MacBook.png"></p>
+
+<h3 id="controlcaps-lock-">Control　を　Caps Lock に割り当て</h3>
+
+<p>System Preferences &gt; Keyboard &gt; Modifier Keys </p>
+
+<p>Caps Lock を Controlへする。</p>
+
+<h3 id="trackpad">Trackpad　</h3>
+
+<p>System Preferences &gt; Point &amp; Click &gt; Three Finger drag にチェックを入れる。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Brewfileでパッケージ管理]]></title>

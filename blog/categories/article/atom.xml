@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Article | Software Technology Memorandum and thoughts]]></title>
+  <title><![CDATA[Category: Article | Faster and Faster]]></title>
   <link href="http://makotow.github.io/blog/categories/article/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-05-05T18:28:23+09:00</updated>
+  <updated>2014-06-12T00:14:20+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ブログタイトル変えました]]></title>
+    <link href="http://makotow.github.io/blog/2014/06/11/change-blog-title/"/>
+    <updated>2014-06-11T23:18:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/06/11/change-blog-title</id>
+    <content type="html"><![CDATA[<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">ブログタイトル変更</a></li>
+  <li><a href="#section-1">理由とか想い</a></li>
+  <li><a href="#section-2">ついでに</a></li>
+</ul>
+
+<h2 id="section">ブログタイトル変更</h2>
+
+<p>「Software Technology Memorandum and thoughts」から
+「Faster and Faster」 に変更しました。</p>
+
+<p>有名ブログでもないしこれからも気持ちが変わればバンバン変えていこうと思います。</p>
+
+<h2 id="section-1">理由とか想い</h2>
+
+<p>前のタイトルは「Software Technology Memorandum and thoughts」でした。
+ブログの内容を表すタイトルとしてそのまま書いていました。</p>
+
+<p>これからは「こうなりたい」という思いを込めて変えてみました。</p>
+
+<pre><code>速く、もっと速く
+</code></pre>
+
+<p>仕事を始めてある程度年数もたち、諸先輩方ほど経験は積んでいないけれどもひと通りは社会に適応できるようになって思ったのが、
+速いことは何事においてもいいことだと最近強く思うようになりました。</p>
+
+<p>これからも自分は速さを重要視して、何事においても「もっと速く」という思いを忘れないようにブログタイトルを変更してみました。</p>
+
+<h2 id="section-2">ついでに</h2>
+
+<p>ブログデザインも変えてみました。
+かなりミニマルになったのではないかと思います。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[20140415時点の近況]]></title>
@@ -368,47 +410,6 @@ Scalaで書かれている。</p>
 <h3 id="reference">Reference</h3>
 
 <p><iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[実践テスト駆動開発　読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/30/tddprac/"/>
-    <updated>2013-03-30T13:30:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/30/tddprac</id>
-    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<p>軽いメモ書き。
-個人的に結構なボリュームがある書籍であった。</p>
-
-<!-- more -->
-
-<h3 id="section">感想</h3>
-
-<p>読んでから少したってしまったので箇条書きで感想。</p>
-
-<ul>
-  <li>1章が一番しっくりきた。</li>
-  <li>テストコードをどうコーディングするかをかなり多くのサンプルをみながら理解できた。</li>
-  <li>モックオブジェクト(jMock2)について理解を深めることができた。</li>
-  <li>同期処理、非同期処理についても言及しているため、非同期処理のテストについて学びたく買ったので良かった。</li>
-</ul>
-
-<p>実際、設計を進化させながら進んでいる。
-  途中でこれは微妙だなと思うことがあっても章が進むと改善されていくので、自分の設計思想と同じだなと思ったり、
-  こういうやり方があるかなどと読み進めていけて面白かった。</p>
-
-<p>この書籍自体にはテスティングフレームワークの使用方法などは載っていないが、
-  書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
-  なにを使ったらよいかの参考になるのではないか。</p>
-
-<h3 id="section-1">参考</h3>
-
-<p>テスト駆動開発といえばこれ。
-併せて読むと理解が進むと思う。</p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" alt="テスト駆動開発入門" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">テスト駆動開発入門</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.30</div></div><div class="amazlet-detail">ケント ベック <br />ピアソンエデュケーション <br />売り上げランキング: 105,111<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 ]]></content>
   </entry>

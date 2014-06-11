@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: scala | Software Technology Memorandum and thoughts]]></title>
+  <title><![CDATA[Category: scala | Faster and Faster]]></title>
   <link href="http://makotow.github.io/blog/categories/scala/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-05-05T18:28:23+09:00</updated>
+  <updated>2014-06-12T00:14:20+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
