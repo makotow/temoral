@@ -4,7 +4,7 @@
   <title><![CDATA[Faster and Faster]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-06-15T17:20:12+09:00</updated>
+  <updated>2014-06-15T17:28:54+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -419,7 +419,7 @@ install XXX || upgrade XXX || true
 <h2 id="section-3">課題？</h2>
 
 <p>よくわからないパッケージがあったりするので
-不要なものについては適宜削除してメンテしていきたい。</p>
+不要なものは適宜削除してメンテしていきたい。</p>
 ]]></content>
   </entry>
   
