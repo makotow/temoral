@@ -4,7 +4,7 @@
   <title><![CDATA[Faster and Faster]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-06-12T00:14:20+09:00</updated>
+  <updated>2014-06-15T17:20:12+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,416 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BrewfileでHomebrewパッケージ管理 その後]]></title>
+    <link href="http://makotow.github.io/blog/2014/06/15/brewfile-2/"/>
+    <updated>2014-06-15T16:18:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/06/15/brewfile-2</id>
+    <content type="html"><![CDATA[<p>過去記事（<a href="http://makotow.github.io/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）の続きです。</p>
+
+<p>導入後Brewfileの機能についてキャッチアップはしてなかったのですが、
+仕様が変わってBrewfileが綺麗に書けるようになっていたり過去記事に書いていたことが間違っているのが判明したため、
+綺麗に書き直してみました。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">環境</a></li>
+  <li><a href="#section-2">作ったファイル</a></li>
+  <li><a href="#section-3">課題？</a></li>
+</ul>
+
+<h2 id="section">動機</h2>
+
+<p>cask に upgradeがなかった（過去記事の間違い）のと、
+cask の仕様変更で返り値がErrorではなくWarningになったりとかでもっとスッキリ書けるようになったので書きなおしてみた。</p>
+
+<h2 id="section-1">環境</h2>
+
+<p>以前とは環境が変わっているため念のため。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>brew &#8211;config </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">-&gt; % brew --config
+</span><span class="line">HOMEBREW_VERSION: 0.9.5
+</span><span class="line">ORIGIN: https://github.com/Homebrew/homebrew
+</span><span class="line">HEAD: 98dc2cdb64256dfa4529bfce03447e4e52507c28
+</span><span class="line">HOMEBREW_PREFIX: /usr/local
+</span><span class="line">HOMEBREW_CELLAR: /usr/local/Cellar
+</span><span class="line">CPU: quad-core 64-bit haswell
+</span><span class="line">OS X: 10.9.3-x86_64
+</span><span class="line">Xcode: 5.1.1
+</span><span class="line">CLT: 5.1.0.0.1.1396320587
+</span><span class="line">GCC-4.2: build 5666
+</span><span class="line">Clang: 5.1 build 503
+</span><span class="line">X11: 2.7.6 =&gt; /opt/X11
+</span><span class="line">System Ruby: 2.0.0-451
+</span><span class="line">Perl: /usr/bin/perl
+</span><span class="line">Python: /usr/local/bin/python =&gt; /usr/local/Cellar/python/2.7.7_2/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+</span><span class="line">Ruby: /usr/local/opt/rbenv/shims/ruby =&gt; /usr/local/Cellar/rbenv/0.4.0/shims/ruby</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">作ったファイル</h2>
+
+<p>tap xxx || true とか
+install XXX || upgrade XXX || true
+がなくなってスッキリ。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Brewfile</span><a href="https://gist.github.com/makotow/203a4d9d79eb7cb9ba81">link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+<span class="line-number">69</span>
+<span class="line-number">70</span>
+<span class="line-number">71</span>
+<span class="line-number">72</span>
+<span class="line-number">73</span>
+<span class="line-number">74</span>
+<span class="line-number">75</span>
+<span class="line-number">76</span>
+<span class="line-number">77</span>
+<span class="line-number">78</span>
+<span class="line-number">79</span>
+<span class="line-number">80</span>
+<span class="line-number">81</span>
+<span class="line-number">82</span>
+<span class="line-number">83</span>
+<span class="line-number">84</span>
+<span class="line-number">85</span>
+<span class="line-number">86</span>
+<span class="line-number">87</span>
+<span class="line-number">88</span>
+<span class="line-number">89</span>
+<span class="line-number">90</span>
+<span class="line-number">91</span>
+<span class="line-number">92</span>
+<span class="line-number">93</span>
+<span class="line-number">94</span>
+<span class="line-number">95</span>
+<span class="line-number">96</span>
+<span class="line-number">97</span>
+<span class="line-number">98</span>
+<span class="line-number">99</span>
+<span class="line-number">100</span>
+<span class="line-number">101</span>
+<span class="line-number">102</span>
+<span class="line-number">103</span>
+<span class="line-number">104</span>
+<span class="line-number">105</span>
+<span class="line-number">106</span>
+<span class="line-number">107</span>
+<span class="line-number">108</span>
+<span class="line-number">109</span>
+<span class="line-number">110</span>
+<span class="line-number">111</span>
+<span class="line-number">112</span>
+<span class="line-number">113</span>
+<span class="line-number">114</span>
+<span class="line-number">115</span>
+<span class="line-number">116</span>
+<span class="line-number">117</span>
+<span class="line-number">118</span>
+<span class="line-number">119</span>
+<span class="line-number">120</span>
+<span class="line-number">121</span>
+<span class="line-number">122</span>
+<span class="line-number">123</span>
+<span class="line-number">124</span>
+<span class="line-number">125</span>
+<span class="line-number">126</span>
+<span class="line-number">127</span>
+<span class="line-number">128</span>
+<span class="line-number">129</span>
+<span class="line-number">130</span>
+<span class="line-number">131</span>
+<span class="line-number">132</span>
+<span class="line-number">133</span>
+<span class="line-number">134</span>
+<span class="line-number">135</span>
+<span class="line-number">136</span>
+<span class="line-number">137</span>
+<span class="line-number">138</span>
+<span class="line-number">139</span>
+<span class="line-number">140</span>
+<span class="line-number">141</span>
+<span class="line-number">142</span>
+<span class="line-number">143</span>
+<span class="line-number">144</span>
+<span class="line-number">145</span>
+<span class="line-number">146</span>
+<span class="line-number">147</span>
+<span class="line-number">148</span>
+<span class="line-number">149</span>
+<span class="line-number">150</span>
+<span class="line-number">151</span>
+<span class="line-number">152</span>
+<span class="line-number">153</span>
+<span class="line-number">154</span>
+<span class="line-number">155</span>
+<span class="line-number">156</span>
+<span class="line-number">157</span>
+<span class="line-number">158</span>
+<span class="line-number">159</span>
+<span class="line-number">160</span>
+<span class="line-number">161</span>
+<span class="line-number">162</span>
+<span class="line-number">163</span>
+<span class="line-number">164</span>
+<span class="line-number">165</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># latest
+</span><span class="line">update
+</span><span class="line">
+</span><span class="line"># update all
+</span><span class="line">upgrade
+</span><span class="line">
+</span><span class="line"># add repository
+</span><span class="line">tap homebrew/binary
+</span><span class="line">tap caskroom/cask
+</span><span class="line">tap homebrew/dupes
+</span><span class="line">tap homebrew/science
+</span><span class="line">tap jimbojsb/launchrocket
+</span><span class="line">
+</span><span class="line"># for X
+</span><span class="line">cask install xquartz
+</span><span class="line">
+</span><span class="line"># install package
+</span><span class="line">install ack
+</span><span class="line">install ant
+</span><span class="line">install apple-gcc42
+</span><span class="line">install atk
+</span><span class="line">install autoconf
+</span><span class="line">install automake
+</span><span class="line">install bash
+</span><span class="line">install boost
+</span><span class="line">install brew-cask
+</span><span class="line">install cairo
+</span><span class="line">install cloog
+</span><span class="line">install cmatrix
+</span><span class="line">install colordiff
+</span><span class="line">install cscope
+</span><span class="line">install emacs
+</span><span class="line">install fontconfig
+</span><span class="line">install fontforge
+</span><span class="line">install fortune
+</span><span class="line">install freetype
+</span><span class="line">install gdbm
+</span><span class="line">install gdk-pixbuf
+</span><span class="line">install gettext
+</span><span class="line">install git
+</span><span class="line">install git-flow
+</span><span class="line">install giter8
+</span><span class="line">install glib
+</span><span class="line">install gmp
+</span><span class="line">install go --cross-compile-all
+</span><span class="line">install gobject-introspection
+</span><span class="line">install gradle
+</span><span class="line">install groovy
+</span><span class="line">install gtk+
+</span><span class="line">install gtksourceview
+</span><span class="line">install harfbuzz
+</span><span class="line">install haskell-platform
+</span><span class="line">install htop-osx
+</span><span class="line">install hub
+</span><span class="line">install icu4c
+</span><span class="line">install intltool
+</span><span class="line">install isl
+</span><span class="line">install jmeter
+</span><span class="line">install jpeg
+</span><span class="line">install less
+</span><span class="line">install libevent
+</span><span class="line">install libffi
+</span><span class="line">install libmpc
+</span><span class="line">install libpng
+</span><span class="line">install libtiff
+</span><span class="line">install libtool
+</span><span class="line">install libyaml
+</span><span class="line">install lv
+</span><span class="line">install macvim
+</span><span class="line">install markdown
+</span><span class="line">install maven
+</span><span class="line">install meld
+</span><span class="line">install mercurial
+</span><span class="line">install mpfr
+</span><span class="line">install mysql
+</span><span class="line">install neon
+</span><span class="line">install nkf
+</span><span class="line">install nmap
+</span><span class="line">install node
+</span><span class="line">install openssl
+</span><span class="line">install ossp-uuid
+</span><span class="line">install pango
+</span><span class="line">install pcre
+</span><span class="line">install pixman
+</span><span class="line">install pkg-config
+</span><span class="line">install play
+</span><span class="line">install postgresql
+</span><span class="line">install pow
+</span><span class="line">install pstree
+</span><span class="line">install py2cairo
+</span><span class="line">install pygobject
+</span><span class="line">install pygtk
+</span><span class="line">install pygtksourceview
+</span><span class="line">install python
+</span><span class="line">install rarian
+</span><span class="line">install rbenv
+</span><span class="line">install readline
+</span><span class="line">install reattach-to-user-namespace
+</span><span class="line">install ruby-build
+</span><span class="line">install sbt
+</span><span class="line">install scala
+</span><span class="line">install scons
+</span><span class="line">install source-highlight
+</span><span class="line">install sqlite
+</span><span class="line">install subversion
+</span><span class="line">install sysdig
+</span><span class="line">install the_silver_searcher
+</span><span class="line">install tig
+</span><span class="line">install tmux
+</span><span class="line">install tomcat
+</span><span class="line">install tree
+</span><span class="line">install vim
+</span><span class="line">install watch
+</span><span class="line">install wget
+</span><span class="line">install xctool
+</span><span class="line">install xz
+</span><span class="line">install yuicompressor
+</span><span class="line">install z
+</span><span class="line">install zsh
+</span><span class="line">install zsh-completions
+</span><span class="line">install docker
+</span><span class="line">install boot2docker
+</span><span class="line">install jenkins
+</span><span class="line">install coreutils
+</span><span class="line">install fsharp
+</span><span class="line">install zlib
+</span><span class="line">
+</span><span class="line"># brew cask
+</span><span class="line">cask install alfred
+</span><span class="line">cask install diffmerge
+</span><span class="line">cask install rstudio
+</span><span class="line">cask install vagrant
+</span><span class="line">cask install vlc
+</span><span class="line">cask install dash
+</span><span class="line">cask install p4merge
+</span><span class="line">cask install sourcetree
+</span><span class="line">cask install virtualbox
+</span><span class="line">cask install xmind
+</span><span class="line">cask install wireshark
+</span><span class="line">cask install google-drive
+</span><span class="line">cask install google-web-designer
+</span><span class="line">cask install --caskroom=/Applications google-chrome
+</span><span class="line">cask install keyremap4macbook
+</span><span class="line">cask install skype
+</span><span class="line">cask install skitch
+</span><span class="line">cask install bettertouchtool
+</span><span class="line">cask install dropbox
+</span><span class="line">cask install evernote
+</span><span class="line">cask install mysqlworkbench
+</span><span class="line">cask install iterm2
+</span><span class="line">cask install appcleaner
+</span><span class="line">cask install emacs
+</span><span class="line">cask install launchrocket
+</span><span class="line">cask install atom
+</span><span class="line">cask install hyperswitch
+</span><span class="line">cask install sophos-anti-virus-home-edition
+</span><span class="line">cask install vmware-fusion
+</span><span class="line">cask install airmail
+</span><span class="line">cask install google-japanese-ime
+</span><span class="line">cask install onyx
+</span><span class="line">## for alfred
+</span><span class="line">cask alfred link
+</span><span class="line">
+</span><span class="line"># cleanup
+</span><span class="line">cleanup</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-3">課題？</h2>
+
+<p>よくわからないパッケージがあったりするので
+不要なものについては適宜削除してメンテしていきたい。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ブログタイトル変えました]]></title>
@@ -335,7 +745,15 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
     <link href="http://makotow.github.io/blog/2014/02/05/brewfile/"/>
     <updated>2014-02-05T00:15:00+09:00</updated>
     <id>http://makotow.github.io/blog/2014/02/05/brewfile</id>
-    <content type="html"><![CDATA[<p>今まで、Mac上のアプリケーションはbrew listの出力結果、 /Application配下の一覧で管理していたがhomebrew標準機能でファイルに書いたパッケージを一括してインストールできるBrewfileを使ってみました。
+    <content type="html"><![CDATA[<h3 id="section">2014/06/15 追記</h3>
+
+<p>cask に upgradeがなかったのと、
+cask の仕様変更とかで返り値がErrorではなくWarningになったりとかでもっとスッキリ書けるようになったので
+別記事にてアップデートしました。<a href="http://makotow.github.io/blog/2014/06/15/brewfile-2/">BrewfileでHomebrewパッケージ管理 その後</a></p>
+
+<p>追記、ここまで。</p>
+
+<p>今まで、Mac上のアプリケーションはbrew listの出力結果、 /Application配下の一覧で管理していたがhomebrew標準機能でファイルに書いたパッケージを一括してインストールできるBrewfileを使ってみました。
 ほとんどこのページを参考にさせていただきました。</p>
 
 <p><a href="http://blog.livedoor.jp/sonots/archives/35251881.html">「BrewfileでHomebrewパッケージを管理する」をやってみた</a></p>
@@ -344,20 +762,21 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
 
 <h2> Contents </h2>
 <ul id="markdown-toc">
-  <li><a href="#section">動機</a></li>
-  <li><a href="#section-1">環境</a></li>
-  <li><a href="#section-2">使い方</a></li>
-  <li><a href="#section-3">留意点</a></li>
-  <li><a href="#section-4">作ったファイル</a></li>
-  <li><a href="#section-5">まとめ</a></li>
+  <li><a href="#section">2014/06/15 追記</a></li>
+  <li><a href="#section-1">動機</a></li>
+  <li><a href="#section-2">環境</a></li>
+  <li><a href="#section-3">使い方</a></li>
+  <li><a href="#section-4">留意点</a></li>
+  <li><a href="#section-5">作ったファイル</a></li>
+  <li><a href="#section-6">まとめ</a></li>
 </ul>
 
-<h2 id="section">動機</h2>
+<h2 id="section-1">動機</h2>
 
 <p>たまたまツイートを見てたらBrewfileなるものが目についたため homebrew標準でできるようなのでやってみた。
 最近導入した brew-cask もこれで管理できる。</p>
 
-<h2 id="section-1">環境</h2>
+<h2 id="section-2">環境</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>brew &#8211;config </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -395,7 +814,7 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
 </span><span class="line">Python: /usr/local/bin/python =&gt; /usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin/python2.7
 </span><span class="line">Ruby: /usr/local/opt/rbenv/shims/ruby =&gt; /usr/local/Cellar/rbenv/0.4.0/shims/ruby</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-2">使い方</h2>
+<h2 id="section-3">使い方</h2>
 
 <p>Brewfile のあるディレクトリで</p>
 
@@ -406,7 +825,7 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
 
 <p>brew cask を使っているところはパスワードを聞かれることもあるので都度入力</p>
 
-<h2 id="section-3">留意点</h2>
+<h2 id="section-4">留意点</h2>
 
 <p>参考ページにもあるがBrewfileないで</p>
 
@@ -429,7 +848,7 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">install X ||  brew upgrade X || true</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-4">作ったファイル</h2>
+<h2 id="section-5">作ったファイル</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Brewfile</span><a href="https://gist.github.com/makotow/8804694">link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -720,7 +1139,7 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
 </span><span class="line">cask install mysql-workbench || cask upgrade mysql-workbench || true
 </span><span class="line">cask install iterm2 || cask upgrade iterm2 || true</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-5">まとめ</h2>
+<h2 id="section-6">まとめ</h2>
 
 <p>必要なものはこのファイルに書いていくことで必要なアプリケーションが管理出来る状態となった。</p>
 
@@ -1987,52 +2406,6 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" alt="テスト駆動開発入門" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">テスト駆動開発入門</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.30</div></div><div class="amazlet-detail">ケント ベック <br />ピアソンエデュケーション <br />売り上げランキング: 105,111<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[アジャイル開発とスクラム　読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/30/agileandscrum/"/>
-    <updated>2013-03-30T13:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/30/agileandscrum</id>
-    <content type="html"><![CDATA[<p>アジャイル開発とスクラム　顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<!-- more -->
-
-<p>話題となっていたので購入。</p>
-
-<h3 id="section">感想</h3>
-
-<p>三部構成となっており
-各部の内容を一言でまとめると</p>
-
-<ul>
-  <li>1部 アジャイル開発とは、Scrumとは、プラクティスの紹介</li>
-  <li>2部 実例</li>
-  <li>3部 考察</li>
-</ul>
-
-<p>1部についてはScrumを学んだことがあればおなじみのもの。</p>
-
-<p>2部がとても参考になった。
-実際の開発事例をあげてどのように導入し、運用していったかが記載されている。</p>
-
-<p>3部の形式知・暗黙知、SECIモデルは自分の中に思い当たるところがあり、
-ようやく言葉で説明できている書籍に出会えた。
-最近はSECIモデルに近いことを行うとうまくいくことが多いことは実感できていた。</p>
-
-<p>2部が一番印象に残っており読んだ段階でワクワクしながら読めた。
-初級者から上級者まで幅広くカバーできている書籍と感じた。</p>
-
-<h3 id="section-1">参考になったキーワード</h3>
-
-<ul>
-  <li>ワンチームマインド</li>
-  <li>マルチ学習</li>
-  <li>暗黙知・形式知</li>
-</ul>
 ]]></content>
   </entry>
   

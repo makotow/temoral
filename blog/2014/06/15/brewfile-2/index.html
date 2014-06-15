@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Brewfileでパッケージ管理 - Faster and Faster</title>
+  <title>BrewfileでHomebrewパッケージ管理 その後 - Faster and Faster</title>
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="2014/06/15 追記 cask に upgradeがなかったのと、
-cask の仕様変更とかで返り値がErrorではなくWarningになったりとかでもっとスッキリ書けるようになったので
-別記事にてアップデートしました。BrewfileでHomebrewパッケージ管理 その後 追記、ここまで &hellip;">
+  <meta name="description" content="過去記事（Brewfileでパッケージ管理）の続きです。 導入後Brewfileの機能についてキャッチアップはしてなかったのですが、
+仕様が変わってBrewfileが綺麗に書けるようになっていたり過去記事に書いていたことが間違っているのが判明したため、
+綺麗に書き直してみました。 Contents &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.io/blog/2014/02/05/brewfile">
+  <link rel="canonical" href="http://makotow.github.io/blog/2014/06/15/brewfile-2">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Faster and Faster" type="application/atom+xml">
@@ -96,7 +96,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">Brewfileでパッケージ管理</h1>
+      <h1 class="entry-title">BrewfileでHomebrewパッケージ管理 その後</h1>
     
     
       <p class="meta">
@@ -112,45 +112,37 @@ $(document).ready( function () {
   
 
 
-<time datetime="2014-02-05T00:15:00+09:00" pubdate data-updated="true">Feb 5<span>th</span>, 2014</time>
+<time datetime="2014-06-15T16:18:00+09:00" pubdate data-updated="true">Jun 15<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3 id="section">2014/06/15 追記</h3>
+<div class="entry-content"><p>過去記事（<a href="/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）の続きです。</p>
 
-<p>cask に upgradeがなかったのと、
-cask の仕様変更とかで返り値がErrorではなくWarningになったりとかでもっとスッキリ書けるようになったので
-別記事にてアップデートしました。<a href="/blog/2014/06/15/brewfile-2/">BrewfileでHomebrewパッケージ管理 その後</a></p>
-
-<p>追記、ここまで。</p>
-
-<p>今まで、Mac上のアプリケーションはbrew listの出力結果、 /Application配下の一覧で管理していたがhomebrew標準機能でファイルに書いたパッケージを一括してインストールできるBrewfileを使ってみました。
-ほとんどこのページを参考にさせていただきました。</p>
-
-<p><a href="http://blog.livedoor.jp/sonots/archives/35251881.html">「BrewfileでHomebrewパッケージを管理する」をやってみた</a></p>
+<p>導入後Brewfileの機能についてキャッチアップはしてなかったのですが、
+仕様が変わってBrewfileが綺麗に書けるようになっていたり過去記事に書いていたことが間違っているのが判明したため、
+綺麗に書き直してみました。</p>
 
 <!-- more -->
 
 <h2> Contents </h2>
 <ul id="markdown-toc">
-  <li><a href="#section">2014/06/15 追記</a></li>
-  <li><a href="#section-1">動機</a></li>
-  <li><a href="#section-2">環境</a></li>
-  <li><a href="#section-3">使い方</a></li>
-  <li><a href="#section-4">留意点</a></li>
-  <li><a href="#section-5">作ったファイル</a></li>
-  <li><a href="#section-6">まとめ</a></li>
+  <li><a href="#section">動機</a></li>
+  <li><a href="#section-1">環境</a></li>
+  <li><a href="#section-2">作ったファイル</a></li>
+  <li><a href="#section-3">課題？</a></li>
 </ul>
 
-<h2 id="section-1">動機</h2>
+<h2 id="section">動機</h2>
 
-<p>たまたまツイートを見てたらBrewfileなるものが目についたため homebrew標準でできるようなのでやってみた。
-最近導入した brew-cask もこれで管理できる。</p>
+<p>cask に upgradeがなかった（過去記事の間違い）のと、
+cask の仕様変更で返り値がErrorではなくWarningになったりとかでもっとスッキリ書けるようになったので書きなおしてみた。</p>
 
-<h2 id="section-2">環境</h2>
+<h2 id="section-1">環境</h2>
+
+<p>以前とは環境が変わっているため念のため。</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>brew &#8211;config </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -172,59 +164,29 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
 <span class="line-number">17</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">-&gt; % brew --config
 </span><span class="line">HOMEBREW_VERSION: 0.9.5
-</span><span class="line">ORIGIN: https://github.com/Homebrew/homebrew.git
-</span><span class="line">HEAD: 406d954664c33e2a23e8e95f016f644e66829ef4
+</span><span class="line">ORIGIN: https://github.com/Homebrew/homebrew
+</span><span class="line">HEAD: 98dc2cdb64256dfa4529bfce03447e4e52507c28
 </span><span class="line">HOMEBREW_PREFIX: /usr/local
 </span><span class="line">HOMEBREW_CELLAR: /usr/local/Cellar
-</span><span class="line">CPU: quad-core 64-bit ivybridge
-</span><span class="line">OS X: 10.9.1-x86_64
-</span><span class="line">Xcode: 5.0.2
-</span><span class="line">CLT: 5.0.1.0.1.1382131676
+</span><span class="line">CPU: quad-core 64-bit haswell
+</span><span class="line">OS X: 10.9.3-x86_64
+</span><span class="line">Xcode: 5.1.1
+</span><span class="line">CLT: 5.1.0.0.1.1396320587
 </span><span class="line">GCC-4.2: build 5666
-</span><span class="line">Clang: 5.0 build 500
-</span><span class="line">X11: 2.7.5 =&gt; /opt/X11
-</span><span class="line">System Ruby: 1.8.7-358
+</span><span class="line">Clang: 5.1 build 503
+</span><span class="line">X11: 2.7.6 =&gt; /opt/X11
+</span><span class="line">System Ruby: 2.0.0-451
 </span><span class="line">Perl: /usr/bin/perl
-</span><span class="line">Python: /usr/local/bin/python =&gt; /usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+</span><span class="line">Python: /usr/local/bin/python =&gt; /usr/local/Cellar/python/2.7.7_2/Frameworks/Python.framework/Versions/2.7/bin/python2.7
 </span><span class="line">Ruby: /usr/local/opt/rbenv/shims/ruby =&gt; /usr/local/Cellar/rbenv/0.4.0/shims/ruby</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-3">使い方</h2>
+<h2 id="section-2">作ったファイル</h2>
 
-<p>Brewfile のあるディレクトリで</p>
+<p>tap xxx || true とか
+install XXX || upgrade XXX || true
+がなくなってスッキリ。</p>
 
-<pre><code>brew bundle
-</code></pre>
-
-<p>でBrewfileに書かれているパッケージがインストールされる。</p>
-
-<p>brew cask を使っているところはパスワードを聞かれることもあるので都度入力</p>
-
-<h2 id="section-4">留意点</h2>
-
-<p>参考ページにもあるがBrewfileないで</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>tup </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">tup phinze/homebrew-cask</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>を実行した際にすでに追加されているリポジトリだと途中で止まってしまう。</p>
-
-<p>なので</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>tup2 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">tup phinze/homebrew-cask || true</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>おなじように、install するときに formulaが消えてたり、古いバージョンがあると途中で止まってしまうため
-以下のように編集</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>install </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">install X ||  brew upgrade X || true</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-5">作ったファイル</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Brewfile</span><a href="https://gist.github.com/makotow/8804694">link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Brewfile</span><a href="https://gist.github.com/makotow/203a4d9d79eb7cb9ba81">link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -368,155 +330,197 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
 <span class="line-number">142</span>
 <span class="line-number">143</span>
 <span class="line-number">144</span>
+<span class="line-number">145</span>
+<span class="line-number">146</span>
+<span class="line-number">147</span>
+<span class="line-number">148</span>
+<span class="line-number">149</span>
+<span class="line-number">150</span>
+<span class="line-number">151</span>
+<span class="line-number">152</span>
+<span class="line-number">153</span>
+<span class="line-number">154</span>
+<span class="line-number">155</span>
+<span class="line-number">156</span>
+<span class="line-number">157</span>
+<span class="line-number">158</span>
+<span class="line-number">159</span>
+<span class="line-number">160</span>
+<span class="line-number">161</span>
+<span class="line-number">162</span>
+<span class="line-number">163</span>
+<span class="line-number">164</span>
+<span class="line-number">165</span>
 </pre></td><td class="code"><pre><code class=""><span class="line"># latest
 </span><span class="line">update
 </span><span class="line">
+</span><span class="line"># update all
+</span><span class="line">upgrade
+</span><span class="line">
 </span><span class="line"># add repository
-</span><span class="line">tap homebrew/binary || true
-</span><span class="line">tap phinze/homebrew-cask || true
-</span><span class="line">tap homebrew/dupes || true
-</span><span class="line">tap homebrew/science || true
+</span><span class="line">tap homebrew/binary
+</span><span class="line">tap caskroom/cask
+</span><span class="line">tap homebrew/dupes
+</span><span class="line">tap homebrew/science
+</span><span class="line">tap jimbojsb/launchrocket
+</span><span class="line">
+</span><span class="line"># for X
+</span><span class="line">cask install xquartz
 </span><span class="line">
 </span><span class="line"># install package
-</span><span class="line">
-</span><span class="line">install ack || brew upgrade ack || true
-</span><span class="line">install ant || brew upgrade ant || true
-</span><span class="line">install apple-gcc42 || brew upgrade apple-gcc42 || true
-</span><span class="line">install atk || brew upgrade atk || true
-</span><span class="line">install autoconf || brew upgrade autoconf || true
-</span><span class="line">install automake || brew upgrade automake || true
-</span><span class="line">install bash || brew upgrade bash || true
-</span><span class="line">install boost || brew upgrade boost || true
-</span><span class="line">install brew-cask || brew upgrade brew-cask || true
-</span><span class="line">install cairo || brew upgrade cairo || true
-</span><span class="line">install cloog || brew upgrade cloog || true
-</span><span class="line">install cmatrix || brew upgrade cmatrix || true
-</span><span class="line">install colordiff || brew upgrade colordiff || true
-</span><span class="line">install cscope || brew upgrade cscope || true
-</span><span class="line">install emacs || brew upgrade emacs || true
-</span><span class="line">install fontconfig || brew upgrade fontconfig || true
-</span><span class="line">install fontforge || brew upgrade fontforge || true
-</span><span class="line">install fortune || brew upgrade fortune || true
-</span><span class="line">install freetype || brew upgrade freetype || true
-</span><span class="line">install gdbm || brew upgrade gdbm || true
-</span><span class="line">install gdk-pixbuf || brew upgrade gdk-pixbuf || true
-</span><span class="line">install gettext || brew upgrade gettext || true
-</span><span class="line">install gfortran || brew upgrade gfortran || true
-</span><span class="line">install ghc || brew upgrade ghc || true
-</span><span class="line">install git || brew upgrade git || true
-</span><span class="line">install git-flow || brew upgrade git-flow || true
-</span><span class="line">install giter8 || brew upgrade giter8 || true
-</span><span class="line">install glib || brew upgrade glib || true
-</span><span class="line">install gmp || brew upgrade gmp || true
-</span><span class="line">install go --cross-compile-all || brew upgrade go || true
-</span><span class="line">install gobject-introspection || brew upgrade gobject-introspection || true
-</span><span class="line">install gradle || brew upgrade gradle || true
-</span><span class="line">install groovy || brew upgrade groovy || true
-</span><span class="line">install gtk+ || brew upgrade gtk+ || true
-</span><span class="line">install gtksourceview || brew upgrade gtksourceview || true
-</span><span class="line">install harfbuzz || brew upgrade harfbuzz || true
-</span><span class="line">install haskell-platform || brew upgrade haskell-platform || true
-</span><span class="line">install htop-osx || brew upgrade htop-osx || true
-</span><span class="line">install hub || brew upgrade hub || true
-</span><span class="line">install icu4c || brew upgrade icu4c || true
-</span><span class="line">install intltool || brew upgrade intltool || true
-</span><span class="line">install isl || brew upgrade isl || true
-</span><span class="line">install jmeter || brew upgrade jmeter || true
-</span><span class="line">install jpeg || brew upgrade jpeg || true
-</span><span class="line">install less || brew upgrade less || true
-</span><span class="line">install libevent || brew upgrade libevent || true
-</span><span class="line">install libffi || brew upgrade libffi || true
-</span><span class="line">install libmpc || brew upgrade libmpc || true
-</span><span class="line">install libpng || brew upgrade libpng || true
-</span><span class="line">install libtiff || brew upgrade libtiff || true
-</span><span class="line">install libtool || brew upgrade libtool || true
-</span><span class="line">install libyaml || brew upgrade libyaml || true
-</span><span class="line">install lv || brew upgrade lv || true
-</span><span class="line">install macvim || brew upgrade macvim || true
-</span><span class="line">install markdown || brew upgrade markdown || true
-</span><span class="line">install maven || brew upgrade maven || true
-</span><span class="line">install meld || brew upgrade meld || true
-</span><span class="line">install mercurial || brew upgrade mercurial || true
-</span><span class="line">install mpfr || brew upgrade mpfr || true
-</span><span class="line">install mysql || brew upgrade mysql || true
-</span><span class="line">install neon || brew upgrade neon || true
-</span><span class="line">install nkf || brew upgrade nkf || true
-</span><span class="line">install nmap || brew upgrade nmap || true
-</span><span class="line">install node || brew upgrade node || true
-</span><span class="line">install openssl || brew upgrade openssl || true
-</span><span class="line">install ossp-uuid || brew upgrade ossp-uuid || true
-</span><span class="line">install pango || brew upgrade pango || true
-</span><span class="line">install pcre || brew upgrade pcre || true
-</span><span class="line">install pixman || brew upgrade pixman || true
-</span><span class="line">install pkg-config || brew upgrade pkg-config || true
-</span><span class="line">install play || brew upgrade play || true
-</span><span class="line">install postgresql || brew upgrade postgresql || true
-</span><span class="line">install pow || brew upgrade pow || true
-</span><span class="line">install pstree || brew upgrade pstree || true
-</span><span class="line">install py2cairo || brew upgrade py2cairo || true
-</span><span class="line">install pygobject || brew upgrade pygobject || true
-</span><span class="line">install pygtk || brew upgrade pygtk || true
-</span><span class="line">install pygtksourceview || brew upgrade pygtksourceview || true
-</span><span class="line">install python || brew upgrade python || true
-</span><span class="line">install rarian || brew upgrade rarian || true
-</span><span class="line">install rbenv || brew upgrade rbenv || true
-</span><span class="line">install readline || brew upgrade readline || true
-</span><span class="line">install reattach-to-user-namespace || brew upgrade reattach-to-user-namespace || true
-</span><span class="line">install ruby-build || brew upgrade ruby-build || true
-</span><span class="line">install sbt || brew upgrade sbt || true
-</span><span class="line">install scala || brew upgrade scala || true
-</span><span class="line">install scons || brew upgrade scons || true
-</span><span class="line">install serf || brew upgrade serf || true
-</span><span class="line">install source-highlight || brew upgrade source-highlight || true
-</span><span class="line">install sqlite || brew upgrade sqlite || true
-</span><span class="line">install subversion || brew upgrade subversion || true
-</span><span class="line">install the_silver_searcher || brew upgrade the_silver_searcher || true
-</span><span class="line">install tig || brew upgrade tig || true
-</span><span class="line">install tmux || brew upgrade tmux || true
-</span><span class="line">install tomcat || brew upgrade tomcat || true
-</span><span class="line">install tree || brew upgrade tree || true
-</span><span class="line">install vim || brew upgrade vim || true
-</span><span class="line">install watch || brew upgrade watch || true
-</span><span class="line">install wget || brew upgrade wget || true
-</span><span class="line">install xctool || brew upgrade xctool || true
-</span><span class="line">install xz || brew upgrade xz || true
-</span><span class="line">install yuicompressor || brew upgrade yuicompressor || true
-</span><span class="line">install z || brew upgrade z || true
-</span><span class="line">install zsh || brew upgrade zsh || true
-</span><span class="line">install zsh-completions || brew upgrade zsh-completions || true
+</span><span class="line">install ack
+</span><span class="line">install ant
+</span><span class="line">install apple-gcc42
+</span><span class="line">install atk
+</span><span class="line">install autoconf
+</span><span class="line">install automake
+</span><span class="line">install bash
+</span><span class="line">install boost
+</span><span class="line">install brew-cask
+</span><span class="line">install cairo
+</span><span class="line">install cloog
+</span><span class="line">install cmatrix
+</span><span class="line">install colordiff
+</span><span class="line">install cscope
+</span><span class="line">install emacs
+</span><span class="line">install fontconfig
+</span><span class="line">install fontforge
+</span><span class="line">install fortune
+</span><span class="line">install freetype
+</span><span class="line">install gdbm
+</span><span class="line">install gdk-pixbuf
+</span><span class="line">install gettext
+</span><span class="line">install git
+</span><span class="line">install git-flow
+</span><span class="line">install giter8
+</span><span class="line">install glib
+</span><span class="line">install gmp
+</span><span class="line">install go --cross-compile-all
+</span><span class="line">install gobject-introspection
+</span><span class="line">install gradle
+</span><span class="line">install groovy
+</span><span class="line">install gtk+
+</span><span class="line">install gtksourceview
+</span><span class="line">install harfbuzz
+</span><span class="line">install haskell-platform
+</span><span class="line">install htop-osx
+</span><span class="line">install hub
+</span><span class="line">install icu4c
+</span><span class="line">install intltool
+</span><span class="line">install isl
+</span><span class="line">install jmeter
+</span><span class="line">install jpeg
+</span><span class="line">install less
+</span><span class="line">install libevent
+</span><span class="line">install libffi
+</span><span class="line">install libmpc
+</span><span class="line">install libpng
+</span><span class="line">install libtiff
+</span><span class="line">install libtool
+</span><span class="line">install libyaml
+</span><span class="line">install lv
+</span><span class="line">install macvim
+</span><span class="line">install markdown
+</span><span class="line">install maven
+</span><span class="line">install meld
+</span><span class="line">install mercurial
+</span><span class="line">install mpfr
+</span><span class="line">install mysql
+</span><span class="line">install neon
+</span><span class="line">install nkf
+</span><span class="line">install nmap
+</span><span class="line">install node
+</span><span class="line">install openssl
+</span><span class="line">install ossp-uuid
+</span><span class="line">install pango
+</span><span class="line">install pcre
+</span><span class="line">install pixman
+</span><span class="line">install pkg-config
+</span><span class="line">install play
+</span><span class="line">install postgresql
+</span><span class="line">install pow
+</span><span class="line">install pstree
+</span><span class="line">install py2cairo
+</span><span class="line">install pygobject
+</span><span class="line">install pygtk
+</span><span class="line">install pygtksourceview
+</span><span class="line">install python
+</span><span class="line">install rarian
+</span><span class="line">install rbenv
+</span><span class="line">install readline
+</span><span class="line">install reattach-to-user-namespace
+</span><span class="line">install ruby-build
+</span><span class="line">install sbt
+</span><span class="line">install scala
+</span><span class="line">install scons
+</span><span class="line">install source-highlight
+</span><span class="line">install sqlite
+</span><span class="line">install subversion
+</span><span class="line">install sysdig
+</span><span class="line">install the_silver_searcher
+</span><span class="line">install tig
+</span><span class="line">install tmux
+</span><span class="line">install tomcat
+</span><span class="line">install tree
+</span><span class="line">install vim
+</span><span class="line">install watch
+</span><span class="line">install wget
+</span><span class="line">install xctool
+</span><span class="line">install xz
+</span><span class="line">install yuicompressor
+</span><span class="line">install z
+</span><span class="line">install zsh
+</span><span class="line">install zsh-completions
+</span><span class="line">install docker
+</span><span class="line">install boot2docker
+</span><span class="line">install jenkins
+</span><span class="line">install coreutils
+</span><span class="line">install fsharp
+</span><span class="line">install zlib
 </span><span class="line">
 </span><span class="line"># brew cask
-</span><span class="line">cask install alfred || cask upgrade alfred || true
-</span><span class="line">cask install diffmerge || cask upgrade diffmerge || true
-</span><span class="line">cask install rstudio || cask upgrade rstudio || true
-</span><span class="line">cask install vagrant || cask upgrade vagrant || true
-</span><span class="line">cask install vlc || cask upgrade vlc || true
-</span><span class="line">cask install dash || cask upgrade dash || true
-</span><span class="line">cask install p4merge || cask upgrade p4merge || true
-</span><span class="line">cask install sourcetree || cask upgrade sourcetree || true
-</span><span class="line">cask install virtualbox || cask upgrade virtualbox || true
-</span><span class="line">cask install xquartz || cask upgrade xquartz || true
-</span><span class="line">cask install xmind || cask upgrade xmind || true
-</span><span class="line">cask install wireshark || cask upgrade wireshark || true
-</span><span class="line">cask install google-chrome || cask upgrade google-chrome || true
-</span><span class="line">cask install google-drive || cask upgrade google-drive || true
-</span><span class="line">cask install google-web-designer || cask upgrade google-web-designer || true
-</span><span class="line">cask install keyremap4macbook || cask upgrade keyremap4macbook || true
-</span><span class="line">cask install sublime-text || cask upgrade sublime-text || true
-</span><span class="line">cask install skype || cask upgrade skype || true
-</span><span class="line">cask install skitch || cask upgrade skitch || true
-</span><span class="line">cask install bettertouchtool || cask upgrade bettertouchtool || true
-</span><span class="line">cask install bitcasa || cask upgrade bitcasa || true
-</span><span class="line">cask install dropbox || cask upgrade dropbox || true
-</span><span class="line">cask install evernote || cask upgrade evernote || true
-</span><span class="line">cask install mendeley || cask upgrade mendeley || true
-</span><span class="line">cask install mysql-workbench || cask upgrade mysql-workbench || true
-</span><span class="line">cask install iterm2 || cask upgrade iterm2 || true</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span><span class="line">cask install alfred
+</span><span class="line">cask install diffmerge
+</span><span class="line">cask install rstudio
+</span><span class="line">cask install vagrant
+</span><span class="line">cask install vlc
+</span><span class="line">cask install dash
+</span><span class="line">cask install p4merge
+</span><span class="line">cask install sourcetree
+</span><span class="line">cask install virtualbox
+</span><span class="line">cask install xmind
+</span><span class="line">cask install wireshark
+</span><span class="line">cask install google-drive
+</span><span class="line">cask install google-web-designer
+</span><span class="line">cask install --caskroom=/Applications google-chrome
+</span><span class="line">cask install keyremap4macbook
+</span><span class="line">cask install skype
+</span><span class="line">cask install skitch
+</span><span class="line">cask install bettertouchtool
+</span><span class="line">cask install dropbox
+</span><span class="line">cask install evernote
+</span><span class="line">cask install mysqlworkbench
+</span><span class="line">cask install iterm2
+</span><span class="line">cask install appcleaner
+</span><span class="line">cask install emacs
+</span><span class="line">cask install launchrocket
+</span><span class="line">cask install atom
+</span><span class="line">cask install hyperswitch
+</span><span class="line">cask install sophos-anti-virus-home-edition
+</span><span class="line">cask install vmware-fusion
+</span><span class="line">cask install airmail
+</span><span class="line">cask install google-japanese-ime
+</span><span class="line">cask install onyx
+</span><span class="line">## for alfred
+</span><span class="line">cask alfred link
+</span><span class="line">
+</span><span class="line"># cleanup
+</span><span class="line">cleanup</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-6">まとめ</h2>
+<h2 id="section-3">課題？</h2>
 
-<p>必要なものはこのファイルに書いていくことで必要なアプリケーションが管理出来る状態となった。</p>
-
+<p>よくわからないパッケージがあったりするので
+不要なものについては適宜削除してメンテしていきたい。</p>
 </div>
 
 
@@ -539,7 +543,7 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
   
 
 
-<time datetime="2014-02-05T00:15:00+09:00" pubdate data-updated="true">Feb 5<span>th</span>, 2014</time>
+<time datetime="2014-06-15T16:18:00+09:00" pubdate data-updated="true">Jun 15<span>th</span>, 2014</time>
       
 
 <span class="categories">
@@ -557,7 +561,7 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
   
 
   
-<div><a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u=http://makotow.github.io/blog/2014/02/05/brewfile/"><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=Brewfileでパッケージ管理&amp;url=http://makotow.github.io/blog/2014/02/05/brewfile/"><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://makotow.github.io/blog/2014/02/05/brewfile/&amp;summary=Brewfileでパッケージ管理"><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url=http://makotow.github.io/blog/2014/02/05/brewfile/"><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a></div>
+<div><a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u=http://makotow.github.io/blog/2014/06/15/brewfile-2/"><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=BrewfileでHomebrewパッケージ管理 その後&amp;url=http://makotow.github.io/blog/2014/06/15/brewfile-2/"><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://makotow.github.io/blog/2014/06/15/brewfile-2/&amp;summary=BrewfileでHomebrewパッケージ管理 その後"><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url=http://makotow.github.io/blog/2014/06/15/brewfile-2/"><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a></div>
 
 
 
@@ -571,7 +575,7 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
   <h2>Related Posts</h2>
   <ul>
     
-    <li><a href="/blog/2014/06/15/brewfile-2/">BrewfileでHomebrewパッケージ管理 その後</a></li>
+    <li><a href="/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a></li>
     
     <li><a href="/blog/2014/06/11/macosx-keybinding/">OSX のキーバインド周り</a></li>
     
@@ -584,10 +588,8 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
 
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/12/31/data-aggregation-2013/" title="Previous Post: 2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)">&laquo; 2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a>
+        <a class="basic-alignment left" href="/blog/2014/06/11/change-blog-title/" title="Previous Post: ブログタイトル変えました">&laquo; ブログタイトル変えました</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/15/tech201404/" title="Next Post: 20140415時点の近況">20140415時点の近況 &raquo;</a>
       
     </p>
   </footer>
@@ -712,8 +714,8 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://makotow.github.io/blog/2014/02/05/brewfile/';
-        var disqus_url = 'http://makotow.github.io/blog/2014/02/05/brewfile/';
+        var disqus_identifier = 'http://makotow.github.io/blog/2014/06/15/brewfile-2/';
+        var disqus_url = 'http://makotow.github.io/blog/2014/06/15/brewfile-2/';
         var disqus_script = 'embed.js';
       
     (function () {
