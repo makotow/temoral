@@ -4,7 +4,7 @@
   <title><![CDATA[Faster and Faster]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-06-15T17:28:54+09:00</updated>
+  <updated>2014-06-28T17:34:36+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,84 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[テストデータのログファイルを簡単につくれる。(apache access.log編)]]></title>
+    <link href="http://makotow.github.io/blog/2014/06/28/access-log-generator/"/>
+    <updated>2014-06-28T16:45:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/06/28/access-log-generator</id>
+    <content type="html"><![CDATA[<p>とあるログを解析してDBに入れて色々するツールを作っているのだけども
+そのテストをするためある程度大きめのテストデータが欲しくて探してみた。
+結果的に apache-loggen という gem があったので紹介。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">割と大きめのテストデータを作りたい</a></li>
+  <li><a href="#apache-loggen">apache-loggen</a>    <ul>
+      <li><a href="#section-1">インストール</a></li>
+      <li><a href="#section-2">使い方</a></li>
+      <li><a href="#section-3">データ作成</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-4">まとめ</a></li>
+</ul>
+
+<h2 id="section">割と大きめのテストデータを作りたい</h2>
+
+<p>少しさがしてなければ自作しようとおもてたけど、
+軽く探してみるとニーズにあったものを見つけたので紹介。</p>
+
+<h2 id="apache-loggen">apache-loggen</h2>
+
+<p>githubに登録されているのである程度真似していろいろなことができると思う。</p>
+
+<p><a href="https://github.com/tamtam180/apache_log_gen">tamtam180/apache_log_gen</a></p>
+
+<h3 id="section-1">インストール</h3>
+
+<p>rubygemsに登録されているのでgemで一発。</p>
+
+<pre><code>gem install apache-loggen
+</code></pre>
+
+<h3 id="section-2">使い方</h3>
+
+<p>今回はある程度のサイズのログが欲しかったのであまり細かいところまでは調べていないけど、
+help見ると秒間のレコード生成数やローテションも指定できるのでログ関連のテストに使えるなという印象。</p>
+
+<pre><code>$ apache-loggen --help
+Usage: apache-loggen [options]
+        --limit=COUNT                最大何件出力するか。デフォルトは0で無制限。
+        --rate=RATE                  毎秒何レコード生成するか。デフォルトは0で流量制限無し。
+        --rotate=SECOND              ローテーションする間隔。デフォルトは0。
+        --progress                   レートの表示をする。
+        --json                       json形式の出力
+</code></pre>
+
+<h3 id="section-3">データ作成</h3>
+
+<p>とりあえず、100件データと10000000件データを作成してみた。</p>
+
+<pre><code>apache-loggen --progress --rate=10 --limit=100 access-short.log
+
+apache-loggen --progress --limit=10000000 access.log
+</code></pre>
+
+<p>ログの内容もあるランダムに出力してくれる。</p>
+
+<pre><code>104.177.44.55 - - [28/Jun/2014:02:20:49 +0900] "GET /category/electronics HTTP/1.1" 200 105 "-" "Mozilla/5.0 (Windows NT 6.0; rv:10.0.1) Gecko/20100101 Firefox/10.0.1"
+184.129.76.75 - - [28/Jun/2014:02:20:49 +0900] "GET /category/games HTTP/1.1" 200 92 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.1) Gecko/20100101 Firefox/10.0.1"
+212.102.35.194 - - [28/Jun/2014:02:20:49 +0900] "GET /item/networking/264 HTTP/1.1" 200 82 "/category/electronics" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.
+</code></pre>
+
+<h2 id="section-4">まとめ</h2>
+
+<p>手軽に apache の access.log を作ることができた。
+help を見るとリアルタイムに流れるログに対するテストなどにも使えるのではないかと思う。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BrewfileでHomebrewパッケージ管理 その後]]></title>
@@ -2364,47 +2442,6 @@ Linuxで起動した時にエラーが出てしまったのでコマンドがあ
 </span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
 </span><span class="line"><span class="k">fi</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[実践テスト駆動開発　読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/30/tddprac/"/>
-    <updated>2013-03-30T13:30:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/30/tddprac</id>
-    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vSRgWto0L._SL160_.jpg" alt="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">Steve Freeman Nat Pryce <br />翔泳社 <br />売り上げランキング: 39,893<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798124583/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<p>軽いメモ書き。
-個人的に結構なボリュームがある書籍であった。</p>
-
-<!-- more -->
-
-<h3 id="section">感想</h3>
-
-<p>読んでから少したってしまったので箇条書きで感想。</p>
-
-<ul>
-  <li>1章が一番しっくりきた。</li>
-  <li>テストコードをどうコーディングするかをかなり多くのサンプルをみながら理解できた。</li>
-  <li>モックオブジェクト(jMock2)について理解を深めることができた。</li>
-  <li>同期処理、非同期処理についても言及しているため、非同期処理のテストについて学びたく買ったので良かった。</li>
-</ul>
-
-<p>実際、設計を進化させながら進んでいる。
-  途中でこれは微妙だなと思うことがあっても章が進むと改善されていくので、自分の設計思想と同じだなと思ったり、
-  こういうやり方があるかなどと読み進めていけて面白かった。</p>
-
-<p>この書籍自体にはテスティングフレームワークの使用方法などは載っていないが、
-  書籍内で使用しているテスティングフレームワークについてはAppendixとして説明がついている。
-  なにを使ったらよいかの参考になるのではないか。</p>
-
-<h3 id="section-1">参考</h3>
-
-<p>テスト駆動開発といえばこれ。
-併せて読むと理解が進むと思う。</p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" alt="テスト駆動開発入門" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">テスト駆動開発入門</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.30</div></div><div class="amazlet-detail">ケント ベック <br />ピアソンエデュケーション <br />売り上げランキング: 105,111<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894717115/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 ]]></content>
   </entry>

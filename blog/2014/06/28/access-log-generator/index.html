@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Virtual Box ゲストから外部ネットワークにつながらない（解決済み） - Faster and Faster</title>
+  <title>テストデータのログファイルを簡単につくれる。(apache access.log編) - Faster and Faster</title>
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="WEB+DB Press vol80 の「テスト駆動インフラ」を写経中に遭遇した名前解決が出来なかった事象に対する対処方法。 結果的には Virtual Box の設定を変更することで対応出来たので備忘録。 WEB+DB PRESS Vol.80posted with amazlet at 14. &hellip;">
+  <meta name="description" content="とあるログを解析してDBに入れて色々するツールを作っているのだけども
+そのテストをするためある程度大きめのテストデータが欲しくて探してみた。
+結果的に apache-loggen という gem があったので紹介。 Contents 割と大きめのテストデータを作りたい apache-loggen &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat">
+  <link rel="canonical" href="http://makotow.github.io/blog/2014/06/28/access-log-generator">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Faster and Faster" type="application/atom+xml">
@@ -94,7 +96,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">Virtual Box ゲストから外部ネットワークにつながらない（解決済み）</h1>
+      <h1 class="entry-title">テストデータのログファイルを簡単につくれる。(apache access.log編)</h1>
     
     
       <p class="meta">
@@ -110,147 +112,83 @@ $(document).ready( function () {
   
 
 
-<time datetime="2014-05-05T18:12:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2014</time>
+<time datetime="2014-06-28T16:45:00+09:00" pubdate data-updated="true">Jun 28<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>WEB+DB Press vol80 の「テスト駆動インフラ」を写経中に遭遇した名前解決が出来なかった事象に対する対処方法。</p>
-
-<p>結果的には Virtual Box の設定を変更することで対応出来たので備忘録。</p>
-
-<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61vP1yUfkZL._SL160_.jpg" alt="WEB+DB PRESS Vol.80" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">WEB+DB PRESS Vol.80</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 14.05.04</div></div><div class="amazlet-detail">鶴長 鎮一 宮下 剛輔 縣 俊貴 中村 知成 西尾 泰和 新井 俊一 南川 毅文 伊藤 直也 石垣 憲一 浅木 朗 渡邊 恵太 中島 聡 はまちや2 竹原 川添 貴生 河合 宜文 <br />技術評論社 <br />売り上げランキング: 463<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163988/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<p>今回使ったソフトウェアのバージョン</p>
-
-<pre><code>OSX: 10.9.2
-Vagrant: 1.5.4
-ruby: 2.1.0p0
-VirtualBox: 4.3.10-93012
-Guest OS: CentOS 6.4
-</code></pre>
+<div class="entry-content"><p>とあるログを解析してDBに入れて色々するツールを作っているのだけども
+そのテストをするためある程度大きめのテストデータが欲しくて探してみた。
+結果的に apache-loggen という gem があったので紹介。</p>
 
 <!-- more -->
 
 <h2> Contents </h2>
 <ul id="markdown-toc">
-  <li><a href="#webdb-vol80-ci">WEB+DB vol80 のインフラCIを写経中に遭遇</a>    <ul>
-      <li><a href="#puppet--rpm-">puppet を rpm でインストールするところでエラー</a></li>
-      <li><a href="#section">原因解析</a></li>
-      <li><a href="#section-1">対応</a></li>
-      <li><a href="#section-2">解決</a></li>
+  <li><a href="#section">割と大きめのテストデータを作りたい</a></li>
+  <li><a href="#apache-loggen">apache-loggen</a>    <ul>
+      <li><a href="#section-1">インストール</a></li>
+      <li><a href="#section-2">使い方</a></li>
+      <li><a href="#section-3">データ作成</a></li>
     </ul>
   </li>
+  <li><a href="#section-4">まとめ</a></li>
 </ul>
 
-<h2 id="webdb-vol80-ci">WEB+DB vol80 のインフラCIを写経中に遭遇</h2>
+<h2 id="section">割と大きめのテストデータを作りたい</h2>
 
-<p>vagrant ファイルやらプロビジョニングに必要なもの（puppetのインストールとか）を作成後に</p>
+<p>少しさがしてなければ自作しようとおもてたけど、
+軽く探してみるとニーズにあったものを見つけたので紹介。</p>
 
-<pre><code>vagrant up
+<h2 id="apache-loggen">apache-loggen</h2>
+
+<p>githubに登録されているのである程度真似していろいろなことができると思う。</p>
+
+<p><a href="https://github.com/tamtam180/apache_log_gen">tamtam180/apache_log_gen</a></p>
+
+<h3 id="section-1">インストール</h3>
+
+<p>rubygemsに登録されているのでgemで一発。</p>
+
+<pre><code>gem install apache-loggen
 </code></pre>
 
-<p>実行してしばらく放置してた。</p>
+<h3 id="section-2">使い方</h3>
 
-<p>結果画面を見ると puppet がインストール失敗しているメッセージが出力されて仮想マシンはブートされていた。</p>
+<p>今回はある程度のサイズのログが欲しかったのであまり細かいところまでは調べていないけど、
+help見ると秒間のレコード生成数やローテションも指定できるのでログ関連のテストに使えるなという印象。</p>
 
-<h3 id="puppet--rpm-">puppet を rpm でインストールするところでエラー</h3>
-
-<p>出力ログを見ていくとpuppetだけではなくて CentOSのイメージをダウンロードするところでもhostが見つからない旨のエラーメッセージが出力されていた。</p>
-
-<h3 id="section">原因解析</h3>
-
-<p>仮想マシンは作成されておりsshでログインできるためゲストOSで調査をする。</p>
-
-<p>出力されているエラーからネットワークにつながらないと推測できた。</p>
-
-<p>ping を適当な FQDN へ打ってみたが返答がないため推測はあっているようだ。</p>
-
-<p>ネットワークつながらないということは、</p>
-
-<ul>
-  <li>F/Wではじいている(F/W相当のフィルタ機能など)</li>
-  <li>名前解決ができていないということ</li>
-</ul>
-
-<p>が考えられるので、
-とりあえず F/W が原因ではないことの切り分けをするため、iptables のサービスを停止して再度 ping。</p>
-
-<p>想定通り事象は解決しないので再度 iptables のサービスを起動。</p>
-
-<p>次は名前解決をできるようにすれば事象は解決すること確認するため、</p>
-
-<p>DNS を明示的に Google Public DNSへ向けてみる（8.8.8.8,8.8.4.4)</p>
-
-<p>/etc/sysconfig/network-scripts/ifcfg-eth0 へ以下を追加し、</p>
-
-<pre><code>DNS1=8.8.8.8
-DNS2=8.8.4.4
+<pre><code>$ apache-loggen --help
+Usage: apache-loggen [options]
+        --limit=COUNT                最大何件出力するか。デフォルトは0で無制限。
+        --rate=RATE                  毎秒何レコード生成するか。デフォルトは0で流量制限無し。
+        --rotate=SECOND              ローテーションする間隔。デフォルトは0。
+        --progress                   レートの表示をする。
+        --json                       json形式の出力
 </code></pre>
 
-<p>network サービスを再起動</p>
+<h3 id="section-3">データ作成</h3>
 
-<pre><code>sudo service network restart
+<p>とりあえず、100件データと10000000件データを作成してみた。</p>
+
+<pre><code>apache-loggen --progress --rate=10 --limit=100 access-short.log
+
+apache-loggen --progress --limit=10000000 access.log
 </code></pre>
 
-<p>/etc/resolve.conf の nameserver に 8.8.8.8 と 8.8.4.4 が登録されているのを確認。
-(NIC起動時に ifcfg-eth0 へ追加した DNS のアドレスが /etc/resolve.conf へ書き込まれる)</p>
+<p>ログの内容もあるランダムに出力してくれる。</p>
 
-<p>ping は通るようになった。</p>
+<pre><code>104.177.44.55 - - [28/Jun/2014:02:20:49 +0900] "GET /category/electronics HTTP/1.1" 200 105 "-" "Mozilla/5.0 (Windows NT 6.0; rv:10.0.1) Gecko/20100101 Firefox/10.0.1"
+184.129.76.75 - - [28/Jun/2014:02:20:49 +0900] "GET /category/games HTTP/1.1" 200 92 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.1) Gecko/20100101 Firefox/10.0.1"
+212.102.35.194 - - [28/Jun/2014:02:20:49 +0900] "GET /item/networking/264 HTTP/1.1" 200 82 "/category/electronics" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.
+</code></pre>
 
-<p>名前解決が根本の原因なのでどこで対応するか考える。
-OS の プロビジョニング中に起きているのでそれ以前で対処しないといけない。</p>
+<h2 id="section-4">まとめ</h2>
 
-<h3 id="section-1">対応</h3>
-
-<p>プロビジョニング中に起きている事象なので puppet の設定で書くのには違和感を感じた。
-vagrantで対応できないか探ってみた。</p>
-
-<p>調べてみると VirtualBox のネットワーク設定が NAT の場合のDNSの挙動に関する設定が VirtualBox 自体に存在していた。
-Vagrantファイルに設定を追加することで対応完了。 <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
-
-<ul>
-  <li>参照URL
-    <ul>
-      <li><a href="http://www.virtualbox.org/manual/ch09.html#nat-adv-dns">9.11.5. Enabling DNS proxy in NAT mode</a></li>
-      <li><a href="http://www.virtualbox.org/manual/ch09.html#nat_host_resolver_proxy">9.11.6. Using the host’s resolver as a DNS proxy in NAT mode</a></li>
-    </ul>
-  </li>
-</ul>
-
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-</span><span class="line">  <span class="c1"># add for dns</span>
-</span><span class="line">  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="ss">:virtualbox</span> <span class="k">do</span> <span class="o">|</span><span class="n">vb</span><span class="o">|</span>
-</span><span class="line">    <span class="n">vb</span><span class="o">.</span><span class="n">customize</span> <span class="o">[</span><span class="s2">&quot;modifyvm&quot;</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="s2">&quot;--natdnshostresolver1&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="o">]</span>
-</span><span class="line">    <span class="n">vb</span><span class="o">.</span><span class="n">customize</span> <span class="o">[</span><span class="s2">&quot;modifyvm&quot;</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="s2">&quot;--natdnsproxy1&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="o">]</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="err">…</span>
-</span><span class="line"><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h3 id="section-2">解決</h3>
-
-<p>仮想マシンを破棄してプロビジョニングし直す。</p>
-
-<p>puppet のインストール完了し無事テストが出来るようになった。</p>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>どちらかを設定すれば動作するように見えたがどちらも on にしないと通信ができなかった。<a href="#fnref:1" rel="reference">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p>手軽に apache の access.log を作ることができた。
+help を見るとリアルタイムに流れるログに対するテストなどにも使えるのではないかと思う。</p>
 </div>
 
 
@@ -273,12 +211,12 @@ Vagrantファイルに設定を追加することで対応完了。 <sup id="fnr
   
 
 
-<time datetime="2014-05-05T18:12:00+09:00" pubdate data-updated="true">May 5<span>th</span>, 2014</time>
+<time datetime="2014-06-28T16:45:00+09:00" pubdate data-updated="true">Jun 28<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/techmemo/'>Techmemo</a>, <a class='category' href='/blog/categories/network/'>network</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a>, <a class='category' href='/blog/categories/virtualbox/'>virtualbox</a>
+    <a class='category' href='/blog/categories/techmemo/'>TechMemo</a>, <a class='category' href='/blog/categories/golang/'>golang</a>
   
 </span>
 
@@ -291,7 +229,7 @@ Vagrantファイルに設定を追加することで対応完了。 <sup id="fnr
   
 
   
-<div><a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u=http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=Virtual Box ゲストから外部ネットワークにつながらない（解決済み）&amp;url=http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/&amp;summary=Virtual Box ゲストから外部ネットワークにつながらない（解決済み）"><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url=http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a></div>
+<div><a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u=http://makotow.github.io/blog/2014/06/28/access-log-generator/"><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=テストデータのログファイルを簡単につくれる。(apache access.log編)&amp;url=http://makotow.github.io/blog/2014/06/28/access-log-generator/"><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://makotow.github.io/blog/2014/06/28/access-log-generator/&amp;summary=テストデータのログファイルを簡単につくれる。(apache access.log編)"><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url=http://makotow.github.io/blog/2014/06/28/access-log-generator/"><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a></div>
 
 
 
@@ -305,8 +243,6 @@ Vagrantファイルに設定を追加することで対応完了。 <sup id="fnr
   <h2>Related Posts</h2>
   <ul>
     
-    <li><a href="/blog/2012/05/13/network-checklist/">Ubuntuのネットワーク設定チェックリスト</a></li>
-    
   </ul>
 </div>
 
@@ -316,10 +252,8 @@ Vagrantファイルに設定を追加することで対応完了。 <sup id="fnr
 
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/15/tech201404/" title="Previous Post: 20140415時点の近況">&laquo; 20140415時点の近況</a>
+        <a class="basic-alignment left" href="/blog/2014/06/15/brewfile-2/" title="Previous Post: BrewfileでHomebrewパッケージ管理 その後">&laquo; BrewfileでHomebrewパッケージ管理 その後</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/06/11/macosx-keybinding/" title="Next Post: OSX のキーバインド周り">OSX のキーバインド周り &raquo;</a>
       
     </p>
   </footer>
@@ -444,8 +378,8 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/';
-        var disqus_url = 'http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/';
+        var disqus_identifier = 'http://makotow.github.io/blog/2014/06/28/access-log-generator/';
+        var disqus_url = 'http://makotow.github.io/blog/2014/06/28/access-log-generator/';
         var disqus_script = 'embed.js';
       
     (function () {
