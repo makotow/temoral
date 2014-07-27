@@ -9,7 +9,11 @@
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="実践テスト駆動開発 テストに導かれてオブジェクト指向ソフトウェアを育てる (Object Oriented SELECTION)posted with amazlet at 13.02.18Steve Freeman Nat Pryce 翔泳社 売り上げランキング: 39,893Amazon.co &hellip;">
+  <meta name="description" content="zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
+Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。 1
+2
+3
+if which brew &gt; /dev/null;then . `brew --prefix`/etc/profile. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +95,62 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/31/sh-tech-exists-command/">shでコマンドが存在するか確認する方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-31T00:41:00+09:00" pubdate data-updated="true">Mar 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
+Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if </span>which brew &gt; /dev/null;then
+</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class="line"><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>こんな方法もあるみたい</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;`which brew`&quot;</span> <span class="o">]</span>;<span class="k">then</span>
+</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
+</span><span class="line"><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -506,50 +566,6 @@ git で branch 作って作業して他の branch にマージということを
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/gitignore/">gitignoreのメモ</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T23:38:00+09:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>gitのリポジトリを作るたびにgitignoreについて試行錯誤しているので、</p>
-
-<p>今回Scala用に書いたものをメモ書きとして残す。</p>
-
-<p>主にsbtとScalaIDE用のものとなる。
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/10/03/gitignore/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -584,6 +600,10 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/27/osx-hydra/">OSX hydra 紹介 （5%くらいの作業効率UPを目指す） </a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/28/access-log-generator/">テストデータのログファイルを簡単につくれる。(apache access.log編)</a>
       </li>
     
@@ -599,15 +619,11 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
         <a href="/blog/2014/06/11/macosx-keybinding/">OSX のキーバインド周り</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/">Virtual Box ゲストから外部ネットワークにつながらない（解決済み）</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 102.85714285714286%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 102.85714285714286%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 102.85714285714286%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 140.0%'>Article(14)</a> <a href='/blog/categories/aws' style='font-size: 102.85714285714286%'>aws(1)</a> <a href='/blog/categories/blog' style='font-size: 105.71428571428571%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 117.14285714285714%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 105.71428571428571%'>brew(2)</a> <a href='/blog/categories/buffer' style='font-size: 102.85714285714286%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 105.71428571428571%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 102.85714285714286%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 102.85714285714286%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 102.85714285714286%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 102.85714285714286%'>font(1)</a> <a href='/blog/categories/fsharp' style='font-size: 102.85714285714286%'>fsharp(1)</a> <a href='/blog/categories/gist' style='font-size: 105.71428571428571%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 108.57142857142857%'>git(3)</a> <a href='/blog/categories/go-lang' style='font-size: 102.85714285714286%'>go-lang(1)</a> <a href='/blog/categories/golang' style='font-size: 102.85714285714286%'>golang(1)</a> <a href='/blog/categories/ifttt' style='font-size: 102.85714285714286%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 108.57142857142857%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 102.85714285714286%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 102.85714285714286%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 102.85714285714286%'>linux(1)</a> <a href='/blog/categories/linux' style='font-size: 102.85714285714286%'>Linux(1)</a> <a href='/blog/categories/mac' style='font-size: 102.85714285714286%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 102.85714285714286%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 105.71428571428571%'>memorandum(2)</a> <a href='/blog/categories/network' style='font-size: 105.71428571428571%'>network(2)</a> <a href='/blog/categories/octopress' style='font-size: 120.0%'>octopress(7)</a> <a href='/blog/categories/osx' style='font-size: 108.57142857142857%'>osx(3)</a> <a href='/blog/categories/pocket' style='font-size: 102.85714285714286%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 102.85714285714286%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 108.57142857142857%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 102.85714285714286%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 111.42857142857143%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 117.14285714285714%'>scala(6)</a> <a href='/blog/categories/scrum' style='font-size: 102.85714285714286%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 102.85714285714286%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 102.85714285714286%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 102.85714285714286%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 102.85714285714286%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 102.85714285714286%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 105.71428571428571%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 102.85714285714286%'>Techmemo(1)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(21)</a> <a href='/blog/categories/technology' style='font-size: 102.85714285714286%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>tools(3)</a> <a href='/blog/categories/unix' style='font-size: 102.85714285714286%'>unix(1)</a> <a href='/blog/categories/vagrant' style='font-size: 102.85714285714286%'>vagrant(1)</a> <a href='/blog/categories/virtualbox' style='font-size: 102.85714285714286%'>virtualbox(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 102.72727272727273%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 102.72727272727273%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 102.72727272727273%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 138.1818181818182%'>Article(14)</a> <a href='/blog/categories/aws' style='font-size: 102.72727272727273%'>aws(1)</a> <a href='/blog/categories/blog' style='font-size: 105.45454545454545%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 116.36363636363636%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 105.45454545454545%'>brew(2)</a> <a href='/blog/categories/buffer' style='font-size: 102.72727272727273%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 105.45454545454545%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 102.72727272727273%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 102.72727272727273%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 102.72727272727273%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 102.72727272727273%'>font(1)</a> <a href='/blog/categories/fsharp' style='font-size: 102.72727272727273%'>fsharp(1)</a> <a href='/blog/categories/gist' style='font-size: 105.45454545454545%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 108.18181818181819%'>git(3)</a> <a href='/blog/categories/go-lang' style='font-size: 102.72727272727273%'>go-lang(1)</a> <a href='/blog/categories/golang' style='font-size: 102.72727272727273%'>golang(1)</a> <a href='/blog/categories/ifttt' style='font-size: 102.72727272727273%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 108.18181818181819%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 102.72727272727273%'>javascript(1)</a> <a href='/blog/categories/links' style='font-size: 102.72727272727273%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 102.72727272727273%'>linux(1)</a> <a href='/blog/categories/linux' style='font-size: 102.72727272727273%'>Linux(1)</a> <a href='/blog/categories/mac' style='font-size: 102.72727272727273%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 102.72727272727273%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 105.45454545454545%'>memorandum(2)</a> <a href='/blog/categories/network' style='font-size: 105.45454545454545%'>network(2)</a> <a href='/blog/categories/octopress' style='font-size: 119.0909090909091%'>octopress(7)</a> <a href='/blog/categories/osx' style='font-size: 110.9090909090909%'>osx(4)</a> <a href='/blog/categories/pocket' style='font-size: 102.72727272727273%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 102.72727272727273%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 108.18181818181819%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 102.72727272727273%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 110.9090909090909%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 116.36363636363636%'>scala(6)</a> <a href='/blog/categories/scrum' style='font-size: 102.72727272727273%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 102.72727272727273%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 102.72727272727273%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 102.72727272727273%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 102.72727272727273%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 102.72727272727273%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 105.45454545454545%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 102.72727272727273%'>Techmemo(1)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(22)</a> <a href='/blog/categories/technology' style='font-size: 102.72727272727273%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.9090909090909%'>tools(4)</a> <a href='/blog/categories/unix' style='font-size: 102.72727272727273%'>unix(1)</a> <a href='/blog/categories/vagrant' style='font-size: 102.72727272727273%'>vagrant(1)</a> <a href='/blog/categories/virtualbox' style='font-size: 102.72727272727273%'>virtualbox(1)</a> </span>
 </section>
 
 <section>

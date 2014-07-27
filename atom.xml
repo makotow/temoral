@@ -4,7 +4,7 @@
   <title><![CDATA[Faster and Faster]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-06-28T17:34:36+09:00</updated>
+  <updated>2014-07-27T22:47:16+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,190 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OSX hydra 紹介 （5%くらいの作業効率UPを目指す） ]]></title>
+    <link href="http://makotow.github.io/blog/2014/07/27/osx-hydra/"/>
+    <updated>2014-07-27T22:45:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/07/27/osx-hydra</id>
+    <content type="html"><![CDATA[<p>ウィンドウのリサイズ、移動、フォーカス切り替えをするために、
+マジックトラックパッドに手をのばすのがだるいときがある。</p>
+
+<p>今回紹介するツールはそのだるさを解決してくれて、かつ、5％くらい作業効率を上げてくれる可能性があるので導入してみた。</p>
+
+<p><a href="http://hackhydra.com/">Hydra</a></p>
+
+<p><img src="https://raw.githubusercontent.com/sdegutis/hydra/master/Hydra/XcodeCrap/Images.xcassets/AppIcon.appiconset/icon_128x128.png" />               </p>
+
+<blockquote><p>Hack your OS X desktop environment</p></blockquote>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">インストール</a></li>
+  <li><a href="#section-1">設定</a></li>
+  <li><a href="#section-2">できること</a></li>
+  <li><a href="#section-3">類似</a></li>
+  <li><a href="#section-4">最後に</a></li>
+</ul>
+
+<h2 id="section">インストール</h2>
+
+<p>hydra 自体は github から zip をダウンロードして /Applicationへ配置</p>
+
+<p>hydra は brew cask でもインストール可能らしいが今のところ問題が起きる可能性が多いらしい（<a href="https://github.com/sdegutis/hydra#faq">FAQ</a>記載）</p>
+
+<p>hydra-cli は brew でインストール</p>
+
+<pre><code>brew install hydra-cli
+</code></pre>
+
+<h2 id="section-1">設定</h2>
+
+<p>設定ファイルはlua(!) でかく</p>
+
+<p>書き方はインストールした時点でsampleがあるのでそれを見ながら書いていく。
+本家のサンプル</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+</pre></td><td class="code"><pre><code class="lua"><span class="line"><span class="c1">-- Hi!</span>
+</span><span class="line"><span class="c1">-- Save this as ~/.hydra/init.lua and choose Reload Config from the menu (or press cmd-alt-ctrl R}</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- show an alert to let you know Hydra&#39;s running</span>
+</span><span class="line"><span class="n">hydra</span><span class="p">.</span><span class="n">alert</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Hydra sample config loaded&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- open a repl with mash-R; requires https://github.com/sdegutis/hydra-cli</span>
+</span><span class="line"><span class="n">hotkey</span><span class="p">.</span><span class="n">bind</span><span class="p">({</span><span class="s2">&quot;</span><span class="s">cmd&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">alt&quot;</span><span class="p">},</span> <span class="s2">&quot;</span><span class="s">R&quot;</span><span class="p">,</span> <span class="n">repl</span><span class="p">.</span><span class="n">open</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- show a helpful menu</span>
+</span><span class="line"><span class="n">hydra</span><span class="p">.</span><span class="n">menu</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="k">function</span><span class="p">()</span>
+</span><span class="line">    <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="line">      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Reload Config&quot;</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">hydra</span><span class="p">.</span><span class="n">reload</span><span class="p">},</span>
+</span><span class="line">      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Open REPL&quot;</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">repl</span><span class="p">.</span><span class="n">open</span><span class="p">},</span>
+</span><span class="line">      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">-&quot;</span><span class="p">},</span>
+</span><span class="line">      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">About Hydra&quot;</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">hydra</span><span class="p">.</span><span class="n">showabout</span><span class="p">},</span>
+</span><span class="line">      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Check for Updates...&quot;</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="n">hydra</span><span class="p">.</span><span class="n">updates</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span> <span class="k">end</span><span class="p">},</span>
+</span><span class="line">      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Quit&quot;</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="nb">os.exit</span><span class="p">},</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">if</span> <span class="ow">not</span> <span class="n">hydra</span><span class="p">.</span><span class="n">license</span><span class="p">.</span><span class="n">haslicense</span><span class="p">()</span> <span class="k">then</span>
+</span><span class="line">      <span class="nb">table.insert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Buy or Enter License...&quot;</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">hydra</span><span class="p">.</span><span class="n">license</span><span class="p">.</span><span class="n">enter</span><span class="p">})</span>
+</span><span class="line">      <span class="nb">table.insert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">-&quot;</span><span class="p">})</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="n">t</span>
+</span><span class="line"><span class="k">end</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- move the window to the right half of the screen</span>
+</span><span class="line"><span class="k">function</span> <span class="nf">movewindow_righthalf</span><span class="p">()</span>
+</span><span class="line">  <span class="kd">local</span> <span class="n">win</span> <span class="o">=</span> <span class="n">window</span><span class="p">.</span><span class="n">focusedwindow</span><span class="p">()</span>
+</span><span class="line">  <span class="kd">local</span> <span class="n">newframe</span> <span class="o">=</span> <span class="n">win</span><span class="p">:</span><span class="n">screen</span><span class="p">():</span><span class="n">frame_without_dock_or_menu</span><span class="p">()</span>
+</span><span class="line">  <span class="n">newframe</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">newframe</span><span class="p">.</span><span class="n">w</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span class="line">  <span class="n">newframe</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">newframe</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">newframe</span><span class="p">.</span><span class="n">w</span> <span class="c1">-- comment out this line to push it to left half of screen</span>
+</span><span class="line">  <span class="n">win</span><span class="p">:</span><span class="n">setframe</span><span class="p">(</span><span class="n">newframe</span><span class="p">)</span>
+</span><span class="line"><span class="k">end</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- bind your custom function to a convenient hotkey</span>
+</span><span class="line"><span class="c1">-- note: it&#39;s good practice to keep hotkey-bindings separate from their functions, like we&#39;re doing here</span>
+</span><span class="line"><span class="n">hotkey</span><span class="p">.</span><span class="n">new</span><span class="p">({</span><span class="s2">&quot;</span><span class="s">cmd&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">alt&quot;</span><span class="p">},</span> <span class="s2">&quot;</span><span class="s">L&quot;</span><span class="p">,</span> <span class="n">movewindow_righthalf</span><span class="p">):</span><span class="n">enable</span><span class="p">()</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- uncomment this line if you want Hydra to make sure it launches at login</span>
+</span><span class="line"><span class="c1">-- hydra.autolaunch.set(true)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- when the &quot;update is available&quot; notification is clicked, open the website</span>
+</span><span class="line"><span class="n">notify</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">showupdate&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="nb">os.execute</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">open https://github.com/sdegutis/Hydra/releases&#39;</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">-- check for updates every week, and also right now (when first launching)</span>
+</span><span class="line"><span class="n">timer</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">timer</span><span class="p">.</span><span class="n">weeks</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">hydra</span><span class="p">.</span><span class="n">updates</span><span class="p">.</span><span class="n">check</span><span class="p">):</span><span class="n">start</span><span class="p">()</span>
+</span><span class="line"><span class="n">hydra</span><span class="p">.</span><span class="n">updates</span><span class="p">.</span><span class="n">check</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">できること</h2>
+
+<p>ウィンドウの操作をバインドしたキーでできる。</p>
+
+<p>Github の gif を見るとやれることが直感的にわかる。</p>
+
+<p><a href="https://github.com/sdegutis/hydra#screenshots">Hydra Screenshots</a></p>
+
+<h2 id="section-3">類似</h2>
+
+<ul>
+  <li><a href="https://github.com/jigish/slate">Slate</a></li>
+</ul>
+
+<p>が類似としてあげられる。</p>
+
+<p>hydra本家の<a href="https://github.com/sdegutis/hydra#faq">FAQ</a>にも
+目指すところは似ていると記載があり。</p>
+
+<p>APIをみて好みの方を選んでねと書いてある。</p>
+
+<p>リソースの一覧 github の本家にリンクあり。</p>
+
+<ul>
+  <li><a href="https://github.com/sdegutis/hydra#resources">Resources</a></li>
+  <li><a href="http://hackhydra.com/docs/">Hydra API</a></li>
+</ul>
+
+<p>API見ると hotkey 以外にもたくさんあるので色々できそう</p>
+
+<h2 id="section-4">最後に</h2>
+
+<p>すぐになにかを便利にするという用途よりは
+日常で使う操作を設定ファイルに追加していき育てていくのがいいのではないかと思いました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[テストデータのログファイルを簡単につくれる。(apache access.log編)]]></title>
@@ -2413,35 +2597,6 @@ git commit -m "pull upstream."
 
 <iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
 <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[shでコマンドが存在するか確認する方法]]></title>
-    <link href="http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command/"/>
-    <updated>2013-03-31T00:41:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command</id>
-    <content type="html"><![CDATA[<p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
-Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if </span>which brew &gt; /dev/null;then
-</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
-</span><span class="line"><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>こんな方法もあるみたい</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;`which brew`&quot;</span> <span class="o">]</span>;<span class="k">then</span>
-</span><span class="line">   . <span class="sb">`</span>brew --prefix<span class="sb">`</span>/etc/profile.d/z.sh
-</span><span class="line"><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 ]]></content>
   </entry>

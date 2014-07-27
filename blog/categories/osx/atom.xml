@@ -4,7 +4,7 @@
   <title><![CDATA[Category: osx | Faster and Faster]]></title>
   <link href="http://makotow.github.io/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-06-28T17:34:36+09:00</updated>
+  <updated>2014-07-27T22:47:16+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,190 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OSX hydra 紹介 （5%くらいの作業効率UPを目指す） ]]></title>
+    <link href="http://makotow.github.io/blog/2014/07/27/osx-hydra/"/>
+    <updated>2014-07-27T22:45:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/07/27/osx-hydra</id>
+    <content type="html"><![CDATA[<p>ウィンドウのリサイズ、移動、フォーカス切り替えをするために、
+マジックトラックパッドに手をのばすのがだるいときがある。</p>
+
+<p>今回紹介するツールはそのだるさを解決してくれて、かつ、5％くらい作業効率を上げてくれる可能性があるので導入してみた。</p>
+
+<p><a href="http://hackhydra.com/">Hydra</a></p>
+
+<p><img src="https://raw.githubusercontent.com/sdegutis/hydra/master/Hydra/XcodeCrap/Images.xcassets/AppIcon.appiconset/icon_128x128.png">               </p>
+
+<p><blockquote><p>Hack your OS X desktop environment</p></blockquote></p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">インストール</a></li>
+  <li><a href="#section-1">設定</a></li>
+  <li><a href="#section-2">できること</a></li>
+  <li><a href="#section-3">類似</a></li>
+  <li><a href="#section-4">最後に</a></li>
+</ul>
+
+<h2 id="section">インストール</h2>
+
+<p>hydra 自体は github から zip をダウンロードして /Applicationへ配置</p>
+
+<p>hydra は brew cask でもインストール可能らしいが今のところ問題が起きる可能性が多いらしい（<a href="https://github.com/sdegutis/hydra#faq">FAQ</a>記載）</p>
+
+<p>hydra-cli は brew でインストール</p>
+
+<pre><code>brew install hydra-cli
+</code></pre>
+
+<h2 id="section-1">設定</h2>
+
+<p>設定ファイルはlua(!) でかく</p>
+
+<p>書き方はインストールした時点でsampleがあるのでそれを見ながら書いていく。
+本家のサンプル</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+</pre></td><td class='code'><pre><code class='lua'><span class='line'><span class="err">–</span> <span class="n">Hi</span><span class="err">!</span>
+</span><span class='line'><span class="err">–</span> <span class="n">Save</span> <span class="n">this</span> <span class="n">as</span> <span class="err">~</span><span class="o">/</span><span class="p">.</span><span class="n">hydra</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">lua</span> <span class="ow">and</span> <span class="n">choose</span> <span class="n">Reload</span> <span class="n">Config</span> <span class="n">from</span> <span class="n">the</span> <span class="n">menu</span> <span class="p">(</span><span class="ow">or</span> <span class="n">press</span> <span class="n">cmd</span><span class="o">-</span><span class="n">alt</span><span class="o">-</span><span class="n">ctrl</span> <span class="n">R</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">show</span> <span class="n">an</span> <span class="n">alert</span> <span class="n">to</span> <span class="n">let</span> <span class="n">you</span> <span class="n">know</span> <span class="n">Hydra</span><span class="err">’</span><span class="n">s</span> <span class="n">running</span>
+</span><span class='line'><span class="n">hydra</span><span class="p">.</span><span class="n">alert</span><span class="p">(</span><span class="err">“</span><span class="n">Hydra</span> <span class="n">sample</span> <span class="n">config</span> <span class="n">loaded</span><span class="err">”</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">open</span> <span class="n">a</span> <span class="n">repl</span> <span class="n">with</span> <span class="n">mash</span><span class="o">-</span><span class="n">R</span><span class="p">;</span> <span class="n">requires</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">sdegutis</span><span class="o">/</span><span class="n">hydra</span><span class="o">-</span><span class="n">cli</span>
+</span><span class='line'><span class="n">hotkey</span><span class="p">.</span><span class="n">bind</span><span class="p">({</span><span class="err">“</span><span class="n">cmd</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">ctrl</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">alt</span><span class="err">”</span><span class="p">},</span> <span class="err">“</span><span class="n">R</span><span class="err">”</span><span class="p">,</span> <span class="n">repl</span><span class="p">.</span><span class="n">open</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">show</span> <span class="n">a</span> <span class="n">helpful</span> <span class="n">menu</span>
+</span><span class='line'><span class="n">hydra</span><span class="p">.</span><span class="n">menu</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="k">function</span><span class="p">()</span>
+</span><span class='line'>    <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Reload</span> <span class="n">Config</span><span class="err">”</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">hydra</span><span class="p">.</span><span class="n">reload</span><span class="p">},</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Open</span> <span class="n">REPL</span><span class="err">”</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">repl</span><span class="p">.</span><span class="n">open</span><span class="p">},</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="o">-</span><span class="err">“</span><span class="p">},</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">About</span> <span class="n">Hydra</span><span class="err">”</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">hydra</span><span class="p">.</span><span class="n">showabout</span><span class="p">},</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Check</span> <span class="k">for</span> <span class="n">Updates</span><span class="err">…”</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="n">hydra</span><span class="p">.</span><span class="n">updates</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span> <span class="k">end</span><span class="p">},</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Quit</span><span class="err">”</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="nb">os.exit</span><span class="p">},</span>
+</span><span class='line'>    <span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="ow">not</span> <span class="n">hydra</span><span class="p">.</span><span class="n">license</span><span class="p">.</span><span class="n">haslicense</span><span class="p">()</span> <span class="k">then</span>
+</span><span class='line'>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Buy or Enter License...&quot;</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">hydra</span><span class="p">.</span><span class="n">license</span><span class="p">.</span><span class="n">enter</span><span class="p">})</span>
+</span><span class='line'>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">-&quot;</span><span class="p">})</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">return</span> <span class="n">t</span> <span class="k">end</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">move</span> <span class="n">the</span> <span class="n">window</span> <span class="n">to</span> <span class="n">the</span> <span class="n">right</span> <span class="n">half</span> <span class="n">of</span> <span class="n">the</span> <span class="n">screen</span>
+</span><span class='line'><span class="k">function</span> <span class="nf">movewindow_righthalf</span><span class="p">()</span>
+</span><span class='line'>  <span class="kd">local</span> <span class="n">win</span> <span class="o">=</span> <span class="n">window</span><span class="p">.</span><span class="n">focusedwindow</span><span class="p">()</span>
+</span><span class='line'>  <span class="kd">local</span> <span class="n">newframe</span> <span class="o">=</span> <span class="n">win</span><span class="p">:</span><span class="n">screen</span><span class="p">():</span><span class="n">frame_without_dock_or_menu</span><span class="p">()</span>
+</span><span class='line'>  <span class="n">newframe</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">newframe</span><span class="p">.</span><span class="n">w</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span class='line'>  <span class="n">newframe</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">newframe</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">newframe</span><span class="p">.</span><span class="n">w</span> <span class="err">–</span> <span class="n">comment</span> <span class="n">out</span> <span class="n">this</span> <span class="n">line</span> <span class="n">to</span> <span class="n">push</span> <span class="n">it</span> <span class="n">to</span> <span class="n">left</span> <span class="n">half</span> <span class="n">of</span> <span class="n">screen</span>
+</span><span class='line'>  <span class="n">win</span><span class="p">:</span><span class="n">setframe</span><span class="p">(</span><span class="n">newframe</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">bind</span> <span class="n">your</span> <span class="n">custom</span> <span class="k">function</span> <span class="nf">to</span> <span class="n">a</span> <span class="n">convenient</span> <span class="n">hotkey</span>
+</span><span class='line'><span class="err">–</span> <span class="n">note</span><span class="p">:</span> <span class="n">it</span><span class="err">’</span><span class="n">s</span> <span class="n">good</span> <span class="n">practice</span> <span class="n">to</span> <span class="n">keep</span> <span class="n">hotkey</span><span class="o">-</span><span class="n">bindings</span> <span class="n">separate</span> <span class="n">from</span> <span class="n">their</span> <span class="n">functions</span><span class="p">,</span> <span class="n">like</span> <span class="n">we</span><span class="err">’</span><span class="n">re</span> <span class="n">doing</span> <span class="n">here</span>
+</span><span class='line'><span class="n">hotkey</span><span class="p">.</span><span class="n">new</span><span class="p">({</span><span class="err">“</span><span class="n">cmd</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">ctrl</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">alt</span><span class="err">”</span><span class="p">},</span> <span class="err">“</span><span class="n">L</span><span class="err">”</span><span class="p">,</span> <span class="n">movewindow_righthalf</span><span class="p">):</span><span class="n">enable</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">uncomment</span> <span class="n">this</span> <span class="n">line</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">Hydra</span> <span class="n">to</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">it</span> <span class="n">launches</span> <span class="n">at</span> <span class="n">login</span>
+</span><span class='line'><span class="err">–</span> <span class="n">hydra</span><span class="p">.</span><span class="n">autolaunch</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">when</span> <span class="n">the</span> <span class="err">“</span><span class="n">update</span> <span class="n">is</span> <span class="n">available</span><span class="err">”</span> <span class="n">notification</span> <span class="n">is</span> <span class="n">clicked</span><span class="p">,</span> <span class="n">open</span> <span class="n">the</span> <span class="n">website</span>
+</span><span class='line'><span class="n">notify</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="err">“</span><span class="n">showupdate</span><span class="err">”</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="nb">os.execute</span><span class="p">(</span><span class="err">‘</span><span class="n">open</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">sdegutis</span><span class="o">/</span><span class="n">Hydra</span><span class="o">/</span><span class="n">releases</span><span class="err">’</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">–</span> <span class="n">check</span> <span class="k">for</span> <span class="n">updates</span> <span class="n">every</span> <span class="n">week</span><span class="p">,</span> <span class="ow">and</span> <span class="n">also</span> <span class="n">right</span> <span class="n">now</span> <span class="p">(</span><span class="n">when</span> <span class="n">first</span> <span class="n">launching</span><span class="p">)</span>
+</span><span class='line'><span class="n">timer</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">timer</span><span class="p">.</span><span class="n">weeks</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">hydra</span><span class="p">.</span><span class="n">updates</span><span class="p">.</span><span class="n">check</span><span class="p">):</span><span class="n">start</span><span class="p">()</span>
+</span><span class='line'><span class="n">hydra</span><span class="p">.</span><span class="n">updates</span><span class="p">.</span><span class="n">check</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2 id="section-2">できること</h2>
+
+<p>ウィンドウの操作をバインドしたキーでできる。</p>
+
+<p>Github の gif を見るとやれることが直感的にわかる。</p>
+
+<p><a href="https://github.com/sdegutis/hydra#screenshots">Hydra Screenshots</a></p>
+
+<h2 id="section-3">類似</h2>
+
+<ul>
+  <li><a href="https://github.com/jigish/slate">Slate</a></li>
+</ul>
+
+<p>が類似としてあげられる。</p>
+
+<p>hydra本家の<a href="https://github.com/sdegutis/hydra#faq">FAQ</a>にも
+目指すところは似ていると記載があり。</p>
+
+<p>APIをみて好みの方を選んでねと書いてある。</p>
+
+<p>リソースの一覧 github の本家にリンクあり。</p>
+
+<ul>
+  <li><a href="https://github.com/sdegutis/hydra#resources">Resources</a></li>
+  <li><a href="http://hackhydra.com/docs/">Hydra API</a></li>
+</ul>
+
+<p>API見ると hotkey 以外にもたくさんあるので色々できそう</p>
+
+<h2 id="section-4">最後に</h2>
+
+<p>すぐになにかを便利にするという用途よりは
+日常で使う操作を設定ファイルに追加していき育てていくのがいいのではないかと思いました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BrewfileでHomebrewパッケージ管理 その後]]></title>
