@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: IFTTT - Faster and Faster</title>
+  <title>#golang　設定値をどうするか？(設定ファイル読み込み編) - Faster and Faster</title>
   <meta name="author" content="Makoto WATANABE (makotow)">
 
   
-  <meta name="description" content="Category: IFTTT">
+  <meta name="description" content="golangを書いて設定値としたいものが出てきた時にどうするのがよいのか？ ふとプログラムを書いていて気になってきたため調べてみた。
+少しずつアウトプットということで今回はjson ファイルから読み込みを試す。 Contents 方法 Githubのパス 方法 【翻訳】 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makotow.github.ioblog/categories/ifttt">
+  <link rel="canonical" href="http://makotow.github.io/blog/2014/07/29/golang-setting-from-file">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Faster and Faster" type="application/atom+xml">
@@ -90,36 +91,222 @@ $(document).ready( function () {
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: IFTTT</h1>
+    
+      <h1 class="entry-title">#golang　設定値をどうするか？(設定ファイル読み込み編)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-29T00:12:00+09:00" pubdate data-updated="true">Jul 29<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
+
+
+<div class="entry-content"><p>golangを書いて設定値としたいものが出てきた時にどうするのがよいのか？</p>
+
+<p>ふとプログラムを書いていて気になってきたため調べてみた。<br />
+少しずつアウトプットということで今回はjson ファイルから読み込みを試す。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">方法</a></li>
+  <li><a href="#github">Githubのパス</a></li>
+</ul>
+
+<h2 id="section">方法</h2>
+
+<ul>
+  <li><a href="http://qiita.com/umisama/items/c2a8db6c23db18dd5437#2-4">【翻訳】プロダクション環境でのベストプラクティス 設定値の扱い</a></li>
+  <li><a href="http://blog.starbug1.com/archives/994">Golangで設定ファイルの読み込み</a></li>
+</ul>
+
+<p>を参考</p>
+
+<p>設定値を読み込む方法としては３つの方法があるようだ。</p>
+
+<ol>
+  <li>設定ファイル読み込み</li>
+  <li>GOENVを設定しos.GetEnvを使用</li>
+  <li>flag パッケージを使う方法</li>
+</ol>
+
+<p>今回は1つ目の「設定ファイル読み込み」を試してみた。</p>
+
+<p>コードは<a href="http://blog.starbug1.com/archives/994">Golangで設定ファイルの読み込み</a>を写経させていただいた。<br />
+struct で json と同じ構造を作り、json をアンマーシャリングする。（JavaのJAXBみたい）</p>
+
+<p>jsonファイルのkey名とsturctの変数名の付け方。どちらも同じ名前にしておけば自動でマッピングしてくれる。(同じでない場合はstructの方でマッピングする。）<br />
+ORMのgorpと同じような感じ。</p>
+
+<p>参考：　<a href="http://qiita.com/oahiroaki/items/ff21d9adfb843161d1d8">golangでのjsonのデコード</a>　を写経</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+</pre></td><td class="code"><pre><code class="go"><span class="line"><span class="kn">package</span> <span class="nx">setting</span>
+</span><span class="line">
+</span><span class="line"><span class="kn">import</span> <span class="p">(</span>
+</span><span class="line">     <span class="s">&quot;io/ioutil&quot;</span>
+</span><span class="line">     <span class="s">&quot;fmt&quot;</span>
+</span><span class="line">     <span class="s">&quot;encoding/json&quot;</span>
+</span><span class="line"><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="kd">type</span> <span class="nx">Config</span> <span class="kd">struct</span> <span class="p">{</span>
+</span><span class="line">     <span class="nx">Id</span> <span class="kt">int</span>
+</span><span class="line">     <span class="nx">Name</span> <span class="kt">string</span>
+</span><span class="line">     <span class="nx">Array</span> <span class="p">[]</span><span class="kt">int</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="kd">func</span> <span class="nx">Parse</span><span class="p">(</span><span class="nx">filename</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">Config</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">     <span class="kd">var</span> <span class="nx">c</span> <span class="nx">Config</span>
+</span><span class="line">     <span class="nx">jsonString</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line">     <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class="line">          <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;error: %v &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span><span class="line">          <span class="k">return</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">err</span>
+</span><span class="line">     <span class="p">}</span>
+</span><span class="line">     <span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">(</span><span class="nx">jsonString</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">c</span><span class="p">)</span>
+</span><span class="line">     <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class="line">          <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;error: %v &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span><span class="line">          <span class="k">return</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">err</span>
+</span><span class="line">     <span class="p">}</span>
+</span><span class="line">     <span class="k">return</span> <span class="nx">c</span> <span class="p">,</span> <span class="kc">nil</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="github">Githubのパス</h2>
+
+<p>今回のソースはgithubにpush済み<br />
+setting_test.go から実行。</p>
+
+<ul>
+  <li><a href="https://github.com/makotow/golang-study/blob/4980ad9857e7a0ae67c45d1d261ddac294043e5c/setting/JsonSetting.go">setting.go</a></li>
+  <li><a href="https://github.com/makotow/golang-study/blob/4980ad9857e7a0ae67c45d1d261ddac294043e5c/setting/JsonSetting_test.go">setting_test.go</a></li>
+  <li><a href="https://github.com/makotow/golang-study/blob/4980ad9857e7a0ae67c45d1d261ddac294043e5c/setting/setting.json">setting.json</a></li>
+</ul>
+
+<p>次は GOENV を使ってみようと思う。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <div id="blog-archives" class="category">
+
+<span class="byline author vcard">Posted by <span class="fn">Makoto WATANABE (makotow)</span></span>
+
+      
+
+
+
+
+
 
 
 
   
-  <h2>2013</h2>
 
-<article>
+
+<time datetime="2014-07-29T00:12:00+09:00" pubdate data-updated="true">Jul 29<span>th</span>, 2014</time>
+      
+
+<span class="categories">
   
-<h1><a href="/blog/2013/12/31/data-aggregation-2013/">2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)</a></h1>
-<time datetime="2013-12-31T20:23:00+09:00" pubdate><span class='month'>Dec</span> <span class='day'>31</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/article/'>Article</a>, <a class='category' href='/blog/categories/buffer/'>Buffer</a>, <a class='category' href='/blog/categories/evernote/'>Evernote</a>, <a class='category' href='/blog/categories/ifttt/'>IFTTT</a>, <a class='category' href='/blog/categories/memorandum/'>memorandum</a></span>
-</footer>
+    <a class='category' href='/blog/categories/techmemo/'>Techmemo</a>, <a class='category' href='/blog/categories/golang/'>golang</a>, <a class='category' href='/blog/categories/json/'>json</a>
+  
+</span>
 
 
-</article>
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+
+  
+<div><a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u=http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/"><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=#golang　設定値をどうするか？(設定ファイル読み込み編)&amp;url=http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/"><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/&amp;summary=#golang　設定値をどうするか？(設定ファイル読み込み編)"><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url=http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/"><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a></div>
+
+
 
 </div>
 
-  
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+    <li><a href="/blog/2014/06/28/access-log-generator/">テストデータのログファイルを簡単につくれる。(apache access.log編)</a></li>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/27/osx-hydra/" title="Previous Post: OSX hydra 紹介 （5%くらいの作業効率UPを目指す） ">&laquo; OSX hydra 紹介 （5%くらいの作業効率UPを目指す） </a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -233,7 +420,10 @@ twitter: <a href="https://twitter.com/makotow">@makotow</a>
       var disqus_shortname = 'makotownotes';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/';
+        var disqus_url = 'http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

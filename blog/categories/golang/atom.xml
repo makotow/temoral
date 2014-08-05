@@ -4,7 +4,7 @@
   <title><![CDATA[Category: golang | Faster and Faster]]></title>
   <link href="http://makotow.github.io/blog/categories/golang/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-07-27T22:47:16+09:00</updated>
+  <updated>2014-08-05T23:05:03+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,130 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[#golang　設定値をどうするか？(設定ファイル読み込み編)]]></title>
+    <link href="http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/"/>
+    <updated>2014-07-29T00:12:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/07/29/golang-setting-from-file</id>
+    <content type="html"><![CDATA[<p>golangを書いて設定値としたいものが出てきた時にどうするのがよいのか？</p>
+
+<p>ふとプログラムを書いていて気になってきたため調べてみた。<br />
+少しずつアウトプットということで今回はjson ファイルから読み込みを試す。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#section">方法</a></li>
+  <li><a href="#github">Githubのパス</a></li>
+</ul>
+
+<h2 id="section">方法</h2>
+
+<ul>
+  <li><a href="http://qiita.com/umisama/items/c2a8db6c23db18dd5437#2-4">【翻訳】プロダクション環境でのベストプラクティス 設定値の扱い</a></li>
+  <li><a href="http://blog.starbug1.com/archives/994">Golangで設定ファイルの読み込み</a></li>
+</ul>
+
+<p>を参考</p>
+
+<p>設定値を読み込む方法としては３つの方法があるようだ。</p>
+
+<ol>
+  <li>設定ファイル読み込み</li>
+  <li>GOENVを設定しos.GetEnvを使用</li>
+  <li>flag パッケージを使う方法</li>
+</ol>
+
+<p>今回は1つ目の「設定ファイル読み込み」を試してみた。</p>
+
+<p>コードは<a href="http://blog.starbug1.com/archives/994">Golangで設定ファイルの読み込み</a>を写経させていただいた。<br />
+struct で json と同じ構造を作り、json をアンマーシャリングする。（JavaのJAXBみたい）</p>
+
+<p>jsonファイルのkey名とsturctの変数名の付け方。どちらも同じ名前にしておけば自動でマッピングしてくれる。(同じでない場合はstructの方でマッピングする。）<br />
+ORMのgorpと同じような感じ。</p>
+
+<p>参考：　<a href="http://qiita.com/oahiroaki/items/ff21d9adfb843161d1d8">golangでのjsonのデコード</a>　を写経</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='go'><span class='line'><span class="kn">package</span> <span class="nx">setting</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="nx">p</span><span class="p">&gt;</span><span class="kn">import</span> <span class="p">(</span>
+</span><span class='line'>     <span class="err">“</span><span class="nx">io</span><span class="o">/</span><span class="nx">ioutil</span><span class="err">”</span>
+</span><span class='line'>     <span class="err">“</span><span class="nx">fmt</span><span class="err">”</span>
+</span><span class='line'>     <span class="err">“</span><span class="nx">encoding</span><span class="o">/</span><span class="nx">json</span><span class="err">”</span>
+</span><span class='line'><span class="p">)&lt;</span><span class="o">/</span><span class="nx">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="nx">p</span><span class="p">&gt;</span><span class="kd">type</span> <span class="nx">Config</span> <span class="kd">struct</span> <span class="p">{</span>
+</span><span class='line'>     <span class="nx">Id</span> <span class="kt">int</span>
+</span><span class='line'>     <span class="nx">Name</span> <span class="kt">string</span>
+</span><span class='line'>     <span class="nx">Array</span> <span class="p">[]</span><span class="kt">int</span>
+</span><span class='line'><span class="p">}&lt;</span><span class="o">/</span><span class="nx">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="nx">p</span><span class="p">&gt;</span><span class="kd">func</span> <span class="nx">Parse</span><span class="p">(</span><span class="nx">filename</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">Config</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>     <span class="kd">var</span> <span class="nx">c</span> <span class="nx">Config</span>
+</span><span class='line'>     <span class="nx">jsonString</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">)&lt;</span><span class="o">/</span><span class="nx">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="nx">pre</span><span class="p">&gt;&lt;</span><span class="nx">code</span><span class="p">&gt;</span> <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;error: %v &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">err</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'> <span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">(</span><span class="nx">jsonString</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">c</span><span class="p">)</span>
+</span><span class='line'> <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;error: %v &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">err</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'> <span class="k">return</span> <span class="nx">c</span> <span class="p">,</span> <span class="kc">nil</span> <span class="p">}</span>
+</span><span class='line'><span class="p">&lt;</span><span class="o">/</span><span class="nx">code</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">pre</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="nx">p</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2 id="github">Githubのパス</h2>
+
+<p>今回のソースはgithubにpush済み<br />
+setting_test.go から実行。</p>
+
+<ul>
+  <li><a href="https://github.com/makotow/golang-study/blob/4980ad9857e7a0ae67c45d1d261ddac294043e5c/setting/JsonSetting.go">setting.go</a></li>
+  <li><a href="https://github.com/makotow/golang-study/blob/4980ad9857e7a0ae67c45d1d261ddac294043e5c/setting/JsonSetting_test.go">setting_test.go</a></li>
+  <li><a href="https://github.com/makotow/golang-study/blob/4980ad9857e7a0ae67c45d1d261ddac294043e5c/setting/setting.json">setting.json</a></li>
+</ul>
+
+<p>次は GOENV を使ってみようと思う。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[テストデータのログファイルを簡単につくれる。(apache access.log編)]]></title>
