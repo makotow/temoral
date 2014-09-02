@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Article | Faster and Faster]]></title>
+  <title><![CDATA[Category: article | Faster and Faster]]></title>
   <link href="http://makotow.github.io/blog/categories/article/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-08-05T23:05:03+09:00</updated>
+  <updated>2014-09-03T01:36:16+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -14,403 +14,78 @@
 
   
   <entry>
-    <title type="html"><![CDATA[ブログタイトル変えました]]></title>
-    <link href="http://makotow.github.io/blog/2014/06/11/change-blog-title/"/>
-    <updated>2014-06-11T23:18:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/06/11/change-blog-title</id>
-    <content type="html"><![CDATA[<h2> Contents </h2>
-<ul id="markdown-toc">
-  <li><a href="#section">ブログタイトル変更</a></li>
-  <li><a href="#section-1">理由とか想い</a></li>
-  <li><a href="#section-2">ついでに</a></li>
-</ul>
+    <title type="html"><![CDATA[ブログプラットフォームの変更を考えている。]]></title>
+    <link href="http://makotow.github.io/blog/2014/09/02/move-to-ghost/"/>
+    <updated>2014-09-02T01:29:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/09/02/move-to-ghost</id>
+    <content type="html"><![CDATA[<p>octopressから別のプラットフォームへの移行を考えている。</p>
 
-<h2 id="section">ブログタイトル変更</h2>
+<p>今のところ候補なのはghost。</p>
 
-<p>「Software Technology Memorandum and thoughts」から
-「Faster and Faster」 に変更しました。</p>
+<p>つらつらと思っていることを書いていく。</p>
 
-<p>有名ブログでもないしこれからも気持ちが変わればバンバン変えていこうと思います。</p>
+<h2 id="section">ブログプラットフォームの移行</h2>
 
-<h2 id="section-1">理由とか想い</h2>
+<p>octopressでもいいのだけど、飽きてきたのとghostを見た時の洗練されたデザインに一目惚れ。</p>
 
-<p>前のタイトルは「Software Technology Memorandum and thoughts」でした。
-ブログの内容を表すタイトルとしてそのまま書いていました。</p>
+<p>また、ghost出たばかりの頃はまだいいかなと思ってたけど、最近見てみたらいい感じになってた。</p>
 
-<p>これからは「こうなりたい」という思いを込めて変えてみました。</p>
+<p>他にも候補としてはhugo,middlemanなど検討したけどもghostが一番面倒が少なさそう。</p>
 
-<pre><code>速く、もっと速く
-</code></pre>
+<h3 id="section-1">テーマの変更</h3>
 
-<p>仕事を始めてある程度年数もたち、諸先輩方ほど経験は積んでいないけれどもひと通りは社会に適応できるようになって思ったのが、
-速いことは何事においてもいいことだと最近強く思うようになりました。</p>
-
-<p>これからも自分は速さを重要視して、何事においても「もっと速く」という思いを忘れないようにブログタイトルを変更してみました。</p>
-
-<h2 id="section-2">ついでに</h2>
-
-<p>ブログデザインも変えてみました。
-かなりミニマルになったのではないかと思います。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[20140415時点の近況]]></title>
-    <link href="http://makotow.github.io/blog/2014/04/15/tech201404/"/>
-    <updated>2014-04-15T00:16:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/04/15/tech201404</id>
-    <content type="html"><![CDATA[<p>２ヶ月記事更新なしだったので近況とか。</p>
-
-<!-- more -->
-
-<h2> Contents </h2>
-<ul id="markdown-toc">
-  <li><a href="#section">2014年にはいってから注目しているテクノロジー</a>    <ul>
-      <li><a href="#aws-amazon-web-services">AWS (Amazon Web Services)</a></li>
-      <li><a href="#scala">Scala</a></li>
-      <li><a href="#go-lang">Go Lang</a></li>
-      <li><a href="#fsharp">FSharp</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-1">その他</a></li>
-</ul>
-
-<h2 id="section">2014年にはいってから注目しているテクノロジー</h2>
-
-<p>今年に入ってから興味を持って本格的に追い始めたもの。</p>
-
-<p>今更感があるかもしれないけども記録しておく。</p>
-
-<h3 id="aws-amazon-web-services">AWS (Amazon Web Services)</h3>
-
-<p>言わずもがなクラウド環境。
-現段階では一択だと思っている。（エンタープライズ用途としても）</p>
-
-<p>個人的にEC2を使い始めてみた。</p>
-
-<p>作ったアプリを動かしたりデータ収集したりするサーバにしたいと思ってる。</p>
-
-<p>検証環境としての使用も模索中。</p>
-
-<h3 id="scala">Scala</h3>
-
-<p>もう何年も前からやっている。ある程度の規模のアプリを作ったりはしていなかったので現在作成中
-Scala + JavaFX8 でクライアントアプリを作成中</p>
-
-<p>１つ作ったあとはMacOSXのDiffアプリを作ってみたい。</p>
-
-<h3 id="go-lang">Go Lang</h3>
-
-<p>最近流行っていたのでキャッチアップ。
-言語仕様とかまだ把握しきれていない。</p>
-
-<h3 id="fsharp">FSharp</h3>
-
-<p>Mac上に環境作ってHello Worldレベル。
-ものにするというかは新しい観点を身につけるために学習する。</p>
-
-<h2 id="section-1">その他</h2>
+<p>ぱっと見素敵なテーマはたくさんあるのだけども、
+以下のものは足りないかなと思っている。</p>
 
 <ul>
-  <li>読書記録も１年近く書いていないので復活させようと思います。</li>
-  <li>git とか sbt についてはなんとなくレベルアップ。</li>
-  <li>IntelliJ IDEA をほぼ毎日使ってる。ライセンス分くらいは使っているはず。</li>
+  <li>コメント(ほぼつかわないけど…、様式美として)</li>
+  <li>Recent Entry</li>
+  <li>twitter, githubとかのガジェット？（シンプルなghostがごちゃごちゃしてしまうかもしれない。）</li>
+  <li>about me</li>
+  <li>octopress からの記事移行</li>
+  <li>octopress のこれからの運用（tech memoメイン？）</li>
+  <li>etc</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)]]></title>
-    <link href="http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/"/>
-    <updated>2013-12-31T20:23:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/12/31/data-aggregation-2013</id>
-    <content type="html"><![CDATA[<p>
-2013年に構築できた情報集約の方法をまとめてみた。<br />
-結果的にIFTTT, Buffer, Evernoteのすごさがわかった。
-</p>
+<h2 id="aws-ordigital-ocean">AWS or　Digital Ocean?</h2>
 
-<p>
-使用するデバイスが増えて主にスマフォ、タブレットで見てた記事とかをうまくまとめられなかったのが課題だったがうまく解決出来たと思う。
-使ってるサービスの詳細は最後にまとめてあるリンクを参照。
-</p>
-<!-- more -->
+<p>ghostに移行するとなった場合、node.jsが使える環境が必要になるので
+上記の、クラウドプラットフォーム、VPSを使う必要がでてくる。</p>
 
-<h2> Contents </h2>
-<ul id="markdown-toc">
-  <li><a href="#section">動機</a></li>
-  <li><a href="#section-1">サービス相関図</a></li>
-  <li><a href="#section-2">基本フロー</a>    <ul>
-      <li><a href="#chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</a></li>
-      <li><a href="#feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</a></li>
-      <li><a href="#feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</a></li>
-      <li><a href="#twitter--tweevie--evernote">twitter → Tweevie → Evernote</a></li>
-      <li><a href="#twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-3">おまけ</a>    <ul>
-      <li><a href="#gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</a></li>
-      <li><a href="#google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-4">要するに</a></li>
-  <li><a href="#section-5">参考</a></li>
-</ul>
+<p>ghost 本家のドキュメントではDigital Oceanはghostのインストーラを用意しているらしい。</p>
 
-<h2 id="section">動機</h2>
+<p>AWSはEC２とEIPがあればそれとなく使える気がするし、少しは勘があるのでいいかなと思っている。</p>
 
-<p>データ集約の流れを数年前からEvernoteへ全て集めてた。
-2013年は使用するデバイスが多くなったため、
-いままでブラウザメインでやっていたことが他のデバイスでアクションすると情報が散らばった場所に保存される状態になっていた。</p>
+<h2 id="chef-terraform-capistrano-ansible-">Chef, Terraform, Capistrano, Ansible などなど</h2>
 
-<p>なんとなく形になったので2013年の記録として残しておく。</p>
+<p>せっかくなので上記のインフラ自動化ツールを導入してみたい。 
+Immutable Infrastructure　の考え方を取り込んで環境構築をしたい。  </p>
 
-<h2 id="section-1">サービス相関図</h2>
+<h3 id="circle-ci-travis-">Circle CI, travis とか</h3>
 
-<p><img src="/images/2013/12/data-aggregation/data-aggregation.001.png"></p>
+<p>github にプッシュすると自動でCIが走って、
+ある一定の条件を満たすと記事公開とか。</p>
 
-<h2 id="section-2">基本フロー</h2>
+<h2 id="section-2">ドメイン名の取得</h2>
 
-<h3 id="chrome--buffer--ifttt--evernote">ウェブブラウズ (Chrome) → Buffer → IFTTT → Evernote</h3>
+<p>ドメインの取得初めてのなので学ぶ。</p>
 
-<p>ウェブブラウズ中に気になった記事をBuffer経由で蓄積する。
-PC,スマートフォン、タブレットとどの端末からでも同じフローでデータを集約できる。
-情報ソースとしては「Gunosy」とか「はてぶ」とか「twitterのTL」とかいろいろ。</p>
-
-<h3 id="feedly-rsssave-for-later--ifttt---evernote">Feedly RSS(save for later) → IFTTT  → Evernote</h3>
-
-<p>RSSリーダーで購読しているフィードを見ている時に主に使用、スマートフォンやタブレット、英語の記事を後て読むときなどにつかう。Android版Feedlyだと長押しでできる。</p>
-
-<h3 id="feedly-rssshare--buffer--ifttt--evernote">Feedly RSS(Share) → Buffer → IFTTT → Evernote</h3>
-
-<p>RSSリーダーで購読しているフィードを見ている時に記事を読んだ後などに使用。
-Bufferで共有すると、twitterにも自動でツイートされる。</p>
-
-<h3 id="twitter--tweevie--evernote">twitter → Tweevie → Evernote</h3>
-
-<p>一日分のツイートをEvernoteへ保存する。
-何気なく検索するとそれっぽいものがでてくるようになる。</p>
-
-<h3 id="twitter-fav--ifttt--evernote">twitter fav → IFTTT → Evernote</h3>
-
-<p>twitter上で fav したものを IFTTT 経由で Evernoteへ保存する。<br />
-fav は後で読もうと思ったリンク等なので、せっかくfavしたものを忘れないように。</p>
-
-<h2 id="section-3">おまけ</h2>
-
-<p>あまり使ってないけども、IFTTTの機能で次のようなこともできる。</p>
-
-<h3 id="gmail-star--ifttt--evernote">Gmail star → IFTTT → Evernote</h3>
-
-<p>GmailでスターをつけるとIFTTT経由でEvernoteのノートが作成される。
-たまに使うがEvernoteに保存される状態が微妙なので別の方法を考えるかも。</p>
-
-<h3 id="google---ifttt--evernote">Google カレンダー特定キーワード → IFTTT → Evernote</h3>
-
-<p>カレンダーの予定に特定のキーワードを入れると IFTTT 経由で Evernoteに保存される。
-仕組みは作ってみたが今のところ使いどころがない。</p>
-
-<h2 id="section-4">要するに</h2>
-
-<p>書いてみると Buffer と IFTTT なしではこの環境は構築できない。<br />
-さらに全てを記憶するEvernote。</p>
-
-<p>最終的には Evernote の特定のノートブックを見ればいいので散らばっていたデータをうまくまとめれてたと思う。</p>
-
-<p>要するに Buffer、Evernote、IFTTT すげーってことです。</p>
-
-<h2 id="section-5">参考</h2>
+<p>今のところ候補はこんな感じ</p>
 
 <ul>
-  <li><a href="https://ifttt.com/">IFTTT</a></li>
-  <li><a href="https://bufferapp.com/app">Buffer</a></li>
-  <li><a href="http://evernote.com/intl/jp/">Evernote</a></li>
-  <li><a href="https://feedly.com/">Feedly</a></li>
-  <li><a href="http://twieve.net/ja">Twieve</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Technology Radar May 2013の気になるところ(1)]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/"/>
-    <updated>2013-07-18T23:50:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic</id>
-    <content type="html"><![CDATA[<h2> Contents </h2>
-
-<ul id="markdown-toc">
-  <li><a href="#technology-radar-may-2013">Technology Radar May 2013</a></li>
-  <li><a href="#section">気になるキーワード</a>    <ul>
-      <li><a href="#infrastructure-as-code">Infrastructure as code</a></li>
-      <li><a href="#d3">D3</a></li>
-      <li><a href="#hystrix">Hystrix</a></li>
-      <li><a href="#log-management">Log Management</a></li>
-      <li><a href="#gatling">Gatling</a></li>
-      <li><a href="#section-1">その他気になったところ</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-2">終わりに</a></li>
+  <li>makotow-tech-blog.com</li>
+  <li>makotow-tech-blog.info</li>
+  <li>blog.makotow.com</li>
 </ul>
 
-<h2 id="technology-radar-may-2013">Technology Radar May 2013</h2>
+<p>普通はどんな感じでつけるのかよくわからなかった。
+独自ドメインの人は代替こんな感じ。</p>
 
-<p>もう、２ヶ月もまえだが、Technology Radar May 2013が公開された。
-興味があるキーワードを自分なりに調べてみた。
-タイトルが（1）となっているのは気になるものをすべて書こうとしてなかなか記事がアップできなかったので1記事2,3トピックで挙げるようにした。</p>
+<h2 id="section-3">課題はたくさんある。</h2>
 
-<p>もしかすると（2）、（3）と続くかもしれない。興味があるものはおおいけど記事を作成する時間がなかなか取れないでとりあえず軽い内容でアップ。</p>
-
-<p>一応、簡単な説明。
-Tehnology Radar は ThoughWorks社が半年に1回、技術トレンドの調査結果を公開しているもの。
-自分が読んでいる目的としては現在どのようなテクノロジーがあり、どれほど浸透しているかの確認や、
-新しいモノを見つけるために読んでいる。
-<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
-
-<ul>
-  <li><a href="http://www.thoughtworks.com/radar">Technology Radar May 2013</a></li>
-  <li><a href="http://thoughtworks.fileburst.com/assets/technology-radar-may-2013.pdf">Technology Radar May 2013(PDF版)</a></li>
-</ul>
-
-<!-- more -->
-
-<h2 id="section">気になるキーワード</h2>
-<p>特に目を引いたもの、興味のあるものについて調べてみた。</p>
-
-<h3 id="infrastructure-as-code">Infrastructure as code</h3>
-<p>Continuous Delivery と DevOps についてたかいところまで到達している。
-infrastructure as code と
-infrastructure as code 、最近VergentやらChef, Puppetなどでインフラの自動化につく記事も多く見るようになってきた。</p>
-
-<h3 id="d3">D3</h3>
-<p>コンテキストから察するに、おそらくこれのこと(最後のReference)
-<a href="http://d3js.org/">Data-Driven Documents</a>
-少しGalleryをみてみるとこんなにも綺麗に可視化できるものかと思ってしまった。</p>
-
-<h3 id="hystrix">Hystrix</h3>
-<p>キーワードだけ。
-調べてはいない。</p>
-
-<p><a href="https://github.com/Netflix/Hystrix">Hystrix: Latency and Fault Tolerance for Distributed Systems</a></p>
-
-<h3 id="log-management">Log Management</h3>
-
-<p>ログの収集、集約、検索、フィルタのテクノロジー。（だと思う…）</p>
-
-<ul>
-  <li><a href="http://logstash.net/">Logstash</a></li>
-  <li><a href="http://graylog2.org/">Graylog2</a></li>
-</ul>
-
-<h3 id="gatling">Gatling</h3>
-<p><a href="http://gatling-tool.org/">Gatling Project - stress tool</a></p>
-
-<p>Gatlingはパフォーマンステストのツール。
-Scalaで書かれている。</p>
-
-<h3 id="section-1">その他気になったところ</h3>
-<ul>
-  <li>Chef, PuppetがWindows対応.OctopusはWindos専用で作成されている。</li>
-</ul>
-
-<h2 id="section-2">終わりに</h2>
-<p>Technoogy　Radarって日本語訳の需要あるかな。
-日本語にするって難しい。</p>
-
-<p><a href="http://martinfowler.com/articles/radar-faq.html">ThoughtWorks Technology Radar FAQ</a>
-を読むことで詳細を理解することができる。</p>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>Technology Radarからリンクされている、<a href="#fnref:1" rel="reference">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SQLアンチパターン　読書録]]></title>
-    <link href="http://makotow.github.io/blog/2013/05/05/sqlantipattern/"/>
-    <updated>2013-05-05T17:50:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/05/05/sqlantipattern</id>
-    <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
-
-<p>内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。
-やっちゃいけないことあるある集、解決方法をみてあーなるほどとなるなど学ぶことの多い本だった。</p>
-
-<p>すでにいろいろな所で言われていることだが、
-アンチパターンに名前をつけたことが最大の功績だと思う。
-名前があることでコミュニケーションが非常にやりやすい。</p>
-
-<p>以下、感想、参考になったアンチパターンを書いてみる。</p>
-
-<!-- more -->
-
-<h3 id="section">感想</h3>
-
-<p>アンチパターンの兆しが見える質問例、
-アンチパターンを使ってもいい場面などが各アンチパターンごとに記載されているため実践的な内容となっている。</p>
-
-<p>「IDリクワイアド」の兆しがある、などと会話できるようなチームはいいなと思いながら読み進めた。</p>
-
-<p>以下4部で構成されている</p>
-
-<ul>
-  <li>論理設計</li>
-  <li>物理設計</li>
-  <li>クエリ</li>
-  <li>アプリケーション</li>
-</ul>
-
-<p>全般的になるほどと思いながら読めた。
-特に、論理設計、アプリケーションの部は面白く感じた。</p>
-
-<p>論理設計のアンチパターンについてはあまり経験値がない部分であったのでとても参考になった。</p>
-
-<h3 id="section-1">特に気になったアンチパターン</h3>
-
-<p>自分なりのメモ。</p>
-
-<h4 id="section-2">ナイーブツリー</h4>
-
-<p>SQLでツリーを表す際のアンチパターン、
-解決するためにはいくつかの策があり、テーブルの性質によって策を考える。
-本書では設計の一覧表がのっている。</p>
-
-<h4 id="section-3">キーレスエントリー</h4>
-
-<p>外部キー制約を使用しないパターン。柔軟性が高まるが参照整合性を保つコードをアプリケーションで保証しなければいけない。
-解決策としては外部キー制約を使用する。
-外部キー制約使うと柔軟性がなくなってテストしにくいって言われたのを思い出した。</p>
-
-<h4 id="section-4">ファントムファイル</h4>
-
-<p>RDMBS上にはファイルのパスを格納、実際のファイルはファイルシステムへ配置するパターン。
-必要に応じてLOBの使用を検討する。常に２パターンの設計を検討。</p>
-
-<h4 id="section-5">リーダブルパスワードの章のレインボーテーブル</h4>
-
-<p>一般的なことだが考慮すべきことは多い。
-攻撃手法を知り対策を行う必要がある。</p>
-
-<h4 id="section-6">マジックビーンズ</h4>
-
-<p>MVCのM(モデル)がActiveRecordそのものなってしまう。
-ドメインモデル貧血症(Anemic Domain Model)</p>
-
-<p>モデルがActiveRecordを持つようにする。コントローラーからはModelを使用する。</p>
-
-<p>プロジェクトのソースが大きくなってきてわかったことがあった。
-このアンチパターンの方に近いやり方になっていたことがあり、
-これではまずいと思い自分なりの解決方法を実施していたことを思い出した。
-やり方的には同じ方法だったような…</p>
-
-<h3 id="reference">Reference</h3>
-
-<p><iframe src="http://www.slideshare.net/slideshow/embed_code/19520294" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/t_wada/sql-antipatterns-digest" title="SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)" target="_blank">SQLアンチパターン - 開発者を待ち受ける25の落とし穴 (拡大版)</a> </strong> from <strong><a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a></strong> </div></p>
-
+<p>つらつらとやってみたいことを書いてみた。<br />
+やらないといけないことはたくさんあるので
+とりあえずはホスティング先とローカルでのテーマの作成をやってみる。</p>
 ]]></content>
   </entry>
   

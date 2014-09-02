@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ブログプラットフォームの変更を考えている。 - Faster and Faster</title>
+  <meta name="author" content="Makoto WATANABE (makotow)">
+
+  
+  <meta name="description" content="octopressから別のプラットフォームへの移行を考えている。 今のところ候補なのはghost。 つらつらと思っていることを書いていく。 ブログプラットフォームの移行 octopressでもいいのだけど、飽きてきたのとghostを見た時の洗練されたデザインに一目惚れ。 また、 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://makotow.github.io/blog/2014/09/02/move-to-ghost">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Faster and Faster" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+
+
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/footnote.js" type="text/javascript"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34175052-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Faster and Faster</a></h1>
+  
+    <h2>技術的な記事、日々の学習メモ、思うことなど。ブログタイトルはその時の思いを反映。</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:makotow.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/techmemo">Tech memo</a></li>
+  <li><a href="https://twitter.com/makotow">Twitter</a></li>
+  <li><a href="https://github.com/makotow">GitHub</a></li>
+  <li><a href="/books">Books</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">ブログプラットフォームの変更を考えている。</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-02T01:29:00+09:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>octopressから別のプラットフォームへの移行を考えている。</p>
+
+<p>今のところ候補なのはghost。</p>
+
+<p>つらつらと思っていることを書いていく。</p>
+
+<h2 id="section">ブログプラットフォームの移行</h2>
+
+<p>octopressでもいいのだけど、飽きてきたのとghostを見た時の洗練されたデザインに一目惚れ。</p>
+
+<p>また、ghost出たばかりの頃はまだいいかなと思ってたけど、最近見てみたらいい感じになってた。</p>
+
+<p>他にも候補としてはhugo,middlemanなど検討したけどもghostが一番面倒が少なさそう。</p>
+
+<h3 id="section-1">テーマの変更</h3>
+
+<p>ぱっと見素敵なテーマはたくさんあるのだけども、
+以下のものは足りないかなと思っている。</p>
+
+<ul>
+  <li>コメント(ほぼつかわないけど…、様式美として)</li>
+  <li>Recent Entry</li>
+  <li>twitter, githubとかのガジェット？（シンプルなghostがごちゃごちゃしてしまうかもしれない。）</li>
+  <li>about me</li>
+  <li>octopress からの記事移行</li>
+  <li>octopress のこれからの運用（tech memoメイン？）</li>
+  <li>etc</li>
+</ul>
+
+<h2 id="aws-ordigital-ocean">AWS or　Digital Ocean?</h2>
+
+<p>ghostに移行するとなった場合、node.jsが使える環境が必要になるので
+上記の、クラウドプラットフォーム、VPSを使う必要がでてくる。</p>
+
+<p>ghost 本家のドキュメントではDigital Oceanはghostのインストーラを用意しているらしい。</p>
+
+<p>AWSはEC２とEIPがあればそれとなく使える気がするし、少しは勘があるのでいいかなと思っている。</p>
+
+<h2 id="chef-terraform-capistrano-ansible-">Chef, Terraform, Capistrano, Ansible などなど</h2>
+
+<p>せっかくなので上記のインフラ自動化ツールを導入してみたい。 
+Immutable Infrastructure　の考え方を取り込んで環境構築をしたい。  </p>
+
+<h3 id="circle-ci-travis-">Circle CI, travis とか</h3>
+
+<p>github にプッシュすると自動でCIが走って、
+ある一定の条件を満たすと記事公開とか。</p>
+
+<h2 id="section-2">ドメイン名の取得</h2>
+
+<p>ドメインの取得初めてのなので学ぶ。</p>
+
+<p>今のところ候補はこんな感じ</p>
+
+<ul>
+  <li>makotow-tech-blog.com</li>
+  <li>makotow-tech-blog.info</li>
+  <li>blog.makotow.com</li>
+</ul>
+
+<p>普通はどんな感じでつけるのかよくわからなかった。
+独自ドメインの人は代替こんな感じ。</p>
+
+<h2 id="section-3">課題はたくさんある。</h2>
+
+<p>つらつらとやってみたいことを書いてみた。<br />
+やらないといけないことはたくさんあるので
+とりあえずはホスティング先とローカルでのテーマの作成をやってみる。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Makoto WATANABE (makotow)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-02T01:29:00+09:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/article/'>article</a>, <a class='category' href='/blog/categories/ghost/'>ghost</a>, <a class='category' href='/blog/categories/hugo/'>hugo</a>, <a class='category' href='/blog/categories/middleman/'>middleman</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+
+  
+<div><a class="mt-facebook mt-share-inline-bar-sm" href="https://www.facebook.com/sharer/sharer.php?u=http://makotow.github.io/blog/2014/09/02/move-to-ghost/"><img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png"></a><a class="mt-twitter mt-share-inline-bar-sm" href="http://twitter.com/intent/tweet?text=ブログプラットフォームの変更を考えている。&amp;url=http://makotow.github.io/blog/2014/09/02/move-to-ghost/"><img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png"></a><a class="mt-linkedin mt-share-inline-bar-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://makotow.github.io/blog/2014/09/02/move-to-ghost/&amp;summary=ブログプラットフォームの変更を考えている。"><img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png"></a><a class="mt-google mt-share-inline-bar-sm" href="https://plus.google.com/share?url=http://makotow.github.io/blog/2014/09/02/move-to-ghost/"><img src="http://mojotech-static.s3.amazonaws.com/google@2x.png"></a></div>
+
+
+
+</div>
+
+    
+
+    
+    
+<div class="related_posts">
+  <h2>Related Posts</h2>
+  <ul>
+    
+  </ul>
+</div>
+
+
+
+    
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/29/golang-setting-from-file/" title="Previous Post: #golang　設定値をどうするか？(設定ファイル読み込み編)">&laquo; #golang　設定値をどうするか？(設定ファイル読み込み編)</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+
+
+twitter: <a href="https://twitter.com/makotow">@makotow</a>
+<br/>
+
+    <p>
+        Software Development Engineer. SI屋勤務。
+    </p>
+
+    <p>
+    興味: Git/Scrum/Agile/Testing/CI/Scala/Ruby/ <br/>
+        VMWare/JavaScript/HPC/AWS　<br/>
+        高みを目指して。
+    </p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/02/move-to-ghost/">ブログプラットフォームの変更を考えている。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/29/golang-setting-from-file/">#golang　設定値をどうするか？(設定ファイル読み込み編)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/27/osx-hydra/">OSX hydra 紹介 （5%くらいの作業効率UPを目指す） </a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/28/access-log-generator/">テストデータのログファイルを簡単につくれる。(apache access.log編)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/brewfile-2/">BrewfileでHomebrewパッケージ管理 その後</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Tag Cloud</h1>
+    <span id="tag-cloud"><a href='/blog/categories/adobe' style='font-size: 102.72727272727273%'>adobe(1)</a> <a href='/blog/categories/agile' style='font-size: 102.72727272727273%'>agile(1)</a> <a href='/blog/categories/application' style='font-size: 102.72727272727273%'>application(1)</a> <a href='/blog/categories/article' style='font-size: 102.72727272727273%'>article(1)</a> <a href='/blog/categories/article' style='font-size: 138.1818181818182%'>Article(14)</a> <a href='/blog/categories/aws' style='font-size: 102.72727272727273%'>aws(1)</a> <a href='/blog/categories/blog' style='font-size: 105.45454545454545%'>blog(2)</a> <a href='/blog/categories/books' style='font-size: 116.36363636363636%'>books(6)</a> <a href='/blog/categories/brew' style='font-size: 105.45454545454545%'>brew(2)</a> <a href='/blog/categories/buffer' style='font-size: 102.72727272727273%'>Buffer(1)</a> <a href='/blog/categories/business' style='font-size: 105.45454545454545%'>business(2)</a> <a href='/blog/categories/command' style='font-size: 102.72727272727273%'>command(1)</a> <a href='/blog/categories/css' style='font-size: 102.72727272727273%'>css(1)</a> <a href='/blog/categories/evernote' style='font-size: 102.72727272727273%'>Evernote(1)</a> <a href='/blog/categories/font' style='font-size: 102.72727272727273%'>font(1)</a> <a href='/blog/categories/fsharp' style='font-size: 102.72727272727273%'>fsharp(1)</a> <a href='/blog/categories/ghost' style='font-size: 102.72727272727273%'>ghost(1)</a> <a href='/blog/categories/gist' style='font-size: 105.45454545454545%'>gist(2)</a> <a href='/blog/categories/git' style='font-size: 108.18181818181819%'>git(3)</a> <a href='/blog/categories/go-lang' style='font-size: 102.72727272727273%'>go-lang(1)</a> <a href='/blog/categories/golang' style='font-size: 105.45454545454545%'>golang(2)</a> <a href='/blog/categories/hugo' style='font-size: 102.72727272727273%'>hugo(1)</a> <a href='/blog/categories/ifttt' style='font-size: 102.72727272727273%'>IFTTT(1)</a> <a href='/blog/categories/intellij' style='font-size: 108.18181818181819%'>IntelliJ(3)</a> <a href='/blog/categories/javascript' style='font-size: 102.72727272727273%'>javascript(1)</a> <a href='/blog/categories/json' style='font-size: 102.72727272727273%'>json(1)</a> <a href='/blog/categories/links' style='font-size: 102.72727272727273%'>Links(1)</a> <a href='/blog/categories/linux' style='font-size: 102.72727272727273%'>linux(1)</a> <a href='/blog/categories/linux' style='font-size: 102.72727272727273%'>Linux(1)</a> <a href='/blog/categories/mac' style='font-size: 102.72727272727273%'>mac(1)</a> <a href='/blog/categories/macosx' style='font-size: 102.72727272727273%'>macosx(1)</a> <a href='/blog/categories/memorandum' style='font-size: 105.45454545454545%'>memorandum(2)</a> <a href='/blog/categories/middleman' style='font-size: 102.72727272727273%'>middleman(1)</a> <a href='/blog/categories/network' style='font-size: 105.45454545454545%'>network(2)</a> <a href='/blog/categories/octopress' style='font-size: 119.0909090909091%'>octopress(7)</a> <a href='/blog/categories/osx' style='font-size: 110.9090909090909%'>osx(4)</a> <a href='/blog/categories/pocket' style='font-size: 102.72727272727273%'>pocket(1)</a> <a href='/blog/categories/programming' style='font-size: 102.72727272727273%'>programming(1)</a> <a href='/blog/categories/project-management' style='font-size: 108.18181818181819%'>project management(3)</a> <a href='/blog/categories/reveal-js' style='font-size: 102.72727272727273%'>reveal.js(1)</a> <a href='/blog/categories/sbt' style='font-size: 110.9090909090909%'>sbt(4)</a> <a href='/blog/categories/scala' style='font-size: 116.36363636363636%'>scala(6)</a> <a href='/blog/categories/scrum' style='font-size: 102.72727272727273%'>scrum(1)</a> <a href='/blog/categories/scss' style='font-size: 102.72727272727273%'>scss(1)</a> <a href='/blog/categories/sh' style='font-size: 102.72727272727273%'>sh(1)</a> <a href='/blog/categories/skill' style='font-size: 102.72727272727273%'>skill(1)</a> <a href='/blog/categories/sql' style='font-size: 102.72727272727273%'>SQL(1)</a> <a href='/blog/categories/sublimetext' style='font-size: 102.72727272727273%'>SublimeText(1)</a> <a href='/blog/categories/tdd' style='font-size: 105.45454545454545%'>TDD(2)</a> <a href='/blog/categories/techmemo' style='font-size: 160.0%'>TechMemo(22)</a> <a href='/blog/categories/techmemo' style='font-size: 105.45454545454545%'>Techmemo(2)</a> <a href='/blog/categories/technology' style='font-size: 102.72727272727273%'>technology(1)</a> <a href='/blog/categories/tools' style='font-size: 110.9090909090909%'>tools(4)</a> <a href='/blog/categories/unix' style='font-size: 102.72727272727273%'>unix(1)</a> <a href='/blog/categories/vagrant' style='font-size: 102.72727272727273%'>vagrant(1)</a> <a href='/blog/categories/virtualbox' style='font-size: 102.72727272727273%'>virtualbox(1)</a> </span>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/makotow">@makotow</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'makotow',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+
+    <a class="twitter-timeline" href="https://twitter.com/makotow" data-widget-id="331289848642150400">@makotow からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
+    <a href="http://twitter.com/makotow" class="twitter-follow-button" data-show-count="true">Follow @makotow</a>
+  
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Makoto WATANABE (makotow) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'makotownotes';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://makotow.github.io/blog/2014/09/02/move-to-ghost/';
+        var disqus_url = 'http://makotow.github.io/blog/2014/09/02/move-to-ghost/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: middleman | Faster and Faster]]></title>
+  <link href="http://makotow.github.io/blog/categories/middleman/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-09-03T01:36:16+09:00</updated>
+  <id>http://makotow.github.io/</id>
+  <author>
+    <name><![CDATA[Makoto WATANABE (makotow)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ブログプラットフォームの変更を考えている。]]></title>
+    <link href="http://makotow.github.io/blog/2014/09/02/move-to-ghost/"/>
+    <updated>2014-09-02T01:29:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/09/02/move-to-ghost</id>
+    <content type="html"><![CDATA[<p>octopressから別のプラットフォームへの移行を考えている。</p>
+
+<p>今のところ候補なのはghost。</p>
+
+<p>つらつらと思っていることを書いていく。</p>
+
+<h2 id="section">ブログプラットフォームの移行</h2>
+
+<p>octopressでもいいのだけど、飽きてきたのとghostを見た時の洗練されたデザインに一目惚れ。</p>
+
+<p>また、ghost出たばかりの頃はまだいいかなと思ってたけど、最近見てみたらいい感じになってた。</p>
+
+<p>他にも候補としてはhugo,middlemanなど検討したけどもghostが一番面倒が少なさそう。</p>
+
+<h3 id="section-1">テーマの変更</h3>
+
+<p>ぱっと見素敵なテーマはたくさんあるのだけども、
+以下のものは足りないかなと思っている。</p>
+
+<ul>
+  <li>コメント(ほぼつかわないけど…、様式美として)</li>
+  <li>Recent Entry</li>
+  <li>twitter, githubとかのガジェット？（シンプルなghostがごちゃごちゃしてしまうかもしれない。）</li>
+  <li>about me</li>
+  <li>octopress からの記事移行</li>
+  <li>octopress のこれからの運用（tech memoメイン？）</li>
+  <li>etc</li>
+</ul>
+
+<h2 id="aws-ordigital-ocean">AWS or　Digital Ocean?</h2>
+
+<p>ghostに移行するとなった場合、node.jsが使える環境が必要になるので
+上記の、クラウドプラットフォーム、VPSを使う必要がでてくる。</p>
+
+<p>ghost 本家のドキュメントではDigital Oceanはghostのインストーラを用意しているらしい。</p>
+
+<p>AWSはEC２とEIPがあればそれとなく使える気がするし、少しは勘があるのでいいかなと思っている。</p>
+
+<h2 id="chef-terraform-capistrano-ansible-">Chef, Terraform, Capistrano, Ansible などなど</h2>
+
+<p>せっかくなので上記のインフラ自動化ツールを導入してみたい。 
+Immutable Infrastructure　の考え方を取り込んで環境構築をしたい。  </p>
+
+<h3 id="circle-ci-travis-">Circle CI, travis とか</h3>
+
+<p>github にプッシュすると自動でCIが走って、
+ある一定の条件を満たすと記事公開とか。</p>
+
+<h2 id="section-2">ドメイン名の取得</h2>
+
+<p>ドメインの取得初めてのなので学ぶ。</p>
+
+<p>今のところ候補はこんな感じ</p>
+
+<ul>
+  <li>makotow-tech-blog.com</li>
+  <li>makotow-tech-blog.info</li>
+  <li>blog.makotow.com</li>
+</ul>
+
+<p>普通はどんな感じでつけるのかよくわからなかった。
+独自ドメインの人は代替こんな感じ。</p>
+
+<h2 id="section-3">課題はたくさんある。</h2>
+
+<p>つらつらとやってみたいことを書いてみた。<br />
+やらないといけないことはたくさんあるので
+とりあえずはホスティング先とローカルでのテーマの作成をやってみる。</p>
+]]></content>
+  </entry>
+  
+</feed>
