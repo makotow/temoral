@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: scala | Faster and Faster]]></title>
-  <link href="http://makotow.github.io/blog/categories/scala/atom.xml" rel="self"/>
-  <link href="http://makotow.github.io/"/>
-  <updated>2014-09-03T01:36:16+09:00</updated>
-  <id>http://makotow.github.io/</id>
+  <link href="http://amakotow.com/blog/categories/scala/atom.xml" rel="self"/>
+  <link href="http://amakotow.com/"/>
+  <updated>2014-09-15T01:20:20+09:00</updated>
+  <id>http://amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[20140415時点の近況]]></title>
-    <link href="http://makotow.github.io/blog/2014/04/15/tech201404/"/>
+    <link href="http://amakotow.com/blog/2014/04/15/tech201404/"/>
     <updated>2014-04-15T00:16:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/04/15/tech201404</id>
+    <id>http://amakotow.com/blog/2014/04/15/tech201404</id>
     <content type="html"><![CDATA[<p>２ヶ月記事更新なしだったので近況とか。</p>
 
 <!-- more -->
@@ -81,9 +81,9 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
   
   <entry>
     <title type="html"><![CDATA[ScalaでIO]]></title>
-    <link href="http://makotow.github.io/blog/2013/08/04/scala-file-io/"/>
+    <link href="http://amakotow.com/blog/2013/08/04/scala-file-io/"/>
     <updated>2013-08-04T23:10:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/08/04/scala-file-io</id>
+    <id>http://amakotow.com/blog/2013/08/04/scala-file-io</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -223,9 +223,9 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
   
   <entry>
     <title type="html"><![CDATA[IntelliJ で ScalaTest]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
+    <link href="http://amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
     <updated>2013-07-18T00:10:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest</id>
+    <id>http://amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -364,9 +364,9 @@ SBT Console使うことでIntelliJ内で完結するのは便利だと思う。<
   
   <entry>
     <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
+    <link href="http://amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
     <updated>2013-07-03T00:14:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
+    <id>http://amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -433,9 +433,9 @@ libraryDependenciesにscalatestを追加され、ScalaTestがつえるように�
   
   <entry>
     <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/"/>
+    <link href="http://amakotow.com/blog/2013/07/01/sbt-intellij-idea/"/>
     <updated>2013-07-01T23:30:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea</id>
+    <id>http://amakotow.com/blog/2013/07/01/sbt-intellij-idea</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">

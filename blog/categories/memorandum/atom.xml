@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: memorandum | Faster and Faster]]></title>
-  <link href="http://makotow.github.io/blog/categories/memorandum/atom.xml" rel="self"/>
-  <link href="http://makotow.github.io/"/>
-  <updated>2014-09-03T01:36:16+09:00</updated>
-  <id>http://makotow.github.io/</id>
+  <link href="http://amakotow.com/blog/categories/memorandum/atom.xml" rel="self"/>
+  <link href="http://amakotow.com/"/>
+  <updated>2014-09-15T01:20:20+09:00</updated>
+  <id>http://amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ブログタイトル変えました]]></title>
-    <link href="http://makotow.github.io/blog/2014/06/11/change-blog-title/"/>
+    <link href="http://amakotow.com/blog/2014/06/11/change-blog-title/"/>
     <updated>2014-06-11T23:18:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/06/11/change-blog-title</id>
+    <id>http://amakotow.com/blog/2014/06/11/change-blog-title</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 <ul id="markdown-toc">
   <li><a href="#section">ブログタイトル変更</a></li>
@@ -57,9 +57,9 @@
   
   <entry>
     <title type="html"><![CDATA[2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)]]></title>
-    <link href="http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/"/>
+    <link href="http://amakotow.com/blog/2013/12/31/data-aggregation-2013/"/>
     <updated>2013-12-31T20:23:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/12/31/data-aggregation-2013</id>
+    <id>http://amakotow.com/blog/2013/12/31/data-aggregation-2013</id>
     <content type="html"><![CDATA[<p>
 2013年に構築できた情報集約の方法をまとめてみた。<br />
 結果的にIFTTT, Buffer, Evernoteのすごさがわかった。

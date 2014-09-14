@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://makotow.github.io/sitemap.xml 
+Sitemap: http://amakotow.com/sitemap.xml 

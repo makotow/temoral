@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: blog | Faster and Faster]]></title>
-  <link href="http://makotow.github.io/blog/categories/blog/atom.xml" rel="self"/>
-  <link href="http://makotow.github.io/"/>
-  <updated>2014-09-03T01:36:16+09:00</updated>
-  <id>http://makotow.github.io/</id>
+  <link href="http://amakotow.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://amakotow.com/"/>
+  <updated>2014-09-15T01:20:20+09:00</updated>
+  <id>http://amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[タグクラウド、関連する記事を表示するようにした。]]></title>
-    <link href="http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post/"/>
+    <link href="http://amakotow.com/blog/2012/08/23/tag-cloud-related-post/"/>
     <updated>2012-08-23T23:26:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post</id>
+    <id>http://amakotow.com/blog/2012/08/23/tag-cloud-related-post</id>
     <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。
 <!-- more --></p>
 
@@ -38,9 +38,9 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
   <entry>
     <title type="html"><![CDATA[first Octopress]]></title>
-    <link href="http://makotow.github.io/blog/2012/08/18/first-octopress/"/>
+    <link href="http://amakotow.com/blog/2012/08/18/first-octopress/"/>
     <updated>2012-08-18T16:17:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/08/18/first-octopress</id>
+    <id>http://amakotow.com/blog/2012/08/18/first-octopress</id>
     <content type="html"><![CDATA[<p>tumblrにブログを構築していたが微妙に機能不足を感じて着ていたのでoctopressに移行。</p>
 
 <p><a href="http://octopress.org">Octopress</a></p>

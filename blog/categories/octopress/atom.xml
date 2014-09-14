@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: octopress | Faster and Faster]]></title>
-  <link href="http://makotow.github.io/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://makotow.github.io/"/>
-  <updated>2014-09-03T01:36:16+09:00</updated>
-  <id>http://makotow.github.io/</id>
+  <link href="http://amakotow.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://amakotow.com/"/>
+  <updated>2014-09-15T01:20:20+09:00</updated>
+  <id>http://amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopressアップデート]]></title>
-    <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
+    <link href="http://amakotow.com/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
+    <id>http://amakotow.com/blog/2013/05/06/octopress-update</id>
     <content type="html"><![CDATA[<h2 id="octopress-">octopress アップデートまとめ</h2>
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>
@@ -83,9 +83,9 @@ git commit -m "pull upstream."
   
   <entry>
     <title type="html"><![CDATA[Octopressでのデザイン変更方法]]></title>
-    <link href="http://makotow.github.io/blog/2013/01/19/change-octopress-css-style/"/>
+    <link href="http://amakotow.com/blog/2013/01/19/change-octopress-css-style/"/>
     <updated>2013-01-19T17:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/01/19/change-octopress-css-style</id>
+    <id>http://amakotow.com/blog/2013/01/19/change-octopress-css-style</id>
     <content type="html"><![CDATA[<p>Octopressの現在のテーマだとタイトルや見出しが大きすぎるので scss を変更し、
 文字サイズを変更してみる。</p>
 
@@ -140,9 +140,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[gistをブログに投稿]]></title>
-    <link href="http://makotow.github.io/blog/2012/10/03/gist-on-octopress/"/>
+    <link href="http://amakotow.com/blog/2012/10/03/gist-on-octopress/"/>
     <updated>2012-10-03T23:42:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/10/03/gist-on-octopress</id>
+    <id>http://amakotow.com/blog/2012/10/03/gist-on-octopress</id>
     <content type="html"><![CDATA[<p>簡単にできて便利だったのでメモ。</p>
 
 <p><a href="http://octopress.org/docs/plugins/gist-tag/">gist syntax</a></p>
@@ -151,9 +151,9 @@ CSSを書き換えることで変更可能
   
   <entry>
     <title type="html"><![CDATA[タグクラウド、関連する記事を表示するようにした。]]></title>
-    <link href="http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post/"/>
+    <link href="http://amakotow.com/blog/2012/08/23/tag-cloud-related-post/"/>
     <updated>2012-08-23T23:26:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/08/23/tag-cloud-related-post</id>
+    <id>http://amakotow.com/blog/2012/08/23/tag-cloud-related-post</id>
     <content type="html"><![CDATA[<p>タイトルの通りざっくりと追加してみた。
 <!-- more --></p>
 
@@ -174,9 +174,9 @@ Related Postsが表示されていないのはなぜかわからないが、も�
   
   <entry>
     <title type="html"><![CDATA[Read Moreの追加]]></title>
-    <link href="http://makotow.github.io/blog/2012/08/22/read-more/"/>
+    <link href="http://amakotow.com/blog/2012/08/22/read-more/"/>
     <updated>2012-08-22T22:01:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2012/08/22/read-more</id>
+    <id>http://amakotow.com/blog/2012/08/22/read-more</id>
     <content type="html"><![CDATA[<p>なんとなく、ポスト一覧を見ているとREAD MOREみたいなものが欲しくなったので探してみた。</p>
 
 <!-- more -->

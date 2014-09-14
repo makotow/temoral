@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: reveal.js | Faster and Faster]]></title>
-  <link href="http://makotow.github.io/blog/categories/reveal-dot-js/atom.xml" rel="self"/>
-  <link href="http://makotow.github.io/"/>
-  <updated>2014-09-03T01:36:16+09:00</updated>
-  <id>http://makotow.github.io/</id>
+  <link href="http://amakotow.com/blog/categories/reveal-dot-js/atom.xml" rel="self"/>
+  <link href="http://amakotow.com/"/>
+  <updated>2014-09-15T01:20:20+09:00</updated>
+  <id>http://amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[reveal.jsを使ってみる]]></title>
-    <link href="http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/"/>
+    <link href="http://amakotow.com/blog/2013/08/17/presentation-using-reveal-dot-js/"/>
     <updated>2013-08-17T19:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js</id>
+    <id>http://amakotow.com/blog/2013/08/17/presentation-using-reveal-dot-js</id>
     <content type="html"><![CDATA[<p>社内勉強会用の資料をつくらなかやなとおもっててプレゼンツールを探してみた。</p>
 
 <p>PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。</p>

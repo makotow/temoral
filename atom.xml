@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Faster and Faster]]></title>
-  <link href="http://makotow.github.io/atom.xml" rel="self"/>
-  <link href="http://makotow.github.io/"/>
-  <updated>2014-09-03T01:36:16+09:00</updated>
-  <id>http://makotow.github.io/</id>
+  <link href="http://amakotow.com/atom.xml" rel="self"/>
+  <link href="http://amakotow.com/"/>
+  <updated>2014-09-15T01:20:20+09:00</updated>
+  <id>http://amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ブログプラットフォームの変更を考えている。]]></title>
-    <link href="http://makotow.github.io/blog/2014/09/02/move-to-ghost/"/>
+    <link href="http://amakotow.com/blog/2014/09/02/move-to-ghost/"/>
     <updated>2014-09-02T01:29:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/09/02/move-to-ghost</id>
+    <id>http://amakotow.com/blog/2014/09/02/move-to-ghost</id>
     <content type="html"><![CDATA[<p>octopressから別のプラットフォームへの移行を考えている。</p>
 
 <p>今のところ候補なのはghost。</p>
@@ -91,9 +91,9 @@ Immutable Infrastructure　の考え方を取り込んで環境構築をした�
   
   <entry>
     <title type="html"><![CDATA[#golang　設定値をどうするか？(設定ファイル読み込み編)]]></title>
-    <link href="http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/"/>
+    <link href="http://amakotow.com/blog/2014/07/29/golang-setting-from-file/"/>
     <updated>2014-07-29T00:12:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/07/29/golang-setting-from-file</id>
+    <id>http://amakotow.com/blog/2014/07/29/golang-setting-from-file</id>
     <content type="html"><![CDATA[<p>golangを書いて設定値としたいものが出てきた時にどうするのがよいのか？</p>
 
 <p>ふとプログラムを書いていて気になってきたため調べてみた。<br />
@@ -211,9 +211,9 @@ setting_test.go から実行。</p>
   
   <entry>
     <title type="html"><![CDATA[OSX hydra 紹介 （5%くらいの作業効率UPを目指す） ]]></title>
-    <link href="http://makotow.github.io/blog/2014/07/27/osx-hydra/"/>
+    <link href="http://amakotow.com/blog/2014/07/27/osx-hydra/"/>
     <updated>2014-07-27T22:45:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/07/27/osx-hydra</id>
+    <id>http://amakotow.com/blog/2014/07/27/osx-hydra</id>
     <content type="html"><![CDATA[<p>ウィンドウのリサイズ、移動、フォーカス切り替えをするために、
 マジックトラックパッドに手をのばすのがだるいときがある。</p>
 
@@ -395,9 +395,9 @@ setting_test.go から実行。</p>
   
   <entry>
     <title type="html"><![CDATA[テストデータのログファイルを簡単につくれる。(apache access.log編)]]></title>
-    <link href="http://makotow.github.io/blog/2014/06/28/access-log-generator/"/>
+    <link href="http://amakotow.com/blog/2014/06/28/access-log-generator/"/>
     <updated>2014-06-28T16:45:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/06/28/access-log-generator</id>
+    <id>http://amakotow.com/blog/2014/06/28/access-log-generator</id>
     <content type="html"><![CDATA[<p>とあるログを解析してDBに入れて色々するツールを作っているのだけども
 そのテストをするためある程度大きめのテストデータが欲しくて探してみた。
 結果的に apache-loggen という gem があったので紹介。</p>
@@ -473,10 +473,10 @@ help を見るとリアルタイムに流れるログに対するテストなど
   
   <entry>
     <title type="html"><![CDATA[BrewfileでHomebrewパッケージ管理 その後]]></title>
-    <link href="http://makotow.github.io/blog/2014/06/15/brewfile-2/"/>
+    <link href="http://amakotow.com/blog/2014/06/15/brewfile-2/"/>
     <updated>2014-06-15T16:18:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/06/15/brewfile-2</id>
-    <content type="html"><![CDATA[<p>過去記事（<a href="http://makotow.github.io/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）の続きです。</p>
+    <id>http://amakotow.com/blog/2014/06/15/brewfile-2</id>
+    <content type="html"><![CDATA[<p>過去記事（<a href="http://amakotow.com/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）の続きです。</p>
 
 <p>導入後Brewfileの機能についてキャッチアップはしてなかったのですが、
 仕様が変わってBrewfileが綺麗に書けるようになっていたり過去記事に書いていたことが間違っているのが判明したため、
@@ -883,9 +883,9 @@ install XXX || upgrade XXX || true
   
   <entry>
     <title type="html"><![CDATA[ブログタイトル変えました]]></title>
-    <link href="http://makotow.github.io/blog/2014/06/11/change-blog-title/"/>
+    <link href="http://amakotow.com/blog/2014/06/11/change-blog-title/"/>
     <updated>2014-06-11T23:18:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/06/11/change-blog-title</id>
+    <id>http://amakotow.com/blog/2014/06/11/change-blog-title</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 <ul id="markdown-toc">
   <li><a href="#section">ブログタイトル変更</a></li>
@@ -925,13 +925,13 @@ install XXX || upgrade XXX || true
   
   <entry>
     <title type="html"><![CDATA[OSX のキーバインド周り]]></title>
-    <link href="http://makotow.github.io/blog/2014/06/11/macosx-keybinding/"/>
+    <link href="http://amakotow.com/blog/2014/06/11/macosx-keybinding/"/>
     <updated>2014-06-11T23:17:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/06/11/macosx-keybinding</id>
+    <id>http://amakotow.com/blog/2014/06/11/macosx-keybinding</id>
     <content type="html"><![CDATA[<p>WWDC 2014 で Macbook Pro は新しく発表されないようだったので、
 少し前に Macbook Pro 13 インチを購入してみました。</p>
 
-<p>brew, brew-cask でソフトウェアの導入は自動化済み（<a href="http://makotow.github.io/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）
+<p>brew, brew-cask でソフトウェアの導入は自動化済み（<a href="http://amakotow.com/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）
  、設定ファイル一式は github から clone 、またはDropboxの同期でセットアップできたので特に苦労した覚えはなかったが、
 使いはじめるとOSX周りのキーバインドの設定を自動化できてなかったので備忘のためメモ。</p>
 
@@ -976,7 +976,7 @@ F1に再割当て</p>
   <li>option(右側）にFnを割り当て</li>
 </ul>
 
-<p><img src="http://makotow.github.io/images/2014/06/KeyRemap4MacBook.png" /></p>
+<p><img src="http://amakotow.com/images/2014/06/KeyRemap4MacBook.png" /></p>
 
 <h3 id="controlcaps-lock-">Control　を　Caps Lock に割り当て</h3>
 
@@ -992,9 +992,9 @@ F1に再割当て</p>
   
   <entry>
     <title type="html"><![CDATA[Virtual Box ゲストから外部ネットワークにつながらない（解決済み）]]></title>
-    <link href="http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"/>
+    <link href="http://amakotow.com/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"/>
     <updated>2014-05-05T18:12:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat</id>
+    <id>http://amakotow.com/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat</id>
     <content type="html"><![CDATA[<p>WEB+DB Press vol80 の「テスト駆動インフラ」を写経中に遭遇した名前解決が出来なかった事象に対する対処方法。</p>
 
 <p>結果的には Virtual Box の設定を変更することで対応出来たので備忘録。</p>
@@ -1134,9 +1134,9 @@ Vagrantファイルに設定を追加することで対応完了。 <sup id="fnr
   
   <entry>
     <title type="html"><![CDATA[20140415時点の近況]]></title>
-    <link href="http://makotow.github.io/blog/2014/04/15/tech201404/"/>
+    <link href="http://amakotow.com/blog/2014/04/15/tech201404/"/>
     <updated>2014-04-15T00:16:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/04/15/tech201404</id>
+    <id>http://amakotow.com/blog/2014/04/15/tech201404</id>
     <content type="html"><![CDATA[<p>２ヶ月記事更新なしだったので近況とか。</p>
 
 <!-- more -->
@@ -1200,14 +1200,14 @@ Scala + JavaFX8 でクライアントアプリを作成中</p>
   
   <entry>
     <title type="html"><![CDATA[Brewfileでパッケージ管理]]></title>
-    <link href="http://makotow.github.io/blog/2014/02/05/brewfile/"/>
+    <link href="http://amakotow.com/blog/2014/02/05/brewfile/"/>
     <updated>2014-02-05T00:15:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/02/05/brewfile</id>
+    <id>http://amakotow.com/blog/2014/02/05/brewfile</id>
     <content type="html"><![CDATA[<h3 id="section">2014/06/15 追記</h3>
 
 <p>cask に upgradeがなかったのと、
 cask の仕様変更とかで返り値がErrorではなくWarningになったりとかでもっとスッキリ書けるようになったので
-別記事にてアップデートしました。<a href="http://makotow.github.io/blog/2014/06/15/brewfile-2/">BrewfileでHomebrewパッケージ管理 その後</a></p>
+別記事にてアップデートしました。<a href="http://amakotow.com/blog/2014/06/15/brewfile-2/">BrewfileでHomebrewパッケージ管理 その後</a></p>
 
 <p>追記、ここまで。</p>
 
@@ -1606,9 +1606,9 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
   
   <entry>
     <title type="html"><![CDATA[2013年版 データ集約まとめ(Buffer, IFTTT, Evernoteなど)]]></title>
-    <link href="http://makotow.github.io/blog/2013/12/31/data-aggregation-2013/"/>
+    <link href="http://amakotow.com/blog/2013/12/31/data-aggregation-2013/"/>
     <updated>2013-12-31T20:23:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/12/31/data-aggregation-2013</id>
+    <id>http://amakotow.com/blog/2013/12/31/data-aggregation-2013</id>
     <content type="html"><![CDATA[<p>
 2013年に構築できた情報集約の方法をまとめてみた。<br />
 結果的にIFTTT, Buffer, Evernoteのすごさがわかった。
@@ -1651,7 +1651,7 @@ cask の仕様変更とかで返り値がErrorではなくWarningになったり
 
 <h2 id="section-1">サービス相関図</h2>
 
-<p><img src="http://makotow.github.io/images/2013/12/data-aggregation/data-aggregation.001.png" /></p>
+<p><img src="http://amakotow.com/images/2013/12/data-aggregation/data-aggregation.001.png" /></p>
 
 <h2 id="section-2">基本フロー</h2>
 
@@ -1717,9 +1717,9 @@ fav は後で読もうと思ったリンク等なので、せっかくfavした�
   
   <entry>
     <title type="html"><![CDATA[man の使い方]]></title>
-    <link href="http://makotow.github.io/blog/2013/11/28/how-to-use-man/"/>
+    <link href="http://amakotow.com/blog/2013/11/28/how-to-use-man/"/>
     <updated>2013-11-28T23:48:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/11/28/how-to-use-man</id>
+    <id>http://amakotow.com/blog/2013/11/28/how-to-use-man</id>
     <content type="html"><![CDATA[<p>man の使い方を調べたのでメモ。
 主にオプションについて。
 <!-- more --></p>
@@ -1779,9 +1779,9 @@ man -k オプションは aproposコマンドと同様の結果とか初めて�
   
   <entry>
     <title type="html"><![CDATA[MacでKindleを読む]]></title>
-    <link href="http://makotow.github.io/blog/2013/11/06/kindle-on-mac/"/>
+    <link href="http://amakotow.com/blog/2013/11/06/kindle-on-mac/"/>
     <updated>2013-11-06T00:54:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/11/06/kindle-on-mac</id>
+    <id>http://amakotow.com/blog/2013/11/06/kindle-on-mac</id>
     <content type="html"><![CDATA[<p>下書きしてから１ヶ月放置してたけどせっかくなので公開します。</p>
 
 <p>KindleのMacアプリはamazon.comのものしか読めないので、
@@ -1825,12 +1825,12 @@ man -k オプションは aproposコマンドと同様の結果とか初めて�
 
 <p>起動した画面から「Add」ボタンクリックすると認証ダイアログが出てくるので作成したアカウントを入力。</p>
 
-<p><img src="http://makotow.github.io/images/2013/11/Genymotion-Add.png" />
-<img src="http://makotow.github.io/images/2013/11/Genymotion-Credential.png" /></p>
+<p><img src="http://amakotow.com/images/2013/11/Genymotion-Add.png" />
+<img src="http://amakotow.com/images/2013/11/Genymotion-Credential.png" /></p>
 
 <p>仮想デバイスの一覧が表示される。</p>
 
-<p><img src="http://makotow.github.io/images/2013/11/Create_a_new_virtual_device.png" /></p>
+<p><img src="http://amakotow.com/images/2013/11/Create_a_new_virtual_device.png" /></p>
 
 <p>好きなデバイスを選んで作成する。
 この時注意することは今回はPlayストアからKindleアプリをダウンロードして本を読むことが目標なので、</p>
@@ -1840,18 +1840,18 @@ man -k オプションは aproposコマンドと同様の結果とか初めて�
 
 <p>となっている仮想デバイスを選ぶこと。</p>
 
-<p><img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device.png" />
-<img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard.png" /></p>
+<p><img src="http://amakotow.com/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device.png" />
+<img src="http://amakotow.com/images/2013/11/Virtual_device_creation_wizard.png" /></p>
 
 <p>Next-＞Nextとボタンを押してくと、
 仮想デバイスのダウンロード、チェックが開始するのでしばらくまつ。</p>
 
-<p><img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_done.png" /></p>
+<p><img src="http://amakotow.com/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_done.png" /></p>
 
 <p>ダウンロードが終わったら名前をつけて終了。</p>
 
-<p><img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_name.png" />
-<img src="http://makotow.github.io/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_success.png" /></p>
+<p><img src="http://amakotow.com/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_name.png" />
+<img src="http://amakotow.com/images/2013/11/Virtual_device_creation_wizard_and_Create_a_new_virtual_device_success.png" /></p>
 
 <h2 id="section-3">起動</h2>
 
@@ -1873,9 +1873,9 @@ man -k オプションは aproposコマンドと同様の結果とか初めて�
   
   <entry>
     <title type="html"><![CDATA[reveal.jsを使ってみる]]></title>
-    <link href="http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js/"/>
+    <link href="http://amakotow.com/blog/2013/08/17/presentation-using-reveal-dot-js/"/>
     <updated>2013-08-17T19:00:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/08/17/presentation-using-reveal-dot-js</id>
+    <id>http://amakotow.com/blog/2013/08/17/presentation-using-reveal-dot-js</id>
     <content type="html"><![CDATA[<p>社内勉強会用の資料をつくらなかやなとおもっててプレゼンツールを探してみた。</p>
 
 <p>PPTでやるのも…だし、Keynote使おうと思ったけどMacはないしでJavaScriptで何かできないかなと思って探してみた。</p>
@@ -2099,9 +2099,9 @@ reveal.jsの特徴としてスライドを一次元的なものではなく2次�
   
   <entry>
     <title type="html"><![CDATA[ScalaでIO]]></title>
-    <link href="http://makotow.github.io/blog/2013/08/04/scala-file-io/"/>
+    <link href="http://amakotow.com/blog/2013/08/04/scala-file-io/"/>
     <updated>2013-08-04T23:10:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/08/04/scala-file-io</id>
+    <id>http://amakotow.com/blog/2013/08/04/scala-file-io</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -2241,9 +2241,9 @@ Java7でできるからScalaでもと思ったけど言語仕様ではできな�
   
   <entry>
     <title type="html"><![CDATA[Technology Radar May 2013の気になるところ(1)]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic/"/>
+    <link href="http://amakotow.com/blog/2013/07/18/technology-radar-may-2013-hot-topic/"/>
     <updated>2013-07-18T23:50:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/18/technology-radar-may-2013-hot-topic</id>
+    <id>http://amakotow.com/blog/2013/07/18/technology-radar-may-2013-hot-topic</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -2339,9 +2339,9 @@ Scalaで書かれている。</p>
   
   <entry>
     <title type="html"><![CDATA[IntelliJ で ScalaTest]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
+    <link href="http://amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
     <updated>2013-07-18T00:10:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/18/scala-intellij-idea-scalatest</id>
+    <id>http://amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -2355,8 +2355,8 @@ Scalaで書かれている。</p>
 </ul>
 
 <h2 id="section">概要</h2>
-<p><a href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br />
-<a href="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a> </p>
+<p><a href="http://amakotow.com/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> <br />
+<a href="http://amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/">sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)</a> </p>
 
 <p>の続きでIntelliJプロジェクトにScalaTestを追加したのでテストを書いてIntelliJのsbtconsoleからコンパイル、実行、テストをやってみる。</p>
 
@@ -2455,11 +2455,11 @@ For functional, integration, or acceptance testing, start with FeatureSpec<br />
 
 <ol>
   <li>SBT Consoleからsbt起動 
-<img src="http://makotow.github.io/images/2013/07/ScalaTest.png" /></li>
+<img src="http://amakotow.com/images/2013/07/ScalaTest.png" /></li>
   <li>コマンド入力エリアへsbtコマンドを入力し実行
-<img src="http://makotow.github.io/images/2013/07/ScalaTest-sbtcmd.png" /></li>
+<img src="http://amakotow.com/images/2013/07/ScalaTest-sbtcmd.png" /></li>
   <li>テスト実行後、結果出力
-<img src="http://makotow.github.io/images/2013/07/ScalaTest-testresult.png" /></li>
+<img src="http://amakotow.com/images/2013/07/ScalaTest-testresult.png" /></li>
 </ol>
 
 <p>上記の例では ~test でやっているがもちろん、run, test, compielなども実行可能。
@@ -2483,9 +2483,9 @@ SBT Console使うことでIntelliJ内で完結するのは便利だと思う。<
   
   <entry>
     <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
+    <link href="http://amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
     <updated>2013-07-03T00:14:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
+    <id>http://amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -2496,13 +2496,13 @@ SBT Console使うことでIntelliJ内で完結するのは便利だと思う。<
 
 <h2 id="section">概要</h2>
 
-<p><a href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
+<p><a href="http://amakotow.com/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> で作成したプロジェクトに依存ライブラリを追加する方法の記録。</p>
 
 <p>今回はScalaTestを導入。
 <!-- more --></p>
 
 <h2 id="section-1">前回の作業内容</h2>
-<p><a href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> の成果</p>
+<p><a href="http://amakotow.com/blog/2013/07/01/sbt-intellij-idea/">sbt で IntelliJのプロジェクトを作成</a> の成果</p>
 
 <ul>
   <li>sbtでIntelliJのプロジェクトを作った</li>
@@ -2552,9 +2552,9 @@ libraryDependenciesにscalatestを追加され、ScalaTestがつえるように�
   
   <entry>
     <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成]]></title>
-    <link href="http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea/"/>
+    <link href="http://amakotow.com/blog/2013/07/01/sbt-intellij-idea/"/>
     <updated>2013-07-01T23:30:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/07/01/sbt-intellij-idea</id>
+    <id>http://amakotow.com/blog/2013/07/01/sbt-intellij-idea</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -2596,9 +2596,9 @@ plugin の導入はproject/plugins.sbtに addSbtPlugin(….)を書いておけ�
   
   <entry>
     <title type="html"><![CDATA[Octopressアップデート]]></title>
-    <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
+    <link href="http://amakotow.com/blog/2013/05/06/octopress-update/"/>
     <updated>2013-05-06T12:19:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
+    <id>http://amakotow.com/blog/2013/05/06/octopress-update</id>
     <content type="html"><![CDATA[<h2 id="octopress-">octopress アップデートまとめ</h2>
 <p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
 作業記録。</p>

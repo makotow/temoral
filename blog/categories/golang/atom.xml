@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: golang | Faster and Faster]]></title>
-  <link href="http://makotow.github.io/blog/categories/golang/atom.xml" rel="self"/>
-  <link href="http://makotow.github.io/"/>
-  <updated>2014-09-03T01:36:16+09:00</updated>
-  <id>http://makotow.github.io/</id>
+  <link href="http://amakotow.com/blog/categories/golang/atom.xml" rel="self"/>
+  <link href="http://amakotow.com/"/>
+  <updated>2014-09-15T01:20:20+09:00</updated>
+  <id>http://amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#golang　設定値をどうするか？(設定ファイル読み込み編)]]></title>
-    <link href="http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/"/>
+    <link href="http://amakotow.com/blog/2014/07/29/golang-setting-from-file/"/>
     <updated>2014-07-29T00:12:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/07/29/golang-setting-from-file</id>
+    <id>http://amakotow.com/blog/2014/07/29/golang-setting-from-file</id>
     <content type="html"><![CDATA[<p>golangを書いて設定値としたいものが出てきた時にどうするのがよいのか？</p>
 
 <p>ふとプログラムを書いていて気になってきたため調べてみた。<br />
@@ -139,9 +139,9 @@ setting_test.go から実行。</p>
   
   <entry>
     <title type="html"><![CDATA[テストデータのログファイルを簡単につくれる。(apache access.log編)]]></title>
-    <link href="http://makotow.github.io/blog/2014/06/28/access-log-generator/"/>
+    <link href="http://amakotow.com/blog/2014/06/28/access-log-generator/"/>
     <updated>2014-06-28T16:45:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2014/06/28/access-log-generator</id>
+    <id>http://amakotow.com/blog/2014/06/28/access-log-generator</id>
     <content type="html"><![CDATA[<p>とあるログを解析してDBに入れて色々するツールを作っているのだけども
 そのテストをするためある程度大きめのテストデータが欲しくて探してみた。
 結果的に apache-loggen という gem があったので紹介。</p>
