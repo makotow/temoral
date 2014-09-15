@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: IntelliJ | Faster and Faster]]></title>
-  <link href="http://amakotow.com/blog/categories/intellij/atom.xml" rel="self"/>
-  <link href="http://amakotow.com/"/>
-  <updated>2014-09-15T11:35:28+09:00</updated>
-  <id>http://amakotow.com/</id>
+  <link href="http://blog.amakotow.com/blog/categories/intellij/atom.xml" rel="self"/>
+  <link href="http://blog.amakotow.com/"/>
+  <updated>2014-09-15T11:42:05+09:00</updated>
+  <id>http://blog.amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[IntelliJ で ScalaTest]]></title>
-    <link href="http://amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
+    <link href="http://blog.amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest/"/>
     <updated>2013-07-18T00:10:00+09:00</updated>
-    <id>http://amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest</id>
+    <id>http://blog.amakotow.com/blog/2013/07/18/scala-intellij-idea-scalatest</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -156,9 +156,9 @@ SBT Console使うことでIntelliJ内で完結するのは便利だと思う。<
   
   <entry>
     <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成(依存ライブラリ追加編)]]></title>
-    <link href="http://amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
+    <link href="http://blog.amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies/"/>
     <updated>2013-07-03T00:14:00+09:00</updated>
-    <id>http://amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
+    <id>http://blog.amakotow.com/blog/2013/07/03/sbt-intellij-idea-add-librarydependencies</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">
@@ -225,9 +225,9 @@ libraryDependenciesにscalatestを追加され、ScalaTestがつえるように�
   
   <entry>
     <title type="html"><![CDATA[sbt で IntelliJのプロジェクトを作成]]></title>
-    <link href="http://amakotow.com/blog/2013/07/01/sbt-intellij-idea/"/>
+    <link href="http://blog.amakotow.com/blog/2013/07/01/sbt-intellij-idea/"/>
     <updated>2013-07-01T23:30:00+09:00</updated>
-    <id>http://amakotow.com/blog/2013/07/01/sbt-intellij-idea</id>
+    <id>http://blog.amakotow.com/blog/2013/07/01/sbt-intellij-idea</id>
     <content type="html"><![CDATA[<h2> Contents </h2>
 
 <ul id="markdown-toc">

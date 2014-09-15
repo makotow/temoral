@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: aws | Faster and Faster]]></title>
-  <link href="http://amakotow.com/blog/categories/aws/atom.xml" rel="self"/>
-  <link href="http://amakotow.com/"/>
-  <updated>2014-09-15T11:35:28+09:00</updated>
-  <id>http://amakotow.com/</id>
+  <link href="http://blog.amakotow.com/blog/categories/aws/atom.xml" rel="self"/>
+  <link href="http://blog.amakotow.com/"/>
+  <updated>2014-09-15T11:42:05+09:00</updated>
+  <id>http://blog.amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[20140415時点の近況]]></title>
-    <link href="http://amakotow.com/blog/2014/04/15/tech201404/"/>
+    <link href="http://blog.amakotow.com/blog/2014/04/15/tech201404/"/>
     <updated>2014-04-15T00:16:00+09:00</updated>
-    <id>http://amakotow.com/blog/2014/04/15/tech201404</id>
+    <id>http://blog.amakotow.com/blog/2014/04/15/tech201404</id>
     <content type="html"><![CDATA[<p>２ヶ月記事更新なしだったので近況とか。</p>
 
 <!-- more -->

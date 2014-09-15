@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: brew | Faster and Faster]]></title>
-  <link href="http://amakotow.com/blog/categories/brew/atom.xml" rel="self"/>
-  <link href="http://amakotow.com/"/>
-  <updated>2014-09-15T11:35:28+09:00</updated>
-  <id>http://amakotow.com/</id>
+  <link href="http://blog.amakotow.com/blog/categories/brew/atom.xml" rel="self"/>
+  <link href="http://blog.amakotow.com/"/>
+  <updated>2014-09-15T11:42:05+09:00</updated>
+  <id>http://blog.amakotow.com/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[BrewfileでHomebrewパッケージ管理 その後]]></title>
-    <link href="http://amakotow.com/blog/2014/06/15/brewfile-2/"/>
+    <link href="http://blog.amakotow.com/blog/2014/06/15/brewfile-2/"/>
     <updated>2014-06-15T16:18:00+09:00</updated>
-    <id>http://amakotow.com/blog/2014/06/15/brewfile-2</id>
+    <id>http://blog.amakotow.com/blog/2014/06/15/brewfile-2</id>
     <content type="html"><![CDATA[<p>過去記事（<a href="/blog/2014/02/05/brewfile/">Brewfileでパッケージ管理</a>）の続きです。</p>
 
 <p>導入後Brewfileの機能についてキャッチアップはしてなかったのですが、
@@ -438,9 +438,9 @@ install XXX || upgrade XXX || true
   
   <entry>
     <title type="html"><![CDATA[Brewfileでパッケージ管理]]></title>
-    <link href="http://amakotow.com/blog/2014/02/05/brewfile/"/>
+    <link href="http://blog.amakotow.com/blog/2014/02/05/brewfile/"/>
     <updated>2014-02-05T00:15:00+09:00</updated>
-    <id>http://amakotow.com/blog/2014/02/05/brewfile</id>
+    <id>http://blog.amakotow.com/blog/2014/02/05/brewfile</id>
     <content type="html"><![CDATA[<h3 id="section">2014/06/15 追記</h3>
 
 <p>cask に upgradeがなかったのと、

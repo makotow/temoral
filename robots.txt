@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://amakotow.com/sitemap.xml 
+Sitemap: http://blog.amakotow.com/sitemap.xml 
