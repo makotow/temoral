@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hugo | Faster and Faster]]></title>
-  <link href="http://blog.amakotow.com/blog/categories/hugo/atom.xml" rel="self"/>
-  <link href="http://blog.amakotow.com/"/>
-  <updated>2014-09-15T11:42:05+09:00</updated>
-  <id>http://blog.amakotow.com/</id>
+  <link href="http://makotow.github.io/blog/categories/hugo/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-11-24T01:21:33+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ブログプラットフォームの変更を考えている。]]></title>
-    <link href="http://blog.amakotow.com/blog/2014/09/02/move-to-ghost/"/>
+    <link href="http://makotow.github.io/blog/2014/09/02/move-to-ghost/"/>
     <updated>2014-09-02T01:29:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2014/09/02/move-to-ghost</id>
+    <id>http://makotow.github.io/blog/2014/09/02/move-to-ghost</id>
     <content type="html"><![CDATA[<p>octopressから別のプラットフォームへの移行を考えている。</p>
 
 <p>今のところ候補なのはghost。</p>

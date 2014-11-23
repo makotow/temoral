@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: SQL | Faster and Faster]]></title>
-  <link href="http://blog.amakotow.com/blog/categories/sql/atom.xml" rel="self"/>
-  <link href="http://blog.amakotow.com/"/>
-  <updated>2014-09-15T11:42:05+09:00</updated>
-  <id>http://blog.amakotow.com/</id>
+  <link href="http://makotow.github.io/blog/categories/sql/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-11-24T01:21:33+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SQLアンチパターン　読書録]]></title>
-    <link href="http://blog.amakotow.com/blog/2013/05/05/sqlantipattern/"/>
+    <link href="http://makotow.github.io/blog/2013/05/05/sqlantipattern/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2013/05/05/sqlantipattern</id>
+    <id>http://makotow.github.io/blog/2013/05/05/sqlantipattern</id>
     <content type="html"><![CDATA[<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qHKrFZi0L._SL160_.jpg" alt="SQLアンチパターン" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">SQLアンチパターン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.05.02</div></div><div class="amazlet-detail">Bill Karwin <br />オライリージャパン <br />売り上げランキング: 10,412<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115892/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
 <p>内容を見たら今までの案件で謝りたいこともある人も多いではないだろうか。

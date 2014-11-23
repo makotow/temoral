@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sh | Faster and Faster]]></title>
-  <link href="http://blog.amakotow.com/blog/categories/sh/atom.xml" rel="self"/>
-  <link href="http://blog.amakotow.com/"/>
-  <updated>2014-09-15T11:42:05+09:00</updated>
-  <id>http://blog.amakotow.com/</id>
+  <link href="http://makotow.github.io/blog/categories/sh/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-11-24T01:21:33+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[shでコマンドが存在するか確認する方法]]></title>
-    <link href="http://blog.amakotow.com/blog/2013/03/31/sh-tech-exists-command/"/>
+    <link href="http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command/"/>
     <updated>2013-03-31T00:41:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2013/03/31/sh-tech-exists-command</id>
+    <id>http://makotow.github.io/blog/2013/03/31/sh-tech-exists-command</id>
     <content type="html"><![CDATA[<p>zshの起動スクリプトないでうっかりMac固有の設定を入れてしまっていたので、
 Linuxで起動した時にエラーが出てしまったのでコマンドがあるかで対応した。</p>
 

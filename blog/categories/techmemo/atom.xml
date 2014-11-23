@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Techmemo | Faster and Faster]]></title>
-  <link href="http://blog.amakotow.com/blog/categories/techmemo/atom.xml" rel="self"/>
-  <link href="http://blog.amakotow.com/"/>
-  <updated>2014-09-15T11:42:05+09:00</updated>
-  <id>http://blog.amakotow.com/</id>
+  <link href="http://makotow.github.io/blog/categories/techmemo/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-11-24T01:21:33+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#golang　設定値をどうするか？(設定ファイル読み込み編)]]></title>
-    <link href="http://blog.amakotow.com/blog/2014/07/29/golang-setting-from-file/"/>
+    <link href="http://makotow.github.io/blog/2014/07/29/golang-setting-from-file/"/>
     <updated>2014-07-29T00:12:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2014/07/29/golang-setting-from-file</id>
+    <id>http://makotow.github.io/blog/2014/07/29/golang-setting-from-file</id>
     <content type="html"><![CDATA[<p>golangを書いて設定値としたいものが出てきた時にどうするのがよいのか？</p>
 
 <p>ふとプログラムを書いていて気になってきたため調べてみた。<br />
@@ -139,9 +139,9 @@ setting_test.go から実行。</p>
   
   <entry>
     <title type="html"><![CDATA[Virtual Box ゲストから外部ネットワークにつながらない（解決済み）]]></title>
-    <link href="http://blog.amakotow.com/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"/>
+    <link href="http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat/"/>
     <updated>2014-05-05T18:12:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat</id>
+    <id>http://makotow.github.io/blog/2014/05/05/cannot-connect-to-virtulbox-guest-through-nat</id>
     <content type="html"><![CDATA[<p>WEB+DB Press vol80 の「テスト駆動インフラ」を写経中に遭遇した名前解決が出来なかった事象に対する対処方法。</p>
 
 <p>結果的には Virtual Box の設定を変更することで対応出来たので備忘録。</p>

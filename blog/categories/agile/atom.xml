@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: agile | Faster and Faster]]></title>
-  <link href="http://blog.amakotow.com/blog/categories/agile/atom.xml" rel="self"/>
-  <link href="http://blog.amakotow.com/"/>
-  <updated>2014-09-15T11:42:05+09:00</updated>
-  <id>http://blog.amakotow.com/</id>
+  <link href="http://makotow.github.io/blog/categories/agile/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-11-24T01:21:33+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[アジャイル開発とスクラム　読書録]]></title>
-    <link href="http://blog.amakotow.com/blog/2013/03/30/agileandscrum/"/>
+    <link href="http://makotow.github.io/blog/2013/03/30/agileandscrum/"/>
     <updated>2013-03-30T13:00:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2013/03/30/agileandscrum</id>
+    <id>http://makotow.github.io/blog/2013/03/30/agileandscrum</id>
     <content type="html"><![CDATA[<p>アジャイル開発とスクラム　顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</p>
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41qg6STGdqL._SL160_.jpg" alt="アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">アジャイル開発とスクラム 顧客・技術・経営をつなぐ協調的ソフトウェア開発マネジメント</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.18</div></div><div class="amazlet-detail">平鍋 健児 野中 郁次郎 <br />翔泳社 <br />売り上げランキング: 1,322<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129704/makotownotes-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>

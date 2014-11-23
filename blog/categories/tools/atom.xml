@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tools | Faster and Faster]]></title>
-  <link href="http://blog.amakotow.com/blog/categories/tools/atom.xml" rel="self"/>
-  <link href="http://blog.amakotow.com/"/>
-  <updated>2014-09-15T11:42:05+09:00</updated>
-  <id>http://blog.amakotow.com/</id>
+  <link href="http://makotow.github.io/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-11-24T01:21:33+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[OSX hydra 紹介 （5%くらいの作業効率UPを目指す） ]]></title>
-    <link href="http://blog.amakotow.com/blog/2014/07/27/osx-hydra/"/>
+    <link href="http://makotow.github.io/blog/2014/07/27/osx-hydra/"/>
     <updated>2014-07-27T22:45:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2014/07/27/osx-hydra</id>
+    <id>http://makotow.github.io/blog/2014/07/27/osx-hydra</id>
     <content type="html"><![CDATA[<p>ウィンドウのリサイズ、移動、フォーカス切り替えをするために、
 マジックトラックパッドに手をのばすのがだるいときがある。</p>
 
@@ -199,9 +199,9 @@
   
   <entry>
     <title type="html"><![CDATA[MacでKindleを読む]]></title>
-    <link href="http://blog.amakotow.com/blog/2013/11/06/kindle-on-mac/"/>
+    <link href="http://makotow.github.io/blog/2013/11/06/kindle-on-mac/"/>
     <updated>2013-11-06T00:54:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2013/11/06/kindle-on-mac</id>
+    <id>http://makotow.github.io/blog/2013/11/06/kindle-on-mac</id>
     <content type="html"><![CDATA[<p>下書きしてから１ヶ月放置してたけどせっかくなので公開します。</p>
 
 <p>KindleのMacアプリはamazon.comのものしか読めないので、
@@ -293,9 +293,9 @@
   
   <entry>
     <title type="html"><![CDATA[SublimeText2で日本語入力をTabで。]]></title>
-    <link href="http://blog.amakotow.com/blog/2013/05/05/sublimetext-japanese-input/"/>
+    <link href="http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input/"/>
     <updated>2013-05-05T17:50:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2013/05/05/sublimetext-japanese-input</id>
+    <id>http://makotow.github.io/blog/2013/05/05/sublimetext-japanese-input</id>
     <content type="html"><![CDATA[<h2 id="section">概要</h2>
 <p>ちょっと不便だなと思いつつ放置して使ってたけど、
 少し調べたらわかったのでメモ。</p>
@@ -342,9 +342,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mac OSX のDiffツール]]></title>
-    <link href="http://blog.amakotow.com/blog/2013/02/08/mac-difftools/"/>
+    <link href="http://makotow.github.io/blog/2013/02/08/mac-difftools/"/>
     <updated>2013-02-08T00:40:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2013/02/08/mac-difftools</id>
+    <id>http://makotow.github.io/blog/2013/02/08/mac-difftools</id>
     <content type="html"><![CDATA[<p>色々探してみた。 
 要件としては</p>
 

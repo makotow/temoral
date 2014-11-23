@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: pocket | Faster and Faster]]></title>
-  <link href="http://blog.amakotow.com/blog/categories/pocket/atom.xml" rel="self"/>
-  <link href="http://blog.amakotow.com/"/>
-  <updated>2014-09-15T11:42:05+09:00</updated>
-  <id>http://blog.amakotow.com/</id>
+  <link href="http://makotow.github.io/blog/categories/pocket/atom.xml" rel="self"/>
+  <link href="http://makotow.github.io/"/>
+  <updated>2014-11-24T01:21:33+09:00</updated>
+  <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[InstapaperからPocketへ移行]]></title>
-    <link href="http://blog.amakotow.com/blog/2012/11/26/instapaper-to-pocket/"/>
+    <link href="http://makotow.github.io/blog/2012/11/26/instapaper-to-pocket/"/>
     <updated>2012-11-26T16:30:00+09:00</updated>
-    <id>http://blog.amakotow.com/blog/2012/11/26/instapaper-to-pocket</id>
+    <id>http://makotow.github.io/blog/2012/11/26/instapaper-to-pocket</id>
     <content type="html"><![CDATA[<p>Pocketが良さげに見えたのでRead it Latarからの移行をしてみた。</p>
 
 <p>最初はInstapaperを使用していたが、文字化けしたりAndroid、Macのアプリがあまり好みではなかったのでPocketに変えてみた。
