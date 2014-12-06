@@ -4,7 +4,7 @@
   <title><![CDATA[Faster and Faster]]></title>
   <link href="http://makotow.github.io/atom.xml" rel="self"/>
   <link href="http://makotow.github.io/"/>
-  <updated>2014-12-07T01:51:43+09:00</updated>
+  <updated>2014-12-07T01:52:27+09:00</updated>
   <id>http://makotow.github.io/</id>
   <author>
     <name><![CDATA[Makoto WATANABE (makotow)]]></name>
@@ -12,6 +12,156 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[新しいブログを作った件]]></title>
+    <link href="http://makotow.github.io/blog/2014/12/07/starting-new-blog/"/>
+    <updated>2014-12-07T00:55:00+09:00</updated>
+    <id>http://makotow.github.io/blog/2014/12/07/starting-new-blog</id>
+    <content type="html"><![CDATA[<p>前回のエントリからしばらくたったけど、
+新しいブログを作ってみました。</p>
+
+<p>今回は新しく作ったブログのテクノロジ周りを照会したいと思います。</p>
+
+<h2 id="tldr">TL;DR</h2>
+
+<p>Ghostの環境をAWSに作ったらたくさん新しいテクノロジーの勉強ができてできることが増えた。</p>
+
+<!-- more -->
+
+<h2> Contents </h2>
+<ul id="markdown-toc">
+  <li><a href="#tldr">TL;DR</a></li>
+  <li><a href="#section">ブログプラットフォーム</a></li>
+  <li><a href="#section-1">サーバ環境</a></li>
+  <li><a href="#nodejs">Nodejs</a></li>
+  <li><a href="#ubuntu">Ubuntu</a></li>
+  <li><a href="#vagrant">Vagrant</a>    <ul>
+      <li><a href="#multivm-">MultiVM 機能</a></li>
+      <li><a href="#provisioning">Provisioning</a></li>
+      <li><a href="#plugin">plugin</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-2">テスト</a>    <ul>
+      <li><a href="#serverspec">ServerSpec</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-3">その他</a></li>
+</ul>
+
+<p>新しいブログはこちらのURLです。</p>
+
+<ul>
+  <li><a href="http://blog.amakotow.com">makotow’s blog</a></li>
+</ul>
+
+<h2 id="section">ブログプラットフォーム</h2>
+
+<p>予定していたとおり <a href="https://ghost.org/">Ghost</a>を使うようにしてみた。
+見た目のシンプルさと綺麗さに惹かれました。</p>
+
+<p>Octopressでも良いのだけど、日本語周りでエラーになってパブリッシュできないことや、
+リリースバージョンにタグがなかったり（masterが最新）という状態でメンテナンスがしづらいなどなどあって乗り換えを検討。</p>
+
+<p>こちらはこちらで残し、うまい棲み分けを考えていきます。</p>
+
+<h2 id="section-1">サーバ環境</h2>
+
+<p>AWSを使っています。
+Digital Ocean も選択肢として考えましたが結果的にはAWSとなりました。
+理由としてはAWSの各種サービスを使ってみたかったというのと、
+現在無料期間中ということが大きな理由です。</p>
+
+<p>AWSで構築した場合、主に以下のサービスを使用しています。
+ブログのドメインはムームードメインで取得したものをRoute53でホストしています。</p>
+
+<ul>
+  <li>EC2</li>
+  <li>Route53</li>
+  <li>VPC</li>
+  <li>EIP</li>
+  <li>etc</li>
+</ul>
+
+<h2 id="nodejs">Nodejs</h2>
+
+<p>GhostはNode.jsで動作しています。</p>
+
+<p>Node.jsのプロセスをバックグラウンドで動作させるため
+forever, supervisor, pm2, upstart, /etc/init でデーモン化を検討しました。
+やりたいことをシンプルに実現できたため、今回はforeverを使用しました。</p>
+
+<p>pm2 のほうがクラスタリングなどの機能があり高機能のようです。
+foreverでまかないきれなくなったらpm2も検討する予定。</p>
+
+<h2 id="ubuntu">Ubuntu</h2>
+
+<p>OS は Ubuntu を使用。
+AWS使うならAmazon Linuxを使うのがいいと考えてやってました。<br />
+テスト時にAmazon Linuxをローカル使う方法がわからなかったのでCentOSかUbuntu2択で
+AMIの関係上Ubuntuを選びました。</p>
+
+<h2 id="vagrant">Vagrant</h2>
+
+<p>今回はAWSに構築する前にローカルでテストして、ある程度形になったらAWSへデプロイしました。
+テクノロジーとしてVagrantを使用しました。</p>
+
+<h3 id="multivm-">MultiVM 機能</h3>
+
+<p>これが使いたかったVagrantを使った。<br />
+vagrant upコマンドの引数で環境ごとにprovisioningとかできる。</p>
+
+<ul>
+  <li>vagrnat up remote – AWSにデプロイ</li>
+  <li>vagrnat up local  – ローカル環境にデプロイ</li>
+</ul>
+
+<p>OSのインストールからすると up に結構時間かかった。<br />
+Dockerでやったら時間がかからずに起動できるのかなと思います。</p>
+
+<h3 id="provisioning">Provisioning</h3>
+
+<p>OS起動後に自動プロビジョニングは、今回はshell scriptを使用しました。  </p>
+
+<p>本当は chef, ansibleでやりたかったが環境構築ばかりに時間がかかってしまうのでは
+本末転倒と思い最速でできるshell script を使用しました。</p>
+
+<p>chef, ansible版は作ってみようと思います。</p>
+
+<h3 id="plugin">plugin</h3>
+
+<p>いま見ると開発時のプラグインは以下のものを入れていたようで、個人的にはhostsupdaterがとても便利でした。<br />
+Vagrantを起動するとhostsファイルに追加してくれる。</p>
+
+<ul>
+  <li>vagrant-aws (0.5.0)</li>
+  <li>vagrant-digitalocean (0.7.0)</li>
+  <li>vagrant-hostsupdater (0.0.11)</li>
+  <li>vagrant-login (1.0.1, system)</li>
+  <li>vagrant-omnibus (1.4.1)</li>
+  <li>vagrant-share (1.1.2, system)</li>
+</ul>
+
+<h2 id="section-2">テスト</h2>
+
+<p>他にも技術的なチャレンジとしてVagrantで自動構築したものに対して
+テストすることにもチャレンジしてみました。</p>
+
+<h3 id="serverspec">ServerSpec</h3>
+
+<p>rake のタスクとして spec を作成</p>
+
+<pre><code>rake spec
+</code></pre>
+
+<p>を実行してテストを走らせながらすすめ、テストのリズム、感触をつかむことが出来ました。</p>
+
+<h2 id="section-3">その他</h2>
+
+<p>ドメインの取得やらを行って、DNSの仕組みなどもやもやしてたものがなんとなく理解できました。
+せっかくなのでもっと体系的に学べるといいなと思いました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ブログプラットフォームの変更を考えている。]]></title>
@@ -2591,74 +2741,6 @@ plugin の導入はproject/plugins.sbtに addSbtPlugin(….)を書いておけ�
 </span><span class="line">echo 'addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.4.0")' &gt;&gt; project/plugins.sbt
 </span><span class="line">sbt
 </span><span class="line">gen-idea</span></code></pre></td></tr></table></div></figure></notextile></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopressアップデート]]></title>
-    <link href="http://makotow.github.io/blog/2013/05/06/octopress-update/"/>
-    <updated>2013-05-06T12:19:00+09:00</updated>
-    <id>http://makotow.github.io/blog/2013/05/06/octopress-update</id>
-    <content type="html"><![CDATA[<h2 id="octopress-">octopress アップデートまとめ</h2>
-<p>octopressのアップデート、頻繁にやるものではないのでメモを残す。
-作業記録。</p>
-
-<h2 id="section">やりたいこと</h2>
-<p>自分のOctopressに、remote branch (本家)の更新を取り込みたい。
-<!-- more --></p>
-
-<h2 id="section-1">マニュアル</h2>
-
-<p>ここに親切に書いてある。</p>
-
-<ul>
-  <li><a href="http://octopress.org/docs/updating/">Updating Octopress</a></li>
-</ul>
-
-<p>基本はこの通りやっていけば大丈夫。
-カスタマイズは */custom以下でやるというoctopressの決まりを守っていればそこら辺も考慮して更新後よしなに上書きしてくれる。</p>
-
-<h3 id="section-2">+α</h3>
-<p>*/custom以外もいじっていたきがするので心配なため以下のとおりブランチを作って作業</p>
-
-<p>ブランチを作って作業</p>
-
-<pre><code>git checkout -b pull-upstream
-</code></pre>
-
-<p>本家更新分を取り込み</p>
-
-<pre><code>git pull octopress master
-</code></pre>
-
-<p>diff の結果 */custom 以外は編集していなかった。(sourceとsource.old、sassとsass.old)</p>
-
-<p>Rakefile, _config.ymlについてはコンフリクトした箇所を手でマージ。</p>
-
-<p>
-2013/05/06 15:00 追記： _layout/post.htmlにrelated_postを表示するプラグインの記述を入れていた。
-</p>
-<pre><code>git add/rm ...
-git commit -m "pull upstream."
-</code></pre>
-
-<p>メインのブランチに戻って更新を反映</p>
-
-<pre><code>git checkout source
-</code></pre>
-
-<p>ブランチ(pull-upstream)で作業した結果をマージ</p>
-
-<pre><code>git merge pull-upstream
-</code></pre>
-
-<p>マージしたブランチ(pull-upstream)を削除</p>
-
-<pre><code>git branch -d pull-upstream
-</code></pre>
-
-<p>以上</p>
-
 ]]></content>
   </entry>
   
